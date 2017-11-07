@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GeoDataCenterFunLib.AddDataFrameTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.AddDataFrameTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.AddLegendCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.AddLegendCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.AddNorthArrowTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.AddNorthArrowTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.AddPictureCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.AddPictureCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.AddScaleBarTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.AddScaleBarTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.AddScaleTextTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.AddScaleTextTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.CommandEnvelopeExport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.CommandEnvelopeExport.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.CommandExtentExport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.CommandExtentExport.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.CommandExtentView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.CommandExtentView.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.CommandImportPolygonExport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.CommandImportPolygonExport.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.CommandPolygonExport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.CommandPolygonExport.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.CommandSelExport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.CommandSelExport.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.CommandWaterMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.CommandWaterMark.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsAddDataCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsAddDataCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsAlignBottomCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsAlignBottomCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsAlignLeftCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsAlignLeftCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsAlignRightCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsAlignRightCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsAlignToMarginsCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsAlignToMarginsCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsAlignTopCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsAlignTopCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsAssignTaskCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsAssignTaskCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsBringToFrontCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsBringToFrontCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsClearElements" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsClearElements.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsClearMouseCurStat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsClearMouseCurStat.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsClearSelectionCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsClearSelectionCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsDefaultTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsDefaultTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsElementRefreshViewCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsElementRefreshViewCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsElementSelectTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsElementSelectTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsGotoXY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsGotoXY.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsGroupCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsGroupCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsImportPolygonQueryTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsImportPolygonQueryTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsLineBufferQueryTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsLineBufferQueryTool.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsMapFullExtentCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsMapFullExtentCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsMapIdentifyTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsMapIdentifyTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsMapMeasureTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsMapMeasureTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsMapPanTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsMapPanTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsMapRefreshViewCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsMapRefreshViewCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsMapZoomInFixedCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsMapZoomInFixedCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsMapZoomInTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsMapZoomInTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsMapZoomOutFixedCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsMapZoomOutFixedCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsMapZoomOutTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsMapZoomOutTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsMapZoomToLastExtentBackCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsMapZoomToLastExtentBackCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsMapZoomToLastExtentForwardCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsMapZoomToLastExtentForwardCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsNewCircleTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsNewCircleTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsNewEllipseTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsNewEllipseTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsNewFreeHandTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsNewFreeHandTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsNewLineTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsNewLineTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsNewMarkerTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsNewMarkerTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsNewPolygonTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsNewPolygonTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsNewRectangleTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsNewRectangleTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsPagePanTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsPagePanTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsPageZoom100PercentCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsPageZoom100PercentCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsPageZoomInFixedCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsPageZoomInFixedCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsPageZoomInTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsPageZoomInTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsPageZoomOutFixedCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsPageZoomOutFixedCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsPageZoomOutTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsPageZoomOutTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsPageZoomPageToLastExtentBackCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsPageZoomPageToLastExtentBackCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsPageZoomPageToLastExtentForwardCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsPageZoomPageToLastExtentForwardCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsPageZoomWholePageCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsPageZoomWholePageCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsPointBufferQueryTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsPointBufferQueryTool.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsPolygonBufferQueryTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsPolygonBufferQueryTool.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsReDoCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsReDoCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsRotateElementTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsRotateElementTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsRotateLeftCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsRotateLeftCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsRotateRightCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsRotateRightCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsSaveAsDocCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsSaveAsDocCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsSelectFeaturesTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsSelectFeaturesTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsSelectTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsSelectTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsSendToBackCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsSendToBackCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsSQLQueryCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsSQLQueryCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsUnDoCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsUnDoCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ControlsUngroupCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ControlsUngroupCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.DataStatMenuBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.DataStatMenuBar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.ElementEditCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.ElementEditCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.MapAnalyseMenuBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.MapAnalyseMenuBar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.MapOutMenuBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.MapOutMenuBar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.MapRectOutBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.MapRectOutBar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.MapSearchMenuBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.MapSearchMenuBar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.MapViewMenuBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.MapViewMenuBar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.Print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.Print.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.PrintPreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.PrintPreview.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.PrintSetting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.PrintSetting.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.TbChangeLayout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.TbChangeLayout.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.TbTextLabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.TbTextLabel.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataCenterFunLib.TbTextNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataCenterFunLib.TbTextNormal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataEdit.DataEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataEdit.DataEdit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.ControlCenterFrame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.ControlCenterFrame.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.DataLibBreak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.DataLibBreak.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.DataLibIndex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.DataLibIndex.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.DataStat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.DataStat.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.ExitMapDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.ExitMapDoc.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.HelpGroup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.HelpGroup.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.LoadMapDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.LoadMapDoc.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.LogManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.LogManager.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.MetadataManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.MetadataManager.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.OutTbl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.OutTbl.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.SaveAsMapDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.SaveAsMapDoc.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.SaveMapDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.SaveMapDoc.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.SelectTBJudge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.SelectTBJudge.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.SysExplain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.SysExplain.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.SysHelpIndex " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.SysHelpIndex .png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.SysHelpIndex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.SysHelpIndex.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.SysHelpList " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.SysHelpList .png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.SysHelpList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.SysHelpList.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDataManagerFrame.SysHelpSearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDataManagerFrame.SysHelpSearch.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.AddDataRcd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.AddDataRcd.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.AnalyseInLibMap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.AnalyseInLibMap.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.BindDocSource" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.BindDocSource.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.BindRasterSource" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.BindRasterSource.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.ControlDataManagerFrame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.ControlDataManagerFrame.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.DataArrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.DataArrange.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.DataBaseLink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.DataBaseLink.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.DataLib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.DataLib.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.DataTblEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.DataTblEdit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.DataUpLoad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.DataUpLoad.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.DelAllDataRcd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.DelAllDataRcd.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.DelDataRcd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.DelDataRcd.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.DocDataArrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.DocDataArrange.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.DocManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.DocManager.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.DocUpload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.DocUpload.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.EditNameRule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.EditNameRule.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.Help.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.HelpGroup " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.HelpGroup .png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.InitConfig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.InitConfig.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.MadeSubModel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.MadeSubModel.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.MapDocMenuBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.MapDocMenuBar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.ModifyDataRcd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.ModifyDataRcd.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.ModifyDataUnit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.ModifyDataUnit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.NewDOCDirectory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.NewDOCDirectory.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.RasterDataArrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.RasterDataArrange.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.RasterDataUpLoad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.RasterDataUpLoad.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.RasterManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.RasterManager.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.SetPhysicSource" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.SetPhysicSource.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.SysExplain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.SysExplain.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.SysHelpIndex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.SysHelpIndex.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.SysHelpList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.SysHelpList.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.SysHelpSearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.SysHelpSearch.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.ToolGroup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.ToolGroup.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoDBConfigFrame.VectorManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoDBConfigFrame.VectorManager.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GeoPageLayout.gzdt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeoPageLayout.gzdt.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CommandPolygonOutmap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Command\CommandPolygonOutmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CommandPolygonOutmap1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Command\CommandPolygonOutmap.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

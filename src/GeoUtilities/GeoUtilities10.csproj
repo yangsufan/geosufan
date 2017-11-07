@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13BF28E6-EE22-420C-99A7-D3B70E82CC8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoUtilities</RootNamespace>
+    <AssemblyName>GeoUtilities</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=8.1.0.6, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.3DAnalyst\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.3DAnalyst.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF, Version=9.2.4.1420, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Carto\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Carto.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataManagementTools, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.DataSourcesFile\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.DataSourcesFile.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesOleDB, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.DataSourcesRaster\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.DataSourcesRaster.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Display\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Display.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Geodatabase\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Geodatabase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Geometry\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Geometry.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessing, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessor, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Output\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Output.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SpatialAnalyst, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.System\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.SystemUI\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.SystemUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\ClsMarkDraw.cs" />
+    <Compile Include="Class\DBConnect.cs" />
+    <Compile Include="Gis\Command\ControlsAddGroupLayer1.cs" />
+    <Compile Include="Gis\Command\ControlsAddGroupLayer2.cs" />
+    <Compile Include="Gis\Command\ControlsAppendFea.cs" />
+    <Compile Include="Gis\Command\ControlsCollapseAllLayer1.cs" />
+    <Compile Include="Gis\Command\ControlsExpandAllLayer1.cs" />
+    <Compile Include="Gis\Command\ControlsExportByCoor.cs" />
+    <Compile Include="Gis\Command\ControlsExportByZone.cs" />
+    <Compile Include="Gis\Command\ControlsGeoTrans.cs" />
+    <Compile Include="Gis\Command\ControlsLayerAtt.cs" />
+    <Compile Include="Gis\Command\ControlsQueryAspectCommand.cs" />
+    <Compile Include="Gis\Command\ControlsQuerySlopeCommand.cs" />
+    <Compile Include="Gis\Command\ControlsRemoveAll.cs" />
+    <Compile Include="Gis\Command\ControlsRemoveLayer1.cs" />
+    <Compile Include="Gis\Command\ControlsRemoveLayer2.cs" />
+    <Compile Include="Gis\Command\ControlsRenderLayerByMxd.cs" />
+    <Compile Include="Gis\Command\ControlsResMapIdentifyTool.cs" />
+    <Compile Include="Gis\Command\ControlsResSQLQueryCommand.cs" />
+    <Compile Include="Gis\Command\ControlsSectionCommand.cs" />
+    <Compile Include="Gis\Command\ControlsSetCoordinateSys.cs" />
+    <Compile Include="Gis\Command\ControlsMapFullExtentCommandEx.cs" />
+    <Compile Include="Gis\Command\ControlsSetLimitScale1.cs" />
+    <Compile Include="Gis\Command\ControlsUnVisibleAllLayer1.cs" />
+    <Compile Include="Gis\Command\ControlsUnVisibleAllLayer2.cs" />
+    <Compile Include="Gis\Command\ControlsVisibleAllLayer1.cs" />
+    <Compile Include="Gis\Command\ControlsVisibleAllLayer2.cs" />
+    <Compile Include="Gis\Command\ControlsZoomToLayer.cs" />
+    <Compile Include="Gis\Command\ControlsZoomToLayer1.cs" />
+    <Compile Include="Gis\Command\ControlsZoomToVisibleScale1.cs" />
+    <Compile Include="Gis\Form\FormSetLimitScale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\FormSetLimitScale.designer.cs">
+      <DependentUpon>FormSetLimitScale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\frm3DSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frm3DSection.Designer.cs">
+      <DependentUpon>frm3DSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Command\ControlsGeoCorTrans.cs" />
+    <Compile Include="Gis\Form\frmAppendFea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmAppendFea.designer.cs">
+      <DependentUpon>frmAppendFea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\frmConflicts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmConflicts.Designer.cs">
+      <DependentUpon>frmConflicts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\ArcGisTool\ControlsTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gis\Command\ControlsAddDataCommand.cs" />
+    <Compile Include="Gis\Command\ControlsClearElements.cs" />
+    <Compile Include="Gis\Command\ControlsClearSelectionCommand.cs" />
+    <Compile Include="Gis\Command\ControlsCollapse.cs" />
+    <Compile Include="Gis\Command\ControlsCollapseAllLayer2.cs" />
+    <Compile Include="Gis\Command\ControlsDisplayLabel.cs" />
+    <Compile Include="Gis\Command\ControlsExpand.cs" />
+    <Compile Include="Gis\Command\ControlsExpandAllLayer2.cs" />
+    <Compile Include="Gis\Command\ControlsHideAllCommand.cs" />
+    <Compile Include="Gis\Command\ControlsLayerAttribute.cs" />
+    <Compile Include="Gis\Command\ControlsMapFullExtentCommand.cs" />
+    <Compile Include="Gis\Command\ControlsMapRefreshViewCommand.cs" />
+    <Compile Include="Gis\Command\ControlsMapZoomInFixedCommand.cs" />
+    <Compile Include="Gis\Command\ControlsMapZoomOutFixedCommand.cs" />
+    <Compile Include="Gis\Command\ControlsMapZoomToLastExtentBackCommand.cs" />
+    <Compile Include="Gis\Command\ControlsMapZoomToLastExtentForwardCommand.cs" />
+    <Compile Include="Gis\Command\ControlsSetLabel.cs" />
+    <Compile Include="Gis\Command\ControlsShowAllCommand.cs" />
+    <Compile Include="Gis\Command\ControlsSQLQueryCommand.cs" />
+    <Compile Include="Gis\Command\ControlsZoomToVisibleScale.cs" />
+    <Compile Include="Gis\Form\frmAttributeTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmAttributeTB.Designer.cs">
+      <DependentUpon>frmAttributeTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\frmBufferSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmBufferSet.designer.cs">
+      <DependentUpon>frmBufferSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\frmCoorEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmCoorEdit.designer.cs">
+      <DependentUpon>frmCoorEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\FrmDisplayPrj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\FrmDisplayPrj.designer.cs">
+      <DependentUpon>FrmDisplayPrj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\frmExportDataByMapNO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmExportDataByMapNO.Designer.cs">
+      <DependentUpon>frmExportDataByMapNO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\frmGeoTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmGeoTrans.designer.cs">
+      <DependentUpon>frmGeoTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\frmMeasureResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmMeasureResult.designer.cs">
+      <DependentUpon>frmMeasureResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\frmQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmQuery.Designer.cs">
+      <DependentUpon>frmQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\frmQuerySlope.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmQuerySlope.Designer.cs">
+      <DependentUpon>frmQuerySlope.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\frmSetLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmSetLabel.Designer.cs">
+      <DependentUpon>frmSetLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\FrmSQLQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\FrmSQLQuery.Designer.cs">
+      <DependentUpon>FrmSQLQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\frmStatisticFeature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmStatisticFeature.designer.cs">
+      <DependentUpon>frmStatisticFeature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\frmGeocorTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\frmGeocorTrans.designer.cs">
+      <DependentUpon>frmGeocorTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Form\UC_CoorTran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gis\Form\UC_CoorTran.Designer.cs">
+      <DependentUpon>UC_CoorTran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\Tool\ControlsDefaultTool.cs" />
+    <Compile Include="Gis\Tool\ControlsLineBufferQueryTool.cs" />
+    <Compile Include="Gis\Tool\ControlsMapIdentifyTool.cs" />
+    <Compile Include="Gis\Tool\ControlsMapMeasureTool.cs" />
+    <Compile Include="Gis\Tool\ControlsMapPanTool.cs" />
+    <Compile Include="Gis\Tool\ControlsMapZoomInTool.cs" />
+    <Compile Include="Gis\Tool\ControlsMapZoomOutTool.cs" />
+    <Compile Include="Gis\Tool\ControlsPointBufferQueryTool.cs" />
+    <Compile Include="Gis\Tool\ControlsPolygonBufferQueryTool.cs" />
+    <Compile Include="Gis\Tool\ControlsResPointBufferQueryTool.cs" />
+    <Compile Include="Gis\Tool\ControlsSelectFeaturesTool.cs" />
+    <Compile Include="Gis\Tool\ControlsSelectTool.cs" />
+    <Compile Include="Gis\Tool\ToolDrawGeo.cs" />
+    <Compile Include="Gis\Tool\ToolQuerySlope.cs" />
+    <Compile Include="Module\PublicFuction.cs" />
+    <Compile Include="Module\TransFeatures.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\DataBaseSets.cs">
+      <DependentUpon>DataBaseSets.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DataBaseSets.Designer.cs">
+      <DependentUpon>DataBaseSets.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\BufferQuery.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Circle.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataBaseSets.xsc">
+      <DependentUpon>DataBaseSets.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\DataBaseSets.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataBaseSets1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\DataBaseSets.xss">
+      <DependentUpon>DataBaseSets.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Polygon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MeasureTool.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeoProperties\GeoProperties10.csproj">
+      <Project>{EEF92981-E4A8-4B7A-A168-E3AB968EC727}</Project>
+      <Name>GeoProperties10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin\Plugin10.csproj">
+      <Project>{94E0B695-1A90-418E-AFAB-542E0728387B}</Project>
+      <Name>Plugin10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SysCommon\SysCommon10.csproj">
+      <Project>{D0B95A14-80D3-4D5F-B765-1F7CF761F981}</Project>
+      <Name>SysCommon10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gis\Form\frmAttributeTB.resx">
+      <DependentUpon>frmAttributeTB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\frmBufferSet.resx">
+      <DependentUpon>frmBufferSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\frmConflicts.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmConflicts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\frmMeasureResult.resx">
+      <DependentUpon>frmMeasureResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\frmQuery.resx">
+      <DependentUpon>frmQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\frmSetLabel.resx">
+      <DependentUpon>frmSetLabel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\FrmSQLQuery.resx">
+      <DependentUpon>FrmSQLQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MapIdentify.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Select.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gis\Form\frm3DSection.resx">
+      <DependentUpon>frm3DSection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\frmAppendFea.resx">
+      <DependentUpon>frmAppendFea.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\frmCoorEdit.resx">
+      <DependentUpon>frmCoorEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\FrmDisplayPrj.resx">
+      <DependentUpon>FrmDisplayPrj.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\frmExportDataByMapNO.resx">
+      <DependentUpon>frmExportDataByMapNO.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\frmGeoTrans.resx">
+      <DependentUpon>frmGeoTrans.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\frmGeocorTrans.resx">
+      <DependentUpon>frmGeocorTrans.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\draw.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gis\Tool\ToolDrawGeo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gis\Tool\ToolDrawGeo.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gis\Tool\ToolQuerySlope.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gis\Form\FormSetLimitScale.resx">
+      <DependentUpon>FormSetLimitScale.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\frmQuerySlope.resx">
+      <DependentUpon>frmQuerySlope.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Form\UC_CoorTran.resx">
+      <DependentUpon>UC_CoorTran.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gis\Tool\ToolQuerySlope.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

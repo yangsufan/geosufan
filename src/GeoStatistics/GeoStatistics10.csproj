@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B604B13E-570D-4D66-B6C7-FD372AEFAE0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoStatistics</RootNamespace>
+    <AssemblyName>GeoStatistics</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/GeoStatistics/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Chartlet, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Chartlet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="DevComponents.DotNetBar2, Version=8.1.0.6, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF, Version=9.2.4.1420, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Office, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Office.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\ModOracle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Command\CommandArborAreaStatistics.cs" />
+    <Compile Include="Command\CommandAreaStatistics.cs" />
+    <Compile Include="Command\CommandBHXX.cs" />
+    <Compile Include="Command\CommandCommonwealStatistics.cs" />
+    <Compile Include="Command\CommandCustomizeStatistics.cs" />
+    <Compile Include="Command\CommandDLXX.cs" />
+    <Compile Include="Command\CommandEachForCumulationStatistics.cs" />
+    <Compile Include="Command\CommandEachGroundAreaStatistics.cs" />
+    <Compile Include="Command\CommandEconomyStatistics.cs" />
+    <Compile Include="Command\CommandEcostatistics.cs" />
+    <Compile Include="Command\CommandEightStatistics.cs" />
+    <Compile Include="Command\CommandEnvelopeStatistics.cs" />
+    <Compile Include="Command\CommandForestAreaPlanningStatistic.cs" />
+    <Compile Include="Command\CommandForestCurrentStatistic.cs" />
+    <Compile Include="Command\CommandForestCurrentStructureStatistic.cs" />
+    <Compile Include="Command\CommandForestKindStatistics.cs" />
+    <Compile Include="Command\CommandForestLandProtectionLevelStatistic.cs" />
+    <Compile Include="Command\CommandForestProtectGradeStatistic.cs" />
+    <Compile Include="Command\CommandForestPublicWelfareStatistic.cs" />
+    <Compile Include="Command\CommandForestQualityStatistic.cs" />
+    <Compile Include="Command\CommandForestUseAreaStatistic.cs" />
+    <Compile Include="Command\CommandGCLBXX.cs" />
+    <Compile Include="Command\CommandImportAreaStatistics.cs" />
+    <Compile Include="Command\CommandJBXX.cs" />
+    <Compile Include="Command\CommandLCForestAreaPlanningStatistic.cs" />
+    <Compile Include="Command\CommandLCForestCurrentStatistic.cs" />
+    <Compile Include="Command\CommandLCForestCurrentStructureStatistic.cs" />
+    <Compile Include="Command\CommandLCForestLandProtectionLevelStatistic.cs" />
+    <Compile Include="Command\CommandLCForestProtectGradeStatistic.cs" />
+    <Compile Include="Command\CommandLCForestPublicWelfareStatistic.cs" />
+    <Compile Include="Command\CommandLCForestQualityStatistic.cs" />
+    <Compile Include="Command\CommandLCForestUseAreaStatistic.cs" />
+    <Compile Include="Command\CommandLDJGXX.cs" />
+    <Compile Include="Command\CommandLZXX.cs" />
+    <Compile Include="Command\CommandQSXX.cs" />
+    <Compile Include="Command\CommandQYXX.cs" />
+    <Compile Include="Command\CommandReport.cs" />
+    <Compile Include="Command\CommandShrubberyStatistics.cs" />
+    <Compile Include="Command\CommandUserfullStatistics.cs" />
+    <Compile Include="Command\CommandZHDJ.cs" />
+    <Compile Include="Command\CommandZHLX.cs" />
+    <Compile Include="Command\CommandZLDJXX.cs" />
+    <Compile Include="Command\CommandZYSZ.cs" />
+    <Compile Include="Command\ToolEvnelopeExport.cs" />
+    <Compile Include="Command\ToolSelAreaStatistics.cs" />
+    <Compile Include="Command\CommandSelAreaStatistics.cs" />
+    <Compile Include="Command\CommandIslandAreaStatistics.cs" />
+    <Compile Include="Command\CommandPopulationStatistics.cs" />
+    <Compile Include="Form\frmAreaStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmAreaStatistics.designer.cs">
+      <DependentUpon>frmAreaStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmCustomizeStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmCustomizeStatistic.designer.cs">
+      <DependentUpon>FrmCustomizeStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmExportEightStatisticalTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmExportEightStatisticalTables.Designer.cs">
+      <DependentUpon>frmExportEightStatisticalTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSelectionInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSelectionInfo.Designer.cs">
+      <DependentUpon>frmSelectionInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmStatisticsCharlte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmStatisticsCharlte.Designer.cs">
+      <DependentUpon>frmStatisticsCharlte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\ModCommon.cs" />
+    <Compile Include="Form\SQLfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SQLfrm.designer.cs">
+      <DependentUpon>SQLfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFields.Designer.cs">
+      <DependentUpon>frmFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Command\ToolAreaStatistics.cs" />
+    <Compile Include="UI\RowMergeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\RowMergeView.designer.cs">
+      <DependentUpon>RowMergeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UcArea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UcArea.Designer.cs">
+      <DependentUpon>UcArea.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\frmSelectionInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSelectionInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UcArea.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UcArea.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Command\ToolAreaStatistics.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\frmAreaStatistics.resx">
+      <DependentUpon>frmAreaStatistics.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmCustomizeStatistic.resx">
+      <DependentUpon>FrmCustomizeStatistic.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmExportEightStatisticalTables.resx">
+      <DependentUpon>frmExportEightStatisticalTables.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmStatisticsCharlte.resx">
+      <DependentUpon>frmStatisticsCharlte.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\ToolAreaStatistics.cur" />
+    <EmbeddedResource Include="Form\SQLfrm.resx">
+      <DependentUpon>SQLfrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFields.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RowMergeView.resx">
+      <DependentUpon>RowMergeView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="VBRUN">
+      <Guid>{EA544A21-C82D-11D1-A3E4-00A0C90AEA82}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>9</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>False</Private>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeoDataCenterFunLib\GeoDataCenterFunLib10.csproj">
+      <Project>{3818EC74-3C15-453D-B931-9AC6C80FACBE}</Project>
+      <Name>GeoDataCenterFunLib10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin\Plugin10.csproj">
+      <Project>{94E0B695-1A90-418E-AFAB-542E0728387B}</Project>
+      <Name>Plugin10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SysCommon\SysCommon10.csproj">
+      <Project>{D0B95A14-80D3-4D5F-B765-1F7CF761F981}</Project>
+      <Name>SysCommon10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Command\ToolEvnelopeExport.bmp" />
+    <Content Include="Command\ToolEvnelopeExport.cur" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

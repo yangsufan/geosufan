@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using ESRI.ArcGIS.Carto;
+using ESRI.ArcGIS.ADF.BaseClasses;
+using ESRI.ArcGIS.Controls;
+using ESRI.ArcGIS.Display;
+using ESRI.ArcGIS.Geometry;
+using ESRI.ArcGIS.SystemUI;
+using ESRI.ArcGIS.esriSystem;
+
+namespace GeoUtilities
+{
+    public class AddScaleBarTool : Plugin.Interface.ToolRefBase
+    {
+        private Plugin.Application.IAppArcGISRef _AppHk;
+        private ITool _tool = null;
+        private ICommand _cmd = null;
+
+        public AddScaleBarTool()
+        {
+            base._Name = "GeoUtilities.AddScaleBarTool";
+            base._Caption = "±ÈÀý³ß";
+            base._Tooltip = "±ÈÀý³ß";
+            base._Checked = false;
+            base._Visible = true;
+            base._Enabled = true;
+            base._Message = "±ÈÀý³ß";
+        }
+
+        public override bool Enabled
+        {
+            get
+            {
+                if (_AppHk.PageLayoutControl == null || _AppHk.TOCControl == null) return false;
+                if (!(_AppHk.CurrentControl is IPageLayoutControl2)) return false;
+                return true;
+            }
+        }
+
+        public override string Message
+        {
+            get
+            {
+                Plugin.Application.IAppFormRef pAppFormRef = _AppHk as Plugin.Application.IAppFormRef;
+                if (pAppFormRef != null)
+                {
+                    pAppFormRef.OperatorTips = base._Message;
+                }
+                return base._Message;
+            }
+        }
+
+        public override void ClearMessage()
+        {
+            Plugin.Application.IAppFormRef pAppFormRef = _AppHk as Plugin.Application.IAppFormRef;
+            if (pAppFormRef != null)
+            {
+                pAppFormRef.OperatorTips = string.Empty;
+            }
+        }
+
+        public override void OnClick()
+        {
+            if (_cmd == null || _AppHk == null) return;
+            if (_AppHk.PageLayoutControl == null) return;
+            _cmd.OnClick();
+            _AppHk.PageLayoutControl.CurrentTool = _tool;
+            _AppHk.CurrentTool = this.Name;
+        }
+
+        public override void OnCreate(Plugin.Application.IApplicationRef hook)
+        {
+            if (hook == null) return;
+            _AppHk = hook as Plugin.Application.IAppArcGISRef;
+            if (_AppHk.PageLayoutControl == null) return;
+
+            string progID = base._Name;
+            int index = _AppHk.ToolbarControls.Find(progID);
+            if (index != -1)
+            {
+                IToolbarItem toolItem = _AppHk.ToolbarControls.GetItem(index);
+                _cmd = toolItem.Command;
+                _tool = (ITool)_cmd;                
+            }
+        }
+    }
+}

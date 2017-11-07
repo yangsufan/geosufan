@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoDataExport", "GeoDataExport.csproj", "{6A5218D0-98B4-4962-B81B-259160D1953C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapControlApplication1", "..\..\GeoDataExport_h\MapControlApplication1\MapControlApplication1.csproj", "{9FF8ACD8-703C-4B77-A9E3-B21ED3C3797F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A5218D0-98B4-4962-B81B-259160D1953C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A5218D0-98B4-4962-B81B-259160D1953C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A5218D0-98B4-4962-B81B-259160D1953C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A5218D0-98B4-4962-B81B-259160D1953C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FF8ACD8-703C-4B77-A9E3-B21ED3C3797F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FF8ACD8-703C-4B77-A9E3-B21ED3C3797F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FF8ACD8-703C-4B77-A9E3-B21ED3C3797F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FF8ACD8-703C-4B77-A9E3-B21ED3C3797F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

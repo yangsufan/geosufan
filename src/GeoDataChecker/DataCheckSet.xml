@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gb2312" ?> 
+<DataCheckSet>
+  <CodeCheck ConnectionType="Remote">
+    <RemoteConnection>
+      <CodeTableName>testCodeTableName</CodeTableName>
+      <CodeLayerTableName>testCodeLayerTableName</CodeLayerTableName>
+    </RemoteConnection>
+    <LocalConnection>
+      <CodeTableName>testCodeTableName</CodeTableName>
+      <CodeLayerTableName>testCodeLayerTableName</CodeLayerTableName>
+    </LocalConnection>
+  </CodeCheck>
+  <StandardizeCheck>
+  </StandardizeCheck>
+  <ElevationCheck>
+  </ElevationCheck>
+</DataCheckSet>

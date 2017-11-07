@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3CB167C-AD3F-43EC-A764-7928845273BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoPageLayout</RootNamespace>
+    <AssemblyName>GeoPageLayout</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=8.1.0.6, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command\CommandSelOutmapZD.cs" />
+    <Compile Include="Command\CommandPolygonOutmapZT.cs" />
+    <Compile Include="Command\CommandRectangleOutmapZT.cs" />
+    <Compile Include="Command\CommandSelOutmapZT.cs" />
+    <Compile Include="Form\FormProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormProgress.designer.cs">
+      <DependentUpon>FormProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmBlockOutMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmBlockOutMap.designer.cs">
+      <DependentUpon>FrmBlockOutMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmMxdExportJPG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmMxdExportJPG.designer.cs">
+      <DependentUpon>FrmMxdExportJPG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmSubHeadFieldSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmSubHeadFieldSet.designer.cs">
+      <DependentUpon>FrmSubHeadFieldSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSetLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSetLabel.Designer.cs">
+      <DependentUpon>frmSetLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmSheetMapUserSet_ZTbat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmSheetMapUserSet_ZTbat.designer.cs">
+      <DependentUpon>FrmSheetMapUserSet_ZTbat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmTDLYGHMapSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmTDLYGHMapSet.Designer.cs">
+      <DependentUpon>FrmTDLYGHMapSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmTDLYMapSet_XQT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmTDLYMapSet_XQT.Designer.cs">
+      <DependentUpon>FrmTDLYMapSet_XQT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmExtentZTMapSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmExtentZTMapSet.Designer.cs">
+      <DependentUpon>FrmExtentZTMapSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmZDMapSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmZDMapSet.Designer.cs">
+      <DependentUpon>FrmZDMapSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmExtentZTMapSetBat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmExtentZTMapSetBat.Designer.cs">
+      <DependentUpon>FrmExtentZTMapSetBat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSetPolygonSymbol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSetPolygonSymbol.Designer.cs">
+      <DependentUpon>frmSetPolygonSymbol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmExtentZTRasterMapSetBat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmExtentZTRasterMapSetBat.Designer.cs">
+      <DependentUpon>FrmExtentZTRasterMapSetBat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmSheetMapSet2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmSheetMapSet2.designer.cs">
+      <DependentUpon>FrmSheetMapSet2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmSheetMapSetDJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmSheetMapSetDJ.designer.cs">
+      <DependentUpon>FrmSheetMapSetDJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmBlockOutMapRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmBlockOutMapRaster.designer.cs">
+      <DependentUpon>FrmBlockOutMapRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeoPageLayout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Module\ModGetData.cs" />
+    <Compile Include="Command\CommandExportActiveView.cs" />
+    <Compile Include="Command\CommandPolygonOutmap.cs" />
+    <Compile Include="Command\CommandRectangleOutmap.cs" />
+    <Compile Include="Command\CommandSelOutmap.cs" />
+    <Compile Include="Command\CommandRangeOutmap.cs" />
+    <Compile Include="PluginCommand\BzffOutMap_ZT.cs" />
+    <Compile Include="Form\FormPrintPageSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPrintPageSet.designer.cs">
+      <DependentUpon>FormPrintPageSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmExportActiveViewSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmExportActiveViewSet.designer.cs">
+      <DependentUpon>FrmExportActiveViewSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRangeOutMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmRangeOutMap.designer.cs">
+      <DependentUpon>frmRangeOutMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmSheetMapSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmSheetMapSet.Designer.cs">
+      <DependentUpon>FrmSheetMapSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmSheetMapSet2backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmSheetMapSet2backup.designer.cs">
+      <DependentUpon>FrmSheetMapSet2backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmSheetMapUserSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmSheetMapUserSet.designer.cs">
+      <DependentUpon>FrmSheetMapUserSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmSheetMapSet_ZT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmSheetMapSet_ZT.Designer.cs">
+      <DependentUpon>FrmSheetMapSet_ZT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmSheetMapUserSet_ZT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmSheetMapUserSet_ZT.designer.cs">
+      <DependentUpon>FrmSheetMapUserSet_ZT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmPageLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmPageLayout.Designer.cs">
+      <DependentUpon>FrmPageLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="maps.cs" />
+    <Compile Include="PluginCommand\ControlsImportExtentZTT.cs" />
+    <Compile Include="PluginCommand\ControlsBlockOutMap.cs" />
+    <Compile Include="PluginCommand\ControlsMxdExportJpg.cs" />
+    <Compile Include="PluginCommand\ControlsSelOutmapZD.cs" />
+    <Compile Include="PluginCommand\ControlsExtentZTGHT.cs" />
+    <Compile Include="PluginCommand\ControlsMapOutTDLYFFT.cs" />
+    <Compile Include="PluginCommand\ControlsMapSheetPageLayoutTDLY.cs" />
+    <Compile Include="PluginCommand\ControlsXZQOutMapTDLYFFT.cs" />
+    <Compile Include="PluginCommand\ControlsXZQOutMapTDLYXQT.cs" />
+    <Compile Include="PluginCommand\ControlsXZQOutMapTDLYXQT_bat.cs" />
+    <Compile Include="PluginCommand\ControlsMapOutCZDJ.cs" />
+    <Compile Include="PluginCommand\ControlsMapOutJCDX.cs" />
+    <Compile Include="PluginCommand\ControlsXZQOutMap.cs" />
+    <Compile Include="PluginCommand\ControlsBlockOutMapRaster.cs" />
+    <Compile Include="PluginCommand\ControlsXZQOutMapZTGHXQT.cs" />
+    <Compile Include="PluginCommand\ControlsSelOutmapZT.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ElementCommandTool\ElementCommandTool10.csproj">
+      <Project>{FD4032B6-1D66-4464-86B6-40DC2EF15E18}</Project>
+      <Name>ElementCommandTool10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeoDataCenterFunLib\GeoDataCenterFunLib10.csproj">
+      <Project>{3818EC74-3C15-453D-B931-9AC6C80FACBE}</Project>
+      <Name>GeoDataCenterFunLib10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GeoDrawSheetMap\GeoDrawSheetMap10.vbproj">
+      <Project>{9C301085-553E-4968-A0B6-493ABC74ACB0}</Project>
+      <Name>GeoDrawSheetMap10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GeoProperties\GeoProperties10.csproj">
+      <Project>{EEF92981-E4A8-4B7A-A168-E3AB968EC727}</Project>
+      <Name>GeoProperties10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GeoSymbology\GeoSymbology10.csproj">
+      <Project>{6B8346C9-A2D1-4B59-8851-FD9AF28138CE}</Project>
+      <Name>GeoSymbology10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin\Plugin10.csproj">
+      <Project>{94E0B695-1A90-418E-AFAB-542E0728387B}</Project>
+      <Name>Plugin10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SysCommon\SysCommon10.csproj">
+      <Project>{D0B95A14-80D3-4D5F-B765-1F7CF761F981}</Project>
+      <Name>SysCommon10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\FormPrintPageSet.resx">
+      <DependentUpon>FormPrintPageSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmExportActiveViewSet.resx">
+      <DependentUpon>FrmExportActiveViewSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmPageLayout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmPageLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormPageLayoutSet\FrmSheetMapSet.resx">
+      <DependentUpon>FrmSheetMapSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormPageLayoutSet\FrmSheetMapSet2backup.resx">
+      <DependentUpon>FrmSheetMapSet2backup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmUser.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmSheetMapUserSet.resx">
+      <DependentUpon>FrmSheetMapUserSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form\FormPageLayoutSet\FrmSheetMapSetExtent_ZT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPageLayoutSet\FrmSheetMapSetExtent_ZT.Designer.cs">
+      <DependentUpon>FrmSheetMapSetExtent_ZT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmBlockOutMapFFT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmBlockOutMapFFT.designer.cs">
+      <DependentUpon>FrmBlockOutMapFFT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmManagerPageLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmManagerPageLayout.Designer.cs">
+      <DependentUpon>FrmManagerPageLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmUpdateSolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmUpdateSolution.Designer.cs">
+      <DependentUpon>FrmUpdateSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmUsePageSolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmUsePageSolution.Designer.cs">
+      <DependentUpon>FrmUsePageSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ModuleMap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginCommand\ControlsBlockOutMapDLFB.cs" />
+    <Compile Include="PluginCommand\ControlsBlockOutMapLDGNQ.cs" />
+    <Compile Include="PluginCommand\ControlsBlockOutMapZTGNQ.cs" />
+    <Compile Include="PluginCommand\ControlsPolygonOutmapZT.cs" />
+    <Compile Include="PluginCommand\ControlsRectangleOutmapZT.cs" />
+    <Compile Include="PluginCommand\ControlsBlockOutMapFFT.cs" />
+    <Compile Include="PluginCommand\ControlsRegionOutMap.cs" />
+    <None Include="Resources\GeoPageLayout.gzdt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Command\CommandPolygonOutmap.cur" />
+    <EmbeddedResource Include="Command\CommandRectangleOutmap.cur" />
+    <EmbeddedResource Include="Form\FormPageLayoutSet\FrmSheetMapSetExtent_ZT.resx">
+      <DependentUpon>FrmSheetMapSetExtent_ZT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormProgress.resx">
+      <DependentUpon>FormProgress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmBlockOutMap.resx">
+      <DependentUpon>FrmBlockOutMap.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmManagerPageLayout.resx">
+      <DependentUpon>FrmManagerPageLayout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmMxdExportJPG.resx">
+      <DependentUpon>FrmMxdExportJPG.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmSubHeadFieldSet.resx">
+      <DependentUpon>FrmSubHeadFieldSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSetLabel.resx">
+      <DependentUpon>frmSetLabel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmRangeOutMap.resx">
+      <DependentUpon>frmRangeOutMap.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormPageLayoutSet\FrmSheetMapSet_ZT.resx">
+      <DependentUpon>FrmSheetMapSet_ZT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmSheetMapUserSet_ZT.resx">
+      <DependentUpon>FrmSheetMapUserSet_ZT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmSheetMapUserSet_ZTbat.resx">
+      <DependentUpon>FrmSheetMapUserSet_ZTbat.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormPageLayoutSet\FrmTDLYGHMapSet.resx">
+      <DependentUpon>FrmTDLYGHMapSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormPageLayoutSet\FrmTDLYMapSet_XQT.resx">
+      <DependentUpon>FrmTDLYMapSet_XQT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormPageLayoutSet\FrmExtentZTMapSet.resx">
+      <DependentUpon>FrmExtentZTMapSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormPageLayoutSet\FrmZDMapSet.resx">
+      <DependentUpon>FrmZDMapSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormPageLayoutSet\FrmExtentZTMapSetBat.resx">
+      <DependentUpon>FrmExtentZTMapSetBat.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSetPolygonSymbol.resx">
+      <DependentUpon>frmSetPolygonSymbol.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormPageLayoutSet\FrmExtentZTRasterMapSetBat.resx">
+      <DependentUpon>FrmExtentZTRasterMapSetBat.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormPageLayoutSet\FrmSheetMapSet2.resx">
+      <DependentUpon>FrmSheetMapSet2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormPageLayoutSet\FrmSheetMapSetDJ.resx">
+      <DependentUpon>FrmSheetMapSetDJ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmBlockOutMapRaster.resx">
+      <DependentUpon>FrmBlockOutMapRaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmBlockOutMapFFT.resx">
+      <DependentUpon>FrmBlockOutMapFFT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmUpdateSolution.resx">
+      <DependentUpon>FrmUpdateSolution.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmUsePageSolution.resx">
+      <DependentUpon>FrmUsePageSolution.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

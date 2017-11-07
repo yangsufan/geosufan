@@ -1,0 +1,352 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C0CD46C-B236-47D2-AD33-83C0846B6D48}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoDataEdit</RootNamespace>
+    <AssemblyName>GeoDataEdit</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\..\Bin\DevComponents.DotNetBar2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ConversionTools, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessing, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessor, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Command\BatchFillField.cs" />
+    <Compile Include="Command\AttributeEdit.cs" />
+    <Compile Include="Command\EditLayerSet.cs" />
+    <Compile Include="Command\AddFeature.cs" />
+    <Compile Include="Command\DeleteFeature.cs" />
+    <Compile Include="Command\MoveFeature.cs" />
+    <Compile Include="Command\SaveFeatureEdit.cs" />
+    <Compile Include="Command\ConvertShp2Dwg.cs" />
+    <Compile Include="Command\ConvertCoor.cs" />
+    <Compile Include="Command\SplitFeature.cs" />
+    <Compile Include="Command\UndoEditOpration.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmBatchFillField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmBatchFillField.Designer.cs">
+      <DependentUpon>frmBatchFillField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmAttributeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmAttributeEdit.designer.cs">
+      <DependentUpon>frmAttributeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmAddPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmAddPoint.designer.cs">
+      <DependentUpon>frmAddPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCoorTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmCoorTrans.Designer.cs">
+      <DependentUpon>frmCoorTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmEditLayerSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmEditLayerSet.designer.cs">
+      <DependentUpon>FrmEditLayerSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmShp2Dwg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmShp2Dwg.designer.cs">
+      <DependentUpon>frmShp2Dwg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module\getEditLayer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeoDataCenterFunLib\GeoDataCenterFunLib.csproj">
+      <Project>{D60941B6-1AF7-4A25-8DFF-EEA1460236AD}</Project>
+      <Name>GeoDataCenterFunLib</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin\Plugin.csproj">
+      <Project>{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}</Project>
+      <Name>Plugin</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SysCommon\SysCommon.csproj">
+      <Project>{D0D978A2-2F5A-41A4-931F-72CDECD61513}</Project>
+      <Name>SysCommon</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmBatchFillField.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBatchFillField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmAttributeEdit.resx">
+      <DependentUpon>frmAttributeEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmAddPoint.resx">
+      <DependentUpon>frmAddPoint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Command\CurAddFeature.cur" />
+    <EmbeddedResource Include="Form\FrmEditLayerSet.resx">
+      <DependentUpon>FrmEditLayerSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmShp2Dwg.resx">
+      <DependentUpon>frmShp2Dwg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Command\AttributeEdit.cur" />
+    <EmbeddedResource Include="Command\CurMoveFeature.cur" />
+    <EmbeddedResource Include="Form\frmCoorTrans.resx">
+      <DependentUpon>frmCoorTrans.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSnapSet.resx">
+      <DependentUpon>frmSnapSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MapDataEdit.resx">
+      <DependentUpon>MapDataEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\ClassStaticType.cs" />
+    <Compile Include="Class\ClsEditorMain.cs" />
+    <Compile Include="Class\DrawVertex.cs" />
+    <Compile Include="Class\SnapPointClass.cs" />
+    <Compile Include="Command\ControlsAddDataCommand.cs" />
+    <Compile Include="Command\ControlsClearRangePolygon.cs" />
+    <Compile Include="Command\ControlsCollapseAllLayerCommand.cs" />
+    <Compile Include="Command\controlsColseAllLayerCommand.cs" />
+    <Compile Include="Command\ControlsDeleteAllLayerCommand.cs" />
+    <Compile Include="Command\ControlsDeleteSelectedFeaturesCommand.cs" />
+    <Compile Include="Command\ControlsDrawRangePolygon.cs" />
+    <Compile Include="Command\ControlsExitMxdDocCommand.cs" />
+    <Compile Include="Command\ControlsExpandAllLayerCommand.cs" />
+    <Compile Include="Command\ControlsImportRangePolygon.cs" />
+    <Compile Include="Command\ControlsMapDataEdit.cs" />
+    <Compile Include="Command\ControlsOpenAllLayerCommand.cs" />
+    <Compile Include="Command\ControlsOpenMxdDocCommand.cs" />
+    <Compile Include="Command\ControlsRedoEditCommand.cs" />
+    <Compile Include="Command\ControlsSaveasMxdDocCommand.cs" />
+    <Compile Include="Command\ControlsSaveEditCommand.cs" />
+    <Compile Include="Command\ControlsSaveMxdDocCommand.cs" />
+    <Compile Include="Command\ControlsSnapSet.cs" />
+    <Compile Include="Command\ControlsStartEditCommand.cs" />
+    <Compile Include="Command\ControlsStopEditCommand.cs" />
+    <Compile Include="Command\ControlsUndoEditCommand.cs" />
+    <Compile Include="Command\RedoEditOpration.cs" />
+    <Compile Include="Command\SNapSettingsCommand.cs" />
+    <Compile Include="Form\frmEditSnapAttri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmEditSnapAttri.designer.cs">
+      <DependentUpon>frmEditSnapAttri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSelectType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSelectType.designer.cs">
+      <DependentUpon>frmSelectType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSnapSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSnapSet.designer.cs">
+      <DependentUpon>frmSnapSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MapDataEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MapDataEdit.designer.cs">
+      <DependentUpon>MapDataEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ICommandEx.cs" />
+    <Compile Include="Module\CreateShape.cs" />
+    <Compile Include="Module\ModData.cs" />
+    <Compile Include="Module\ModForEdit.cs" />
+    <Compile Include="Module\ModMxd.cs" />
+    <Compile Include="Tools\ControlsDefaultTool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\CreatePolygonTool.cs" />
+    <Compile Include="Tools\DrawLineTrack.cs" />
+    <Compile Include="Tools\SketChupTool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\ToolDrawPolygons.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CreatePolygon.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\frmEditSnapAttri.resx">
+      <DependentUpon>frmEditSnapAttri.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSelectType.resx">
+      <DependentUpon>frmSelectType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ControlsDefaultTool.bmp" />
+    <EmbeddedResource Include="Tools\ControlsDefaultTool.cur" />
+    <EmbeddedResource Include="Tools\SketChupTool.bmp" />
+    <EmbeddedResource Include="Tools\SketChupTool.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

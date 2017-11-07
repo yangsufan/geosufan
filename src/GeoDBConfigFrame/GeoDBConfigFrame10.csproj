@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4C4CC191-01C9-43C0-8960-763C0E15279B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoDBConfigFrame</RootNamespace>
+    <AssemblyName>GeoDBConfigFrame</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=8.1.0.6, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commond\AddDataRcd.cs" />
+    <Compile Include="Commond\AddDicTable.cs" />
+    <Compile Include="Commond\BindRasterSource.cs" />
+    <Compile Include="Commond\ControlsEnterIntoIntegrationFramSys.cs" />
+    <Compile Include="Commond\ControlsEnterIntoDataManageFramSys.cs" />
+    <Compile Include="Commond\ExportDataRcd.cs" />
+    <Compile Include="Commond\ImportDataRcd.cs" />
+    <Compile Include="Commond\InitConfig.cs" />
+    <Compile Include="Commond\InitSystem.cs" />
+    <Compile Include="Commond\QueryDataRcd.cs" />
+    <Compile Include="Commond\RasterDataArrange.cs" />
+    <Compile Include="Commond\RasterDataUpLoad.cs" />
+    <Compile Include="Commond\BindDocSource.cs" />
+    <Compile Include="Commond\RoleManager.cs" />
+    <Compile Include="Commond\SystemBackup.cs" />
+    <Compile Include="Commond\SystemRecovery.cs" />
+    <Compile Include="Commond\UserManager.cs" />
+    <Compile Include="ControlsParameters.cs" />
+    <Compile Include="Control\FrmAddDicTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\FrmAddDicTable.Designer.cs">
+      <DependentUpon>FrmAddDicTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AddField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\AddField.Designer.cs">
+      <DependentUpon>AddField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commond\AnalyseInLibMap.cs" />
+    <Compile Include="Commond\DataArrange.cs" />
+    <Compile Include="Commond\DataBaseBreak.cs" />
+    <Compile Include="Commond\DataBaseInit.cs" />
+    <Compile Include="Commond\DataBaseLink.cs" />
+    <Compile Include="Commond\DataDownLoad.cs" />
+    <Compile Include="Commond\DataUpLoad.cs" />
+    <Compile Include="Commond\DelAllDataRcd.cs" />
+    <Compile Include="Commond\DelDataRcd.cs" />
+    <Compile Include="Commond\DocUpload.cs" />
+    <Compile Include="Commond\EditNameRule.cs" />
+    <Compile Include="Commond\MadeSubModel.cs" />
+    <Compile Include="Commond\ModifyDataRcd.cs" />
+    <Compile Include="Commond\ModifyDataUnit.cs" />
+    <Compile Include="Commond\NewDOCDirectory.cs" />
+    <Compile Include="Commond\SetLogicDataSource.cs" />
+    <Compile Include="Commond\SetPhysicSource.cs" />
+    <Compile Include="Commond\SysExplain.cs" />
+    <Compile Include="Commond\SysHelpIndex.cs" />
+    <Compile Include="Commond\SysHelpList.cs" />
+    <Compile Include="Commond\SysHelpSearch.cs" />
+    <Compile Include="Commond\UpLoadDataUnitIndexMap.cs" />
+    <Compile Include="Commond\SetLogicSource.cs" />
+    <Compile Include="ControlDataManagerFrame.cs" />
+    <Compile Include="Control\AddGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\AddGroupForm.Designer.cs">
+      <DependentUpon>AddGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AddLayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\AddLayerForm.Designer.cs">
+      <DependentUpon>AddLayerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\DataBaseLinkControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\DataBaseLinkControl.Designer.cs">
+      <DependentUpon>DataBaseLinkControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FaceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\FaceControl.Designer.cs">
+      <DependentUpon>FaceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmBarManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmBarManager.designer.cs">
+      <DependentUpon>frmBarManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmQueryDataRcd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmQueryDataRcd.Designer.cs">
+      <DependentUpon>frmQueryDataRcd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ModifyDataUnitControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\ModifyDataUnitControl.Designer.cs">
+      <DependentUpon>ModifyDataUnitControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\NameRuleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\NameRuleForm.Designer.cs">
+      <DependentUpon>NameRuleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SetLogicDataSourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\SetLogicDataSourceForm.Designer.cs">
+      <DependentUpon>SetLogicDataSourceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SetPhysicsDataSourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\SetPhysicsDataSourceForm.Designer.cs">
+      <DependentUpon>SetPhysicsDataSourceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SubAttForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\SubAttForm.Designer.cs">
+      <DependentUpon>SubAttForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SubIndexScript.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\SubIndexScript.Designer.cs">
+      <DependentUpon>SubIndexScript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\TableForm.Designer.cs">
+      <DependentUpon>TableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commond\DocDataArrange.cs" />
+    <Compile Include="Module\ModDBOperate.cs" />
+    <Compile Include="Module\CopyPasteGDBData.cs" />
+    <Compile Include="Module\ModExcel.cs" />
+    <Compile Include="Module\ModFrameData.cs" />
+    <Compile Include="Module\ModSystemExport.cs" />
+    <Compile Include="Module\ModuleData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Control\FrmAddDicTable.resx">
+      <DependentUpon>FrmAddDicTable.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\AddField.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\AddGroupForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\AddLayerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddLayerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\DataBaseLinkControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataBaseLinkControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\FaceControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FaceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmBarManager.resx">
+      <DependentUpon>frmBarManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmQueryDataRcd.resx">
+      <DependentUpon>frmQueryDataRcd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ModifyDataUnitControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ModifyDataUnitControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\NameRuleForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NameRuleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SetLogicDataSourceForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SetLogicDataSourceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SetPhysicsDataSourceForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SetPhysicsDataSourceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SubAttForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SubAttForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SubIndexScript.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SubIndexScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\TableForm.resx">
+      <DependentUpon>TableForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeoDataCenterFunLib\GeoDataCenterFunLib10.csproj">
+      <Project>{3818EC74-3C15-453D-B931-9AC6C80FACBE}</Project>
+      <Name>GeoDataCenterFunLib10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin\Plugin10.csproj">
+      <Project>{94E0B695-1A90-418E-AFAB-542E0728387B}</Project>
+      <Name>Plugin10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SysCommon\SysCommon10.csproj">
+      <Project>{D0B95A14-80D3-4D5F-B765-1F7CF761F981}</Project>
+      <Name>SysCommon10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IObjectSafetyTLB">
+      <Guid>{C67830E0-D11D-11CF-BD80-00AA00575603}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>False</Private>
+    </COMReference>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole1">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="VBRUN">
+      <Guid>{EA544A21-C82D-11D1-A3E4-00A0C90AEA82}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>9</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>False</Private>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

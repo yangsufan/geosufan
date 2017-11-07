@@ -1,0 +1,865 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{392B05F9-B0D9-4843-AF74-13AA95825940}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoDBATool</RootNamespace>
+    <AssemblyName>GeoDBATool</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\..\Bin\DevComponents.DotNetBar2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF, Version=9.2.6.1500, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Carto\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Carto.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Controls\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ConversionTools, Version=9.2.6.1500, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.DataSourcesFile\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.DataSourcesFile.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.DataSourcesGDB\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.DataSourcesGDB.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesOleDB, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.DataSourcesOleDB\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.DataSourcesOleDB.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Display\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Display.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Geodatabase\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Geodatabase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseDistributed, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Geometry\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Geometry.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessor, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Output\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Output.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SpatialAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.System\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.SystemUI\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.SystemUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.ADOX, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Interop.ADOX.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.GeoMsgCenterCOMLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Interop.GeoMsgCenterCOMLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.GeoOneDataCheck, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Interop.GeoOneDataCheck.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.SCHEMEMANAGERCLASSESLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Interop.SCHEMEMANAGERCLASSESLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MyControls, Version=1.0.3777.25167, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MyControls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArcSDEManager\Connection.cs" />
+    <Compile Include="ArcSDEManager\Layer.cs" />
+    <Compile Include="ArcSDEManager\Version.cs" />
+    <Compile Include="Class\AutoMergefeatures.cs" />
+    <Compile Include="Class\ClsBatchUpdate.cs" />
+    <Compile Include="Class\clsDataTransplant.cs" />
+    <Compile Include="Class\clsFtp.cs" />
+    <Compile Include="Class\ClsUpdate.cs" />
+    <Compile Include="Class\CSendUpdateMsg.cs" />
+    <Compile Include="Class\GOFIDCreator.cs" />
+    <Compile Include="Class\clsSubmitByDGML.cs" />
+    <Compile Include="Class\GOFuzingTables.cs" />
+    <Compile Include="Class\clsMergeFeatures.cs" />
+    <Compile Include="Class\JoinClsMapFrame.cs" />
+    <Compile Include="Class\JoinInterface.cs" />
+    <Compile Include="Class\ProjectXml.cs" />
+    <Compile Include="Command\ControlsArcSDEManager.cs" />
+    <Compile Include="Command\ControlsBctchUpdate.cs" />
+    <Compile Include="Command\ControlsClearRows.cs" />
+    <Compile Include="Command\ControlsClearSel.cs" />
+    <Compile Include="Command\ControlsCurrDBDataAdd.cs" />
+    <Compile Include="Command\ControlsDataDoJion.cs" />
+    <Compile Include="Command\ControlsDataDoMerge.cs" />
+    <Compile Include="Command\ControlsDataJoinSearch.cs" />
+    <Compile Include="Command\ControlsDataJoinSetting.cs" />
+    <Compile Include="Command\ControlsDBDataAdd.cs" />
+    <Compile Include="Command\ControlsCreateProject.cs" />
+    <Compile Include="Command\ControlsCreateTempDB4Update.cs" />
+    <Compile Include="Command\ControlsDBDataDelete.cs" />
+    <Compile Include="Command\ControlsDBDataInsert.cs" />
+    <Compile Include="Command\ControlsDBDataProccess.cs" />
+    <Compile Include="Command\ControlsDBDataUpdate.cs" />
+    <Compile Include="Command\ControlsDBHistoryManage.cs" />
+    <Compile Include="Command\ControlsDBReferDataAdd.cs" />
+    <Compile Include="Command\ControlsDBsConnectionProperties.cs" />
+    <Compile Include="Command\ControlsDelProject.cs" />
+    <Compile Include="Command\ControlsEditProject.cs" />
+    <Compile Include="Command\ControlsExportByLayer.cs" />
+    <Compile Include="Command\ControlsFieldsCheck.cs" />
+    <Compile Include="Command\ControlsGoFIDCreator.cs" />
+    <Compile Include="Command\ControlsImportMapProfile.cs" />
+    <Compile Include="Command\ControlsInitialDBHistory.cs" />
+    <Compile Include="Command\ControlsInputData.cs" />
+    <Compile Include="Command\ControlsInputUpdateData.cs" />
+    <Compile Include="Command\ControlsCreateDBStruct.cs" />
+    <Compile Include="Command\ControlsLayerIntegrity.cs" />
+    <Compile Include="Command\ControlsMetaDataMap.cs" />
+    <Compile Include="Command\ControlsMetaDataStat.cs" />
+    <Compile Include="Command\ControlsOutputData.cs" />
+    <Compile Include="Command\ControlsDBDataRemove.cs" />
+    <Compile Include="Command\ControlsProClear.cs" />
+    <Compile Include="Command\ControlsPublishData.cs" />
+    <Compile Include="Command\ControlsQuickUpdate.cs" />
+    <Compile Include="Command\ControlsRangeDataAdd.cs" />
+    <Compile Include="Command\ControlsRecSelect.cs" />
+    <Compile Include="Command\ControlsSelectAllJoin.cs" />
+    <Compile Include="Command\ControlsSelectAllNJoin.cs" />
+    <Compile Include="Command\ControlsUpdateClear.cs" />
+    <Compile Include="Command\ControlsSelectAll.cs" />
+    <Compile Include="Command\GeometryAndAttributeCheck.cs" />
+    <Compile Include="Command\LayerControl.cs" />
+    <Compile Include="Command\ControlsInputXZData.cs" />
+    <Compile Include="Command\ControlsInputTYData.cs" />
+    <Compile Include="ControlDBATool.cs" />
+    <Compile Include="Command\ControlsShowDGML.cs" />
+    <Compile Include="Command\ControlsUpdateZoomToNew.cs" />
+    <Compile Include="Command\ControlsUpdateZoomToOld.cs" />
+    <Compile Include="Command\ControlsInputMapFramData.cs" />
+    <Compile Include="Command\ControlsStractData.cs" />
+    <Compile Include="Command\ControlsSubmitMapFramData.cs" />
+    <Compile Include="Command\ControlsDataMerge.cs" />
+    <Compile Include="Command\ControlsGetRange.cs" />
+    <Compile Include="Command\ControlsStractDataByCondition.cs" />
+    <Compile Include="Command\ControlsDBDataSearch.cs" />
+    <Compile Include="Command\ControlsCheckGridClear.cs" />
+    <Compile Include="Command\ControlsZoomtoErrorData.cs" />
+    <Compile Include="Command\ControlsCreateRasterDBStruct.cs" />
+    <Compile Include="Command\ControlsRasterImport.cs" />
+    <Compile Include="Command\ControlsRasterStract.cs" />
+    <Compile Include="Command\ControlsPulishData.cs" />
+    <Compile Include="Command\ControlsRasterBatchImport.cs" />
+    <Compile Include="Command\ControlsInitRasterCatalog.cs" />
+    <Compile Include="Command\ControlsUpdateRasterCatalog.cs" />
+    <Compile Include="Command\ControlsMetaDataImport.cs" />
+    <Compile Include="Command\ControlsMetaDataStract.cs" />
+    <Compile Include="Control\UserControlDBATool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UserControlDBATool.Designer.cs">
+      <DependentUpon>UserControlDBATool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmBarManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmBarManager.Designer.cs">
+      <DependentUpon>frmBarManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmBatchUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmBatchUpdate.Designer.cs">
+      <DependentUpon>FrmBatchUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmCheck.Designer.cs">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCompareData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmCompareData.designer.cs">
+      <DependentUpon>frmCompareData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDataTransplant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDataTransplant.Designer.cs">
+      <DependentUpon>frmDataTransplant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDBPropertySet1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDBPropertySet1.designer.cs">
+      <DependentUpon>frmDBPropertySet1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDBStructCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDBStructCreate.designer.cs">
+      <DependentUpon>frmDBStructCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmGetGeometry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmGetGeometry.designer.cs">
+      <DependentUpon>FrmGetGeometry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmGetTaskLayerGuide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmGetTaskLayerGuide.designer.cs">
+      <DependentUpon>FrmGetTaskLayerGuide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmInitUpdateEnviroment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmInitUpdateEnviroment.Designer.cs">
+      <DependentUpon>frmInitUpdateEnviroment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmInputUpdateData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmInputUpdateData.Designer.cs">
+      <DependentUpon>frmInputUpdateData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDBPropertySet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDBPropertySet.Designer.cs">
+      <DependentUpon>frmDBPropertySet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDataSubmit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDataSubmit.Designer.cs">
+      <DependentUpon>frmDataSubmit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDataMerge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDataMerge.Designer.cs">
+      <DependentUpon>frmDataMerge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmInitialDBHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmInitialDBHistory.Designer.cs">
+      <DependentUpon>frmInitialDBHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ControlHistoryBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ControlHistoryBar.Designer.cs">
+      <DependentUpon>ControlHistoryBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmJoinFeaSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmJoinFeaSearch.designer.cs">
+      <DependentUpon>frmJoinFeaSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmJoinSetting .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmJoinSetting .designer.cs">
+      <DependentUpon>frmJoinSetting .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMetaConversion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMetaConversion.designer.cs">
+      <DependentUpon>frmMetaConversion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMetaDataOracle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMetaDataOracle.Designer.cs">
+      <DependentUpon>frmMetaDataOracle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMetaMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMetaMap.Designer.cs">
+      <DependentUpon>frmMetaMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMetaMapSetLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMetaMapSetLabel.Designer.cs">
+      <DependentUpon>frmMetaMapSetLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMetaStat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMetaStat.designer.cs">
+      <DependentUpon>frmMetaStat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmNameRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmNameRule.designer.cs">
+      <DependentUpon>frmNameRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmProcessBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmProcessBar.designer.cs">
+      <DependentUpon>FrmProcessBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSDEManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSDEManager.designer.cs">
+      <DependentUpon>frmSDEManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSetControlFields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSetControlFields.designer.cs">
+      <DependentUpon>frmSetControlFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmStractHistorySet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmStractHistorySet.Designer.cs">
+      <DependentUpon>frmStractHistorySet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmBrowseHistorySelFeatures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmBrowseHistorySelFeatures.Designer.cs">
+      <DependentUpon>frmBrowseHistorySelFeatures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSelHistoryDataVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSelHistoryDataVersion.Designer.cs">
+      <DependentUpon>frmSelHistoryDataVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmArcgisMapControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmArcgisMapControl.Designer.cs">
+      <DependentUpon>frmArcgisMapControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmProject.Designer.cs">
+      <DependentUpon>frmProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmInitCaseEnviroment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmInitCaseEnviroment.designer.cs">
+      <DependentUpon>frmInitCaseEnviroment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmGetRange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmGetRange.Designer.cs">
+      <DependentUpon>FrmGetRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDBsConnSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmDataStract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmDataStract.Designer.cs">
+      <DependentUpon>FrmDataStract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmSQLQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmSQLQuery.designer.cs">
+      <DependentUpon>FrmSQLQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmFieldSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmFieldSetting.Designer.cs">
+      <DependentUpon>FrmFieldSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmCountySheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmCountySheet.Designer.cs">
+      <DependentUpon>FrmCountySheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmQueryAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmQueryAll.Designer.cs">
+      <DependentUpon>FrmQueryAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmCreateRasterDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmCreateRasterDB.designer.cs">
+      <DependentUpon>FrmCreateRasterDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmImportData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmImportData.Designer.cs">
+      <DependentUpon>FrmImportData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmRasterDataStract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmRasterDataStract.Designer.cs">
+      <DependentUpon>FrmRasterDataStract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmInitiaRasterCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmInitiaRasterCatalog.Designer.cs">
+      <DependentUpon>FrmInitiaRasterCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMetaConversionXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMetaConversionXML.designer.cs">
+      <DependentUpon>frmMetaConversionXML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmXZDataUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmXZDataUpload.Designer.cs">
+      <DependentUpon>frmXZDataUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmXZDBPropertySet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmXZDBPropertySet.Designer.cs">
+      <DependentUpon>frmXZDBPropertySet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmTYDataUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmTYDataUpload.Designer.cs">
+      <DependentUpon>frmTYDataUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ModDBOperator.cs" />
+    <Compile Include="Module\ModData.cs" />
+    <Compile Include="Module\ModTableFun.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\RasterErrInfoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\RasterErrInfoFrm.Designer.cs">
+      <DependentUpon>RasterErrInfoFrm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeoDataCenterFunLib\GeoDataCenterFunLib.csproj">
+      <Project>{D60941B6-1AF7-4A25-8DFF-EEA1460236AD}</Project>
+      <Name>GeoDataCenterFunLib</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GeoDBIntegration\GeoDBIntegration.csproj">
+      <Project>{F8E72C59-2107-45AE-B0AD-05A78A78AA39}</Project>
+      <Name>GeoDBIntegration</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GeoUtilities\GeoUtilities.csproj">
+      <Project>{AE24821E-0814-4C91-A076-D647201DAC9B}</Project>
+      <Name>GeoUtilities</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin\Plugin.csproj">
+      <Project>{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}</Project>
+      <Name>Plugin</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SysCommon\SysCommon.csproj">
+      <Project>{D0D978A2-2F5A-41A4-931F-72CDECD61513}</Project>
+      <Name>SysCommon</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Control\ControlHistoryBar.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ControlHistoryBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UserControlDBATool.resx">
+      <DependentUpon>UserControlDBATool.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmBarManager.resx">
+      <DependentUpon>frmBarManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmBatchUpdate.resx">
+      <DependentUpon>FrmBatchUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmBrowseHistorySelFeatures.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBrowseHistorySelFeatures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmCheck.resx">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCompareData.resx">
+      <DependentUpon>frmCompareData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDataMerge.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDataMerge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmDataStract.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmDataStract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDataSubmit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDataSubmit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDataTransplant.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDataTransplant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDBPropertySet1.resx">
+      <DependentUpon>frmDBPropertySet1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDBStructCreate.resx">
+      <DependentUpon>frmDBStructCreate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmFieldSetting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmFieldSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmGetGeometry.resx">
+      <DependentUpon>FrmGetGeometry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmGetTaskLayerGuide.resx">
+      <DependentUpon>FrmGetTaskLayerGuide.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmImportData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmImportData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmInitialDBHistory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInitialDBHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmInitiaRasterCatalog.resx">
+      <DependentUpon>FrmInitiaRasterCatalog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmInitUpdateEnviroment.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInitUpdateEnviroment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmInputUpdateData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInputUpdateData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDBPropertySet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDBPropertySet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmJoinFeaSearch.resx">
+      <DependentUpon>frmJoinFeaSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmJoinSetting .resx">
+      <DependentUpon>frmJoinSetting .cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMetaConversion.resx">
+      <DependentUpon>frmMetaConversion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMetaDataOracle.resx">
+      <DependentUpon>frmMetaDataOracle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMetaMap.resx">
+      <DependentUpon>frmMetaMap.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMetaMapSetLabel.resx">
+      <DependentUpon>frmMetaMapSetLabel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMetaStat.resx">
+      <DependentUpon>frmMetaStat.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmNameRule.resx">
+      <DependentUpon>frmNameRule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmProcessBar.resx">
+      <DependentUpon>FrmProcessBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmProject.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmQueryAll.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmQueryAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSDEManager.resx">
+      <DependentUpon>frmSDEManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSelHistoryDataVersion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSelHistoryDataVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSetControlFields.resx">
+      <DependentUpon>frmSetControlFields.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmStractHistorySet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmStractHistorySet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmArcgisMapControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmArcgisMapControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmInitCaseEnviroment.resx">
+      <DependentUpon>frmInitCaseEnviroment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmGetRange.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmGetRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDBsConnSet.resx">
+      <DependentUpon>frmDBsConnSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmSQLQuery.resx">
+      <DependentUpon>FrmSQLQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmCountySheet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmCountySheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmCreateRasterDB.resx">
+      <DependentUpon>FrmCreateRasterDB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmRasterDataStract.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmRasterDataStract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmXZDataUpload.resx">
+      <DependentUpon>frmXZDataUpload.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\RasterErrInfoFrm.resx">
+      <DependentUpon>RasterErrInfoFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMetaConversionXML.resx">
+      <DependentUpon>frmMetaConversionXML.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmXZDBPropertySet.resx">
+      <DependentUpon>frmXZDBPropertySet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmTYDataUpload.resx">
+      <DependentUpon>frmTYDataUpload.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AddHistoryData.png" />
+    <None Include="Resources\SelFeatures.png" />
+    <None Include="Resources\SelFeaturesByCondition.png" />
+    <None Include="Resources\CompareHistoryData.PNG" />
+    <None Include="Resources\MapMeasure.png" />
+    <None Include="Resources\MapIdentify.png" />
+    <None Include="Resources\MapZoomToLastExtentForward.png" />
+    <None Include="Resources\MapZoomToLastExtentBack.png" />
+    <None Include="Resources\MapFullExtent.png" />
+    <None Include="Resources\MapRefreshView.png" />
+    <None Include="Resources\MapZoomOutFixed.png" />
+    <None Include="Resources\MapZoomInFixed.png" />
+    <None Include="Resources\MapPan.png" />
+    <None Include="Resources\MapZoomOut.png" />
+    <None Include="Resources\MapZoomIn.png" />
+    <None Include="Resources\Default.png" />
+    <None Include="Resources\BrowseHistoryData.PNG" />
+    <None Include="Resources\RenderHistoryData.png" />
+    <None Include="Resources\StractHistoryData.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

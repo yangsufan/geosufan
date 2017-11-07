@@ -1,0 +1,508 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F8E72C59-2107-45AE-B0AD-05A78A78AA39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoDBIntegration</RootNamespace>
+    <AssemblyName>GeoDBIntegration</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\..\Bin\DevComponents.DotNetBar2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Carto\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Carto.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataManagementTools, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Display\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Display.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Geometry\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Geometry.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessing, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessor, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Output\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Output.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.System\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.SystemUI\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.SystemUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.GeoOneDataCheck, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Interop.GeoOneDataCheck.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.SCHEMEMANAGERCLASSESLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Interop.SCHEMEMANAGERCLASSESLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\clsAddAppDBConnection.cs" />
+    <Compile Include="Class\ClsArcGisLayerOper.cs" />
+    <Compile Include="Class\ClsDataBasePanel.cs" />
+    <Compile Include="Class\ClsDataBaseProject.cs" />
+    <Compile Include="Class\clsDBAdd.cs" />
+    <Compile Include="Class\clsFTPMetaDBCreater.cs" />
+    <Compile Include="Class\clsFTPOper.cs" />
+    <Compile Include="Class\ClsMetaTableOperation.cs" />
+    <Compile Include="Class\ClsOracleConnect.cs" />
+    <Compile Include="Class\ClsOracleSpatialDBCreater.cs" />
+    <Compile Include="Class\clsRefurbishDBinfo.cs" />
+    <Compile Include="Class\ProjectXml.cs" />
+    <Compile Include="Command\ControlBackMainFrm.cs" />
+    <Compile Include="Command\ControlsAddUser.cs" />
+    <Compile Include="Command\ControlsDBDataAdd.cs" />
+    <Compile Include="Command\ControlsDBDataRemove.cs" />
+    <Compile Include="Command\ControlsDelUser.cs" />
+    <Compile Include="Command\ControlsModifyUser.cs" />
+    <Compile Include="Command\ControlsSetAppConnection.cs" />
+    <Compile Include="Command\ControlsDBbackup.cs" />
+    <Compile Include="Command\ControlsAddDBType.cs" />
+    <Compile Include="ControlDBIntegrationTool.cs" />
+    <Compile Include="Command\ControlsAddDBConn.cs" />
+    <Compile Include="Command\ControlsDelDBConn.cs" />
+    <Compile Include="Command\ControlsCreateDB.cs" />
+    <Compile Include="Command\ControlsEditProject.cs" />
+    <Compile Include="Command\ControlsRangeDataAdd.cs" />
+    <Compile Include="Command\ControlsLogin.cs" />
+    <Compile Include="Command\ControlsAddRole.cs" />
+    <Compile Include="Command\ControlsModifyRole.cs" />
+    <Compile Include="Command\ControlsDelRole.cs" />
+    <Compile Include="Command\ControlsConnectDB.cs" />
+    <Compile Include="Command\ControlsEnterIntoDataManageFramSys.cs" />
+    <Compile Include="Command\ControlsEnterIntoConfigFramSys.cs" />
+    <Compile Include="ControlDBIntergration.cs" />
+    <Compile Include="Command\ControlsRefreshDBTree.cs" />
+    <Compile Include="Control\frmBarManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmBarManager.designer.cs">
+      <DependentUpon>frmBarManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UserControlDBIntegra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UserControlDBIntegra.designer.cs">
+      <DependentUpon>UserControlDBIntegra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DelGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\DelGroup.Designer.cs">
+      <DependentUpon>DelGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AddGroup.designer.cs">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AddUser.designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmAddNewDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmAddNewDB.designer.cs">
+      <DependentUpon>frmAddNewDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmChooseTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmChooseTable.designer.cs">
+      <DependentUpon>frmChooseTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCreateDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmCreateDB.designer.cs">
+      <DependentUpon>frmCreateDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmCreateRasterDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmCreateRasterDB.designer.cs">
+      <DependentUpon>FrmCreateRasterDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDSAttribute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDSAttribute.Designer.cs">
+      <DependentUpon>frmDSAttribute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmFields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmFields.designer.cs">
+      <DependentUpon>frmFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmGetTaskLayerGuide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmGetTaskLayerGuide.designer.cs">
+      <DependentUpon>FrmGetTaskLayerGuide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmOraBk_Rc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmOraBk_Rc.designer.cs">
+      <DependentUpon>frmOraBk_Rc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmProcessBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmProcessBar.designer.cs">
+      <DependentUpon>FrmProcessBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmProject.designer.cs">
+      <DependentUpon>frmProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSetAppDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSetAppDB.designer.cs">
+      <DependentUpon>frmSetAppDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmSetRasterDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmSetRasterDB.designer.cs">
+      <DependentUpon>FrmSetRasterDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmAddDBType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmAddDBType.designer.cs">
+      <DependentUpon>frmAddDBType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module\CopyPasteGDBData.cs" />
+    <Compile Include="Module\ModDBOperate.cs" />
+    <Compile Include="Module\ModuleData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Control\frmBarManager.resx">
+      <DependentUpon>frmBarManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Form\SubMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SubMainForm.Designer.cs">
+      <DependentUpon>SubMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\parentMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\parentMainForm.Designer.cs">
+      <DependentUpon>parentMainForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeoUtilities\GeoUtilities.csproj">
+      <Project>{AE24821E-0814-4C91-A076-D647201DAC9B}</Project>
+      <Name>GeoUtilities</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin\Plugin.csproj">
+      <Project>{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}</Project>
+      <Name>Plugin</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SysCommon\SysCommon.csproj">
+      <Project>{D0D978A2-2F5A-41A4-931F-72CDECD61513}</Project>
+      <Name>SysCommon</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Control\UserControlDBIntegra.resx">
+      <DependentUpon>UserControlDBIntegra.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AddGroup.resx">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\DelGroup.resx">
+      <DependentUpon>DelGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmAddNewDB.resx">
+      <DependentUpon>frmAddNewDB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmChooseTable.resx">
+      <DependentUpon>frmChooseTable.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCreateDB.resx">
+      <DependentUpon>frmCreateDB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmCreateRasterDB.resx">
+      <DependentUpon>FrmCreateRasterDB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDSAttribute.resx">
+      <DependentUpon>frmDSAttribute.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmFields.resx">
+      <DependentUpon>frmFields.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmGetTaskLayerGuide.resx">
+      <DependentUpon>FrmGetTaskLayerGuide.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmOraBk_Rc.resx">
+      <DependentUpon>frmOraBk_Rc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmProcessBar.resx">
+      <DependentUpon>FrmProcessBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmProject.resx">
+      <DependentUpon>frmProject.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSetAppDB.resx">
+      <DependentUpon>frmSetAppDB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmSetRasterDB.resx">
+      <DependentUpon>FrmSetRasterDB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SubMainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SubMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\parentMainForm.resx">
+      <DependentUpon>parentMainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmAddDBType.resx">
+      <DependentUpon>frmAddDBType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Add.png" />
+    <Content Include="Resources\database.png" />
+    <Content Include="Resources\database100x100.png" />
+    <Content Include="Resources\Del.png" />
+    <Content Include="Resources\email_server.png" />
+    <Content Include="Resources\proxy_server.png" />
+    <Content Include="Resources\web_server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.9.2">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition SP2 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

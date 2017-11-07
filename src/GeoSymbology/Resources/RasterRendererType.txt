@@ -1,0 +1,6 @@
+<Root>
+    <Node Name="GeoSymbology.frmStretchColorRampRenderer" Text="渐变颜色" ImageKey="BSim" Type="GeoSymbology.frmStretchColorRampRenderer"/>
+    <Node Name="GeoSymbology.frmClassifyColorRampRenderer" Text="分级颜色" ImageKey="BUN" Type="GeoSymbology.frmClassifyColorRampRenderer"/>
+    <Node Name="GeoSymbology.frmUniqueValueRenderer" Text="唯一颜色" ImageKey="BGC" Type="GeoSymbology.frmUniqueValueRenderer"/>
+    <Node Name="GeoSymbology.frmRGBRenderer" Text="简单颜色" ImageKey="BGS" Type="GeoSymbology.frmRGBRenderer"/>
+</Root>

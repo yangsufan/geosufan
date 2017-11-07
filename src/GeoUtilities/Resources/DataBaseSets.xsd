@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataBaseSets" targetNamespace="http://tempuri.org/DataBaseSets.xsd" xmlns:mstns="http://tempuri.org/DataBaseSets.xsd" xmlns="http://tempuri.org/DataBaseSets.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataBaseSets" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DataBaseSets" msprop:Generator_UserDSName="DataBaseSets" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AppendFeaTB" msprop:Generator_UserTableName="AppendFeaTB" msprop:Generator_RowDeletedName="AppendFeaTBRowDeleted" msprop:Generator_TableClassName="AppendFeaTBDataTable" msprop:Generator_RowChangedName="AppendFeaTBRowChanged" msprop:Generator_RowClassName="AppendFeaTBRow" msprop:Generator_RowChangingName="AppendFeaTBRowChanging" msprop:Generator_RowEvArgName="AppendFeaTBRowChangeEvent" msprop:Generator_RowEvHandlerName="AppendFeaTBRowChangeEventHandler" msprop:Generator_TablePropName="AppendFeaTB" msprop:Generator_TableVarName="tableAppendFeaTB" msprop:Generator_RowDeletingName="AppendFeaTBRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="colChecked" msdata:Caption="选择" msprop:Generator_UserColumnName="colChecked" msprop:Generator_ColumnPropNameInRow="colChecked" msprop:Generator_ColumnVarNameInTable="columncolChecked" msprop:Generator_ColumnPropNameInTable="colCheckedColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="colDatasetName" msdata:Caption="名称" msprop:Generator_UserColumnName="colDatasetName" msprop:Generator_ColumnPropNameInRow="colDatasetName" msprop:Generator_ColumnVarNameInTable="columncolDatasetName" msprop:Generator_ColumnPropNameInTable="colDatasetNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="colAliasName" msdata:Caption="别名" msprop:Generator_UserColumnName="colAliasName" msprop:Generator_ColumnPropNameInRow="colAliasName" msprop:Generator_ColumnVarNameInTable="columncolAliasName" msprop:Generator_ColumnPropNameInTable="colAliasNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="colDataType" msdata:Caption="类型" msprop:Generator_UserColumnName="colDataType" msprop:Generator_ColumnPropNameInRow="colDataType" msprop:Generator_ColumnVarNameInTable="columncolDataType" msprop:Generator_ColumnPropNameInTable="colDataTypeColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

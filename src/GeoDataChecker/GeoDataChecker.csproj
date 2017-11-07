@@ -1,0 +1,374 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EDF138DA-F9D2-4B03-9D5B-4B731722BD2B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoDataChecker</RootNamespace>
+    <AssemblyName>GeoDataChecker</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=8.1.0.6, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF, Version=9.2.4.1420, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Carto, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Carto\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Carto.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.DataSourcesFile\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.DataSourcesFile.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Display\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Display.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Geodatabase\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Geodatabase.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Geometry\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.System\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.System.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.SystemUI\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.SystemUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.DOMAINITEMLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Interop.DOMAINITEMLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.GeoOneDataCheck, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Interop.GeoOneDataCheck.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.SCHEMEMANAGERCLASSESLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Interop.SCHEMEMANAGERCLASSESLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\DataCheck.cs" />
+    <Compile Include="Class\DataCheckClassParse.cs" />
+    <Compile Include="Class\DataCheckLogicClass\GeoBatchCheck.cs" />
+    <Compile Include="Class\DataCheckLogicClass\GeoContourLineCheck.cs" />
+    <Compile Include="Class\DataCheckLogicClass\GeoFeatureRepeatedCheck.cs" />
+    <Compile Include="Class\DataCheckLogicClass\GeoGeometryLogicCheck.cs" />
+    <Compile Include="Class\DataCheckLogicClass\GeoLayerAndAttributeStructCheck.cs" />
+    <Compile Include="Class\DataCheckLogicClass\GeoPolygonSpatialRelCheck.cs" />
+    <Compile Include="Class\DataCheckLogicClass\GeoPolylineSpatialRelCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoFeatureDuplicateCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPointDuplicateCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPolygonOverlapCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPolylineDanglesCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPolylinePseudosCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPolylineSelfIntersect.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPolylineSelfOverlapCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoStructChecker.cs" />
+    <Compile Include="Class\DataErr.cs" />
+    <Compile Include="Class\ErrorEvntArg.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoControlPointAnnoCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoCounterLineAnnoCheck.cs" />
+    <Compile Include="Class\GOGISDBStructErrorTreator.cs" />
+    <Compile Include="Class\GOGISErrorChecker.cs" />
+    <Compile Include="Class\GOGISErrorTreator.cs" />
+    <Compile Include="Class\GOGISStructErrorChecker.cs" />
+    <Compile Include="Class\ClsCodeCheck.cs" />
+    <Compile Include="Class\clsCodeCheckProccess.cs" />
+    <Compile Include="Command\ControlsLineSelfIntersectCheck.cs" />
+    <Compile Include="Command\ControlsLineOverlapCheck.cs" />
+    <Compile Include="Command\ControlsLineIntersectCheck.cs" />
+    <Compile Include="Command\ControlsLineDanglesCheck.cs" />
+    <Compile Include="Command\ControlsLinePseudosCheck.cs" />
+    <Compile Include="Command\ControlsLineSelfOverlapCheck.cs" />
+    <Compile Include="Command\ControlsAreaOverlapCheck.cs" />
+    <Compile Include="Command\ControlsAreaOverlapAreaCheck.cs" />
+    <Compile Include="Command\ControlsAreaCoveredByAreaCheck.cs" />
+    <Compile Include="Command\ControlsAreaGapsCheck.cs" />
+    <Compile Include="Command\ControlsLineCoveredByAreaBoundaryCheck.cs" />
+    <Compile Include="Command\ControlsPointCoveredBYBoundaryCheck.cs" />
+    <Compile Include="Command\ControlsPointCoveredByLineCheck.cs" />
+    <Compile Include="Command\ControlsPointCoveredByLineEndpointCheck.cs" />
+    <Compile Include="Command\ControlsPointProperlyInsideAreaCheck.cs" />
+    <Compile Include="Command\ControlsLineCrossAreaCheck.cs" />
+    <Compile Include="Command\ControlsAreaLogicCheck.cs" />
+    <Compile Include="Command\ControlsIsNullableCheck.cs" />
+    <Compile Include="Command\ControlsLineLengthLogicCheck.cs" />
+    <Compile Include="Command\ControlsMathematicsCheck.cs" />
+    <Compile Include="Command\ContourElevCheck.cs" />
+    <Compile Include="Command\ControlsLineOverlapLineCheck.cs" />
+    <Compile Include="Command\ControlsLineEndpointCoveredByPoint.cs" />
+    <Compile Include="Command\ControlsAreaContainsPoint.cs" />
+    <Compile Include="Command\ControlsLineCoveredByLine.cs" />
+    <Compile Include="Command\ControlAreaBoundaryCoveredByLine.cs" />
+    <Compile Include="Command\ControlsAreaBoundaryCoveredByAreaBoundary.cs" />
+    <Compile Include="Command\ControlsAreaCoverEachOther.cs" />
+    <Compile Include="ControlsLineNoMutiPart.cs" />
+    <Compile Include="Form\frmLineContourCheckSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmLineContourCheckSet.Designer.cs">
+      <DependentUpon>frmLineContourCheckSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmMathematicsCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmMathematicsCheck.Designer.cs">
+      <DependentUpon>FrmMathematicsCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\LineElevToolCls.cs" />
+    <Compile Include="Form\FrmMathCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmMathCheck.Designer.cs">
+      <DependentUpon>FrmMathCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmLineLengthCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmLineLengthCheck.Designer.cs">
+      <DependentUpon>FrmLineLengthCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\DataCheckRealizeClass\GeoPolylineOverlapCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPolylineIntersectCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPolygonOverlapPolygonCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPolygonGapsCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoAreaCoveredByAreaCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPointCoveredByBoundaryCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPointCoveredByLineCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPointCoveredByLineEndPointCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoPointProperlyInsideAreaCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoLineCoveredByAreaBoundaryCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoLineCrossAreaCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoIsNullableCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoCounterLinePointCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoCounterPointAnnoCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoCheckLineNoOverlapWithLine.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoCheckAreaBoundaryCoveredByAreaBoundary.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoCheckAreaCoverEachOther.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoCheckAreaBoundaryCoveredByLine.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoCheckAreaContainsPoint.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoCheckLineCoveredByLine.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoCheckLineEndpointCoveredByPoint.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoCheckMustBeSinglePart.cs" />
+    <Compile Include="Form\FrmSDEConnSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmSDEConnSet.Designer.cs">
+      <DependentUpon>FrmSDEConnSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\DataCheckRealizeClass\GeoTopologyCheck.cs" />
+    <Compile Include="Module\ClsDataCheckFun.cs" />
+    <Compile Include="Command\ControlsDBStructCheck.cs" />
+    <Compile Include="Command\BatchDataCheck.cs" />
+    <Compile Include="Command\GeoDataCheckerJoinCheck.cs" />
+    <Compile Include="Command\ControlsCodeStandardizeCheck.cs" />
+    <Compile Include="Command\ControlsCodeLayerCheck.cs" />
+    <Compile Include="Form\frmCheckDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmCheckDataBase.Designer.cs">
+      <DependentUpon>frmCheckDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmBatchDataCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmBatchDataCheck.Designer.cs">
+      <DependentUpon>frmBatchDataCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\DataCheckRealizeClass\GeoCodeStandardizeCheck.cs" />
+    <Compile Include="Class\DataCheckRealizeClass\GeoCodeLayerCheck.cs" />
+    <Compile Include="GeoDataChecker.cs" />
+    <Compile Include="Module\ClearDataCheckGrid.cs" />
+    <Compile Include="Command\AnnotationDigitalDuplicateCheck.cs" />
+    <Compile Include="Command\CodeLayerCheck.cs" />
+    <Compile Include="Command\ControlsGetCodeFromTemplete.cs" />
+    <Compile Include="Command\ContourLinesAnnCheck.cs" />
+    <Compile Include="Command\ContourLinesElevCheck.cs" />
+    <Compile Include="Command\ContourLinesElevPointCheck.cs" />
+    <Compile Include="Command\ContourLinesSelfintersectCheck.cs" />
+    <Compile Include="Command\ControlPointAnnCheck.cs" />
+    <Compile Include="Command\InitializationFeatureDataset.cs" />
+    <Compile Include="Command\LineDigitalDuplicateCheck.cs" />
+    <Compile Include="Command\PointDigitalDuplicateCheck.cs" />
+    <Compile Include="Command\PolygonDigitalDuplicateCheck.cs" />
+    <Compile Include="Command\ElevationPointsAnnCheck.cs" />
+    <Compile Include="Command\GeometryCorrector.cs" />
+    <Compile Include="Command\HangPointCheck.cs" />
+    <Compile Include="Command\LinePathStandardize.cs" />
+    <Compile Include="Command\PolygonOverlapTreat.cs" />
+    <Compile Include="Command\PolygonStadardize.cs" />
+    <Compile Include="Command\SelfIntersectionCheck.cs" />
+    <Compile Include="Command\SkeletonLineCheck.cs" />
+    <Compile Include="Form\FrmItemSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmInitiFeatureDataset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmInitiFeatureDataset.Designer.cs">
+      <DependentUpon>FrmInitiFeatureDataset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmSetCheckData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmSetCheckData.Designer.cs">
+      <DependentUpon>FrmSetCheckData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\CheckItemsSet.cs" />
+    <Compile Include="Module\CommonSet.cs" />
+    <Compile Include="Module\ModCommonFunction.cs" />
+    <Compile Include="Module\Overridfunction.cs" />
+    <Compile Include="Module\SetCheckState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SetJoinChecks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SetJoinChecks.Designer.cs">
+      <DependentUpon>SetJoinChecks.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\FrmInitiFeatureDataset.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmInitiFeatureDataset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmItemSet.resx">
+      <DependentUpon>FrmItemSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataCheckSet.xml" />
+    <EmbeddedResource Include="Form\frmCheckDataBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCheckDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmBatchDataCheck.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBatchDataCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmLineContourCheckSet.resx">
+      <DependentUpon>frmLineContourCheckSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmMathCheck.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmMathCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmMathematicsCheck.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmMathematicsCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmSDEConnSet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmSDEConnSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmSetCheckData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmSetCheckData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SetJoinChecks.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SetJoinChecks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmLineLengthCheck.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmLineLengthCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\2.gif" />
+    <EmbeddedResource Include="Resources\1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Plugin\Plugin.csproj">
+      <Project>{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}</Project>
+      <Name>Plugin</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SysCommon\SysCommon.csproj">
+      <Project>{D0D978A2-2F5A-41A4-931F-72CDECD61513}</Project>
+      <Name>SysCommon</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

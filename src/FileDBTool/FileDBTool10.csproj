@@ -1,0 +1,300 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E2E538DF-8658-487A-908A-950E61647B25}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FileDBTool</RootNamespace>
+    <AssemblyName>FileDBTool</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=8.1.0.6, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ArcMap, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output, Version=9.2.3.1380, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.Output\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.Output.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1\clsFtp.cs" />
+    <Compile Include="Class1\clsProject.cs" />
+    <Compile Include="Command\ControlsGetProjectRange.cs" />
+    <Compile Include="Command\ControlsSavePernence.cs" />
+    <Compile Include="Command\ControlsDisConnection.cs" />
+    <Compile Include="Command\ControlsDelConnection.cs" />
+    <Compile Include="Command\ControlsInputBatchData.cs" />
+    <Compile Include="Command\ControlsOutputControlData.cs" />
+    <Compile Include="Command\ControlsZoomToRange.cs" />
+    <Compile Include="Command\ControlsQueryAllData.cs" />
+    <Compile Include="Command\ControlsBlurQueryData.cs" />
+    <Compile Include="Form\FrmProjectSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmProjectSetting.Designer.cs">
+      <DependentUpon>FrmProjectSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmQueryAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmQueryAll.designer.cs">
+      <DependentUpon>FrmQueryAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmBlurQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmBlurQuery.Designer.cs">
+      <DependentUpon>FrmBlurQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\ControlsLineBufferQueryTool.cs" />
+    <Compile Include="Tool\ControlsPointBufferQueryTool.cs" />
+    <Compile Include="Tool\ControlsPolygonBufferQueryTool.cs" />
+    <Compile Include="ControlFileDBTool.cs" />
+    <Compile Include="Command\ControlsCreateProject.cs" />
+    <Compile Include="Command\ControlsEditProject.cs" />
+    <Compile Include="Command\ControlsDelProject.cs" />
+    <Compile Include="Command\ControlsCreateProduct.cs" />
+    <Compile Include="Command\ControlsDelProduct.cs" />
+    <Compile Include="Command\ControlsEditProduct.cs" />
+    <Compile Include="Command\ControlsInputData.cs" />
+    <Compile Include="Command\ControlsDelData.cs" />
+    <Compile Include="Command\ControlsEditData.cs" />
+    <Compile Include="Command\ControlsStractData.cs" />
+    <Compile Include="Command\ControlsDataTypeSetting.cs" />
+    <Compile Include="Command\ControlsDataFieldSetting.cs" />
+    <Compile Include="Command\ControlsConnectionSetting.cs" />
+    <Compile Include="Command\ControlsQueryData.cs" />
+    <Compile Include="Command\ControlsIdentifyCoordinate.cs" />
+    <Compile Include="Command\ControlsIdentifyRegion.cs" />
+    <Compile Include="Command\ControlsImportSysInfo.cs" />
+    <Compile Include="Command\ControlsAddNewRecord.cs" />
+    <Compile Include="Command\ControlsDelRecord.cs" />
+    <Compile Include="Command\ControlsEditSysInfo.cs" />
+    <Compile Include="Command\ControlsSaveEdit.cs" />
+    <Compile Include="Command\ControlsScaleSel.cs" />
+    <Compile Include="Command\ControlsTimeShow.cs" />
+    <Compile Include="Command\ControlsConnect.cs" />
+    <Compile Include="Command\ControlsSaveData.cs" />
+    <Compile Include="Command\ControlsQueryDataByCondition.cs" />
+    <Compile Include="Command\ControlsDownLoadData.cs" />
+    <Compile Include="Control\frmBarManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmBarManager.designer.cs">
+      <DependentUpon>frmBarManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\LabelScaleSel.cs" />
+    <Compile Include="Command\LabelTimeShow.cs" />
+    <Compile Include="Form\frmConSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmConSet.Designer.cs">
+      <DependentUpon>frmConSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmProcessBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmProcessBar.Designer.cs">
+      <DependentUpon>FrmProcessBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmBufferSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmBufferSet.designer.cs">
+      <DependentUpon>frmBufferSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ModDBOperator.cs" />
+    <Compile Include="Module\ModData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Control\frmBarManager.resx">
+      <DependentUpon>frmBarManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UserControlFileDBTool.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserControlFileDBTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmBlurQuery.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmBlurQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmConSet.resx">
+      <DependentUpon>frmConSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmProcessBar.resx">
+      <DependentUpon>FrmProcessBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmBufferSet.resx">
+      <DependentUpon>frmBufferSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmProjectSetting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmProjectSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmQueryAll.resx">
+      <DependentUpon>FrmQueryAll.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Control\UserControlFileDBTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UserControlFileDBTool.Designer.cs">
+      <DependentUpon>UserControlFileDBTool.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ball_red.ico" />
+    <Content Include="Resources\search.ico" />
+    <Content Include="Resources\Select.cur" />
+    <Content Include="Resources\zoom in.ico" />
+    <Content Include="Resources\zoom out.ico" />
+    <Content Include="Resources\绘图1.gif" />
+    <Content Include="Resources\绘图11.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Plugin\Plugin10.csproj">
+      <Project>{94E0B695-1A90-418E-AFAB-542E0728387B}</Project>
+      <Name>Plugin10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SysCommon\SysCommon10.csproj">
+      <Project>{D0B95A14-80D3-4D5F-B765-1F7CF761F981}</Project>
+      <Name>SysCommon10</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
