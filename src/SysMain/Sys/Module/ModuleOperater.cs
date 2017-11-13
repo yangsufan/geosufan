@@ -333,7 +333,6 @@ namespace GeoDatabaseManager
         {
             //判断配置文件是否存在
             bool blnCanConnect = false;
-            bool blnCurCanConnect = false;
             if (File.Exists(Mod.v_ConfigPath))
             {
                 SysCommon.Gis.SysGisDB vgisDb = new SysGisDB();
@@ -341,13 +340,7 @@ namespace GeoDatabaseManager
                 blnCanConnect = CanOpenConnect(vgisDb, Mod.dbType, Mod.Server, Mod.Instance, Mod.Database, Mod.User, Mod.Password, Mod.Version);
                 Mod.TempWks = vgisDb.WorkSpace;
                 Plugin.ModuleCommon.TmpWorkSpace = vgisDb.WorkSpace;
-                //判断现实库的连接
-                //string strCurServer, strCurType, strCurInstance, strCurDatabase, strCurUser, strCurPassword, strCurVersion;
-                //SysCommon.Authorize.AuthorizeClass.GetCurWks(vgisDb.WorkSpace, out Mod.CurServer, out Mod.CurInstance, out Mod.CurDatabase, out Mod.CurUser, out Mod.CurPassword, out Mod.CurVersion, out Mod.CurdbType);
-                //blnCurCanConnect = CanOpenConnect(vgisDb, Mod.CurdbType, Mod.CurServer, Mod.CurInstance, Mod.CurDatabase, Mod.CurUser, Mod.CurPassword, Mod.CurVersion);
-                //Mod.CurWks = vgisDb.WorkSpace;
             }
-
             //无法连接则调配置窗体
             if ((!blnCanConnect))
             {
@@ -363,15 +356,6 @@ namespace GeoDatabaseManager
                     blnCanConnect = false;
                 }
             }
-
-            //if (!blnCurCanConnect)
-            //{
-            //    if (MessageBox.Show("用地库连接信息出现错误，请与管理员联系。是否操作继续？" + Environment.NewLine + "（如果你为管理员，请进入系统进行正式库连接信息调整）", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-            //    {
-            //        return false;
-            //    }
-            //}
-
             //存在，调用登陆窗体
             if (blnCanConnect)
             {
@@ -604,15 +588,6 @@ namespace GeoDatabaseManager
                             user.UserDate = dicData["ENDDATE"].ToString();
                         }
                     }
-                    //if (dicData["EXPORTAREA"].ToString() == "")//added by chulili 20110926 提取面积限制
-                    //{
-                    //    user.ExportArea = -1;
-                    //}
-                    //else
-                    //{
-                    //    user.ExportArea = Convert.ToDouble(dicData["EXPORTAREA"]);
-                    //}
-
                     Dictionary<string, object> dicUser_role = sysTable.GetRow("user_role", "USERID='" + user.IDStr + "'", out eError);
                     if (dicUser_role.ContainsKey("ROLEID"))
                     {
@@ -651,9 +626,6 @@ namespace GeoDatabaseManager
                         // *修改日期： 20110602
                         // *功能描述： 保存用户对应的角色信息
                         if (!SaveRoleInfo(user)) return false;
-                        // *end
-                        // ****************************************
-                        //读取系统权限XML
                         XmlDocument docXml = new XmlDocument();
                         if (!File.Exists(Mod.m_SysXmlPath)) return false;
                         docXml.Load(Mod.m_SysXmlPath);
@@ -856,7 +828,6 @@ namespace GeoDatabaseManager
                 return null;
             }
         }
-
         /// <summary>
         /// 去除List中的重复项
         /// </summary>

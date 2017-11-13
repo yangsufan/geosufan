@@ -53,12 +53,8 @@ namespace SysCommon.Authorize
             }
 
         }
-
-
         #endregion
-
         #region 反序列化
-
         public static void Deserialize(ref Hashtable _hashtable, string strFile)
         {
             System.IO.FileStream fs = new System.IO.FileStream(strFile, FileMode.Open);
@@ -85,7 +81,6 @@ namespace SysCommon.Authorize
             }
         }
         #endregion
-
         //通过反序列化 获得链接信息
         public static void GetConnectInfo(string strFile, out string strServer, out string strSevice, out string strDatabase, out string strUser, out string strPass, out string strVersion, out string strType)
         {

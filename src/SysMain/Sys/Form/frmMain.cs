@@ -7,13 +7,12 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.IO;
-using DevComponents.DotNetBar;
 using ESRI.ArcGIS.esriSystem;
 using System.Data.OracleClient;
 
 namespace GeoDatabaseManager
 {
-    public class frmMain : DevComponents.DotNetBar.Office2007RibbonForm
+    public class frmMain : SysCommon.BaseRibbonForm
     {
         //等待窗体
         private frmLoadProgress _frmTemp;
@@ -36,9 +35,6 @@ namespace GeoDatabaseManager
             }
             base.Dispose(disposing);
         }
-
-
-
         public frmMain()
         {
             //让线程等待，知道窗口句柄创建完毕
@@ -235,9 +231,7 @@ namespace GeoDatabaseManager
             SysLogInfoChnaged(null, newEvent);
             //根据XML加载插件界面
             Plugin.ModuleCommon.LoadData(Mod.v_AppForm as Plugin.Application.IApplicationRef);
-
         }
-
         private void SysLogInfoChnaged(object sender, SysCommon.SysLogInfoChangedEvent e)
         {
             //cyf 20110613 modify :先清空信息
@@ -283,7 +277,6 @@ namespace GeoDatabaseManager
         {
             if (_Res)
             {
-                
                 Application.Exit();
             }
         }
@@ -315,7 +308,7 @@ namespace GeoDatabaseManager
             }
             else if (pRes == DialogResult.No)
             {
-                Plugin.LogTable.Writelog("切换子系统");//yjl记录用户退出系统
+                Plugin.LogTable.Writelog("切换子系统");
                 string exepath = Application.StartupPath;
                 string strExecutablePath = Application.ExecutablePath;
                 Application.ExitThread();

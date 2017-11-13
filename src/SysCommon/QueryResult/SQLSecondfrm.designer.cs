@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.groupPanel1 = new DevExpress.XtraEditors.GroupControl();
             this.fieldlistBox = new System.Windows.Forms.ListBox();
-            this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.groupPanel2 = new DevExpress.XtraEditors.GroupControl();
             this.fieldvaluelistBox = new System.Windows.Forms.ListBox();
-            this.guvbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.isbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.cbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.whbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.notbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.ykhbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.orbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.sandebuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.stbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.andbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.bandebuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.ltbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.likebuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.jkhbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.dybuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.savebuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.loadbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.verifybuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.clearbuttonX = new DevComponents.DotNetBar.ButtonX();
+            this.guvbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.isbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.cbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.whbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.notbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.ykhbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.orbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.sandebuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.stbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.andbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.bandebuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.ltbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.likebuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.jkhbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.dybuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.groupPanel3 = new DevExpress.XtraEditors.GroupControl();
+            this.savebuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.loadbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.verifybuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.clearbuttonX = new DevExpress.XtraEditors.SimpleButton();
             this.sqlrichTextBox = new System.Windows.Forms.RichTextBox();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.okbuttonX = new DevComponents.DotNetBar.ButtonX();
-            this.closebuttonX = new DevComponents.DotNetBar.ButtonX();
+            this.labelX1 = new DevExpress.XtraEditors.LabelControl();
+            this.okbuttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.closebuttonX = new DevExpress.XtraEditors.SimpleButton();
             this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupPanel1
-            // 
-            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            //// 
+            //this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
+            //this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.Controls.Add(this.fieldlistBox);
             this.groupPanel1.Location = new System.Drawing.Point(0, 1);
             this.groupPanel1.Name = "groupPanel1";
@@ -72,23 +72,23 @@
             // 
             // 
             // 
-            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel1.Style.BackColorGradientAngle = 90;
-            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderBottomWidth = 1;
-            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderLeftWidth = 1;
-            this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderRightWidth = 1;
-            this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderTopWidth = 1;
-            this.groupPanel1.Style.CornerDiameter = 4;
-            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            //this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            //this.groupPanel1.Style.BackColorGradientAngle = 90;
+            //this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            //this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            //this.groupPanel1.Style.BorderBottomWidth = 1;
+            //this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            //this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            //this.groupPanel1.Style.BorderLeftWidth = 1;
+            //this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            //this.groupPanel1.Style.BorderRightWidth = 1;
+            //this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            //this.groupPanel1.Style.BorderTopWidth = 1;
+            //this.groupPanel1.Style.CornerDiameter = 4;
+            //this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            //this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            //this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            //this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
             // 
             // fieldlistBox
@@ -103,9 +103,9 @@
             this.fieldlistBox.Click += new System.EventHandler(this.fieldlistBox_Click);
             // 
             // groupPanel2
-            // 
-            this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            //// 
+            //this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
+            //this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel2.Controls.Add(this.fieldvaluelistBox);
             this.groupPanel2.Controls.Add(this.guvbuttonX);
             this.groupPanel2.Controls.Add(this.isbuttonX);
@@ -127,24 +127,24 @@
             this.groupPanel2.Size = new System.Drawing.Size(335, 154);
             // 
             // 
-            // 
-            this.groupPanel2.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel2.Style.BackColorGradientAngle = 90;
-            this.groupPanel2.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel2.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel2.Style.BorderBottomWidth = 1;
-            this.groupPanel2.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel2.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel2.Style.BorderLeftWidth = 1;
-            this.groupPanel2.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel2.Style.BorderRightWidth = 1;
-            this.groupPanel2.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel2.Style.BorderTopWidth = 1;
-            this.groupPanel2.Style.CornerDiameter = 4;
-            this.groupPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel2.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel2.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            //// 
+            //this.groupPanel2.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            //this.groupPanel2.Style.BackColorGradientAngle = 90;
+            //this.groupPanel2.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            //this.groupPanel2.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            //this.groupPanel2.Style.BorderBottomWidth = 1;
+            //this.groupPanel2.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            //this.groupPanel2.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            //this.groupPanel2.Style.BorderLeftWidth = 1;
+            //this.groupPanel2.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            //this.groupPanel2.Style.BorderRightWidth = 1;
+            //this.groupPanel2.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            //this.groupPanel2.Style.BorderTopWidth = 1;
+            //this.groupPanel2.Style.CornerDiameter = 4;
+            //this.groupPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            //this.groupPanel2.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            //this.groupPanel2.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            //this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel2.TabIndex = 1;
             // 
             // fieldvaluelistBox
@@ -160,7 +160,7 @@
             // guvbuttonX
             // 
             this.guvbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.guvbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.guvbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.guvbuttonX.Location = new System.Drawing.Point(201, 119);
             this.guvbuttonX.Name = "guvbuttonX";
             this.guvbuttonX.Size = new System.Drawing.Size(119, 24);
@@ -171,7 +171,7 @@
             // isbuttonX
             // 
             this.isbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.isbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.isbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.isbuttonX.Location = new System.Drawing.Point(1, 123);
             this.isbuttonX.Name = "isbuttonX";
             this.isbuttonX.Size = new System.Drawing.Size(34, 24);
@@ -182,7 +182,7 @@
             // cbuttonX
             // 
             this.cbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.cbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.cbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.cbuttonX.Location = new System.Drawing.Point(18, 95);
             this.cbuttonX.Name = "cbuttonX";
             this.cbuttonX.Size = new System.Drawing.Size(15, 22);
@@ -193,7 +193,7 @@
             // whbuttonX
             // 
             this.whbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.whbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.whbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.whbuttonX.Location = new System.Drawing.Point(1, 95);
             this.whbuttonX.Name = "whbuttonX";
             this.whbuttonX.Size = new System.Drawing.Size(15, 21);
@@ -204,7 +204,7 @@
             // notbuttonX
             // 
             this.notbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.notbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.notbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.notbuttonX.Location = new System.Drawing.Point(79, 93);
             this.notbuttonX.Name = "notbuttonX";
             this.notbuttonX.Size = new System.Drawing.Size(35, 24);
@@ -215,7 +215,7 @@
             // ykhbuttonX
             // 
             this.ykhbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.ykhbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.ykhbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.ykhbuttonX.Location = new System.Drawing.Point(39, 93);
             this.ykhbuttonX.Name = "ykhbuttonX";
             this.ykhbuttonX.Size = new System.Drawing.Size(34, 24);
@@ -226,7 +226,7 @@
             // orbuttonX
             // 
             this.orbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.orbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.orbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.orbuttonX.Location = new System.Drawing.Point(79, 63);
             this.orbuttonX.Name = "orbuttonX";
             this.orbuttonX.Size = new System.Drawing.Size(35, 24);
@@ -237,7 +237,7 @@
             // sandebuttonX
             // 
             this.sandebuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.sandebuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.sandebuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.sandebuttonX.Location = new System.Drawing.Point(39, 63);
             this.sandebuttonX.Name = "sandebuttonX";
             this.sandebuttonX.Size = new System.Drawing.Size(34, 24);
@@ -248,7 +248,7 @@
             // stbuttonX
             // 
             this.stbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.stbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.stbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.stbuttonX.Location = new System.Drawing.Point(0, 63);
             this.stbuttonX.Name = "stbuttonX";
             this.stbuttonX.Size = new System.Drawing.Size(33, 24);
@@ -259,7 +259,7 @@
             // andbuttonX
             // 
             this.andbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.andbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.andbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.andbuttonX.Location = new System.Drawing.Point(79, 33);
             this.andbuttonX.Name = "andbuttonX";
             this.andbuttonX.Size = new System.Drawing.Size(35, 24);
@@ -270,7 +270,7 @@
             // bandebuttonX
             // 
             this.bandebuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bandebuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.bandebuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bandebuttonX.Location = new System.Drawing.Point(39, 33);
             this.bandebuttonX.Name = "bandebuttonX";
             this.bandebuttonX.Size = new System.Drawing.Size(34, 24);
@@ -281,7 +281,7 @@
             // ltbuttonX
             // 
             this.ltbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.ltbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.ltbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.ltbuttonX.Location = new System.Drawing.Point(0, 33);
             this.ltbuttonX.Name = "ltbuttonX";
             this.ltbuttonX.Size = new System.Drawing.Size(33, 24);
@@ -292,7 +292,7 @@
             // likebuttonX
             // 
             this.likebuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.likebuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.likebuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.likebuttonX.Location = new System.Drawing.Point(79, 3);
             this.likebuttonX.Name = "likebuttonX";
             this.likebuttonX.Size = new System.Drawing.Size(35, 24);
@@ -303,7 +303,7 @@
             // jkhbuttonX
             // 
             this.jkhbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.jkhbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.jkhbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.jkhbuttonX.Location = new System.Drawing.Point(39, 3);
             this.jkhbuttonX.Name = "jkhbuttonX";
             this.jkhbuttonX.Size = new System.Drawing.Size(34, 24);
@@ -314,7 +314,7 @@
             // dybuttonX
             // 
             this.dybuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.dybuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.dybuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.dybuttonX.Location = new System.Drawing.Point(0, 3);
             this.dybuttonX.Name = "dybuttonX";
             this.dybuttonX.Size = new System.Drawing.Size(33, 24);
@@ -324,8 +324,8 @@
             // 
             // groupPanel3
             // 
-            this.groupPanel3.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            //this.groupPanel3.CanvasColor = System.Drawing.SystemColors.Control;
+            //this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel3.Controls.Add(this.savebuttonX);
             this.groupPanel3.Controls.Add(this.loadbuttonX);
             this.groupPanel3.Controls.Add(this.verifybuttonX);
@@ -338,29 +338,29 @@
             // 
             // 
             // 
-            this.groupPanel3.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel3.Style.BackColorGradientAngle = 90;
-            this.groupPanel3.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel3.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel3.Style.BorderBottomWidth = 1;
-            this.groupPanel3.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel3.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel3.Style.BorderLeftWidth = 1;
-            this.groupPanel3.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel3.Style.BorderRightWidth = 1;
-            this.groupPanel3.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel3.Style.BorderTopWidth = 1;
-            this.groupPanel3.Style.CornerDiameter = 4;
-            this.groupPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel3.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel3.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel3.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            //this.groupPanel3.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            //this.groupPanel3.Style.BackColorGradientAngle = 90;
+            //this.groupPanel3.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            //this.groupPanel3.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            //this.groupPanel3.Style.BorderBottomWidth = 1;
+            //this.groupPanel3.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            //this.groupPanel3.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            //this.groupPanel3.Style.BorderLeftWidth = 1;
+            //this.groupPanel3.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            //this.groupPanel3.Style.BorderRightWidth = 1;
+            //this.groupPanel3.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            //this.groupPanel3.Style.BorderTopWidth = 1;
+            //this.groupPanel3.Style.CornerDiameter = 4;
+            //this.groupPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            //this.groupPanel3.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            //this.groupPanel3.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            //this.groupPanel3.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel3.TabIndex = 2;
             // 
             // savebuttonX
             // 
             this.savebuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.savebuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.savebuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.savebuttonX.Location = new System.Drawing.Point(169, 103);
             this.savebuttonX.Name = "savebuttonX";
             this.savebuttonX.Size = new System.Drawing.Size(54, 23);
@@ -371,7 +371,7 @@
             // loadbuttonX
             // 
             this.loadbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.loadbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.loadbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.loadbuttonX.Location = new System.Drawing.Point(115, 103);
             this.loadbuttonX.Name = "loadbuttonX";
             this.loadbuttonX.Size = new System.Drawing.Size(54, 23);
@@ -382,7 +382,7 @@
             // verifybuttonX
             // 
             this.verifybuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.verifybuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.verifybuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.verifybuttonX.Location = new System.Drawing.Point(61, 103);
             this.verifybuttonX.Name = "verifybuttonX";
             this.verifybuttonX.Size = new System.Drawing.Size(54, 23);
@@ -393,7 +393,7 @@
             // clearbuttonX
             // 
             this.clearbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.clearbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.clearbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.clearbuttonX.Location = new System.Drawing.Point(7, 103);
             this.clearbuttonX.Name = "clearbuttonX";
             this.clearbuttonX.Size = new System.Drawing.Size(54, 23);
@@ -421,7 +421,7 @@
             // okbuttonX
             // 
             this.okbuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.okbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.okbuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.okbuttonX.Location = new System.Drawing.Point(179, 413);
             this.okbuttonX.Name = "okbuttonX";
             this.okbuttonX.Size = new System.Drawing.Size(75, 23);
@@ -432,7 +432,7 @@
             // closebuttonX
             // 
             this.closebuttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.closebuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            //this.closebuttonX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.closebuttonX.Location = new System.Drawing.Point(260, 413);
             this.closebuttonX.Name = "closebuttonX";
             this.closebuttonX.Size = new System.Drawing.Size(75, 23);
@@ -467,32 +467,32 @@
 
         #endregion
 
-        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
-        private DevComponents.DotNetBar.ButtonX jkhbuttonX;
-        private DevComponents.DotNetBar.ButtonX dybuttonX;
-        private DevComponents.DotNetBar.ButtonX andbuttonX;
-        private DevComponents.DotNetBar.ButtonX bandebuttonX;
-        private DevComponents.DotNetBar.ButtonX ltbuttonX;
-        private DevComponents.DotNetBar.ButtonX likebuttonX;
-        private DevComponents.DotNetBar.ButtonX notbuttonX;
-        private DevComponents.DotNetBar.ButtonX ykhbuttonX;
-        private DevComponents.DotNetBar.ButtonX orbuttonX;
-        private DevComponents.DotNetBar.ButtonX sandebuttonX;
-        private DevComponents.DotNetBar.ButtonX stbuttonX;
-        private DevComponents.DotNetBar.ButtonX isbuttonX;
-        private DevComponents.DotNetBar.ButtonX cbuttonX;
-        private DevComponents.DotNetBar.ButtonX whbuttonX;
-        private DevComponents.DotNetBar.ButtonX guvbuttonX;
-        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
-        private DevComponents.DotNetBar.LabelX labelX1;
+        private DevExpress.XtraEditors.GroupControl groupPanel1;
+        private DevExpress.XtraEditors.GroupControl groupPanel2;
+        private DevExpress.XtraEditors.SimpleButton jkhbuttonX;
+        private DevExpress.XtraEditors.SimpleButton dybuttonX;
+        private DevExpress.XtraEditors.SimpleButton andbuttonX;
+        private DevExpress.XtraEditors.SimpleButton bandebuttonX;
+        private DevExpress.XtraEditors.SimpleButton ltbuttonX;
+        private DevExpress.XtraEditors.SimpleButton likebuttonX;
+        private DevExpress.XtraEditors.SimpleButton notbuttonX;
+        private DevExpress.XtraEditors.SimpleButton ykhbuttonX;
+        private DevExpress.XtraEditors.SimpleButton orbuttonX;
+        private DevExpress.XtraEditors.SimpleButton sandebuttonX;
+        private DevExpress.XtraEditors.SimpleButton stbuttonX;
+        private DevExpress.XtraEditors.SimpleButton isbuttonX;
+        private DevExpress.XtraEditors.SimpleButton cbuttonX;
+        private DevExpress.XtraEditors.SimpleButton whbuttonX;
+        private DevExpress.XtraEditors.SimpleButton guvbuttonX;
+        private DevExpress.XtraEditors.GroupControl groupPanel3;
+        private DevExpress.XtraEditors.LabelControl labelX1;
         private System.Windows.Forms.RichTextBox sqlrichTextBox;
-        private DevComponents.DotNetBar.ButtonX savebuttonX;
-        private DevComponents.DotNetBar.ButtonX loadbuttonX;
-        private DevComponents.DotNetBar.ButtonX verifybuttonX;
-        private DevComponents.DotNetBar.ButtonX clearbuttonX;
-        private DevComponents.DotNetBar.ButtonX okbuttonX;
-        private DevComponents.DotNetBar.ButtonX closebuttonX;
+        private DevExpress.XtraEditors.SimpleButton savebuttonX;
+        private DevExpress.XtraEditors.SimpleButton loadbuttonX;
+        private DevExpress.XtraEditors.SimpleButton verifybuttonX;
+        private DevExpress.XtraEditors.SimpleButton clearbuttonX;
+        private DevExpress.XtraEditors.SimpleButton okbuttonX;
+        private DevExpress.XtraEditors.SimpleButton closebuttonX;
         private System.Windows.Forms.ListBox fieldlistBox;
         private System.Windows.Forms.ListBox fieldvaluelistBox;
 

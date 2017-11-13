@@ -56,33 +56,33 @@ namespace SysCommon.Gis
         //获取数据库下全部的FC名称
         List<string> GetAllFeatureClassNames(bool bFullName);
 
-            #region 异构 获取FC名称
-            //获取数据库下全部的离散FC名称
-            List<string> GetFeatureClassNames();
-            //获取某一要素集合下FC名称
-            List<string> GetFeatureClassNames(string fdname, bool bFullName, out Exception eError);
-            List<string> GetFeatureClassNames(IFeatureDatasetName pFeaDsName, bool bFullName);
-            #endregion
+        #region 异构 获取FC名称
+        //获取数据库下全部的离散FC名称
+        List<string> GetFeatureClassNames();
+        //获取某一要素集合下FC名称
+        List<string> GetFeatureClassNames(string fdname, bool bFullName, out Exception eError);
+        List<string> GetFeatureClassNames(IFeatureDatasetName pFeaDsName, bool bFullName);
+        #endregion
 
-            #region 异构 获取要素集合FeatureCursor
-            //根据条件获取
+        #region 异构 获取要素集合FeatureCursor
+        //根据条件获取
         IFeatureCursor GetFeatureCursor(string featureclassname, string condition, IGeometry pGeometry, esriSpatialRelEnum pSpatialRel, out Exception eError);
-            //根据条件获取,输出获取要素数量
+        //根据条件获取,输出获取要素数量
         IFeatureCursor GetFeatureCursor(string featureclassname, string condition, IGeometry pGeometry, esriSpatialRelEnum pSpatialRel, out Exception eError, out int count);
-            //根据条件获取,输出获取要素数量及FC中要素总量
+        //根据条件获取,输出获取要素数量及FC中要素总量
         IFeatureCursor GetFeatureCursor(string featureclassname, string condition, IGeometry pGeometry, esriSpatialRelEnum pSpatialRel, out Exception eError, out int count, out int total);
         IFeatureCursor GetFeatureCursor(string featureclassname, string condition, IGeometry pGeometry, string strSpatialRel, out Exception eError, out int count, out int total);
 
-            #endregion
+        #endregion
 
-            #region 异构 获取指定要素
+        #region 异构 获取指定要素
 
         IFeature GetFeature(string featureclassname, string condition, IGeometry pGeometry, esriSpatialRelEnum pSpatialRel, out Exception eError);
         IFeature GetFeature(string featureclassname, string condition, IGeometry pGeometry, string strSpatialRel, out Exception eError);
         IFeature GetFeature(IFeatureClass pFeatCls, string condition, IGeometry pGeometry, esriSpatialRelEnum pSpatialRel, out Exception eError);
         IFeature GetFeature(IFeatureClass pFeatCls, string condition, IGeometry pGeometry, string strSpatialRel, out Exception eError);
 
-            #endregion
+        #endregion
 
         //检查数据集FeatureClass是否存在
         bool CheckFeatureClassExist(string feaclassname, out string FeatureType, out Exception eError);
@@ -91,36 +91,36 @@ namespace SysCommon.Gis
         #endregion
 
         #region 写操作
-            #region 异构 导入DOM数据(RC文件)集合
-            bool InputDOMData(string RCDatasetName, List<string> filepaths, out Exception eError);
-            bool InputDOMData(string RCDatasetName, string filepaths, out Exception eError);
-            #endregion
-
-            #region 异构 导入DEM数据(RD文件)集合
-            bool InputDEMData(string RDDatasetName, List<string> filepaths, out Exception eError);
-            bool InputDEMData(string RDDatasetName, string filepaths, out Exception eError);
-            #endregion
-
-            #region 异构 新建Feature
-            bool NewFeature(string objfcname, Dictionary<string, object> values, IGeometry geomtry, bool Edit, out Exception eError);
-            bool NewFeature(string objfcname, Dictionary<string, object> values, Dictionary<int, string> dicCoor, bool Edit, out Exception eError);
-            bool NewFeature(IFeatureClass objfc, Dictionary<string, object> values, IGeometry geomtry, bool Edit, out Exception eError);
-            bool NewFeature(IFeatureClass objfc, Dictionary<string, object> values, Dictionary<int, string> dicCoor, bool Edit, out Exception eError);
-            bool NewFeatures(IFeatureClass objfc, IFeatureCursor pfeacursor, Dictionary<string, object> values, bool Edit, bool bIngore, out Exception eError);
-            bool NewFeatures(IFeatureClass objfc, IFeatureCursor pfeacursor, List<string> FieldNames, Dictionary<string, object> values, bool Edit, bool bIngore, out Exception eError);
-            bool NewFeatures(IFeatureClass objfc, IFeatureCursor pfeacursor, Dictionary<string, string> dicFieldsPair, Dictionary<string, object> values, bool Edit, bool bIngore, out Exception eError);
-            bool NewFeatures(string objfcname, IFeatureCursor pfeacursor, Dictionary<string, object> values,bool useOrgFdVal ,bool Edit, bool bIngore, out Exception eError);
-            bool NewFeatures(string objfcname, IFeatureCursor pfeacursor, List<string> FieldNames, Dictionary<string, object> values, bool Edit, bool bIngore, out Exception eError);
-            bool NewFeatures(string objfcname, IFeatureCursor pfeacursor, Dictionary<string, string> dicFieldsPair, Dictionary<string, object> values, bool Edit, bool bIngore, out Exception eError);
-            #endregion
-
-            #region 异构 编辑Feature
-            bool EditFeature(string objfcname, string condition, Dictionary<string, object> values, Dictionary<int, string> dicCoor, bool Edit, out Exception eError);
-            bool EditFeature(string objfcname, string condition, Dictionary<string, object> values, IGeometry geomtry, bool Edit, out Exception eError);
-            bool EditFeatures(string objfcname, string condition, Dictionary<string, object> dicValues, bool bEdit, out Exception eError);
-            #endregion
+        #region 异构 导入DOM数据(RC文件)集合
+        bool InputDOMData(string RCDatasetName, List<string> filepaths, out Exception eError);
+        bool InputDOMData(string RCDatasetName, string filepaths, out Exception eError);
         #endregion
-        }
+
+        #region 异构 导入DEM数据(RD文件)集合
+        bool InputDEMData(string RDDatasetName, List<string> filepaths, out Exception eError);
+        bool InputDEMData(string RDDatasetName, string filepaths, out Exception eError);
+        #endregion
+
+        #region 异构 新建Feature
+        bool NewFeature(string objfcname, Dictionary<string, object> values, IGeometry geomtry, bool Edit, out Exception eError);
+        bool NewFeature(string objfcname, Dictionary<string, object> values, Dictionary<int, string> dicCoor, bool Edit, out Exception eError);
+        bool NewFeature(IFeatureClass objfc, Dictionary<string, object> values, IGeometry geomtry, bool Edit, out Exception eError);
+        bool NewFeature(IFeatureClass objfc, Dictionary<string, object> values, Dictionary<int, string> dicCoor, bool Edit, out Exception eError);
+        bool NewFeatures(IFeatureClass objfc, IFeatureCursor pfeacursor, Dictionary<string, object> values, bool Edit, bool bIngore, out Exception eError);
+        bool NewFeatures(IFeatureClass objfc, IFeatureCursor pfeacursor, List<string> FieldNames, Dictionary<string, object> values, bool Edit, bool bIngore, out Exception eError);
+        bool NewFeatures(IFeatureClass objfc, IFeatureCursor pfeacursor, Dictionary<string, string> dicFieldsPair, Dictionary<string, object> values, bool Edit, bool bIngore, out Exception eError);
+        bool NewFeatures(string objfcname, IFeatureCursor pfeacursor, Dictionary<string, object> values, bool useOrgFdVal, bool Edit, bool bIngore, out Exception eError);
+        bool NewFeatures(string objfcname, IFeatureCursor pfeacursor, List<string> FieldNames, Dictionary<string, object> values, bool Edit, bool bIngore, out Exception eError);
+        bool NewFeatures(string objfcname, IFeatureCursor pfeacursor, Dictionary<string, string> dicFieldsPair, Dictionary<string, object> values, bool Edit, bool bIngore, out Exception eError);
+        #endregion
+
+        #region 异构 编辑Feature
+        bool EditFeature(string objfcname, string condition, Dictionary<string, object> values, Dictionary<int, string> dicCoor, bool Edit, out Exception eError);
+        bool EditFeature(string objfcname, string condition, Dictionary<string, object> values, IGeometry geomtry, bool Edit, out Exception eError);
+        bool EditFeatures(string objfcname, string condition, Dictionary<string, object> dicValues, bool bEdit, out Exception eError);
+        #endregion
+        #endregion
+    }
 
     public interface IGisLayer
     {

@@ -30,15 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectLayerByTree));
-            this.advTreeLayerList = new DevComponents.AdvTree.AdvTree();
-            this.node1 = new DevComponents.AdvTree.Node();
-            this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
-            this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
-            this.buttonCancel = new DevComponents.DotNetBar.ButtonX();
-            this.buttonOK = new DevComponents.DotNetBar.ButtonX();
+            this.advTreeLayerList = new DevExpress.XtraTreeList.TreeList();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonOK = new DevExpress.XtraEditors.SimpleButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.labelErr = new DevComponents.DotNetBar.LabelX();
-            this.btn_TbCatalog = new DevComponents.DotNetBar.ButtonX();
+            this.labelErr = new DevExpress.XtraEditors.LabelControl();
+            this.btn_TbCatalog = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.advTreeLayerList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,53 +43,20 @@
             // 
             this.advTreeLayerList.AccessibleRole = System.Windows.Forms.AccessibleRole.Outline;
             this.advTreeLayerList.AllowDrop = true;
-            this.advTreeLayerList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
-            this.advTreeLayerList.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.advTreeLayerList.BackgroundStyle.Class = "TreeBorderKey";
-            this.advTreeLayerList.DragDropEnabled = false;
+            this.advTreeLayerList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.advTreeLayerList.Location = new System.Drawing.Point(0, 0);
-            this.advTreeLayerList.MultiSelect = true;
             this.advTreeLayerList.Name = "advTreeLayerList";
-            this.advTreeLayerList.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
-            this.node1});
-            this.advTreeLayerList.NodesConnector = this.nodeConnector1;
-            this.advTreeLayerList.NodeStyle = this.elementStyle1;
-            this.advTreeLayerList.PathSeparator = ";";
-            this.advTreeLayerList.Size = new System.Drawing.Size(269, 307);
-            this.advTreeLayerList.Styles.Add(this.elementStyle1);
+            this.advTreeLayerList.Size = new System.Drawing.Size(306, 358);
             this.advTreeLayerList.TabIndex = 1;
-            this.advTreeLayerList.Text = "advTree1";
-            this.advTreeLayerList.NodeDoubleClick += new DevComponents.AdvTree.TreeNodeMouseEventHandler(this.advTreeLayerList_NodeDoubleClick);
-            this.advTreeLayerList.NodeClick += new DevComponents.AdvTree.TreeNodeMouseEventHandler(this.advTreeLayerList_NodeClick);
-            this.advTreeLayerList.AfterCheck += new DevComponents.AdvTree.AdvTreeCellEventHandler(this.advTreeLayerList_AfterCheck);
-            // 
-            // node1
-            // 
-            this.node1.Expanded = true;
-            this.node1.Name = "node1";
-            this.node1.Text = "node1";
-            // 
-            // nodeConnector1
-            // 
-            this.nodeConnector1.LineColor = System.Drawing.SystemColors.ControlText;
-            // 
-            // elementStyle1
-            // 
-            this.elementStyle1.Name = "elementStyle1";
-            this.elementStyle1.TextColor = System.Drawing.SystemColors.ControlText;
             // 
             // buttonCancel
             // 
             this.buttonCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonCancel.Location = new System.Drawing.Point(192, 313);
+            this.buttonCancel.Location = new System.Drawing.Point(224, 365);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(70, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(82, 27);
             this.buttonCancel.TabIndex = 14;
             this.buttonCancel.Text = "取消";
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -101,10 +65,9 @@
             // 
             this.buttonOK.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonOK.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonOK.Location = new System.Drawing.Point(117, 313);
+            this.buttonOK.Location = new System.Drawing.Point(136, 365);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(70, 23);
+            this.buttonOK.Size = new System.Drawing.Size(82, 27);
             this.buttonOK.TabIndex = 13;
             this.buttonOK.Text = "确定";
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
@@ -139,22 +102,22 @@
             // 
             // labelErr
             // 
-            this.labelErr.AutoSize = true;
-            this.labelErr.BackColor = System.Drawing.Color.Transparent;
-            this.labelErr.ForeColor = System.Drawing.Color.Red;
-            this.labelErr.Location = new System.Drawing.Point(0, 311);
+            this.labelErr.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelErr.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelErr.Appearance.Options.UseBackColor = true;
+            this.labelErr.Appearance.Options.UseForeColor = true;
+            this.labelErr.Location = new System.Drawing.Point(0, 363);
             this.labelErr.Name = "labelErr";
-            this.labelErr.Size = new System.Drawing.Size(0, 0);
+            this.labelErr.Size = new System.Drawing.Size(0, 14);
             this.labelErr.TabIndex = 15;
             // 
             // btn_TbCatalog
             // 
             this.btn_TbCatalog.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_TbCatalog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_TbCatalog.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_TbCatalog.Location = new System.Drawing.Point(0, 313);
+            this.btn_TbCatalog.Location = new System.Drawing.Point(0, 365);
             this.btn_TbCatalog.Name = "btn_TbCatalog";
-            this.btn_TbCatalog.Size = new System.Drawing.Size(86, 23);
+            this.btn_TbCatalog.Size = new System.Drawing.Size(100, 27);
             this.btn_TbCatalog.TabIndex = 13;
             this.btn_TbCatalog.Text = "显示所有图层";
             this.btn_TbCatalog.Visible = false;
@@ -162,9 +125,9 @@
             // 
             // SelectLayerByTree
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(262, 343);
+            this.ClientSize = new System.Drawing.Size(306, 400);
             this.Controls.Add(this.labelErr);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.btn_TbCatalog);
@@ -173,7 +136,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SelectLayerByTree";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "选择图层";
             this.TopMost = true;
@@ -186,14 +148,12 @@
 
         #endregion
 
-        private DevComponents.AdvTree.AdvTree advTreeLayerList;
-        private DevComponents.AdvTree.Node node1;
-        private DevComponents.AdvTree.NodeConnector nodeConnector1;
-        private DevComponents.DotNetBar.ElementStyle elementStyle1;
-        private DevComponents.DotNetBar.ButtonX buttonCancel;
-        private DevComponents.DotNetBar.ButtonX buttonOK;
+        private DevExpress.XtraTreeList.TreeList advTreeLayerList;
+        private DevExpress.XtraTreeList.Nodes.TreeListNode node1;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
+        private DevExpress.XtraEditors.SimpleButton buttonOK;
         public System.Windows.Forms.ImageList ImageList;
-        private DevComponents.DotNetBar.LabelX labelErr;
-        private DevComponents.DotNetBar.ButtonX btn_TbCatalog;
+        private DevExpress.XtraEditors.LabelControl labelErr;
+        private DevExpress.XtraEditors.SimpleButton btn_TbCatalog;
     }
 }

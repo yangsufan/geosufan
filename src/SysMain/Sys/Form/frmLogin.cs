@@ -15,7 +15,7 @@ using System.Collections;
 
 namespace GeoDatabaseManager
 {
-    public partial class frmLogin : DevComponents.DotNetBar.Office2007Form
+    public partial class frmLogin :SysCommon.BaseForm
     {
         SysGisDB gisDb = null;                                  //数据操作类\
         enumWSType _curWsType=enumWSType.SDE;                               //当前工作空间类型
@@ -73,8 +73,7 @@ namespace GeoDatabaseManager
 
                 _loginSuccess = true;
                 Plugin.LogTable.user = this.comboBoxUser.Text.Trim();
-                //GeoDataCenterFunLib.LogTable.InitStaticFields();//初始化静态字段
-                Plugin.LogTable.Writelog("登录系统");//yjl记录用户登录系统
+                Plugin.LogTable.Writelog("登录系统");
                 WriteUserName(this.comboBoxUser.Text.Trim());
                 this.DialogResult = DialogResult.OK;
             }
@@ -189,7 +188,7 @@ namespace GeoDatabaseManager
                 {
                     string strKey = de.Key.ToString();
                     string strValue = de.Value.ToString();
-                    this.comboBoxUser.Items.Add(strKey);
+                    this.comboBoxUser.Properties.Items.Add(strKey);
                 }
             }
         }

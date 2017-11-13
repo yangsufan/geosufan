@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SufanGeo")]
 [assembly: AssemblyProduct("GeoCommon")]
-[assembly: AssemblyCopyright("版权所有 (C) SufanGeo 2009")]
+[assembly: AssemblyCopyright("版权所有 (C) SufanGeo 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

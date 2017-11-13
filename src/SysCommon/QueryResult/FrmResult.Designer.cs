@@ -30,16 +30,19 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.chartlet1 = new FanG.Chartlet();
-            this.txtPageCount = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnNextPage = new DevComponents.DotNetBar.ButtonX();
-            this.btnLastPage = new DevComponents.DotNetBar.ButtonX();
-            this.btnExportExecl = new DevComponents.DotNetBar.ButtonX();
-            this.btnExportChart = new DevComponents.DotNetBar.ButtonX();
-            this.cbStyle = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtPageCount = new DevExpress.XtraEditors.TextEdit();
+            this.btnNextPage = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLastPage = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExportExecl = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExportChart = new DevExpress.XtraEditors.SimpleButton();
+            this.cbStyle = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelX1 = new DevExpress.XtraEditors.LabelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPageCount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbStyle.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -62,8 +65,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.btnExportChart);
             this.splitContainer1.Panel2.Controls.Add(this.cbStyle);
             this.splitContainer1.Panel2.Controls.Add(this.labelX1);
-            this.splitContainer1.Size = new System.Drawing.Size(697, 604);
-            this.splitContainer1.SplitterDistance = 521;
+            this.splitContainer1.Size = new System.Drawing.Size(813, 705);
+            this.splitContainer1.SplitterDistance = 608;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
             // chartlet1
@@ -117,8 +121,8 @@
             this.chartlet1.LineConnectionRadius = 10;
             this.chartlet1.LineConnectionType = FanG.Chartlet.LineConnectionTypes.Round;
             this.chartlet1.Location = new System.Drawing.Point(0, 0);
-            this.chartlet1.MaxValueY = 0;
-            this.chartlet1.MinValueY = 0;
+            this.chartlet1.MaxValueY = 0D;
+            this.chartlet1.MinValueY = 0D;
             this.chartlet1.Name = "chartlet1";
             this.chartlet1.OutputFormat = System.Drawing.Imaging.ImageFormat.Jpeg;
             this.chartlet1.RootPath = "C:\\\\";
@@ -133,7 +137,7 @@
             this.chartlet1.Shadow.Radius = 3;
             this.chartlet1.ShowCopyright = false;
             this.chartlet1.ShowErrorInfo = true;
-            this.chartlet1.Size = new System.Drawing.Size(697, 521);
+            this.chartlet1.Size = new System.Drawing.Size(813, 608);
             this.chartlet1.Stroke.Color1 = System.Drawing.Color.Empty;
             this.chartlet1.Stroke.Color2 = System.Drawing.Color.Empty;
             this.chartlet1.Stroke.Color3 = System.Drawing.Color.Empty;
@@ -166,22 +170,17 @@
             // 
             // txtPageCount
             // 
-            // 
-            // 
-            // 
-            this.txtPageCount.Border.Class = "TextBoxBorder";
-            this.txtPageCount.Location = new System.Drawing.Point(104, 25);
+            this.txtPageCount.Location = new System.Drawing.Point(121, 29);
             this.txtPageCount.Name = "txtPageCount";
-            this.txtPageCount.Size = new System.Drawing.Size(54, 21);
+            this.txtPageCount.Size = new System.Drawing.Size(63, 20);
             this.txtPageCount.TabIndex = 6;
             // 
             // btnNextPage
             // 
             this.btnNextPage.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnNextPage.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnNextPage.Location = new System.Drawing.Point(175, 25);
+            this.btnNextPage.Location = new System.Drawing.Point(204, 29);
             this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(75, 23);
+            this.btnNextPage.Size = new System.Drawing.Size(87, 27);
             this.btnNextPage.TabIndex = 5;
             this.btnNextPage.Text = "下页";
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
@@ -189,10 +188,9 @@
             // btnLastPage
             // 
             this.btnLastPage.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnLastPage.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnLastPage.Location = new System.Drawing.Point(12, 25);
+            this.btnLastPage.Location = new System.Drawing.Point(14, 29);
             this.btnLastPage.Name = "btnLastPage";
-            this.btnLastPage.Size = new System.Drawing.Size(75, 23);
+            this.btnLastPage.Size = new System.Drawing.Size(87, 27);
             this.btnLastPage.TabIndex = 4;
             this.btnLastPage.Text = "上页";
             this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
@@ -200,10 +198,9 @@
             // btnExportExecl
             // 
             this.btnExportExecl.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnExportExecl.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnExportExecl.Location = new System.Drawing.Point(594, 25);
+            this.btnExportExecl.Location = new System.Drawing.Point(693, 29);
             this.btnExportExecl.Name = "btnExportExecl";
-            this.btnExportExecl.Size = new System.Drawing.Size(75, 23);
+            this.btnExportExecl.Size = new System.Drawing.Size(87, 27);
             this.btnExportExecl.TabIndex = 3;
             this.btnExportExecl.Text = "导出统计表";
             this.btnExportExecl.Click += new System.EventHandler(this.btnExportExecl_Click);
@@ -211,51 +208,49 @@
             // btnExportChart
             // 
             this.btnExportChart.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnExportChart.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnExportChart.Location = new System.Drawing.Point(496, 25);
+            this.btnExportChart.Location = new System.Drawing.Point(579, 29);
             this.btnExportChart.Name = "btnExportChart";
-            this.btnExportChart.Size = new System.Drawing.Size(92, 23);
+            this.btnExportChart.Size = new System.Drawing.Size(107, 27);
             this.btnExportChart.TabIndex = 2;
             this.btnExportChart.Text = "导出统计图";
             this.btnExportChart.Click += new System.EventHandler(this.btnExportChart_Click);
             // 
             // cbStyle
             // 
-            this.cbStyle.DisplayMember = "Text";
-            this.cbStyle.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbStyle.FormattingEnabled = true;
-            this.cbStyle.ItemHeight = 15;
-            this.cbStyle.Location = new System.Drawing.Point(337, 27);
+            this.cbStyle.Location = new System.Drawing.Point(393, 31);
             this.cbStyle.Name = "cbStyle";
-            this.cbStyle.Size = new System.Drawing.Size(153, 21);
+            this.cbStyle.Size = new System.Drawing.Size(178, 20);
             this.cbStyle.TabIndex = 1;
             this.cbStyle.SelectedIndexChanged += new System.EventHandler(this.cbStyle_SelectedIndexChanged);
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(256, 27);
+            this.labelX1.Location = new System.Drawing.Point(299, 31);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(75, 23);
+            this.labelX1.Size = new System.Drawing.Size(60, 14);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "外观样式：";
             // 
             // FrmResult
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 604);
+            this.ClientSize = new System.Drawing.Size(813, 705);
             this.Controls.Add(this.splitContainer1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmResult";
-            this.ShowIcon = false;
             this.Text = "查询结果统计";
             this.Load += new System.EventHandler(this.FrmResult_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtPageCount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbStyle.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -263,13 +258,13 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private DevComponents.DotNetBar.ButtonX btnExportExecl;
-        private DevComponents.DotNetBar.ButtonX btnExportChart;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbStyle;
-        private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtPageCount;
-        private DevComponents.DotNetBar.ButtonX btnNextPage;
-        private DevComponents.DotNetBar.ButtonX btnLastPage;
+        private DevExpress.XtraEditors.SimpleButton btnExportExecl;
+        private DevExpress.XtraEditors.SimpleButton btnExportChart;
+        private DevExpress.XtraEditors.ComboBoxEdit cbStyle;
+        private DevExpress.XtraEditors.LabelControl labelX1;
+        private DevExpress.XtraEditors.TextEdit txtPageCount;
+        private DevExpress.XtraEditors.SimpleButton btnNextPage;
+        private DevExpress.XtraEditors.SimpleButton btnLastPage;
         private FanG.Chartlet chartlet1;
     }
 }

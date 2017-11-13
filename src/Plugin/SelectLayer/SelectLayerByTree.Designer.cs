@@ -30,15 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectLayerByTree));
-            this.advTreeLayerList = new DevComponents.AdvTree.AdvTree();
-            this.node1 = new DevComponents.AdvTree.Node();
-            this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
-            this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
-            this.buttonCancel = new DevComponents.DotNetBar.ButtonX();
-            this.buttonOK = new DevComponents.DotNetBar.ButtonX();
+            this.advTreeLayerList = new DevExpress.XtraTreeList.TreeList();
+            this.node1 = new DevExpress.XtraTreeList.Nodes.TreeListNode();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonOK = new DevExpress.XtraEditors.SimpleButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.labelErr = new DevComponents.DotNetBar.LabelX();
-            ((System.ComponentModel.ISupportInitialize)(this.advTreeLayerList)).BeginInit();
+            this.labelErr = new DevExpress.XtraEditors.LabelControl();
             this.SuspendLayout();
             // 
             // advTreeLayerList
@@ -49,41 +46,26 @@
             // 
             // 
             // 
-            this.advTreeLayerList.BackgroundStyle.Class = "TreeBorderKey";
             this.advTreeLayerList.Dock = System.Windows.Forms.DockStyle.Top;
             this.advTreeLayerList.Location = new System.Drawing.Point(0, 0);
             this.advTreeLayerList.Name = "advTreeLayerList";
-            this.advTreeLayerList.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
-            this.node1});
-            this.advTreeLayerList.NodesConnector = this.nodeConnector1;
-            this.advTreeLayerList.NodeStyle = this.elementStyle1;
-            this.advTreeLayerList.PathSeparator = ";";
             this.advTreeLayerList.Size = new System.Drawing.Size(322, 295);
-            this.advTreeLayerList.Styles.Add(this.elementStyle1);
             this.advTreeLayerList.TabIndex = 1;
             this.advTreeLayerList.Text = "advTree1";
-            this.advTreeLayerList.NodeDoubleClick += new DevComponents.AdvTree.TreeNodeMouseEventHandler(this.advTreeLayerList_NodeDoubleClick);
-            this.advTreeLayerList.NodeClick += new DevComponents.AdvTree.TreeNodeMouseEventHandler(this.advTreeLayerList_NodeClick);
             // 
             // node1
             // 
             this.node1.Expanded = true;
-            this.node1.Name = "node1";
-            this.node1.Text = "node1";
             // 
             // nodeConnector1
             // 
-            this.nodeConnector1.LineColor = System.Drawing.SystemColors.ControlText;
             // 
             // elementStyle1
             // 
-            this.elementStyle1.Name = "elementStyle1";
-            this.elementStyle1.TextColor = System.Drawing.SystemColors.ControlText;
             // 
             // buttonCancel
             // 
             this.buttonCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonCancel.Location = new System.Drawing.Point(240, 308);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(70, 23);
@@ -94,7 +76,6 @@
             // buttonOK
             // 
             this.buttonOK.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonOK.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonOK.Location = new System.Drawing.Point(154, 308);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(70, 23);
@@ -156,7 +137,6 @@
             this.ShowIcon = false;
             this.Text = "选择图层";
             this.Load += new System.EventHandler(this.SelectLayerByTree_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.advTreeLayerList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,13 +144,11 @@
 
         #endregion
 
-        private DevComponents.AdvTree.AdvTree advTreeLayerList;
-        private DevComponents.AdvTree.Node node1;
-        private DevComponents.AdvTree.NodeConnector nodeConnector1;
-        private DevComponents.DotNetBar.ElementStyle elementStyle1;
-        private DevComponents.DotNetBar.ButtonX buttonCancel;
-        private DevComponents.DotNetBar.ButtonX buttonOK;
+        private DevExpress.XtraTreeList.TreeList advTreeLayerList;
+        private DevExpress.XtraTreeList.Nodes.TreeListNode node1;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
+        private DevExpress.XtraEditors.SimpleButton buttonOK;
         public System.Windows.Forms.ImageList ImageList;
-        private DevComponents.DotNetBar.LabelX labelErr;
+        private DevExpress.XtraEditors.LabelControl labelErr;
     }
 }

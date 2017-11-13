@@ -310,7 +310,6 @@ namespace Plugin.Parse
             }
             catch
             {
-
             }
             finally
             {

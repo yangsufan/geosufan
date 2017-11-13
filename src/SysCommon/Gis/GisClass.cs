@@ -47,7 +47,6 @@ namespace SysCommon.Gis
             }
 
         }
-
         /// <summary>
         /// 设置SDE工作区
         /// </summary>
@@ -310,12 +309,10 @@ namespace SysCommon.Gis
         {
 
         }
-
         public SysGisDataSet(IWorkspace pWorkspace)
         {
             this.WorkSpace = pWorkspace;
         }
-
         /// <summary>
         /// 创建DEM数据集
         /// </summary>

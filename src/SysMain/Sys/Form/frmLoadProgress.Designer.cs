@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoadProgress));
-            this.labelXInfo = new DevComponents.DotNetBar.LabelX();
+            this.labelXInfo = new DevExpress.XtraEditors.LabelControl();
             this.SuspendLayout();
             // 
             // labelXInfo
@@ -63,7 +63,7 @@
 
         #endregion
 
-        private DevComponents.DotNetBar.LabelX labelXInfo;
+        private DevExpress.XtraEditors.LabelControl labelXInfo;
 
     }
 }

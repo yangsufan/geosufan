@@ -19,8 +19,6 @@ namespace SysCommon
         /// <param name="TmpWorkspace"></param>
         /// <param name="SettingName"></param>
         /// <returns>strSettingValue</returns>
-        ///         
-        /// 
         public static string GetXzqName(IWorkspace TmpWorkspace, string XZQcode)
         {
             string strXZQname = XZQcode;

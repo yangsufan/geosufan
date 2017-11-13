@@ -62,8 +62,13 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevComponents.DotNetBar2, Version=8.1.0.6, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
     <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
@@ -131,13 +136,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GeoOneKey.cs" />
-    <Compile Include="SentinelKey.cs" />
-    <Compile Include="SentinelKeyNativeApi.cs" />
-    <Compile Include="SentinelKeysLicense.cs" />
     <Compile Include="LicenseInitializer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -145,10 +147,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sys\Form\frmDBSet.resx">
       <DependentUpon>frmDBSet.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sys\Form\FrmFunctionAllot.resx">
-      <DependentUpon>FrmFunctionAllot.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Sys\Form\frmLoadProgress.resx">
@@ -169,10 +167,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sys\Form\frmSetAppDB.resx">
       <DependentUpon>frmSetAppDB.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sys\Form\NewFormLogin.resx">
-      <DependentUpon>NewFormLogin.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -198,12 +192,6 @@
     </Compile>
     <Compile Include="Sys\Form\frmDBSet.designer.cs">
       <DependentUpon>frmDBSet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sys\Form\FrmFunctionAllot.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sys\Form\FrmFunctionAllot.Designer.cs">
-      <DependentUpon>FrmFunctionAllot.cs</DependentUpon>
     </Compile>
     <Compile Include="Sys\Form\frmLoadProgress.cs">
       <SubType>Form</SubType>
@@ -231,12 +219,6 @@
     </Compile>
     <Compile Include="Sys\Form\frmSetAppDB.designer.cs">
       <DependentUpon>frmSetAppDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sys\Form\NewFormLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sys\Form\NewFormLogin.Designer.cs">
-      <DependentUpon>NewFormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Sys\Module\ModuleData.cs">
       <SubType>Code</SubType>

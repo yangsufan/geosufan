@@ -7,19 +7,16 @@ using System.Collections;
 using System.IO;
 using System.Reflection;
 using System.Xml;
-
 using Plugin.Interface;
 using Plugin.Application;
 using Plugin.Parse;
 
-using DevComponents.DotNetBar;
 namespace Plugin
 {
     #region 从XML读取解析插件UI化,并与插件实现进行绑定
     public static class ModuleCommon
     {
         public static event SysCommon.SysLogInfoChangedHandle SysLogInfoChnaged;
-
         #region 插件对象集合
         private static Dictionary<string, IPlugin> v_dicPlugins;
         private static Dictionary<string, ICommandRef> v_dicCommands;
@@ -32,7 +29,6 @@ namespace Plugin
         private static Dictionary<string, IMenuRef> v_dicMenus;
         private static Dictionary<string, IDockableWindowRef> v_dicDockableWindows;
         private static Dictionary<string, IControlRef> v_dicControls;
-
         public static Dictionary<string, IControlRef> DicControls
         {
             get
@@ -45,7 +41,6 @@ namespace Plugin
             }
         }
         #endregion
-
         private static XmlDocument _SysXmlDocument;
         private static string _ResPath;
         private static List<string> _ListUserPrivilegeID;

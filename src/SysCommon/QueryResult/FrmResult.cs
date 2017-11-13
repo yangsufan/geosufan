@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace SysCommon
 {
-    public partial class FrmResult : DevComponents.DotNetBar.Office2007Form
+    public partial class FrmResult :BaseForm
     {
         private string m_Title = "";
         private string m_XLabels = "";
@@ -22,7 +22,7 @@ namespace SysCommon
             InitializeComponent();
             //初始化下拉框
             object[] strType = new object[] { "柱状图", "饼状图" };
-            cbStyle.Items.AddRange(strType);
+            cbStyle.Properties.Items.AddRange(strType);
             cbStyle.SelectedIndex = 0;
         }
         private List<Dictionary<ArrayList, ArrayList[]>> m_Lst = new List<Dictionary<ArrayList, ArrayList[]>>();

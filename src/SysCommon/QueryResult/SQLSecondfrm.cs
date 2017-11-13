@@ -21,7 +21,7 @@ using ESRI.ArcGIS.Controls;
 
 namespace SysCommon
 {
-    public partial class SQLSecondfrm :DevComponents.DotNetBar.Office2007Form
+    public partial class SQLSecondfrm :BaseForm
     {
         private IFeatureClass m_pFeaCls = null;
         private string m_strSQL = "";

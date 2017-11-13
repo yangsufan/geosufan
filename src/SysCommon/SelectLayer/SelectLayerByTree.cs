@@ -13,7 +13,7 @@ using ESRI.ArcGIS.Geodatabase;
 //xisheng 20111119 增加选择图层的功能。
 namespace SysCommon
 {
-    public partial class SelectLayerByTree : DevComponents.DotNetBar.Office2007Form
+    public partial class SelectLayerByTree : BaseForm
 
     {
         public string _LayerTreePath = System.Windows.Forms.Application.StartupPath + "\\..\\res\\xml\\查询图层树.xml"; //图层目录文件路径
@@ -23,7 +23,7 @@ namespace SysCommon
         private bool m_checkbox = false;//设置是否有checkbox
         private IMap m_Map = null;//设置Imap;
         private IMap m_Mapold = null;
-        private List<DevComponents.AdvTree.Node> ListNode=new List<DevComponents.AdvTree.Node>();
+        private List<DevExpress.XtraTreeList.Nodes.TreeListNode> ListNode=new List<DevExpress.XtraTreeList.Nodes.TreeListNode>();
         private bool flag = true;
         private bool flag2 = true;
         private bool tbclick = false;//是否点击同步按钮
@@ -222,39 +222,14 @@ namespace SysCommon
             {
                 if (flag && node.Nodes.Count==0)
                 {
-                    //flag2 = false;
-                    //node.Parent.Checked = true;
-                    //flag2 = true;
                     _ClsSelectLayerByTree.ChangeParentCheck(node,ref flag2 );
                 }
                 else if (flag2)//不是叶子节点 
                 {
-
-                    //foreach (DevComponents.AdvTree.Node item in node.Nodes)
-                    //{
-                    //    flag = false;
-                    //    item.Checked = node.Checked;
-                    //}
-                    //flag = true;
                     _ClsSelectLayerByTree.ChangeParentCheck(node,ref flag2 );
                     _ClsSelectLayerByTree.ChangeChildCheck(node,ref flag ); 
                 }
             }
-            //if (flag2 && flag)
-            //{
-            //    ChangeParentCheck(node);
-
-            //    //如果是叶子节点
-            //    if (node.Tag.ToString() == "Layer" && flag)
-            //    {
-
-            //    }
-            //    else
-            //    {
-
-            //        ChangeChildCheck(node);
-            //    }
-            //}
         }
 
     }

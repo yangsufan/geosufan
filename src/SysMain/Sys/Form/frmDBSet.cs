@@ -14,7 +14,7 @@ using ESRI.ArcGIS.Geodatabase;
 
 namespace GeoDatabaseManager
 {
-    public partial class frmDBSet : DevComponents.DotNetBar.Office2007Form
+    public partial class frmDBSet :SysCommon.BaseForm
     {
         private enumWSType wsType;                 //工作库数据库类型
         public enumWSType WsType

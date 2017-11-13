@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ButtonCancel = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.labelDesc = new System.Windows.Forms.Label();
-            this.labelProgress = new System.Windows.Forms.Label();
+            this.ButtonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.progressBar1 = new DevExpress.XtraEditors.ProgressBarControl();
+            this.labelDesc = new DevExpress.XtraEditors.LabelControl();
+            this.labelProgress = new DevExpress.XtraEditors.LabelControl();
             this.SuspendLayout();
             // 
             // ButtonCancel
@@ -42,7 +42,7 @@
             this.ButtonCancel.Size = new System.Drawing.Size(73, 29);
             this.ButtonCancel.TabIndex = 13;
             this.ButtonCancel.Text = "取消";
-            this.ButtonCancel.UseVisualStyleBackColor = true;
+            //this.ButtonCancel.UseVisualStyleBackColor = true;
             this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // progressBar1
@@ -51,7 +51,7 @@
             this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(423, 29);
-            this.progressBar1.Step = 1;
+            this.progressBar1.Properties.Step = 1;
             this.progressBar1.TabIndex = 14;
             // 
             // labelDesc
@@ -72,7 +72,7 @@
             this.labelProgress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.labelProgress.Size = new System.Drawing.Size(0, 15);
             this.labelProgress.TabIndex = 16;
-            this.labelProgress.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            //this.labelProgress.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelProgress.Click += new System.EventHandler(this.labelProgress_Click);
             // 
             // FormProgress
@@ -103,9 +103,9 @@
 
         #endregion
 
-        public System.Windows.Forms.Button ButtonCancel;
-        public System.Windows.Forms.ProgressBar progressBar1;
-        public System.Windows.Forms.Label labelProgress;
-        public System.Windows.Forms.Label labelDesc;
+        public DevExpress.XtraEditors.SimpleButton ButtonCancel;
+        public DevExpress.XtraEditors.ProgressBarControl progressBar1;
+        public DevExpress.XtraEditors.LabelControl labelProgress;
+        public DevExpress.XtraEditors.LabelControl labelDesc;
     }
 }

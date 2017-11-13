@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace GeoDatabaseManager
 {
-    public partial class frmLoadProgress : DevComponents.DotNetBar.Office2007Form
+    public partial class frmLoadProgress : SysCommon.BaseForm
     {
         public string SysInfo
         {

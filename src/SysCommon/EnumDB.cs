@@ -13,7 +13,6 @@ namespace SysCommon
         SHP=4                      //shape
 
     }
-
     //数据库联接方式
     public enum enumDBConType
     {

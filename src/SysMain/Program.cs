@@ -21,18 +21,16 @@ namespace GeoDatabaseManager
         [STAThread]
         static void Main()
         {
-            //cyf 20110612 modify:将许可授权文件由ArcEngine改为ArcINfo
             //ESRI License Initializer generated code.
             if (!RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.EngineOrDesktop))
             {
                 MessageBox.Show("没有安装ArcGIS","提示",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
-            IAoInitialize m_AoInitialize = new AoInitialize();
-           // ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.EngineOrDesktop);
-            m_AoInitialize.Initialize(esriLicenseProductCode.esriLicenseProductCodeEngineGeoDB);//esriLicenseProductCodeArcInfo);//.esriLicenseProductCodeEngineGeoDB);
-            m_AoInitialize.IsProductCodeAvailable(esriLicenseProductCode.esriLicenseProductCodeEngineGeoDB);//esriLicenseProductCodeArcInfo);//.esriLicenseProductCodeEngineGeoDB);
-            //end
+            //扩展许可判断
+            //IAoInitialize m_AoInitialize = new AoInitialize();
+            //esriLicenseStatus status=m_AoInitialize.Initialize(esriLicenseProductCode.esriLicenseProductCodeEngineGeoDB);
+            //m_AoInitialize.IsProductCodeAvailable(esriLicenseProductCode.esriLicenseProductCodeEngineGeoDB);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             if (GetProcessSysmain())
@@ -50,8 +48,8 @@ namespace GeoDatabaseManager
                     Application.Run(new frmMain());
                 }
             }
-            m_AoInitialize.Shutdown();
-            m_AoInitialize = null;
+            //m_AoInitialize.Shutdown();
+            //m_AoInitialize = null;
             m_AOLicenseInitializer.ShutdownApplication();
             m_AOLicenseInitializer = null;
         }

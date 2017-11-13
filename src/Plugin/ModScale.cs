@@ -3,7 +3,6 @@ using System.Windows.Forms;
 using System.Collections;
 using System.IO;
 using System.Xml;
-using DevComponents.DotNetBar;
 namespace Plugin
 {
     public static class ModScale

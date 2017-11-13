@@ -12,7 +12,7 @@ namespace SysCommon.SelectLayer
         private System.Xml.XmlDocument _LayerTreeXmldoc = null;
         private bool m_checkbox = false;
         private System.Windows.Forms.ImageList _Imagelist = null;
-        private Dictionary<DevComponents.AdvTree.Node, bool> m_Dic = new Dictionary<DevComponents.AdvTree.Node, bool>();
+        private Dictionary<DevExpress.XtraTreeList.Nodes.TreeListNode, bool> m_Dic = new Dictionary<DevExpress.XtraTreeList.Nodes.TreeListNode, bool>();
         private List<string> _ListDataNodeKeys = null;
         public List<string> ListDataNodeKeys
         {
@@ -66,17 +66,17 @@ namespace SysCommon.SelectLayer
         /// </summary>
         /// <param name="node"></param>
         /// 
-        public void CheckNode(DevComponents.AdvTree.Node node)//
+        public void CheckNode(DevExpress.XtraTreeList.Nodes.TreeListNode node)//
         {
-            if (node.Parent != null)
+            if (node.ParentNode != null)
             {
-                node.Parent.Checked = true;
-                CheckNode(node.Parent);
+                node.ParentNode.Checked = true;
+                CheckNode(node.ParentNode);
             }
 
         }
         //创建根节点 xisheng 20111128
-        public void CreatRootNode(IMap pMap, string strLayerTreePath, DevComponents.AdvTree.AdvTree advTreeLayerList,bool isTbClick)
+        public void CreatRootNode(IMap pMap, string strLayerTreePath, DevExpress.XtraTreeList.TreeList advTreeLayerList,bool isTbClick)
         {
             //初始化图层树列表
             if (File.Exists(strLayerTreePath))
@@ -87,30 +87,28 @@ namespace SysCommon.SelectLayer
                 }
                 _LayerTreeXmldoc.Load(strLayerTreePath);
                 advTreeLayerList.Nodes.Clear();
-
                 //获取Xml的根节点并作为根节点加到UltraTree上
                 XmlNode xmlnodeRoot = _LayerTreeXmldoc.DocumentElement;
                 XmlElement xmlelementRoot = xmlnodeRoot as XmlElement;
 
                 xmlelementRoot.SetAttribute("NodeKey", "Root");
                 string sNodeText = xmlelementRoot.GetAttribute("NodeText");
-
                 //创建并设定树的根节点
-                DevComponents.AdvTree.Node treenodeRoot = new DevComponents.AdvTree.Node();
-                treenodeRoot.Name = "Root";
-                treenodeRoot.Text = sNodeText;
+                DevExpress.XtraTreeList.Nodes.TreeListNode treenodeRoot = new DevExpress.XtraTreeList.Nodes.TreeListNode();
+                //treenodeRoot.n = "Root";
+                //treenodeRoot.Text = sNodeText;
 
                 treenodeRoot.Tag = "Root";
-                treenodeRoot.DataKey = xmlelementRoot;
+               // treenodeRoot.DataKey = xmlelementRoot;
                 treenodeRoot.Expanded = true;
                 if (m_checkbox)
                 {
-                    treenodeRoot.CheckBoxVisible = true;
+                    //treenodeRoot.CheckBoxVisible = true;
                     treenodeRoot.Checked = true;
                 }
                 advTreeLayerList.Nodes.Add(treenodeRoot);
 
-                treenodeRoot.Image = _Imagelist.Images["Root"];
+                //treenodeRoot = _Imagelist.Images["Root"];
                 if (_ListLayerKeys == null)
                 {
                     InitLayerTreeByXmlNode(pMap, treenodeRoot, xmlnodeRoot, isTbClick);
@@ -122,7 +120,7 @@ namespace SysCommon.SelectLayer
             }
         }
         //根据配置文件显示图层树
-        public void InitLayerTreeByLayerKeys(IMap pMap, DevComponents.AdvTree.Node treenode, XmlNode xmlnode, bool isTbClick)
+        public void InitLayerTreeByLayerKeys(IMap pMap,DevExpress.XtraTreeList.Nodes.TreeListNode treenode, XmlNode xmlnode, bool isTbClick)
         {
 
             bool haschild = false;
@@ -168,18 +166,18 @@ namespace SysCommon.SelectLayer
                     }
 
                     haschild = true;
-                    DevComponents.AdvTree.Node treenodeChild = new DevComponents.AdvTree.Node();
-                    treenodeChild.Name = sNodeKey;
-                    treenodeChild.Text = sNodeText;
+                    DevExpress.XtraTreeList.Nodes.TreeListNode treenodeChild = new DevExpress.XtraTreeList.Nodes.TreeListNode();
+                    //treenodeChild.Name = sNodeKey;
+                    //treenodeChild.Text = sNodeText;
 
 
-                    treenodeChild.DataKey = xmlElementChild;
+                    //treenodeChild.DataKey = xmlElementChild;
                     treenodeChild.Tag = xmlElementChild.Name;
                     treenode.Nodes.Add(treenodeChild);
 
                     if (m_checkbox)
                     {
-                        treenodeChild.CheckBoxVisible = true;
+                        //treenodeChild.CheckBoxVisible = true;
                         if (xmlElementChild.Name == "Layer" && player != null)
                         {
                             treenodeChild.Checked = true;
@@ -193,17 +191,9 @@ namespace SysCommon.SelectLayer
                     }
                 }
             }
-
-            
-            //if (!haschild) //没有子节点移除父节点
-            //{
-            //    Remove(treenode);
-
-            //}
-
         }
         //根据配置文件显示图层树
-        public void InitLayerTreeByXmlNode(IMap pMap, DevComponents.AdvTree.Node treenode, XmlNode xmlnode,bool isTbClick)
+        public void InitLayerTreeByXmlNode(IMap pMap, DevExpress.XtraTreeList.Nodes.TreeListNode treenode, XmlNode xmlnode,bool isTbClick)
         {
 
             bool haschild = false;
@@ -247,18 +237,18 @@ namespace SysCommon.SelectLayer
                 }
 
                 haschild = true;
-                DevComponents.AdvTree.Node treenodeChild = new DevComponents.AdvTree.Node();
-                treenodeChild.Name = sNodeKey;
-                treenodeChild.Text = sNodeText;
+                DevExpress.XtraTreeList.Nodes.TreeListNode treenodeChild = new DevExpress.XtraTreeList.Nodes.TreeListNode();
+                //treenodeChild.Name = sNodeKey;
+                //treenodeChild.Text = sNodeText;
 
 
-                treenodeChild.DataKey = xmlElementChild;
+                //treenodeChild.DataKey = xmlElementChild;
                 treenodeChild.Tag = xmlElementChild.Name;
                 treenode.Nodes.Add(treenodeChild);
 
                 if (m_checkbox)
                 {
-                    treenodeChild.CheckBoxVisible = true;
+                    //treenodeChild.CheckBoxVisible = true;
                     if (xmlElementChild.Name == "Layer" && player != null)
                     {
                         treenodeChild.Checked = true;
@@ -284,7 +274,7 @@ namespace SysCommon.SelectLayer
             //}
 
         }
-        public void RemoveChild(DevComponents.AdvTree.Node node,ref bool remove)
+        public void RemoveChild(DevExpress.XtraTreeList.Nodes.TreeListNode node , ref bool remove)
         {
             remove = false;
             try
@@ -311,13 +301,13 @@ namespace SysCommon.SelectLayer
         /// 移除节点后，判断其父节点是否也需要移除
         /// </summary>
         /// <param name="node"></param>
-        public void Remove(DevComponents.AdvTree.Node node)
+        public void Remove(DevExpress.XtraTreeList.Nodes.TreeListNode node)
         {
             try
             {
-                if (node.Parent.Nodes.Count == 1 && node.Parent.Name != "Root")
+                if (node.PrevNode.Nodes.Count == 1)// && node.PrevNode. != "Root")
                 {
-                    Remove(node.Parent);
+                    Remove(node.PrevNode);
                 }
                 else
                 {
@@ -331,98 +321,98 @@ namespace SysCommon.SelectLayer
         /// 通过传入节点的tag，选择对应的图标        
         /// </summary>
         /// <param name="treenode"></param>
-        public void InitializeNodeImage(DevComponents.AdvTree.Node treenode)
+        public void InitializeNodeImage(DevExpress.XtraTreeList.Nodes.TreeListNode treenode)
         {
-            switch (treenode.Tag.ToString())
-            {
-                case "Root":
-                    treenode.Image =_Imagelist.Images["Root"];
-                    treenode.CheckBoxVisible = false;
-                    break;
-                case "SDE":
-                    treenode.Image = _Imagelist.Images["SDE"];
-                    break;
-                case "PDB":
-                    treenode.Image = _Imagelist.Images["PDB"];
-                    break;
-                case "FD":
-                    treenode.Image = _Imagelist.Images["FD"];
-                    break;
-                case "FC":
-                    treenode.Image = _Imagelist.Images["FC"];
-                    break;
-                case "TA":
-                    treenode.Image = _Imagelist.Images["TA"];
-                    break;
-                case "DIR":
-                    treenode.Image = _Imagelist.Images["DIR"];
-                    //treenode.CheckBoxVisible = false;
-                    break;
-                case "DataDIR":
-                    treenode.Image = _Imagelist.Images["DataDIRHalfOpen"];
-                    break;
-                case "DataDIR&AllOpened":
-                    treenode.Image = _Imagelist.Images["DataDIROpen"];
-                    break;
-                case "DataDIR&Closed":
-                    treenode.Image = _Imagelist.Images["DataDIRClosed"];
-                    break;
-                case "DataDIR&HalfOpened":
-                    treenode.Image = _Imagelist.Images["DataDIRHalfOpen"];
-                    break;
-                case "Layer":
-                    XmlNode xmlnodeChild = (XmlNode)treenode.DataKey;
-                    if (xmlnodeChild != null && xmlnodeChild.Attributes["FeatureType"] != null)
-                    {
-                        string strFeatureType = xmlnodeChild.Attributes["FeatureType"].Value;
+            //switch (treenode.Tag.ToString())
+            //{
+            //    case "Root":
+            //        treenode.Image =_Imagelist.Images["Root"];
+            //        treenode.CheckBoxVisible = false;
+            //        break;
+            //    case "SDE":
+            //        treenode.Image = _Imagelist.Images["SDE"];
+            //        break;
+            //    case "PDB":
+            //        treenode.Image = _Imagelist.Images["PDB"];
+            //        break;
+            //    case "FD":
+            //        treenode.Image = _Imagelist.Images["FD"];
+            //        break;
+            //    case "FC":
+            //        treenode.Image = _Imagelist.Images["FC"];
+            //        break;
+            //    case "TA":
+            //        treenode.Image = _Imagelist.Images["TA"];
+            //        break;
+            //    case "DIR":
+            //        treenode.Image = _Imagelist.Images["DIR"];
+            //        //treenode.CheckBoxVisible = false;
+            //        break;
+            //    case "DataDIR":
+            //        treenode.Image = _Imagelist.Images["DataDIRHalfOpen"];
+            //        break;
+            //    case "DataDIR&AllOpened":
+            //        treenode.Image = _Imagelist.Images["DataDIROpen"];
+            //        break;
+            //    case "DataDIR&Closed":
+            //        treenode.Image = _Imagelist.Images["DataDIRClosed"];
+            //        break;
+            //    case "DataDIR&HalfOpened":
+            //        treenode.Image = _Imagelist.Images["DataDIRHalfOpen"];
+            //        break;
+            //    case "Layer":
+            //        XmlNode xmlnodeChild = (XmlNode)treenode.DataKey;
+            //        if (xmlnodeChild != null && xmlnodeChild.Attributes["FeatureType"] != null)
+            //        {
+            //            string strFeatureType = xmlnodeChild.Attributes["FeatureType"].Value;
 
-                        switch (strFeatureType)
-                        {
-                            case "esriGeometryPoint":
-                                treenode.Image = _Imagelist.Images["_point"];
-                                break;
-                            case "esriGeometryPolyline":
-                                treenode.Image = _Imagelist.Images["_line"];
-                                break;
-                            case "esriGeometryPolygon":
-                                treenode.Image = _Imagelist.Images["_polygon"];
-                                break;
-                            case "esriFTAnnotation":
-                                treenode.Image = _Imagelist.Images["_annotation"];
-                                break;
-                            case "esriFTDimension":
-                                treenode.Image = _Imagelist.Images["_Dimension"];
-                                break;
-                            case "esriGeometryMultiPatch":
-                                treenode.Image = _Imagelist.Images["_MultiPatch"];
-                                break;
-                            default:
-                                treenode.Image = _Imagelist.Images["Layer"];
-                                break;
-                        }
-                    }
-                    else
-                    {
-                        treenode.Image = _Imagelist.Images["Layer"];
-                    }
-                    break;
-                case "RC":
-                    treenode.Image = _Imagelist.Images["RC"];
-                    break;
-                case "RD":
-                    treenode.Image = _Imagelist.Images["RD"];
-                    break;
-                case "SubType":
-                    treenode.Image = _Imagelist.Images["SubType"];
-                    break;
-                default:
-                    break;
-            }//end switch
+            //            switch (strFeatureType)
+            //            {
+            //                case "esriGeometryPoint":
+            //                    treenode.Image = _Imagelist.Images["_point"];
+            //                    break;
+            //                case "esriGeometryPolyline":
+            //                    treenode.Image = _Imagelist.Images["_line"];
+            //                    break;
+            //                case "esriGeometryPolygon":
+            //                    treenode.Image = _Imagelist.Images["_polygon"];
+            //                    break;
+            //                case "esriFTAnnotation":
+            //                    treenode.Image = _Imagelist.Images["_annotation"];
+            //                    break;
+            //                case "esriFTDimension":
+            //                    treenode.Image = _Imagelist.Images["_Dimension"];
+            //                    break;
+            //                case "esriGeometryMultiPatch":
+            //                    treenode.Image = _Imagelist.Images["_MultiPatch"];
+            //                    break;
+            //                default:
+            //                    treenode.Image = _Imagelist.Images["Layer"];
+            //                    break;
+            //            }
+            //        }
+            //        else
+            //        {
+            //            treenode.Image = _Imagelist.Images["Layer"];
+            //        }
+            //        break;
+            //    case "RC":
+            //        treenode.Image = _Imagelist.Images["RC"];
+            //        break;
+            //    case "RD":
+            //        treenode.Image = _Imagelist.Images["RD"];
+            //        break;
+            //    case "SubType":
+            //        treenode.Image = _Imagelist.Images["SubType"];
+            //        break;
+            //    default:
+            //        break;
+            //}//end switch
         }
         //获得所有选中的节点
-        public void GetCheckedNodetoMap(DevComponents.AdvTree.Node Node, List<DevComponents.AdvTree.Node> pListNode)
+        public void GetCheckedNodetoMap(DevExpress.XtraTreeList.Nodes.TreeListNode Node, List<DevExpress.XtraTreeList.Nodes.TreeListNode> pListNode)
         {
-            foreach (DevComponents.AdvTree.Node node in Node.Nodes)
+            foreach (DevExpress.XtraTreeList.Nodes.TreeListNode node in Node.Nodes)
             {
                 if (node.Checked)
                 {
@@ -436,19 +426,18 @@ namespace SysCommon.SelectLayer
                 }
             }
         }
-
         //通过NODE 得到NODYKEY
-        public void GetNodeKey(DevComponents.AdvTree.Node pNode, DevComponents.DotNetBar.LabelX labelErr, int m_m, ref string NodeKey, ref string NodeText)
+        public void GetNodeKey(DevExpress.XtraTreeList.Nodes.TreeListNode pNode, DevExpress.XtraEditors.LabelControl labelErr, int m_m, ref string NodeKey, ref string NodeText)
         {
             string connectkey = "";
             GetNodeKey(pNode, labelErr, m_m, ref NodeKey, ref NodeText, ref connectkey);
 
         }
         //通过NODE 得到NODYKEY
-        public void GetNodeKey(DevComponents.AdvTree.Node pNode, DevComponents.DotNetBar.LabelX labelErr, int m_m, ref string NodeKey, ref string NodeText,ref string ConnectKey)
+        public void GetNodeKey(DevExpress.XtraTreeList.Nodes.TreeListNode pNode, DevExpress.XtraEditors.LabelControl labelErr, int m_m, ref string NodeKey, ref string NodeText,ref string ConnectKey)
         {
             labelErr.Text = "";
-            XmlNode xmlnode = (XmlNode)pNode.DataKey;
+            XmlNode xmlnode = (XmlNode)pNode.Tag;
             XmlElement xmlelement = xmlnode as XmlElement;
             string strDataType = "";
             if (xmlelement.HasAttribute("DataType"))
@@ -474,7 +463,7 @@ namespace SysCommon.SelectLayer
             if (xmlelement.HasAttribute("NodeKey"))
             {
                 NodeKey = xmlelement.GetAttribute("NodeKey");
-                NodeText = pNode.Text;
+               // NodeText = pNode.GetValue;
             }
             if (xmlelement.HasAttribute("ConnectKey"))
             {
@@ -482,10 +471,10 @@ namespace SysCommon.SelectLayer
             }
         }
         //通过NODE 得到NODYKEY
-        public string GetNodeKey1(DevComponents.AdvTree.Node Node, DevComponents.DotNetBar.LabelX labelErr,int m_m)
+        public string GetNodeKey1(DevExpress.XtraTreeList.Nodes.TreeListNode Node, DevExpress.XtraEditors.LabelControl labelErr,int m_m)
         {
             labelErr.Text = "";
-            XmlNode xmlnode = (XmlNode)Node.DataKey;
+            XmlNode xmlnode = (XmlNode)Node.Tag;
             XmlElement xmlelement = xmlnode as XmlElement;
 
             if (m_m == 1)
@@ -511,29 +500,28 @@ namespace SysCommon.SelectLayer
         /// 根据当前节点递归选中父节点 added by xs 2011.04.18
         /// </summary>
         /// <param name="node">当前节点</param>
-        public void ChangeParentCheck(DevComponents.AdvTree.Node node,ref bool flag2)
+        public void ChangeParentCheck(DevExpress.XtraTreeList.Nodes.TreeListNode node,ref bool flag2)
         {
             flag2 = false;
-            if (node.Parent != null)
+            if (node.PrevNode != null)
             {
                 if (node.Checked)
                 {
-                    node.Parent.Checked = true;
-                    ChangeParentCheck(node.Parent,ref flag2 );
+                    node.PrevNode.Checked = true;
+                    ChangeParentCheck(node.PrevNode, ref flag2 );
                 }
             }
             flag2 = true;
 
         }
-
         /// <summary>
         /// 根据当前节点递归选中父节点 added by xs 2011.04.19
         /// </summary>
         /// <param name="node">当前节点</param>
-        public void ChangeChildCheck(DevComponents.AdvTree.Node node,ref bool flag)
+        public void ChangeChildCheck(DevExpress.XtraTreeList.Nodes.TreeListNode node,ref bool flag)
         {
 
-            foreach (DevComponents.AdvTree.Node item in node.Nodes)
+            foreach (DevExpress.XtraTreeList.Nodes.TreeListNode item in node.Nodes)
             {
                 flag = false;
                 if (item.Nodes.Count == 0) flag = true;

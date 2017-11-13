@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.buttonCancel = new DevComponents.DotNetBar.ButtonX();
-            this.buttonChange = new DevComponents.DotNetBar.ButtonX();
-            this.buttonExit = new DevComponents.DotNetBar.ButtonX();
+            this.label1 = new DevExpress.XtraEditors.LabelControl();
+            this.panel1 = new DevExpress.XtraEditors.PanelControl();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonChange = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonExit = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,40 +49,20 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
-            this.panel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.panel1.Controls.Add(this.buttonCancel);
             this.panel1.Controls.Add(this.buttonChange);
             this.panel1.Controls.Add(this.buttonExit);
-            this.panel1.DrawTitleBox = false;
             this.panel1.Location = new System.Drawing.Point(-1, 71);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(283, 54);
             // 
             // 
             // 
-            this.panel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panel1.Style.BackColorGradientAngle = 90;
-            this.panel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panel1.Style.BorderBottomWidth = 1;
-            this.panel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panel1.Style.BorderLeftWidth = 1;
-            this.panel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panel1.Style.BorderRightWidth = 1;
-            this.panel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panel1.Style.BorderTopWidth = 1;
-            this.panel1.Style.CornerDiameter = 4;
-            this.panel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.panel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.panel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.panel1.TabIndex = 8;
             // 
             // buttonCancel
             // 
             this.buttonCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonCancel.Location = new System.Drawing.Point(188, 12);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(80, 28);
@@ -93,7 +73,6 @@
             // buttonChange
             // 
             this.buttonChange.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonChange.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonChange.Location = new System.Drawing.Point(101, 12);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(80, 28);
@@ -104,7 +83,6 @@
             // buttonExit
             // 
             this.buttonExit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonExit.Location = new System.Drawing.Point(14, 12);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(80, 28);
@@ -135,10 +113,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private DevComponents.DotNetBar.Controls.GroupPanel panel1;
-        private DevComponents.DotNetBar.ButtonX  buttonCancel;
-        private DevComponents.DotNetBar.ButtonX buttonChange;
-        private DevComponents.DotNetBar.ButtonX buttonExit;
+        private DevExpress.XtraEditors.LabelControl label1;
+        private DevExpress.XtraEditors.PanelControl panel1;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
+        private DevExpress.XtraEditors.SimpleButton buttonChange;
+        private DevExpress.XtraEditors.SimpleButton buttonExit;
     }
 }

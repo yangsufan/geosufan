@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace GeoDatabaseManager
 {
-    public partial class frmSelectLogin :DevComponents.DotNetBar.Office2007Form
+    public partial class frmSelectLogin :SysCommon.BaseForm
     {
         private SystemTypeEnum _Systemtype;
         public frmSelectLogin()

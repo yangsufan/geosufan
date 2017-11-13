@@ -11,9 +11,9 @@ using ESRI.ArcGIS.DataSourcesGDB;
 using System.IO;
 namespace SysCommon.Gis
 {
-    public partial class UIDataConnect : UserControl
+    public partial class UIDataConnect : BaseControl
     {
-        private string _Addtag = "Old";//added by chulili 20110705 是新建数据库还是连接已有数据库 Old/New
+        private string _Addtag = "Old";
         public string Addtag
         {
             get { return _Addtag; }
@@ -26,7 +26,7 @@ namespace SysCommon.Gis
         private string m_strTitle = "数据连接";
         public string strTitle
         {
-            get { return m_strTitle; }//yjl20110907 add
+            get { return m_strTitle; }
             set { m_strTitle = value; }
         }
 
@@ -84,20 +84,18 @@ namespace SysCommon.Gis
 
         public IWorkspace GetWks()
         {
-            //if (m_pWks != null) return m_pWks;
             m_pWks = GetWksBySetting();
             return m_pWks;
         }
 
         public void IntiForm()
         {
-            this.cboDataType.Items.Clear();
-            this.cboDataType.Items.Add("ArcSDE(For Oracle)");
-            this.cboDataType.Items.Add("ArcSDE(For MicorSoft SQLServer)");
-            this.cboDataType.Items.Add("ESRI文件数据库(File Geodatabase)");
-            this.cboDataType.Items.Add("ESRI个人数据库(Personal Geodatabase)");
+            this.cboDataType.Properties.Items.Clear();
+            this.cboDataType.Properties.Items.Add("ArcSDE(For Oracle)");
+            this.cboDataType.Properties.Items.Add("ArcSDE(For MicorSoft SQLServer)");
+            this.cboDataType.Properties.Items.Add("ESRI文件数据库(File Geodatabase)");
+            this.cboDataType.Properties.Items.Add("ESRI个人数据库(Personal Geodatabase)");
 
-            //
             this.groupPanel.Text = m_strTitle;
 
             if (m_strDatabaseType == "ORACLE")
@@ -136,7 +134,6 @@ namespace SysCommon.Gis
 
             IWorkspace pTempWks = null;
             Exception err=null;
-            ///ZQ 20111020  清除提示信息
             errorServer.Clear();
             errorService.Clear();
             errorUser.Clear();
@@ -147,7 +144,6 @@ namespace SysCommon.Gis
             {
                 if (strType == "ARCSDE")
                 {
-                    ///ZQ 20111020  增加必填项提示
                     if (txtServer.Text == "")
                     {
                         errorServer.SetError(btnNew, "必填！");
@@ -173,7 +169,6 @@ namespace SysCommon.Gis
                         errorDataBase.SetError(txtDataBase, "必填！");
                         return pTempWks;
                     }
-                    ///
                     pTempWks = SetWorkspace(this.txtServer.Text, this.txtService.Text, this.txtDataBase.Text, this.txtUser.Text, this.txtPassWord.Text, this.cboVersion.Text, out err);
                 }
                 else if (strType == "FGDB")
@@ -183,26 +178,16 @@ namespace SysCommon.Gis
                         errorServer.SetError(btnNew, "必填！");
                         return pTempWks;
                     }
-                    //added by xisheng 2011.06.27  增加可以新建GDB数据库
                     if (Directory.Exists(this.txtServer.Text))
                     {
                         pTempWks = SetWorkspace(this.txtServer.Text, WksType.FGDB, out err);
                     }
                     else
                     {
-                        if (_Addtag == "New")//added by chulili 20110705 是否新建根据按钮判断
+                        if (_Addtag == "New")
                         {
                             string path = txtServer.Text.Substring(0, txtServer.Text.LastIndexOf("\\") + 1);
                             string name = txtServer.Text.Substring(txtServer.Text.LastIndexOf("\\") + 1);
-                            // if (!Directory.Exists(path))
-                            // {
-                            //     return null;
-                            // }
-                            // DialogResult result = MessageBox.Show("数据库不存在，是否创建？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                            //if (result == DialogResult.No)
-                            //{ 
-                            //    return null;
-                            //}
                             IWorkspaceFactory pworkspacefactory = new FileGDBWorkspaceFactoryClass();
                             IWorkspaceName workspaceName = pworkspacefactory.Create(path, name, null, 0);
                             ESRI.ArcGIS.esriSystem.IName pname = (ESRI.ArcGIS.esriSystem.IName)workspaceName;
@@ -218,14 +203,13 @@ namespace SysCommon.Gis
                         errorServer.SetError(btnNew, "必填！");
                         return pTempWks;
                     }
-                    //added by xisheng 2011.06.27  增加可以新建MDB数据库
                     if (File.Exists(this.txtServer.Text))
                     {
                         pTempWks = SetWorkspace(this.txtServer.Text, WksType.PGDB, out err);
                     }
                     else
                     {
-                        if (_Addtag == "New")   //added by chulili 20110705是否新建根据按钮判断
+                        if (_Addtag == "New")  
                         {
                             string path = txtServer.Text.Substring(0, txtServer.Text.LastIndexOf("\\") + 1);
                             string name = txtServer.Text.Substring(txtServer.Text.LastIndexOf("\\") + 1);
@@ -233,11 +217,6 @@ namespace SysCommon.Gis
                             {
                                 return null;
                             }
-                            //DialogResult result = MessageBox.Show("数据库不存在，是否创建？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                            //if (result == DialogResult.No)
-                            //{
-                            //    return null;
-                            //}
                             IWorkspaceFactory pworkspacefactory = new AccessWorkspaceFactoryClass();
                             IWorkspaceName workspaceName = pworkspacefactory.Create(path, name, null, 0);
                             ESRI.ArcGIS.esriSystem.IName pname = (ESRI.ArcGIS.esriSystem.IName)workspaceName;
@@ -249,7 +228,6 @@ namespace SysCommon.Gis
 
                 if (pTempWks == null && err!=null )
                 {
-                    //MessageBox.Show("无法连接数据库：" + this.txtServer.Text + err.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "无法连接数据库：" + this.txtServer.Text + err.Message);
                     return null;
                 }
@@ -258,7 +236,6 @@ namespace SysCommon.Gis
             catch (Exception  ex)
             {
                 SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "无法连接数据库：" + this.txtServer.Text + " " + ex.Message);
-                //MessageBox.Show("无法连接数据库：" + this.txtServer.Text + " " + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             return pTempWks;
@@ -351,19 +328,18 @@ namespace SysCommon.Gis
         {
             if (workspace.Type != esriWorkspaceType.esriRemoteDatabaseWorkspace) return;
 
-            this.cboVersion.Items.Clear();
+            this.cboVersion.Properties.Items.Clear();
             IVersionedWorkspace versionedWorkspace = (IVersionedWorkspace)workspace;     
             IEnumVersionInfo enumVersionInfo = versionedWorkspace.Versions;        
             enumVersionInfo.Reset();        
-            //next enumerate through each version's name        
             IVersionInfo version = (IVersionInfo)enumVersionInfo.Next();
             if (version != null)
             {
-                this.cboVersion.Items.Clear();
+                this.cboVersion.Properties.Items.Clear();
             }
             while (version != null)        
             {
-                this.cboVersion.Items.Add(version.VersionName);
+                this.cboVersion.Properties.Items.Add(version.VersionName);
                 version = (IVersionInfo)enumVersionInfo.Next();       
             }    
         }
@@ -375,7 +351,6 @@ namespace SysCommon.Gis
                 this.cboDataType.Tag = null;
                 return;
             }
-            ///清除错误提示    ZQ 2011020  add
             errorServer.Clear();
             errorService.Clear();
             errorUser.Clear();
@@ -385,9 +360,9 @@ namespace SysCommon.Gis
             if (this.cboDataType.Text == "ArcSDE(For Oracle)")
             {
                 this.cboDataType.Tag = "ARCSDE";
-                this.txtDataBase.Enabled = true;//changed by chulili 20110914 false->true //oracle数据库记录下服务名
+                this.txtDataBase.Enabled = true;
                 this.btnServer.Enabled = false;
-                this.btnNew.Enabled = false;    //added by chulili 新建按钮不可用
+                this.btnNew.Enabled = false;    
 
                 this.txtService.Enabled = true;
                 this.txtUser.Enabled = true;

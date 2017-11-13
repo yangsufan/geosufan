@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SysCommon.Progress
 {
-    partial class FormProgress : DevComponents.DotNetBar.Office2007Form
+    partial class FormProgress : BaseForm
     {
         public event CProgress.UserCancel UserCanceled;
 

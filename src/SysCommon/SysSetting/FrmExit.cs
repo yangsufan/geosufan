@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SysCommon
 {
-    public partial class FrmExit : DevComponents.DotNetBar.Office2007Form
+    public partial class FrmExit :BaseForm
     {
         public FrmExit()
         {

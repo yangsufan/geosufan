@@ -14,7 +14,7 @@ using SysCommon.Gis;
 
 namespace GeoDatabaseManager
 {
-    public partial class frmSetAppDB : DevComponents.DotNetBar.Office2007Form
+    public partial class frmSetAppDB :SysCommon.BaseForm
     {
         private string m_Server;
         private string m_User;
