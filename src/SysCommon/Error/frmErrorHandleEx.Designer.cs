@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmErrorHandleEx));
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.buttonX = new DevComponents.DotNetBar.ButtonX();
-            this.labelX = new DevComponents.DotNetBar.LabelX();
-            this.listErrorInfo = new DevComponents.DotNetBar.Controls.ListViewEx();
+            this.buttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.labelX = new DevExpress.XtraEditors.LabelControl();
+            this.listErrorInfo = new DevExpress.XtraEditors.ListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,21 +61,16 @@
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(293, 29);
             this.labelX.TabIndex = 3;
-            this.labelX.WordWrap = true;
             // 
             // listErrorInfo
             // 
-            this.listErrorInfo.Alignment = System.Windows.Forms.ListViewAlignment.Left;
             // 
             // 
             // 
-            this.listErrorInfo.Border.Class = "ListViewBorder";
             this.listErrorInfo.Location = new System.Drawing.Point(19, 53);
             this.listErrorInfo.Name = "listErrorInfo";
             this.listErrorInfo.Size = new System.Drawing.Size(333, 143);
             this.listErrorInfo.TabIndex = 6;
-            this.listErrorInfo.UseCompatibleStateImageBehavior = false;
-            this.listErrorInfo.View = System.Windows.Forms.View.List;
             // 
             // frmErrorHandleEx
             // 
@@ -101,8 +96,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox;
-        private DevComponents.DotNetBar.ButtonX buttonX;
-        private DevComponents.DotNetBar.LabelX labelX;
-        private DevComponents.DotNetBar.Controls.ListViewEx listErrorInfo;
+        private DevExpress.XtraEditors.SimpleButton buttonX;
+        private DevExpress.XtraEditors.LabelControl labelX;
+        private DevExpress.XtraEditors.ListBoxControl listErrorInfo;
     }
 }

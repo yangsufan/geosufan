@@ -23,17 +23,14 @@ namespace SysCommon.Log
                 _strSavePath = value;
             }
         }
-
         //构造函数
         public SysLocalLog()
         {
         }
-
         public SysLocalLog(string strSavePath)
         {
             _strSavePath = strSavePath;
         }
-
         public void CreateLogFile(string strFileName)
         {
             if (_strSavePath == string.Empty) return;
@@ -50,7 +47,6 @@ namespace SysCommon.Log
 
             _StreamWriter = new StreamWriter(_strSavePath + @"\" + strFileName);
         }
-
         // 写入本地日志(带参数的构造函数与CreateLogFile函数先使用)
         public void WriteLocalLog(string content)
         {
@@ -59,7 +55,6 @@ namespace SysCommon.Log
             _StreamWriter.Write(content);
             _StreamWriter.Write(_StreamWriter.NewLine);
         }
-
         /// <summary>
         /// 写入本地日志(单独使用)
         /// </summary>
@@ -82,7 +77,6 @@ namespace SysCommon.Log
 
             WriteLocalLog(content);
         }
-
         public void LogClose()
         {
             if (_StreamWriter != null)
@@ -92,9 +86,117 @@ namespace SysCommon.Log
             }
         }
     }
-
-    //数据库日志
-    public class SysDBLog
+    public class FunctionLogClass : IFunctionLog
     {
+        public bool InitialLog()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool WriteLog(string FunctionName, params string[] LogStr)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class SysLogClass : ISysLog
+    {
+        public string logFileName {
+            get
+            {
+               return LogFileName;
+            }
+        }
+        private string LogFileName;
+
+        public SysLogClass(string logFileName)
+        {
+            LogFileName = logFileName;
+            if (string.IsNullOrEmpty(LogFileName))
+            {
+                return;
+            }
+            if (System.IO.File.Exists(LogFileName))
+            {
+                System.IO.File.Delete(LogFileName);
+            }
+            System.IO.File.Create(LogFileName);
+            InitialLog();
+        }
+        public string GetLogStr()
+        {
+           return string.Empty;
+        }
+        public bool InitialLog()
+        {
+           return false;
+        }
+        public bool WriteLog(Exception ex)
+        {
+            try
+            {
+                DateTime RecTime = DateTime.Now;
+                FileStream Fs = new FileStream(LogFileName, FileMode.Append);
+                StreamWriter SW = new StreamWriter(Fs);
+                SW.WriteLine();
+                SW.Write(RecTime.ToString("G") + "  :异常：");
+                SW.WriteLine();
+                SW.Write(" HelpLink:" + ex.HelpLink);
+                SW.WriteLine();
+                SW.Write(" Source:" + ex.Source);
+                SW.WriteLine();
+                SW.Write(" Message:" + ex.Message);
+                SW.WriteLine();
+                SW.Write(" StackTrace:" + ex.StackTrace);
+                SW.WriteLine();
+                SW.Write("***********************************************************************");
+                SW.Flush();
+                SW.Close();
+                SW.Dispose();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+        public bool WriteLog(Exception ex,params string[] strContent)
+        {
+            try
+            {
+                DateTime RecTime = DateTime.Now;
+                FileStream Fs = new FileStream(LogFileName, FileMode.Append);
+                StreamWriter SW = new StreamWriter(Fs);
+                SW.WriteLine();
+                SW.Write(RecTime.ToString("G") + "  :异常：");
+                SW.WriteLine();
+                SW.Write(" HelpLink:" + ex.HelpLink);
+                SW.WriteLine();
+                SW.Write(" Source:" + ex.Source);
+                SW.WriteLine();
+                SW.Write(" Message:" + ex.Message);
+                SW.WriteLine();
+                SW.Write(" StackTrace:" + ex.StackTrace);
+                SW.WriteLine();
+                if (strContent.Length>0)
+                {
+
+                    foreach (string sParameter in strContent)
+                    {
+                        SW.WriteLine();
+                        SW.Write("Parameters:" + sParameter);
+                    }
+                    SW.WriteLine();
+                }
+                SW.Write("***********************************************************************");
+                SW.Flush();
+                SW.Close();
+                SW.Dispose();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

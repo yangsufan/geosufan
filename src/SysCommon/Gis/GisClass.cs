@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 using System.IO;
 using System.Xml;
 using System.Windows.Forms;
-
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.ConversionTools;
 using ESRI.ArcGIS.DataSourcesGDB;
@@ -15,15 +14,8 @@ using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Display;
-
 using ESRI.ArcGIS.DataSourcesRaster;
-using ESRI.ArcGIS.DataManagementTools;
-using ESRI.ArcGIS.Geoprocessing;
 using ESRI.ArcGIS.Geoprocessor;
-using SCHEMEMANAGERCLASSESLib;
-using System.Data.OleDb;
-using ESRI.ArcGIS.DataSourcesOleDB;
-using ADODB;
 using System.Data;
 
 namespace SysCommon.Gis
@@ -269,8 +261,8 @@ namespace SysCommon.Gis
         public bool CloseWorkspace()
         {
             if (_Workspace == null) return true;
-            ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(_Workspace.WorkspaceFactory);
-            ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(_Workspace);
+            //ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(_Workspace.WorkspaceFactory);
+            //ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(_Workspace);
             _Workspace = null;
             return true;
         }
@@ -295,7 +287,7 @@ namespace SysCommon.Gis
 
         public void Dispose()
         {
-            ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(_Workspace);
+            //ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(_Workspace);
             Marshal.ReleaseComObject(_Workspace);
             _Workspace = null;
         }
@@ -3364,7 +3356,7 @@ namespace SysCommon.Gis
     public class CreateArcGISGeoDatabase : ICreateGeoDatabase
     {
 
-        private ISchemeProject m_pProject = null;                                           //数据库结构文件对象
+        //private ISchemeProject m_pProject = null;                                           //数据库结构文件对象
         private int m_DBScale = 0;                                                          //默认比例尺
         private int m_DSScale = 0;                                                          //数据集比例尺
         private ISpatialReference m_SpatialReference = null;                                //空间参考对象
@@ -3381,41 +3373,42 @@ namespace SysCommon.Gis
         /// <returns></returns>
         public bool LoadDBShecmaDocument(string LoadPath)
         {
-            try
-            {
-                m_pProject = new SchemeProjectClass();     //创建实例
-                int index = LoadPath.LastIndexOf('.');
-                if (index == -1) return false;
-                string lastName = LoadPath.Substring(index + 1);
-                if (lastName == "mdb")
-                {
-                    m_pProject.Load(LoadPath, e_FileType.GO_SCHEMEFILETYPE_MDB);    //加载schema文件
-                }
-                else if (lastName == "gosch")
-                {
-                    m_pProject.Load(LoadPath, e_FileType.GO_SCHEMEFILETYPE_GOSCH);    //加载schema文件
-                }
+            //try
+            //{
+            //    m_pProject = new SchemeProjectClass();     //创建实例
+            //    int index = LoadPath.LastIndexOf('.');
+            //    if (index == -1) return false;
+            //    string lastName = LoadPath.Substring(index + 1);
+            //    if (lastName == "mdb")
+            //    {
+            //        m_pProject.Load(LoadPath, e_FileType.GO_SCHEMEFILETYPE_MDB);    //加载schema文件
+            //    }
+            //    else if (lastName == "gosch")
+            //    {
+            //        m_pProject.Load(LoadPath, e_FileType.GO_SCHEMEFILETYPE_GOSCH);    //加载schema文件
+            //    }
 
 
-                ///如果加载成功则获取比例尺返回true，否则返回false
-                if (m_pProject != null)
-                {
-                    string DBScale = m_pProject.get_MetaDataValue("Scale") as string;   //获取比例尺信息（总工程中的默认比例尺）
-                    string[] DBScaleArayy = DBScale.Split(':');
-                    m_DBScale = Convert.ToInt32(DBScaleArayy[1]);
+            //    ///如果加载成功则获取比例尺返回true，否则返回false
+            //    if (m_pProject != null)
+            //    {
+            //        string DBScale = m_pProject.get_MetaDataValue("Scale") as string;   //获取比例尺信息（总工程中的默认比例尺）
+            //        string[] DBScaleArayy = DBScale.Split(':');
+            //        m_DBScale = Convert.ToInt32(DBScaleArayy[1]);
 
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch
-            {
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+            //}
+            //catch
+            //{
 
-                return false;
-            }
+            //    return false;
+            //}
+            return false;
         }
 
         /// <summary>
@@ -3558,116 +3551,117 @@ namespace SysCommon.Gis
         /// <returns></returns>
         public bool CreateDBStruct()
         {
-            IFeatureWorkspace pFeatureWorkSpace = null;
+            return false;
+            //IFeatureWorkspace pFeatureWorkSpace = null;
 
-            try
-            {
-                //如果工作空间获取成功则赋值要素工作空间
-                if (m_WorkSpace != null)
-                {
-                    pFeatureWorkSpace = m_WorkSpace as IFeatureWorkspace;
-                }
-                else
-                {
-                    return false;
-                }
+            //try
+            //{
+            //    //如果工作空间获取成功则赋值要素工作空间
+            //    if (m_WorkSpace != null)
+            //    {
+            //        pFeatureWorkSpace = m_WorkSpace as IFeatureWorkspace;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
 
-                //如果获取库体schema成功则开始创建过程
-                if (m_pProject != null)
-                {
-                    IChildItemList pProjects = m_pProject as IChildItemList;
-                    //获取属性库集合信息
-                    ISchemeItem pDBList = pProjects.get_ItemByName("ATTRDB");
-                    IChildItemList pDBLists = pDBList as IChildItemList;
-                    //遍历属性库集合
-                    long DBNum = pDBLists.GetCount();
-                    for (int i = 0; i < DBNum; i++)
-                    {
-                        m_DSScale = 0;    //比例尺信息
+            //    //如果获取库体schema成功则开始创建过程
+            //    if (m_pProject != null)
+            //    {
+            //        IChildItemList pProjects = m_pProject as IChildItemList;
+            //        //获取属性库集合信息
+            //        ISchemeItem pDBList = pProjects.get_ItemByName("ATTRDB");
+            //        IChildItemList pDBLists = pDBList as IChildItemList;
+            //        //遍历属性库集合
+            //        long DBNum = pDBLists.GetCount();
+            //        for (int i = 0; i < DBNum; i++)
+            //        {
+            //            m_DSScale = 0;    //比例尺信息
 
-                        //取得属性库信息
-                        ISchemeItem pDB = pDBLists.get_ItemByIndex(i);
-                        ///获取数据集的比例尺信息，如果获取失败则，取默认比例尺信息
-                        IAttribute pa = pDB.AttributeList.get_AttributeByName("Scale") as IAttribute;
-                        if (pa == null)
-                        {
-                            m_DSScale = m_DBScale;
-                        }
-                        else
-                        {
-                            string[] DBScaleArayy = pa.Value.ToString().Split(':');
-                            m_DSScale = Convert.ToInt32(DBScaleArayy[1]);
-                        }
+            //            //取得属性库信息
+            //            ISchemeItem pDB = pDBLists.get_ItemByIndex(i);
+            //            ///获取数据集的比例尺信息，如果获取失败则，取默认比例尺信息
+            //            IAttribute pa = pDB.AttributeList.get_AttributeByName("Scale") as IAttribute;
+            //            if (pa == null)
+            //            {
+            //                m_DSScale = m_DBScale;
+            //            }
+            //            else
+            //            {
+            //                string[] DBScaleArayy = pa.Value.ToString().Split(':');
+            //                m_DSScale = Convert.ToInt32(DBScaleArayy[1]);
+            //            }
 
-                        IChildItemList pDBs = pDB as IChildItemList;
-                        string pDatasetName = pDB.Name;
+            //            IChildItemList pDBs = pDB as IChildItemList;
+            //            string pDatasetName = pDB.Name;
 
-                        #region 在工作空间中创建数据集，返回数据集对象
-                        //创建数据集信息，并输出数据集对象
-                        IFeatureDataset pFeatureDataset = null;  //定义数据集用来装载要素类
-                        if (createFeatureDataset(pFeatureWorkSpace, pDatasetName, out pFeatureDataset, m_SpatialReference) == false)
-                        {
-                            return false;
-                        }
-                        #endregion
+            //            #region 在工作空间中创建数据集，返回数据集对象
+            //            //创建数据集信息，并输出数据集对象
+            //            IFeatureDataset pFeatureDataset = null;  //定义数据集用来装载要素类
+            //            if (createFeatureDataset(pFeatureWorkSpace, pDatasetName, out pFeatureDataset, m_SpatialReference) == false)
+            //            {
+            //                return false;
+            //            }
+            //            #endregion
 
-                        //遍历属性表
-                        long TabNum = pDBs.GetCount();
-                        for (int j = 0; j < TabNum; j++)
-                        {
-                            //获取属性表信息
-                            ISchemeItem pTable = pDBs.get_ItemByIndex(j);  //获取属性表对象
+            //            //遍历属性表
+            //            long TabNum = pDBs.GetCount();
+            //            for (int j = 0; j < TabNum; j++)
+            //            {
+            //                //获取属性表信息
+            //                ISchemeItem pTable = pDBs.get_ItemByIndex(j);  //获取属性表对象
 
-                            string pFeatureClassName = pTable.Name;     //要素类名称
-                            string pFeatureClassType = pTable.Value as string;   //要素类类型
+            //                string pFeatureClassName = pTable.Name;     //要素类名称
+            //                string pFeatureClassType = pTable.Value as string;   //要素类类型
 
-                            //遍历字段
-                            IAttributeList pAttrs = pTable.AttributeList;
-                            long FNum = pAttrs.GetCount();
+            //                //遍历字段
+            //                IAttributeList pAttrs = pTable.AttributeList;
+            //                long FNum = pAttrs.GetCount();
 
-                            //创建用户自定义的字段
+            //                //创建用户自定义的字段
 
-                            IFields fields = new FieldsClass();
-                            IFieldsEdit fsEdit = fields as IFieldsEdit;
+            //                IFields fields = new FieldsClass();
+            //                IFieldsEdit fsEdit = fields as IFieldsEdit;
 
-                            //循环属性表中的字段，添加到arcgis的字段对象中
-                            for (int k = 0; k < FNum; k++)
-                            {
-                                //添加自定义属性字段
-                                AddCustomusFields(pAttrs, k, fsEdit);
-                            }
+            //                //循环属性表中的字段，添加到arcgis的字段对象中
+            //                for (int k = 0; k < FNum; k++)
+            //                {
+            //                    //添加自定义属性字段
+            //                    AddCustomusFields(pAttrs, k, fsEdit);
+            //                }
 
-                            if (pFeatureClassType == "NONE")
-                            {
-                                //创建非空间表
-                            }
-                            //创建要素类或者注记
-                            else if (pFeatureClassType == "ANNO")  //如果是注记图层
-                            {
-                                //创建注记层
-                                createAnnoFeatureClass(pFeatureClassName, pFeatureWorkSpace, fsEdit, m_DSScale, "注记", pFeatureDataset);
-                            }
-                            else  //如果是普通要素类图层
-                            {
-                                //创建普通要素类
-                                createCommomFeatureClass(pFeatureClassName, pFeatureClassType, fsEdit, fields, pFeatureDataset);
-                            }
-                        }
-                    }
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
-                    return true;
-                }
-                else
-                {
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
-                return false;
-            }
+            //                if (pFeatureClassType == "NONE")
+            //                {
+            //                    //创建非空间表
+            //                }
+            //                //创建要素类或者注记
+            //                else if (pFeatureClassType == "ANNO")  //如果是注记图层
+            //                {
+            //                    //创建注记层
+            //                    createAnnoFeatureClass(pFeatureClassName, pFeatureWorkSpace, fsEdit, m_DSScale, "注记", pFeatureDataset);
+            //                }
+            //                else  //如果是普通要素类图层
+            //                {
+            //                    //创建普通要素类
+            //                    createCommomFeatureClass(pFeatureClassName, pFeatureClassType, fsEdit, fields, pFeatureDataset);
+            //                }
+            //            }
+            //        }
+            //        System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
+            //        return false;
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
+            //    return false;
+            //}
 
         }
 
@@ -3678,125 +3672,126 @@ namespace SysCommon.Gis
         /// <returns></returns>
         public bool CreateDBStruct(List<string> DSName)
         {
-            IFeatureWorkspace pFeatureWorkSpace = null;
+            return false;
+            //IFeatureWorkspace pFeatureWorkSpace = null;
 
-            try
-            {
-                //如果工作空间获取成功则赋值要素工作空间
-                if (m_WorkSpace != null)
-                {
-                    pFeatureWorkSpace = m_WorkSpace as IFeatureWorkspace;
-                }
-                else
-                {
-                    return false;
-                }
+            //try
+            //{
+            //    //如果工作空间获取成功则赋值要素工作空间
+            //    if (m_WorkSpace != null)
+            //    {
+            //        pFeatureWorkSpace = m_WorkSpace as IFeatureWorkspace;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
 
-                //如果获取库体schema成功则开始创建过程
-                if (m_pProject != null)
-                {
-                    IChildItemList pProjects = m_pProject as IChildItemList;
-                    //获取属性库集合信息
-                    ISchemeItem pDBList = pProjects.get_ItemByName("ATTRDB");
-                    IChildItemList pDBLists = pDBList as IChildItemList;
-                    //遍历属性库集合
-                    long DBNum = pDBLists.GetCount();
-                    for (int i = 0; i < DBNum; i++)
-                    {
-                        m_DSScale = 0;    //比例尺信息
+            //    //如果获取库体schema成功则开始创建过程
+            //    if (m_pProject != null)
+            //    {
+            //        IChildItemList pProjects = m_pProject as IChildItemList;
+            //        //获取属性库集合信息
+            //        ISchemeItem pDBList = pProjects.get_ItemByName("ATTRDB");
+            //        IChildItemList pDBLists = pDBList as IChildItemList;
+            //        //遍历属性库集合
+            //        long DBNum = pDBLists.GetCount();
+            //        for (int i = 0; i < DBNum; i++)
+            //        {
+            //            m_DSScale = 0;    //比例尺信息
 
-                        //取得属性库信息
-                        ISchemeItem pDB = pDBLists.get_ItemByIndex(i);
-                        ///获取数据集的比例尺信息，如果获取失败则，取默认比例尺信息
-                        IAttribute pa = pDB.AttributeList.get_AttributeByName("Scale") as IAttribute;
-                        if (pa == null)
-                        {
-                            m_DSScale = m_DBScale;
-                        }
-                        else
-                        {
-                            string[] DBScaleArayy = pa.Value.ToString().Split(':');
-                            m_DSScale = Convert.ToInt32(DBScaleArayy[1]);
-                        }
+            //            //取得属性库信息
+            //            ISchemeItem pDB = pDBLists.get_ItemByIndex(i);
+            //            ///获取数据集的比例尺信息，如果获取失败则，取默认比例尺信息
+            //            IAttribute pa = pDB.AttributeList.get_AttributeByName("Scale") as IAttribute;
+            //            if (pa == null)
+            //            {
+            //                m_DSScale = m_DBScale;
+            //            }
+            //            else
+            //            {
+            //                string[] DBScaleArayy = pa.Value.ToString().Split(':');
+            //                m_DSScale = Convert.ToInt32(DBScaleArayy[1]);
+            //            }
 
-                        IChildItemList pDBs = pDB as IChildItemList;
-                        string pDatasetName = pDB.Name;
-                        DSName.Add(pDatasetName);
+            //            IChildItemList pDBs = pDB as IChildItemList;
+            //            string pDatasetName = pDB.Name;
+            //            DSName.Add(pDatasetName);
 
-                        #region 在工作空间中创建数据集，返回数据集对象
-                        //创建数据集信息，并输出数据集对象
-                        IFeatureDataset pFeatureDataset = null;  //定义数据集用来装载要素类
-                        if (createFeatureDataset(pFeatureWorkSpace, pDatasetName, out pFeatureDataset, m_SpatialReference) == false)
-                        {
-                            return false;
-                        }
-                        #endregion
+            //            #region 在工作空间中创建数据集，返回数据集对象
+            //            //创建数据集信息，并输出数据集对象
+            //            IFeatureDataset pFeatureDataset = null;  //定义数据集用来装载要素类
+            //            if (createFeatureDataset(pFeatureWorkSpace, pDatasetName, out pFeatureDataset, m_SpatialReference) == false)
+            //            {
+            //                return false;
+            //            }
+            //            #endregion
 
-                        //遍历属性表
-                        long TabNum = pDBs.GetCount();
-                        for (int j = 0; j < TabNum; j++)
-                        {
-                            //获取属性表信息
-                            ISchemeItem pTable = pDBs.get_ItemByIndex(j);  //获取属性表对象
+            //            //遍历属性表
+            //            long TabNum = pDBs.GetCount();
+            //            for (int j = 0; j < TabNum; j++)
+            //            {
+            //                //获取属性表信息
+            //                ISchemeItem pTable = pDBs.get_ItemByIndex(j);  //获取属性表对象
 
-                            string pFeatureClassName = pTable.Name;     //要素类名称
-                            string pFeatureClassType = pTable.Value as string;   //要素类类型
+            //                string pFeatureClassName = pTable.Name;     //要素类名称
+            //                string pFeatureClassType = pTable.Value as string;   //要素类类型
 
-                            //遍历字段
-                            IAttributeList pAttrs = pTable.AttributeList;
-                            long FNum = pAttrs.GetCount();
+            //                //遍历字段
+            //                IAttributeList pAttrs = pTable.AttributeList;
+            //                long FNum = pAttrs.GetCount();
 
-                            //创建用户自定义的字段
+            //                //创建用户自定义的字段
 
-                            IFields fields = new FieldsClass();
-                            IFieldsEdit fsEdit = fields as IFieldsEdit;
+            //                IFields fields = new FieldsClass();
+            //                IFieldsEdit fsEdit = fields as IFieldsEdit;
 
-                            //循环属性表中的字段，添加到arcgis的字段对象中
-                            for (int k = 0; k < FNum; k++)
-                            {
-                                //添加自定义属性字段
-                                AddCustomusFields(pAttrs, k, fsEdit);
-                            }
+            //                //循环属性表中的字段，添加到arcgis的字段对象中
+            //                for (int k = 0; k < FNum; k++)
+            //                {
+            //                    //添加自定义属性字段
+            //                    AddCustomusFields(pAttrs, k, fsEdit);
+            //                }
 
-                            /////添加版本字段，供协同更新版本库使用，陈胜鹏  2010.3.26添加
-                            //AddVersionField(fsEdit);
+            //                /////添加版本字段，供协同更新版本库使用，陈胜鹏  2010.3.26添加
+            //                //AddVersionField(fsEdit);
 
-                            if (pFeatureClassType == "NONE")
-                            {
-                                //创建非空间表
-                                //createNonSpatialTable(pFeatureClassName, m_WorkSpace, fsEdit, pFeatureDataset);
-                            }
-                            //创建要素类或者注记
-                            else if (pFeatureClassType == "ANNO")  //如果是注记图层
-                            {
-                                //创建注记层
-                                createAnnoFeatureClass(pFeatureClassName, pFeatureWorkSpace, fsEdit, m_DSScale, "注记", pFeatureDataset);
-                            }
-                            else  //如果是普通要素类图层
-                            {
-                                //创建普通要素类
-                                createCommomFeatureClass(pFeatureClassName, pFeatureClassType, fsEdit, fields, pFeatureDataset);
-                            }
-                        }
-                    }
-                    //System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
-                    return true;
-                }
-                else
-                {
-                    //System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
-                //***********************
-                //guozheng 2010-12-17 added
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "创建数据库失败！\n原因：" + e.Message);
-                //***********************
-                return false;
-            }
+            //                if (pFeatureClassType == "NONE")
+            //                {
+            //                    //创建非空间表
+            //                    //createNonSpatialTable(pFeatureClassName, m_WorkSpace, fsEdit, pFeatureDataset);
+            //                }
+            //                //创建要素类或者注记
+            //                else if (pFeatureClassType == "ANNO")  //如果是注记图层
+            //                {
+            //                    //创建注记层
+            //                    createAnnoFeatureClass(pFeatureClassName, pFeatureWorkSpace, fsEdit, m_DSScale, "注记", pFeatureDataset);
+            //                }
+            //                else  //如果是普通要素类图层
+            //                {
+            //                    //创建普通要素类
+            //                    createCommomFeatureClass(pFeatureClassName, pFeatureClassType, fsEdit, fields, pFeatureDataset);
+            //                }
+            //            }
+            //        }
+            //        //System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        //System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
+            //        return false;
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
+            //    //***********************
+            //    //guozheng 2010-12-17 added
+            //    SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "创建数据库失败！\n原因：" + e.Message);
+            //    //***********************
+            //    return false;
+            //}
 
         }
 
@@ -3806,128 +3801,131 @@ namespace SysCommon.Gis
         /// <returns></returns>
         public bool CreateDBStruct(List<string> DSName, out int iScale, out string sDBName)
         {
-            iScale = -1;
+            iScale = 0;
             sDBName = string.Empty;
-            IFeatureWorkspace pFeatureWorkSpace = null;
+            return false;
+            //iScale = -1;
+            //sDBName = string.Empty;
+            //IFeatureWorkspace pFeatureWorkSpace = null;
 
-            try
-            {
-                //如果工作空间获取成功则赋值要素工作空间
-                if (m_WorkSpace != null)
-                {
-                    pFeatureWorkSpace = m_WorkSpace as IFeatureWorkspace;
-                }
-                else
-                {
-                    return false;
-                }
+            //try
+            //{
+            //    //如果工作空间获取成功则赋值要素工作空间
+            //    if (m_WorkSpace != null)
+            //    {
+            //        pFeatureWorkSpace = m_WorkSpace as IFeatureWorkspace;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
 
-                //如果获取库体schema成功则开始创建过程
-                if (m_pProject != null)
-                {
-                    IChildItemList pProjects = m_pProject as IChildItemList;
-                    //获取属性库集合信息
-                    ISchemeItem pDBList = pProjects.get_ItemByName("ATTRDB");
-                    IChildItemList pDBLists = pDBList as IChildItemList;
-                    //遍历属性库集合
-                    long DBNum = pDBLists.GetCount();
-                    for (int i = 0; i < DBNum; i++)
-                    {
-                        m_DSScale = 0;    //比例尺信息
+            //    //如果获取库体schema成功则开始创建过程
+            //    if (m_pProject != null)
+            //    {
+            //        IChildItemList pProjects = m_pProject as IChildItemList;
+            //        //获取属性库集合信息
+            //        ISchemeItem pDBList = pProjects.get_ItemByName("ATTRDB");
+            //        IChildItemList pDBLists = pDBList as IChildItemList;
+            //        //遍历属性库集合
+            //        long DBNum = pDBLists.GetCount();
+            //        for (int i = 0; i < DBNum; i++)
+            //        {
+            //            m_DSScale = 0;    //比例尺信息
 
-                        //取得属性库信息
-                        ISchemeItem pDB = pDBLists.get_ItemByIndex(i);
-                        ///获取数据集的比例尺信息，如果获取失败则，取默认比例尺信息
-                        IAttribute pa = pDB.AttributeList.get_AttributeByName("Scale") as IAttribute;
-                        if (pa == null)
-                        {
-                            iScale = m_DBScale;
-                        }
-                        else
-                        {
-                            string[] DBScaleArayy = pa.Value.ToString().Split(':');
-                            m_DSScale = Convert.ToInt32(DBScaleArayy[1]);
-                            iScale = m_DSScale;
-                        }
+            //            //取得属性库信息
+            //            ISchemeItem pDB = pDBLists.get_ItemByIndex(i);
+            //            ///获取数据集的比例尺信息，如果获取失败则，取默认比例尺信息
+            //            IAttribute pa = pDB.AttributeList.get_AttributeByName("Scale") as IAttribute;
+            //            if (pa == null)
+            //            {
+            //                iScale = m_DBScale;
+            //            }
+            //            else
+            //            {
+            //                string[] DBScaleArayy = pa.Value.ToString().Split(':');
+            //                m_DSScale = Convert.ToInt32(DBScaleArayy[1]);
+            //                iScale = m_DSScale;
+            //            }
 
-                        IChildItemList pDBs = pDB as IChildItemList;
-                        string pDatasetName = pDB.Name;
-                        sDBName = pDatasetName;
-                        DSName.Add(pDatasetName);
+            //            IChildItemList pDBs = pDB as IChildItemList;
+            //            string pDatasetName = pDB.Name;
+            //            sDBName = pDatasetName;
+            //            DSName.Add(pDatasetName);
 
-                        #region 在工作空间中创建数据集，返回数据集对象
-                        //创建数据集信息，并输出数据集对象
-                        IFeatureDataset pFeatureDataset = null;  //定义数据集用来装载要素类
-                        if (createFeatureDataset(pFeatureWorkSpace, pDatasetName, out pFeatureDataset, m_SpatialReference) == false)
-                        {
-                            return false;
-                        }
-                        #endregion
+            //            #region 在工作空间中创建数据集，返回数据集对象
+            //            //创建数据集信息，并输出数据集对象
+            //            IFeatureDataset pFeatureDataset = null;  //定义数据集用来装载要素类
+            //            if (createFeatureDataset(pFeatureWorkSpace, pDatasetName, out pFeatureDataset, m_SpatialReference) == false)
+            //            {
+            //                return false;
+            //            }
+            //            #endregion
 
-                        //遍历属性表
-                        long TabNum = pDBs.GetCount();
-                        for (int j = 0; j < TabNum; j++)
-                        {
-                            //获取属性表信息
-                            ISchemeItem pTable = pDBs.get_ItemByIndex(j);  //获取属性表对象
+            //            //遍历属性表
+            //            long TabNum = pDBs.GetCount();
+            //            for (int j = 0; j < TabNum; j++)
+            //            {
+            //                //获取属性表信息
+            //                ISchemeItem pTable = pDBs.get_ItemByIndex(j);  //获取属性表对象
 
-                            string pFeatureClassName = pTable.Name;     //要素类名称
-                            string pFeatureClassType = pTable.Value as string;   //要素类类型
+            //                string pFeatureClassName = pTable.Name;     //要素类名称
+            //                string pFeatureClassType = pTable.Value as string;   //要素类类型
 
-                            //遍历字段
-                            IAttributeList pAttrs = pTable.AttributeList;
-                            long FNum = pAttrs.GetCount();
+            //                //遍历字段
+            //                IAttributeList pAttrs = pTable.AttributeList;
+            //                long FNum = pAttrs.GetCount();
 
-                            //创建用户自定义的字段
+            //                //创建用户自定义的字段
 
-                            IFields fields = new FieldsClass();
-                            IFieldsEdit fsEdit = fields as IFieldsEdit;
+            //                IFields fields = new FieldsClass();
+            //                IFieldsEdit fsEdit = fields as IFieldsEdit;
 
-                            //循环属性表中的字段，添加到arcgis的字段对象中
-                            for (int k = 0; k < FNum; k++)
-                            {
-                                //添加自定义属性字段
-                                AddCustomusFields(pAttrs, k, fsEdit);
-                            }
+            //                //循环属性表中的字段，添加到arcgis的字段对象中
+            //                for (int k = 0; k < FNum; k++)
+            //                {
+            //                    //添加自定义属性字段
+            //                    AddCustomusFields(pAttrs, k, fsEdit);
+            //                }
 
-                            /////添加版本字段，供协同更新版本库使用，陈胜鹏  2010.3.26添加
-                            //AddVersionField(fsEdit);
+            //                /////添加版本字段，供协同更新版本库使用，陈胜鹏  2010.3.26添加
+            //                //AddVersionField(fsEdit);
 
-                            if (pFeatureClassType == "NONE")
-                            {
-                                //创建非空间表
-                            }
-                            //创建要素类或者注记
-                            else if (pFeatureClassType == "ANNO")  //如果是注记图层
-                            {
-                                //创建注记层
-                                createAnnoFeatureClass(pFeatureClassName, pFeatureWorkSpace, fsEdit, m_DSScale, "注记", pFeatureDataset);
-                            }
-                            else  //如果是普通要素类图层
-                            {
-                                //创建普通要素类
-                                createCommomFeatureClass(pFeatureClassName, pFeatureClassType, fsEdit, fields, pFeatureDataset);
-                            }
-                        }
-                    }
-                    //System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
-                    return true;
-                }
-                else
-                {
-                    //System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
-                //***********************
-                //guozheng 2010-12-17 added
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "创建数据库失败！\n原因：" + e.Message);
-                //***********************
-                return false;
-            }
+            //                if (pFeatureClassType == "NONE")
+            //                {
+            //                    //创建非空间表
+            //                }
+            //                //创建要素类或者注记
+            //                else if (pFeatureClassType == "ANNO")  //如果是注记图层
+            //                {
+            //                    //创建注记层
+            //                    createAnnoFeatureClass(pFeatureClassName, pFeatureWorkSpace, fsEdit, m_DSScale, "注记", pFeatureDataset);
+            //                }
+            //                else  //如果是普通要素类图层
+            //                {
+            //                    //创建普通要素类
+            //                    createCommomFeatureClass(pFeatureClassName, pFeatureClassType, fsEdit, fields, pFeatureDataset);
+            //                }
+            //            }
+            //        }
+            //        //System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        //System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
+            //        return false;
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
+            //    //***********************
+            //    //guozheng 2010-12-17 added
+            //    SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "创建数据库失败！\n原因：" + e.Message);
+            //    //***********************
+            //    return false;
+            //}
 
         }
 
@@ -3937,155 +3935,158 @@ namespace SysCommon.Gis
         /// <returns></returns>
         public bool CreateDBStruct(out string iScale, out List<string> DSName, System.Windows.Forms.ProgressBar in_ProcBar)
         {
-            //cyf 20110622 modify
-            //iScale = -1;
-            iScale = "";
-            //end
-            //sDBName = string.Empty;  //cyf 20110707 modify
-            IFeatureWorkspace pFeatureWorkSpace = null;
-            //cyf 20110707 modify
-                DSName = new List<string>();
-            //end
-            try
-            {
-                //如果工作空间获取成功则赋值要素工作空间
-                if (m_WorkSpace != null)
-                {
-                    pFeatureWorkSpace = m_WorkSpace as IFeatureWorkspace;
-                }
-                else
-                {
-                    return false;
-                }
+            iScale = string.Empty;
+            DSName = new List<string>();
+            return false;
+            ////cyf 20110622 modify
+            ////iScale = -1;
+            //iScale = "";
+            ////end
+            ////sDBName = string.Empty;  //cyf 20110707 modify
+            //IFeatureWorkspace pFeatureWorkSpace = null;
+            ////cyf 20110707 modify
+            //    DSName = new List<string>();
+            ////end
+            //try
+            //{
+            //    //如果工作空间获取成功则赋值要素工作空间
+            //    if (m_WorkSpace != null)
+            //    {
+            //        pFeatureWorkSpace = m_WorkSpace as IFeatureWorkspace;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
 
-                //如果获取库体schema成功则开始创建过程
-                if (m_pProject != null)
-                {
-                    IChildItemList pProjects = m_pProject as IChildItemList;
-                    //获取属性库集合信息
-                    ISchemeItem pDBList = pProjects.get_ItemByName("ATTRDB");
-                    IChildItemList pDBLists = pDBList as IChildItemList;
-                    //遍历属性库集合
-                    long DBNum = pDBLists.GetCount();
+            //    //如果获取库体schema成功则开始创建过程
+            //    if (m_pProject != null)
+            //    {
+            //        IChildItemList pProjects = m_pProject as IChildItemList;
+            //        //获取属性库集合信息
+            //        ISchemeItem pDBList = pProjects.get_ItemByName("ATTRDB");
+            //        IChildItemList pDBLists = pDBList as IChildItemList;
+            //        //遍历属性库集合
+            //        long DBNum = pDBLists.GetCount();
                    
-                    for (int i = 0; i < DBNum; i++)
-                    {
-                        m_DSScale = 0;    //比例尺信息
-                        //取得属性库信息
-                        ISchemeItem pDB = pDBLists.get_ItemByIndex(i);
-                        ///获取数据集的比例尺信息，如果获取失败则，取默认比例尺信息
-                        IAttribute pa = pDB.AttributeList.get_AttributeByName("Scale") as IAttribute;
-                        if (pa == null)
-                        {
-                            //cyf 20110622 modify:将比例尺类型改为字符串型
-                            iScale = m_DBScale.ToString();
-                            //end
-                        }
-                        else
-                        {
-                            string[] DBScaleArayy = pa.Value.ToString().Split(':');
-                            m_DSScale = Convert.ToInt32(DBScaleArayy[1]);
-                            //cyf 20110622 modify:将比例尺类型改为字符串型
-                            iScale = m_DSScale.ToString();
-                            //end
-                        }
+            //        for (int i = 0; i < DBNum; i++)
+            //        {
+            //            m_DSScale = 0;    //比例尺信息
+            //            //取得属性库信息
+            //            ISchemeItem pDB = pDBLists.get_ItemByIndex(i);
+            //            ///获取数据集的比例尺信息，如果获取失败则，取默认比例尺信息
+            //            IAttribute pa = pDB.AttributeList.get_AttributeByName("Scale") as IAttribute;
+            //            if (pa == null)
+            //            {
+            //                //cyf 20110622 modify:将比例尺类型改为字符串型
+            //                iScale = m_DBScale.ToString();
+            //                //end
+            //            }
+            //            else
+            //            {
+            //                string[] DBScaleArayy = pa.Value.ToString().Split(':');
+            //                m_DSScale = Convert.ToInt32(DBScaleArayy[1]);
+            //                //cyf 20110622 modify:将比例尺类型改为字符串型
+            //                iScale = m_DSScale.ToString();
+            //                //end
+            //            }
 
-                        IChildItemList pDBs = pDB as IChildItemList;
-                        string pDatasetName = pDB.Name;
-                        //cyf 20110706 modify
-                        //sDBName = pDatasetName;
-                        //DSName.Add(pDatasetName);
-                        //end
+            //            IChildItemList pDBs = pDB as IChildItemList;
+            //            string pDatasetName = pDB.Name;
+            //            //cyf 20110706 modify
+            //            //sDBName = pDatasetName;
+            //            //DSName.Add(pDatasetName);
+            //            //end
 
-                        #region 在工作空间中创建数据集，返回数据集对象
-                        //创建数据集信息，并输出数据集对象
-                        IFeatureDataset pFeatureDataset = null;  //定义数据集用来装载要素类
-                        if (createFeatureDataset(pFeatureWorkSpace, pDatasetName, out pFeatureDataset, m_SpatialReference) == false)
-                        {
-                            return false;
-                        }
-                        #endregion
-                        //cyf 20110706 modify
-                        pDatasetName = (pFeatureDataset as IDataset).Name;
-                        //sDBName = pDatasetName;  //cyf 20110707 modify
-                        DSName.Add(pDatasetName);
-                        //end
+            //            #region 在工作空间中创建数据集，返回数据集对象
+            //            //创建数据集信息，并输出数据集对象
+            //            IFeatureDataset pFeatureDataset = null;  //定义数据集用来装载要素类
+            //            if (createFeatureDataset(pFeatureWorkSpace, pDatasetName, out pFeatureDataset, m_SpatialReference) == false)
+            //            {
+            //                return false;
+            //            }
+            //            #endregion
+            //            //cyf 20110706 modify
+            //            pDatasetName = (pFeatureDataset as IDataset).Name;
+            //            //sDBName = pDatasetName;  //cyf 20110707 modify
+            //            DSName.Add(pDatasetName);
+            //            //end
 
-                        //遍历属性表
-                        long TabNum = pDBs.GetCount();
-                        /////////////////////////////////////////进度条//////////////////////
-                        if (in_ProcBar != null)
-                        {
-                            in_ProcBar.Maximum = (int)TabNum;
-                            in_ProcBar.Value = 0;
-                        }
-                        for (int j = 0; j < TabNum; j++)
-                        {
-                            //获取属性表信息
-                            if (in_ProcBar != null)
-                            {
-                                in_ProcBar.Value = j;
-                                Application.DoEvents();
-                            }
-                            ISchemeItem pTable = pDBs.get_ItemByIndex(j);  //获取属性表对象
+            //            //遍历属性表
+            //            long TabNum = pDBs.GetCount();
+            //            /////////////////////////////////////////进度条//////////////////////
+            //            if (in_ProcBar != null)
+            //            {
+            //                in_ProcBar.Maximum = (int)TabNum;
+            //                in_ProcBar.Value = 0;
+            //            }
+            //            for (int j = 0; j < TabNum; j++)
+            //            {
+            //                //获取属性表信息
+            //                if (in_ProcBar != null)
+            //                {
+            //                    in_ProcBar.Value = j;
+            //                    Application.DoEvents();
+            //                }
+            //                ISchemeItem pTable = pDBs.get_ItemByIndex(j);  //获取属性表对象
 
-                            string pFeatureClassName = pTable.Name;     //要素类名称
-                            string pFeatureClassType = pTable.Value as string;   //要素类类型
+            //                string pFeatureClassName = pTable.Name;     //要素类名称
+            //                string pFeatureClassType = pTable.Value as string;   //要素类类型
 
-                            //遍历字段
-                            IAttributeList pAttrs = pTable.AttributeList;
-                            long FNum = pAttrs.GetCount();
+            //                //遍历字段
+            //                IAttributeList pAttrs = pTable.AttributeList;
+            //                long FNum = pAttrs.GetCount();
 
-                            //创建用户自定义的字段
+            //                //创建用户自定义的字段
 
-                            IFields fields = new FieldsClass();
-                            IFieldsEdit fsEdit = fields as IFieldsEdit;
+            //                IFields fields = new FieldsClass();
+            //                IFieldsEdit fsEdit = fields as IFieldsEdit;
 
-                            //循环属性表中的字段，添加到arcgis的字段对象中
-                            for (int k = 0; k < FNum; k++)
-                            {
-                                //添加自定义属性字段
-                                AddCustomusFields(pAttrs, k, fsEdit);
-                            }
+            //                //循环属性表中的字段，添加到arcgis的字段对象中
+            //                for (int k = 0; k < FNum; k++)
+            //                {
+            //                    //添加自定义属性字段
+            //                    AddCustomusFields(pAttrs, k, fsEdit);
+            //                }
 
-                            /////添加版本字段，供协同更新版本库使用，陈胜鹏  2010.3.26添加
-                            //AddVersionField(fsEdit);
+            //                /////添加版本字段，供协同更新版本库使用，陈胜鹏  2010.3.26添加
+            //                //AddVersionField(fsEdit);
 
-                            if (pFeatureClassType == "NONE")
-                            {
-                                //创建非空间表
-                            }
-                            //创建要素类或者注记
-                            else if (pFeatureClassType == "ANNO")  //如果是注记图层
-                            {
-                                //创建注记层
-                                createAnnoFeatureClass(pFeatureClassName, pFeatureWorkSpace, fsEdit, m_DSScale, "注记", pFeatureDataset);
-                            }
-                            else  //如果是普通要素类图层
-                            {
-                                //创建普通要素类
-                                createCommomFeatureClass(pFeatureClassName, pFeatureClassType, fsEdit, fields, pFeatureDataset);
-                            }
-                        }
-                    }
-                    //System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
-                    return true;
-                }
-                else
-                {
-                    //System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
-                //***********************
-                //guozheng 2010-12-17 added
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "创建数据库失败！\n原因：" + e.Message);
-                //***********************
-                return false;
-            }
+            //                if (pFeatureClassType == "NONE")
+            //                {
+            //                    //创建非空间表
+            //                }
+            //                //创建要素类或者注记
+            //                else if (pFeatureClassType == "ANNO")  //如果是注记图层
+            //                {
+            //                    //创建注记层
+            //                    createAnnoFeatureClass(pFeatureClassName, pFeatureWorkSpace, fsEdit, m_DSScale, "注记", pFeatureDataset);
+            //                }
+            //                else  //如果是普通要素类图层
+            //                {
+            //                    //创建普通要素类
+            //                    createCommomFeatureClass(pFeatureClassName, pFeatureClassType, fsEdit, fields, pFeatureDataset);
+            //                }
+            //            }
+            //        }
+            //        //System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        //System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
+            //        return false;
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
+            //    //***********************
+            //    //guozheng 2010-12-17 added
+            //    SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "创建数据库失败！\n原因：" + e.Message);
+            //    //***********************
+            //    return false;
+            //}
 
         }
         /// <summary>
@@ -4545,162 +4546,162 @@ namespace SysCommon.Gis
         /// <param name="pAttrs">库体结构的属性表集合</param>
         /// <param name="k">属性表索引号</param>
         /// <param name="fsEdit">输出的自定义字段对象</param>
-        private void AddCustomusFields(IAttributeList pAttrs, int k, IFieldsEdit fsEdit)
+        private void AddCustomusFields(int k, IFieldsEdit fsEdit)
         {
-            try
-            {
-                IField newfield = new FieldClass();                //字段对象
-                IFieldEdit fieldEdit = newfield as IFieldEdit;     //字段编辑对象
+            //try
+            //{
+            //    IField newfield = new FieldClass();                //字段对象
+            //    IFieldEdit fieldEdit = newfield as IFieldEdit;     //字段编辑对象
 
-                //获取基本属性信息
-                IAttribute pAttr = pAttrs.get_AttributeByIndex(k);
+            //    //获取基本属性信息
+            //    IAttribute pAttr = pAttrs.get_AttributeByIndex(k);
 
-                //获取扩展属性信息
-                IAttributeDes pAttrDes = pAttr.Description;
+            //    //获取扩展属性信息
+            //    IAttributeDes pAttrDes = pAttr.Description;
 
-                //以下变量用来定义字段的属性
-                string fieldName = "";//记录字段名称
-                esriFieldType fieldType = esriFieldType.esriFieldTypeString;//记录字段类型
-                //string fieldType = "";
-                int fieldLen;//记录字段长度
-                bool isNullable = true;//记录字段是否允许空值
-                int precision = 0;//精度
+            //    //以下变量用来定义字段的属性
+            //    string fieldName = "";//记录字段名称
+            //    esriFieldType fieldType = esriFieldType.esriFieldTypeString;//记录字段类型
+            //    //string fieldType = "";
+            //    int fieldLen;//记录字段长度
+            //    bool isNullable = true;//记录字段是否允许空值
+            //    int precision = 0;//精度
 
-                bool required = false;
-                bool editable = true;
-                bool domainfixed = false;   //值域是否可以改变
+            //    bool required = false;
+            //    bool editable = true;
+            //    bool domainfixed = false;   //值域是否可以改变
 
-                //获得字段的属性
-                fieldName = pAttr.Name;
+            //    //获得字段的属性
+            //    fieldName = pAttr.Name;
 
-                //======chenayfei modify 增加BLOB字段的定义============================================
-                //fieldType = pAttr.Type.ToString();
-                //根据字段类型记录arcgis中对应的字段类型
-                switch (pAttr.Type)
-                {
-                    case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_STRING:
-                        fieldType = esriFieldType.esriFieldTypeString;// "esriFieldTypeString";
-                        try
-                        {
-                            fieldEdit.DefaultValue_2 = pAttr.Value.ToString();  //默认值
-                        }
-                        catch
-                        {
-                        }
-                        break;
-                    case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_LONG:// "GO_VALUETYPE_LONG":
-                        fieldType = esriFieldType.esriFieldTypeInteger;// "esriFieldTypeInteger";
-                        try
-                        {
-                            fieldEdit.DefaultValue_2 = Convert.ToInt32(pAttr.Value.ToString());  //默认值
-                        }
-                        catch
-                        {
-                        }
-                        break;
-                    case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_BOOL:// "GO_VALUETYPE_BOOL":
-                        fieldType = esriFieldType.esriFieldTypeSmallInteger;// "esriFieldTypeSmallInteger";
-                        try
-                        {
-                            fieldEdit.DefaultValue_2 = Convert.ToBoolean(pAttr.Value.ToString()); //默认值
-                        }
-                        catch
-                        {
-                        }
-                        break;
-                    case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_DATE:// "GO_VALUETYPE_DATE":
-                        fieldType = esriFieldType.esriFieldTypeDate;// "esriFieldTypeDate";
-                        try
-                        {
-                            fieldEdit.DefaultValue_2 = Convert.ToDateTime(pAttr.Value.ToString());  //默认值
-                        }
-                        catch
-                        {
-                            fieldEdit.DefaultValue_2 = "";
-                        }
+            //    //======chenayfei modify 增加BLOB字段的定义============================================
+            //    //fieldType = pAttr.Type.ToString();
+            //    //根据字段类型记录arcgis中对应的字段类型
+            //    switch (pAttr.Type)
+            //    {
+            //        case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_STRING:
+            //            fieldType = esriFieldType.esriFieldTypeString;// "esriFieldTypeString";
+            //            try
+            //            {
+            //                fieldEdit.DefaultValue_2 = pAttr.Value.ToString();  //默认值
+            //            }
+            //            catch
+            //            {
+            //            }
+            //            break;
+            //        case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_LONG:// "GO_VALUETYPE_LONG":
+            //            fieldType = esriFieldType.esriFieldTypeInteger;// "esriFieldTypeInteger";
+            //            try
+            //            {
+            //                fieldEdit.DefaultValue_2 = Convert.ToInt32(pAttr.Value.ToString());  //默认值
+            //            }
+            //            catch
+            //            {
+            //            }
+            //            break;
+            //        case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_BOOL:// "GO_VALUETYPE_BOOL":
+            //            fieldType = esriFieldType.esriFieldTypeSmallInteger;// "esriFieldTypeSmallInteger";
+            //            try
+            //            {
+            //                fieldEdit.DefaultValue_2 = Convert.ToBoolean(pAttr.Value.ToString()); //默认值
+            //            }
+            //            catch
+            //            {
+            //            }
+            //            break;
+            //        case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_DATE:// "GO_VALUETYPE_DATE":
+            //            fieldType = esriFieldType.esriFieldTypeDate;// "esriFieldTypeDate";
+            //            try
+            //            {
+            //                fieldEdit.DefaultValue_2 = Convert.ToDateTime(pAttr.Value.ToString());  //默认值
+            //            }
+            //            catch
+            //            {
+            //                fieldEdit.DefaultValue_2 = "";
+            //            }
 
-                        break;
-                    case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_DATETIME:// "GO_VALUETYPE_DATE":
-                        fieldType = esriFieldType.esriFieldTypeDate;// "esriFieldTypeDate";
-                        try
-                        {
-                            fieldEdit.DefaultValue_2 = Convert.ToDateTime(pAttr.Value.ToString());  //默认值
-                        }
-                        catch
-                        {
-                            fieldEdit.DefaultValue_2 = "";
-                        }
-                        break;
-                    case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_FLOAT:// "GO_VALUETYPE_FLOAT":
-                        fieldType = esriFieldType.esriFieldTypeSingle;// "esriFieldTypeSingle";
-                        try
-                        {
-                            fieldEdit.DefaultValue_2 = Convert.ToSingle(pAttr.Value.ToString());//默认值
-                        }
-                        catch
-                        {
-                        }
-                        break;
-                    case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_DOUBLE:// "GO_VALUETYPE_DOUBLE":
-                        fieldType = esriFieldType.esriFieldTypeDouble;// "esriFieldTypeDouble";
-                        try
-                        {
-                            fieldEdit.DefaultValue_2 = Convert.ToDouble(pAttr.Value.ToString());  //默认值
-                        }
-                        catch
-                        {
-                        }
-                        break;
-                    case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_BYTE:// "GO_VALUETYPE_DOUBLE":
-                        fieldType = esriFieldType.esriFieldTypeBlob;// "esriFieldTypeDouble";
-                        try
-                        {
-                            fieldEdit.DefaultValue_2 = pAttr.Value.ToString();  //默认值
-                        }
-                        catch
-                        {
-                            fieldEdit.DefaultValue_2 = null;
-                        }
-                        break;
+            //            break;
+            //        case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_DATETIME:// "GO_VALUETYPE_DATE":
+            //            fieldType = esriFieldType.esriFieldTypeDate;// "esriFieldTypeDate";
+            //            try
+            //            {
+            //                fieldEdit.DefaultValue_2 = Convert.ToDateTime(pAttr.Value.ToString());  //默认值
+            //            }
+            //            catch
+            //            {
+            //                fieldEdit.DefaultValue_2 = "";
+            //            }
+            //            break;
+            //        case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_FLOAT:// "GO_VALUETYPE_FLOAT":
+            //            fieldType = esriFieldType.esriFieldTypeSingle;// "esriFieldTypeSingle";
+            //            try
+            //            {
+            //                fieldEdit.DefaultValue_2 = Convert.ToSingle(pAttr.Value.ToString());//默认值
+            //            }
+            //            catch
+            //            {
+            //            }
+            //            break;
+            //        case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_DOUBLE:// "GO_VALUETYPE_DOUBLE":
+            //            fieldType = esriFieldType.esriFieldTypeDouble;// "esriFieldTypeDouble";
+            //            try
+            //            {
+            //                fieldEdit.DefaultValue_2 = Convert.ToDouble(pAttr.Value.ToString());  //默认值
+            //            }
+            //            catch
+            //            {
+            //            }
+            //            break;
+            //        case GeoOneDataCheck.VALUETYPE.GO_VALUETYPE_BYTE:// "GO_VALUETYPE_DOUBLE":
+            //            fieldType = esriFieldType.esriFieldTypeBlob;// "esriFieldTypeDouble";
+            //            try
+            //            {
+            //                fieldEdit.DefaultValue_2 = pAttr.Value.ToString();  //默认值
+            //            }
+            //            catch
+            //            {
+            //                fieldEdit.DefaultValue_2 = null;
+            //            }
+            //            break;
 
-                    default:
-                        break;
-                }
+            //        default:
+            //            break;
+            //    }
 
-                isNullable = pAttrDes.AllowNull;
-                fieldLen = Convert.ToInt32(pAttrDes.InputWidth);
-                precision = Convert.ToInt32(pAttrDes.PrecisionEx);
+            //    isNullable = pAttrDes.AllowNull;
+            //    fieldLen = Convert.ToInt32(pAttrDes.InputWidth);
+            //    precision = Convert.ToInt32(pAttrDes.PrecisionEx);
 
-                required = bool.Parse(pAttrDes.Necessary.ToString());
+            //    required = bool.Parse(pAttrDes.Necessary.ToString());
 
-                fieldEdit.Name_2 = fieldName;
-                fieldEdit.AliasName_2 = fieldName;
-                //字段类型要装化为枚举类型
-                fieldEdit.Type_2 = fieldType;// (esriFieldType)Enum.Parse(typeof(esriFieldType), fieldType, true);
-                fieldEdit.IsNullable_2 = isNullable;
-                fieldEdit.Length_2 = fieldLen;
-                //fieldEdit.DefaultValue_2 =  pAttr.Value;  //默认值
+            //    fieldEdit.Name_2 = fieldName;
+            //    fieldEdit.AliasName_2 = fieldName;
+            //    //字段类型要装化为枚举类型
+            //    fieldEdit.Type_2 = fieldType;// (esriFieldType)Enum.Parse(typeof(esriFieldType), fieldType, true);
+            //    fieldEdit.IsNullable_2 = isNullable;
+            //    fieldEdit.Length_2 = fieldLen;
+            //    //fieldEdit.DefaultValue_2 =  pAttr.Value;  //默认值
 
-                //双精度类型不可设置精度（在PDB和GDB中不会出现错误，但是在SDE中会抛出“无效的列”错误）
-                if (fieldType != esriFieldType.esriFieldTypeDouble)// "esriFieldTypeDouble")
-                {
-                    fieldEdit.Precision_2 = precision;
-                }
+            //    //双精度类型不可设置精度（在PDB和GDB中不会出现错误，但是在SDE中会抛出“无效的列”错误）
+            //    if (fieldType != esriFieldType.esriFieldTypeDouble)// "esriFieldTypeDouble")
+            //    {
+            //        fieldEdit.Precision_2 = precision;
+            //    }
 
-                //========================================================================
+            //    //========================================================================
 
-                fieldEdit.Required_2 = required;
-                fieldEdit.Editable_2 = editable;
-                fieldEdit.DomainFixed_2 = domainfixed;
-                newfield = fieldEdit as IField;
-                fsEdit.AddField(newfield);
-                return;
-            }
-            catch
-            {
-                fsEdit = null;
-                return;
-            }
+            //    fieldEdit.Required_2 = required;
+            //    fieldEdit.Editable_2 = editable;
+            //    fieldEdit.DomainFixed_2 = domainfixed;
+            //    newfield = fieldEdit as IField;
+            //    fsEdit.AddField(newfield);
+            //    return;
+            //}
+            //catch
+            //{
+            //    fsEdit = null;
+            //    return;
+            //}
         }
         /// <summary>
         /// 创建数据集

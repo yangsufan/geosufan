@@ -126,76 +126,11 @@ namespace SysCommon
        
 
 
-        //点击叶子节点 选中该图层
-        private void advTreeLayerList_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
-        {
-
-        }
-        //双击选择叶子节点 
-        private void advTreeLayerList_NodeDoubleClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
-        {
-            if (m_checkbox)
-                return;
-            m_NodeKey = "";
-            if (e.Node == null)
-                return;
-            if (e.Node.Tag.ToString() != "Layer")//不是叶子节点 返回
-            {
-                return;
-            }
-
-            _ClsSelectLayerByTree.GetNodeKey(e.Node,labelErr,m_m,ref m_NodeKey,ref m_NodeText );
-            if (string.IsNullOrEmpty(m_NodeKey))
-                return;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-       }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
             
-            if (!m_checkbox)//不支持多选的
-            {
-                m_NodeKey = "";
-                if (advTreeLayerList.SelectedNode == null)
-                    return;
-                if (advTreeLayerList.SelectedNode.Tag.ToString() != "Layer")//不是叶子节点 返回
-                {
-                    return;
-                }
 
-                _ClsSelectLayerByTree.GetNodeKey(advTreeLayerList.SelectedNode, labelErr, m_m, ref m_NodeKey, ref m_NodeText, ref m_DataSourceKey);
-                if (string.IsNullOrEmpty(m_NodeKey))
-                    return;
-            }
-            else//支持多选的 
-            {
-                
-                if (advTreeLayerList.Nodes.Count > 0)
-                {
-                    this.Cursor = Cursors.WaitCursor;
-                    ListNode.Clear();//清空节点
-                    _ClsSelectLayerByTree.GetCheckedNodetoMap(advTreeLayerList.Nodes[0],ListNode );
-                    try
-                    {
-                        for (int i = 0; i < ListNode.Count; i++)
-                        {
-                            // IFeatureLayer pfeaturelayer = new FeatureLayerClass();
-                            // pfeaturelayer.Name = ListNode[i].Text;
-                            //pfeaturelayer.FeatureClass=SysCommon.ModSysSetting.GetFeatureClassByNodeKey(Plugin.ModuleCommon.TmpWorkSpace,_LayerTreePath,GetNodeKey1(ListNode[i]));
-
-                            ILayer pLayer = SysCommon.ModuleMap.GetLayerByNodeKey(m_TmpWorkSpace, m_Mapold,_ClsSelectLayerByTree.GetNodeKey1(ListNode[i],labelErr,m_m ), _LayerTreeXmldoc, false);
-                            if (pLayer == null) continue;
-                            //m_returnMap.AddLayer(pLayer);
-                            m_DicLayer.Add(_ClsSelectLayerByTree.GetNodeKey1(ListNode[i],labelErr,m_m ), pLayer);
-                        }
-                    }
-                    catch { }
-                    this.Cursor = Cursors.Default;
-                }
-            }
-            this.DialogResult = DialogResult.OK;
-            this.Close();
         }
 
         
@@ -211,26 +146,7 @@ namespace SysCommon
             tbclick = true;
             _ClsSelectLayerByTree.CreatRootNode(m_Map, _LayerTreePath,this.advTreeLayerList,tbclick );
         }
-        private void advTreeLayerList_AfterCheck(object sender, DevComponents.AdvTree.AdvTreeCellEventArgs e)
-        {
-            DevComponents.AdvTree.AdvTree tree = sender as DevComponents.AdvTree.AdvTree;
-            DevComponents.AdvTree.Node node = tree.SelectedNode;
 
-            if (node == null) return;
-           //如果是叶子节点
-            if (flag2 && flag)
-            {
-                if (flag && node.Nodes.Count==0)
-                {
-                    _ClsSelectLayerByTree.ChangeParentCheck(node,ref flag2 );
-                }
-                else if (flag2)//不是叶子节点 
-                {
-                    _ClsSelectLayerByTree.ChangeParentCheck(node,ref flag2 );
-                    _ClsSelectLayerByTree.ChangeChildCheck(node,ref flag ); 
-                }
-            }
-        }
 
     }
 }

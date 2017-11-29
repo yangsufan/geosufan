@@ -30,43 +30,42 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmErrorHandle));
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.buttonX = new DevComponents.DotNetBar.ButtonX();
-            this.labelX = new DevComponents.DotNetBar.LabelX();
+            this.buttonX = new DevExpress.XtraEditors.SimpleButton();
+            this.labelX = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox
             // 
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(12, 30);
+            this.pictureBox.Location = new System.Drawing.Point(14, 35);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(26, 36);
+            this.pictureBox.Size = new System.Drawing.Size(30, 42);
             this.pictureBox.TabIndex = 5;
             this.pictureBox.TabStop = false;
             // 
             // buttonX
             // 
             this.buttonX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX.Location = new System.Drawing.Point(262, 87);
+            this.buttonX.Location = new System.Drawing.Point(306, 101);
             this.buttonX.Name = "buttonX";
-            this.buttonX.Size = new System.Drawing.Size(75, 23);
+            this.buttonX.Size = new System.Drawing.Size(87, 27);
             this.buttonX.TabIndex = 4;
             this.buttonX.Text = "返 回";
             this.buttonX.Click += new System.EventHandler(this.buttonX_Click);
             // 
             // labelX
             // 
-            this.labelX.Location = new System.Drawing.Point(44, 18);
+            this.labelX.Location = new System.Drawing.Point(51, 21);
             this.labelX.Name = "labelX";
-            this.labelX.Size = new System.Drawing.Size(293, 63);
+            this.labelX.Size = new System.Drawing.Size(0, 14);
             this.labelX.TabIndex = 3;
-            this.labelX.WordWrap = true;
             // 
             // frmErrorHandle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 122);
+            this.ClientSize = new System.Drawing.Size(407, 142);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.buttonX);
             this.Controls.Add(this.labelX);
@@ -78,13 +77,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox;
-        private DevComponents.DotNetBar.ButtonX buttonX;
-        private DevComponents.DotNetBar.LabelX labelX;
+        private DevExpress.XtraEditors.SimpleButton buttonX;
+        private DevExpress.XtraEditors.LabelControl labelX;
     }
 }

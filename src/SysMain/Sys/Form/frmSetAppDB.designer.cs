@@ -197,7 +197,6 @@
 
         #endregion
 
-        private DevComponents.DotNetBar.SuperTooltip superTooltip;
         private DevExpress.XtraEditors.GroupControl groupPanel1;
         private DevExpress.XtraEditors.LabelControl labelX4;
         private DevExpress.XtraEditors.LabelControl labelX2;

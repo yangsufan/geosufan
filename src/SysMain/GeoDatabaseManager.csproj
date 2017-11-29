@@ -228,11 +228,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GeoUtilities\GeoUtilities.csproj">
-      <Project>{AE24821E-0814-4C91-A076-D647201DAC9B}</Project>
-      <Name>GeoUtilities</Name>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\Plugin\Plugin.csproj">
       <Project>{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}</Project>
       <Name>Plugin</Name>
@@ -273,6 +268,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

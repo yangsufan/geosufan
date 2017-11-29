@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -45,9 +46,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Chartlet, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -172,25 +170,12 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Interop.DOMAINITEMLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Bin\Interop.DOMAINITEMLib.dll</HintPath>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Interop.GeoOneDataCheck, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Bin\Interop.GeoOneDataCheck.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Interop.SCHEMEMANAGERCLASSESLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Bin\Interop.SCHEMEMANAGERCLASSESLib.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Office, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
       <Private>False</Private>
     </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -226,15 +211,21 @@
     <Compile Include="DataBase\DataBaseClass.cs" />
     <Compile Include="DataBase\DataBaseInterface.cs" />
     <Compile Include="Error\ErrorClass.cs" />
-    <Compile Include="Error\frmErrorHandle.cs" />
+    <Compile Include="Error\frmErrorHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Error\frmErrorHandle.Designer.cs">
       <DependentUpon>frmErrorHandle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Error\frmErrorHandleEx.cs" />
+    <Compile Include="Error\frmErrorHandleEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Error\frmErrorHandleEx.designer.cs">
       <DependentUpon>frmErrorHandleEx.cs</DependentUpon>
     </Compile>
-    <Compile Include="Error\frmInformation.cs" />
+    <Compile Include="Error\frmInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Error\frmInformation.Designer.cs">
       <DependentUpon>frmInformation.cs</DependentUpon>
     </Compile>
@@ -244,6 +235,12 @@
     </Compile>
     <Compile Include="Form\BaseRibbonForm.Designer.cs">
       <DependentUpon>BaseRibbonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BaseTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\BaseTreeView.Designer.cs">
+      <DependentUpon>BaseTreeView.cs</DependentUpon>
     </Compile>
     <Compile Include="Gis\GisClass.cs" />
     <Compile Include="Gis\GisInterface.cs" />
@@ -255,8 +252,10 @@
     </Compile>
     <Compile Include="Log\clsWriteSystemFunctionLog.cs" />
     <Compile Include="Log\CodeSystemFunctionlog.cs" />
-    <Compile Include="Log\Interface_SystemFunctionLOG.cs" />
+    <Compile Include="Log\ILog.cs" />
+    <Compile Include="Log\ISystemFunctionLog.cs" />
     <Compile Include="Log\LogClass.cs" />
+    <Compile Include="Log\LogManage.cs" />
     <Compile Include="Map\ModuleLabel.cs" />
     <Compile Include="Map\ModuleMap.cs" />
     <Compile Include="Map\ModuleRenderer.cs" />
@@ -430,6 +429,10 @@
     </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

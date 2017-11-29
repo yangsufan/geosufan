@@ -379,14 +379,11 @@ namespace SysCommon
 
             if (FakeProgress)
             {
-                m_FormProgress.progressBar1.Maximum =   100;
-                m_FormProgress.progressBar1.Step = 1;
+
                 m_FormProgress.labelProgress.Visible = false;
             }
             else
             {
-                m_FormProgress.progressBar1.Maximum = (MaxValue > 1) ? MaxValue : 100;
-                m_FormProgress.progressBar1.Step = (Step > 0) ? Step : 1;
                 m_FormProgress.labelProgress.Visible = ShowProgressNumber;
             }
             m_FormProgress.UserCanceled += new UserCancel(m_FormProgress_UserCanceled);

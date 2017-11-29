@@ -213,44 +213,40 @@ namespace Plugin
         }
 
 
-        //点击叶子节点 选中该图层
-        private void advTreeLayerList_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
-        {
-
-        }
+      
         //双击选择叶子节点 
-        private void advTreeLayerList_NodeDoubleClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
-        {
-            m_NodeKey = "";
-            if (e.Node == null)
-                return;
-            if (e.Node.Tag.ToString() != "Layer")//不是叶子节点 返回
-            {
-                return;
-            }
+       // private void advTreeLayerList_NodeDoubleClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
+       // {
+       //     m_NodeKey = "";
+       //     if (e.Node == null)
+       //         return;
+       //     if (e.Node.Tag.ToString() != "Layer")//不是叶子节点 返回
+       //     {
+       //         return;
+       //     }
 
-            GetNodeKey(e.Node);
-            if (string.IsNullOrEmpty(m_NodeKey))
-                return;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-       }
+       //     GetNodeKey(e.Node);
+       //     if (string.IsNullOrEmpty(m_NodeKey))
+       //         return;
+       //     this.DialogResult = DialogResult.OK;
+       //     this.Close();
+       //}
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            m_NodeKey = "";
-            if (advTreeLayerList.SelectedNode == null)
-                return;
-            if (advTreeLayerList.SelectedNode.Tag.ToString() != "Layer")//不是叶子节点 返回
-            {
-                return;
-            }
+            //m_NodeKey = "";
+            //if (advTreeLayerList.SelectedNode == null)
+            //    return;
+            //if (advTreeLayerList.SelectedNode.Tag.ToString() != "Layer")//不是叶子节点 返回
+            //{
+            //    return;
+            //}
 
-            GetNodeKey(advTreeLayerList.SelectedNode);
-            if (string.IsNullOrEmpty(m_NodeKey))
-                return;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            //GetNodeKey(advTreeLayerList.SelectedNode);
+            //if (string.IsNullOrEmpty(m_NodeKey))
+            //    return;
+            //this.DialogResult = DialogResult.OK;
+            //this.Close();
         }
 
 

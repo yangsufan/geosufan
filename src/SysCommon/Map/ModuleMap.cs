@@ -19,49 +19,10 @@ namespace SysCommon
 {
     public static class ModuleMap
     {
-        //public static void ChangeLableEngine2MapLex(IMapControlDefault pMapControl)
-        //{
-        //    pMapControl.Map.AnnotationEngine =new ESRI.ArcGIS.Maplex.MaplexAnnotateMapClass() ;
-        //}
-        //added by chulili 20110714 已知节点名称，查找节点（名称唯一）
-        public static DevComponents.AdvTree.Node SearchLayerNodebyName(string nodename,DevComponents.AdvTree.AdvTree pTree)
-        {
-            if (pTree.Nodes.Count == 0)
-                return null;
-            DevComponents.AdvTree.Node pSearchNode = null;
-            for (int i = 0; i < pTree.Nodes.Count; i++)
-            {
-                DevComponents.AdvTree.Node pNode = pTree.Nodes[i];
-                if (pNode.Name == nodename)
-                    return pNode;
-                //调用递归函数，查找节点
-                pSearchNode = SearchLayerNodebyName(pNode, nodename);
-                if (pSearchNode != null)
-                    return pSearchNode;
 
-            }
-            return null;
-        }//added by chulili 20110714 已知节点名称，查找节点（名称唯一），递归调用
-        public static DevComponents.AdvTree.Node SearchLayerNodebyName(DevComponents.AdvTree.Node pNode, string nodename)
+        public static DevExpress.XtraTreeList.Nodes.TreeListNode SearchLayerNodebyName(DevExpress.XtraTreeList.Nodes.TreeListNode pNode, string nodename)
         {
-            if (pNode.Name == nodename)
-                return pNode;
-            if (pNode.Nodes.Count == 0)
-                return null;
-            DevComponents.AdvTree.Node pSearchNode = null;
-            //遍历子节点
-            for (int i = 0; i < pNode.Nodes.Count; i++)
-            {
-                DevComponents.AdvTree.Node ptmpNode = pNode.Nodes[i];
-                if (ptmpNode.Name == nodename)
-                    return ptmpNode;
-                //递归调用查找
-                pSearchNode = SearchLayerNodebyName(ptmpNode, nodename);
-                //如果已找到，则返回
-                if (pSearchNode != null)
-                    return pSearchNode;
-
-            }
+  
             return null;
         }
 
@@ -204,15 +165,7 @@ namespace SysCommon
             }
             return null;
         }
-        public static void SetDataKey(DevComponents.AdvTree.Node pNode,XmlNode pXmlnode)
-        {
-            while (pNode != null && pXmlnode!=null)
-            {
-                pNode.DataKey = pXmlnode as object;
-                pNode = pNode.Parent;
-                pXmlnode = pXmlnode.ParentNode;
-            }
-        }
+     
         
         public static bool IsLayerTreeXmlRight(string xmlpath)
         {

@@ -21,7 +21,6 @@ namespace Plugin.Application
     public interface IApplicationRef
     {
     }
-
     /// <summary>
     /// 框架公用属性接口
     /// </summary>
@@ -31,56 +30,45 @@ namespace Plugin.Application
         /// 窗体
         /// </summary>
         Form MainForm { get; set; }
-
         /// <summary>
         /// 窗体名称
         /// </summary>
         string Name { get; set; }
-
         /// <summary>
         /// 窗体标题
         /// </summary>
         string Caption { get; set; }
-
         /// <summary>
         /// 是否显示
         /// </summary>
         bool Visible { get; set; }
-
         /// <summary>
         /// 是否可用
         /// </summary>
         bool Enabled { get; set; }
-
         /// <summary>
         /// 工具栏控件容器
         /// </summary>
         Control ControlContainer { get; set; }
-
         #region 状态栏属性
         /// <summary>
         /// 状态栏
         /// </summary>
         Control StatusBar { get; set; }
-
         /// <summary>
         /// 操作提示内容
         /// </summary>
         string OperatorTips { get; set; }
-
         /// <summary>
         /// 进度条
         /// </summary>
-        DevComponents.DotNetBar.ProgressBarItem ProgressBar { get; set; }
-
+        DevExpress.XtraEditors.Repository.RepositoryItemProgressBar ProgressBar { get; set; }
         //参考比例尺cmb
-        DevComponents.DotNetBar.ComboBoxItem RefScaleCmb { get; set; }
-
+        DevExpress.XtraEditors.Repository.RepositoryItemComboBox RefScaleCmb { get; set; }
         //当前比例尺cmb
-        DevComponents.DotNetBar.ComboBoxItem CurScaleCmb { get; set; }
-
+        DevExpress.XtraEditors.Repository.RepositoryItemComboBox CurScaleCmb { get; set; }
         //坐标显示文本框
-        DevComponents.DotNetBar.TextBoxItem CoorTxt { get; set; }
+        DevExpress.XtraEditors.Repository.RepositoryItemTextEdit CoorTxt { get; set; }
         /// <summary>
         /// 图上点坐标内容
         /// </summary>
@@ -109,7 +97,7 @@ namespace Plugin.Application
         /// <summary>
         /// 右键菜单集合
         /// </summary>
-        Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> DicContextMenu { get; set; }
+        Dictionary<string, System.Windows.Forms.ContextMenuStrip> DicContextMenu { get; set; }
         /// <summary>
         /// 系统插件集合
         /// </summary>
@@ -143,7 +131,6 @@ namespace Plugin.Application
         IMapControlDefault MapControl { get; set; }
         ITOCControlDefault TOCControl { get; set; }
         //end added by chulili 
-
         object LayerTree { get; set; }
         object LayerAdvTree { get; set; }
         string LayerTreeXmlPath { get; set; }
@@ -206,17 +193,11 @@ namespace Plugin.Application
         /// </summary>
         object CurrentControl { get; set; }
         /// <summary>
-        /// 比例尺显示
-        /// </summary>
-        List<DevComponents.DotNetBar.ComboBoxItem> ScaleBoxList { get; set; }
-
-        /// <summary>
         /// 将tab按照系统分类
         /// </summary>
-        Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> DicTabs { get; set; }
+        Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> DicTabs { get; set; }
         //end
     }
-
     /// <summary>
     /// GIS系统公用属性接口
     /// </summary>
@@ -226,65 +207,54 @@ namespace Plugin.Application
         /// 用户控件
         /// </summary>
         UserControl MainUserControl { get; set; }
-
         /// <summary>
         /// 数据处理树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree DataTree { get; set; }
-
+        DevExpress.XtraTreeList.TreeList DataTree { get; set; }
         /// <summary>
         /// 工程信息树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree ProjectTree { get; set; }
-
+        DevExpress.XtraTreeList.TreeList ProjectTree { get; set; }
         /// <summary>
         /// 数据工程配置XML文件
         /// </summary>
         XmlDocument DBXmlDocument { get; set; }
-
         /// <summary>
         /// 更新对比列表
         /// </summary>
-        DevComponents.DotNetBar.Controls.DataGridViewX UpdateGrid { get; set; }
-
+        DevExpress.XtraGrid.Views.Grid.GridView UpdateGrid { get; set; }
         /// <summary>
         /// 更新对比列表分页信息显示文本框
         /// </summary>
-        DevComponents.DotNetBar.TextBoxItem TxtDisplayPage { get; set; }
+        DevExpress.XtraEditors.Repository.RepositoryItemTextEdit TxtDisplayPage { get; set; }
         /// <summary>
         /// 更新对比列表按钮
         /// </summary>
-        DevComponents.DotNetBar.ButtonItem BtnFirst { get; set; }
-        DevComponents.DotNetBar.ButtonItem BtnLast { get; set; }
-        DevComponents.DotNetBar.ButtonItem BtnPre { get; set; }
-        DevComponents.DotNetBar.ButtonItem BtnNext { get; set; }
-
+        DevExpress.XtraBars.BarButtonItem BtnFirst { get; set; }
+        DevExpress.XtraBars.BarButtonItem BtnLast { get; set; }
+        DevExpress.XtraBars.BarButtonItem BtnPre { get; set; }
+        DevExpress.XtraBars.BarButtonItem BtnNext { get; set; }
         /// <summary>
         /// 线搜索结果列表
         /// </summary>
-        DevComponents.DotNetBar.Controls.DataGridViewX PolylineSearchGrid { get; set; }
-
+        DevExpress.XtraGrid.Views.Grid.GridView PolylineSearchGrid { get; set; }
         /// <summary>
         /// 多边形搜索结果
         /// </summary>
-        DevComponents.DotNetBar.Controls.DataGridViewX PolygonSearchGrid { get; set; }
-
+        DevExpress.XtraGrid.Views.Grid.GridView PolygonSearchGrid { get; set; }
         /// <summary>
         /// 接边融合记录结果
         /// </summary>
-        DevComponents.DotNetBar.Controls.DataGridViewX JoinMergeResultGrid { get; set; }
-
+        DevExpress.XtraGrid.Views.Grid.GridView JoinMergeResultGrid { get; set; }
         /// <summary>
         /// 数据检查列表
         /// </summary>
-        DevComponents.DotNetBar.Controls.DataGridViewX DataCheckGrid { get; set; }
-
+        DevExpress.XtraGrid.Views.Grid.GridView DataCheckGrid { get; set; }
         /// <summary>
         /// 处理数据的进程(唯一)
         /// </summary>
         Thread CurrentThread { get; set; }
     }
-
     /// <summary>
     /// 数据更新系统公用属性接口
     /// </summary>
@@ -294,86 +264,42 @@ namespace Plugin.Application
         /// 用户控件
         /// </summary>
         UserControl MainUserControl { get; set; }
-
-        /// <summary>
-        /// 数据处理树图
-        /// </summary>
-        DevComponents.AdvTree.AdvTree DataTree { get; set; }
-
         /// <summary>
         /// 更新对比列表分页信息显示文本框
         /// </summary>
-        DevComponents.DotNetBar.TextBoxItem TxtDisplayPage { get; set; }
+        DevExpress.XtraEditors.Repository.RepositoryItemTextEdit TxtDisplayPage { get; set; }
         /// <summary>
         /// 更新对比列表按钮
         /// </summary>
-        DevComponents.DotNetBar.ButtonItem BtnFirst { get; set; }
-        DevComponents.DotNetBar.ButtonItem BtnLast { get; set; }
-        DevComponents.DotNetBar.ButtonItem BtnPre { get; set; }
-        DevComponents.DotNetBar.ButtonItem BtnNext { get; set; }
-
+        DevExpress.XtraBars.BarButtonItem BtnFirst { get; set; }
+        DevExpress.XtraBars.BarButtonItem BtnLast { get; set; }
+        DevExpress.XtraBars.BarButtonItem BtnPre { get; set; }
+        DevExpress.XtraBars.BarButtonItem BtnNext { get; set; }
         /// <summary>
         /// 错误树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree ErrTree { get; set; }
-
+        DevExpress.XtraTreeList.TreeList ErrTree { get; set; }
         /// <summary>
         /// 工程信息树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree ProjectTree { get; set; }
-
+        DevExpress.XtraTreeList.TreeList ProjectTree { get; set; }
         /// <summary>
         /// 更新对比分析列表
         /// </summary>
-        DevComponents.DotNetBar.Controls.DataGridViewX UpdateDataGrid { get; set; }
-
+        DevExpress.XtraGrid.Views.Grid.GridView UpdateDataGrid { get; set; }
         /// <summary>
         /// 数据检查列表
         /// </summary>
-        DevComponents.DotNetBar.Controls.DataGridViewX DataCheckGrid { get; set; }
-
-        /// <summary>
-        /// 数据检查列表
-        /// </summary>
-        //DevComponents.DotNetBar.Controls.DataGridViewX DataCheckGrid { get;set;}
-
+        DevExpress.XtraGrid.Views.Grid.GridView DataCheckGrid { get; set; }
         /// <summary>
         /// 数据工程配置XML文件
         /// </summary>
         XmlDocument DBXmlDocument { get; set; }
-
         /// <summary>
         /// 处理数据的进程(唯一)
         /// </summary>
         Thread CurrentThread { get; set; }
     }
-
-     ///<summary>
-     ///数据入库更新系统公用属性接口
-     ///</summary>
-    //public interface IAppDBProjectRef : IAppArcGISRef
-    //{
-    //    /// <summary>
-    //    /// 用户控件
-    //    /// </summary>
-    //    UserControl MainUserControl { get; set; }
-
-    //    /// <summary>
-    //    ///  数据工程XML
-    //    /// </summary>
-    //    XmlDocument DBMainXml { get; set; }
-
-    //    /// <summary>
-    //    /// 业务树图
-    //    /// </summary>
-    //    DevComponents.AdvTree.AdvTree CaseDataTree { get; set; }
-
-    //    /// <summary>
-    //    /// 数据库配置树图
-    //    /// </summary>
-    //    DevComponents.AdvTree.AdvTree DBDataTree { get; set; }
-    //}
-
     /// <summary>
     /// 配置系统公用属性接口
     /// </summary>
@@ -388,42 +314,30 @@ namespace Plugin.Application
         System.Windows.Forms.RichTextBox tipRichBox { get; set; }
         string strLogFilePath { get; set; }   //日志文件
         //---------------------------------------------------------
-
         /// <summary>
         /// 用户控件
         /// </summary>
         UserControl MainUserControl { get; set; }
-
         /// <summary>
         /// 配置管理主树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree MainTree { get; set; }
-
+        DevExpress.XtraTreeList.TreeList MainTree { get; set; }
         /// <summary>
         /// 用户组树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree RoleTree { get; set; }
+        DevExpress.XtraTreeList.TreeList RoleTree { get; set; }
 
-        /// <summary>
         /// 用户树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree UserTree { get; set; }
-
+        DevExpress.XtraTreeList.TreeList UserTree { get; set; }
         /// <summary>
         /// 权限树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree PrivilegeTree { get; set; }
-        /// <summary>
-        /// 当前的GroupPanel
-        /// </summary>
-        /// 
-        DevComponents.DotNetBar.Controls.GroupPanel CurrentPanel { get; set; }
-
+        DevExpress.XtraTreeList.TreeList PrivilegeTree { get; set; }
         /// <summary>
         /// 处理数据的进程(唯一)
         /// </summary>
         Thread CurrentThread { get; set; }
-
         //连接信息
         /// <summary>
         /// 正式库数据库接口信息
@@ -433,7 +347,6 @@ namespace Plugin.Application
         /// 临时库数据库结构信息
         /// </summary>
         ICustomWks TempWksInfo { get; set; }
-
         bool CurScaleVisible { get; set; }
         bool RefScaleVisible { get; set; }
     }
@@ -465,7 +378,7 @@ namespace Plugin.Application
         //用户成果树
         System.Windows.Forms.TreeView UserResultTree { get; set; }
 
-        DevComponents.DotNetBar.TabControl IndextabControl { get; set; }
+        DevExpress.XtraBars.Ribbon.RibbonPage IndextabControl { get; set; }
 
         System.Windows.Forms.RichTextBox tipRichBox { get; set; }
         SysCommon.BottomQueryBar QueryBar { get; set; }
@@ -484,33 +397,26 @@ namespace Plugin.Application
         /// <summary>
         /// 数据处理树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree DataTree { get; set; }
+        DevExpress.XtraTreeList.TreeList DataTree { get; set; }
 
         /// <summary>
         /// 错误树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree ErrTree { get; set; }
+        DevExpress.XtraTreeList.TreeList ErrTree { get; set; }
 
         /// <summary>
         /// 工程信息树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree ProjectTree { get; set; }
+        DevExpress.XtraTreeList.TreeList ProjectTree { get; set; }
 
         /// <summary>
         /// 更新对比分析列表
         /// </summary>
-        DevComponents.DotNetBar.Controls.DataGridViewX UpdateDataGrid { get; set; }
-
-        /// <summary>
-        /// 数据检查列表
-        /// </summary>
-        //DevComponents.DotNetBar.Controls.DataGridViewX DataCheckGrid { get;set;}
-
+        DevExpress.XtraGrid.Views.Grid.GridView UpdateDataGrid { get; set; }
         /// <summary>
         /// 数据工程配置XML文件
         /// </summary>
         XmlDocument DBXmlDocument { get; set; }
-
         /// <summary>
         /// 处理数据的进程(唯一)
         /// </summary>
@@ -536,23 +442,23 @@ namespace Plugin.Application
         /// <summary>
         /// 工程信息树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree ProjectTree { get; set; }
+        DevExpress.XtraTreeList.TreeList ProjectTree { get; set; }
         /// <summary>
         /// 数据信息列表
         /// </summary>
-        DevComponents.DotNetBar.Controls.DataGridViewX DataInfoGrid { get; set; }
+        DevExpress.XtraGrid.Views.Grid.GridView DataInfoGrid { get; set; }
         /// <summary>
         /// 元数据列表
         /// </summary>
-        DevComponents.DotNetBar.Controls.DataGridViewX MetaDataGrid { get; set; }
+        DevExpress.XtraGrid.Views.Grid.GridView MetaDataGrid { get; set; }
         /// <summary>
         /// 系统设置列表
         /// </summary>
-        DevComponents.DotNetBar.Controls.DataGridViewX SysSettingGrid { get; set; }
+        DevExpress.XtraGrid.Views.Grid.GridView SysSettingGrid { get; set; }
         /// <summary>
         /// 系统设置树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree SysSettingTree { get; set; }
+        DevExpress.XtraTreeList.TreeList SysSettingTree { get; set; }
         /// <summary>
         /// 数据工程配置XML文件
         /// </summary>
@@ -560,54 +466,19 @@ namespace Plugin.Application
         /// <summary>
         /// 数据信息列表分页信息显示文本框
         /// </summary>
-        DevComponents.DotNetBar.TextBoxItem TxtDisplayPage { get; set; }
+        DevExpress.XtraEditors.Repository.RepositoryItemTextEdit TxtDisplayPage { get; set; }
         /// <summary>
         /// 数据信息列表按钮
         /// </summary>
-        DevComponents.DotNetBar.ButtonItem BtnFirst { get; set; }
-        DevComponents.DotNetBar.ButtonItem BtnLast { get; set; }
-        DevComponents.DotNetBar.ButtonItem BtnPre { get; set; }
-        DevComponents.DotNetBar.ButtonItem BtnNext { get; set; }
+        DevExpress.XtraBars.BarButtonItem BtnFirst { get; set; }
+        DevExpress.XtraBars.BarButtonItem BtnLast { get; set; }
+        DevExpress.XtraBars.BarButtonItem BtnPre { get; set; }
+        DevExpress.XtraBars.BarButtonItem BtnNext { get; set; }
         /// <summary>
         /// 处理数据的进程(唯一)
         /// </summary>
         Thread CurrentThread { get; set; }
     }
-    /// <summary>
-    /// Oracle Spatial 建库工具共用属性接口
-    /// </summary>
-    //public interface IAppOracleSpatialRef : IAppFormRef
-    //{
-    //    /// <summary>
-    //    /// 用户控件
-    //    /// </summary>
-    //    UserControl MainUserControl { get; set; }
-
-    //    /// <summary>
-    //    /// 工程信息树图
-    //    /// </summary>
-    //    DevComponents.AdvTree.AdvTree OraProjectTree { get; set; }
-
-    //    /// <summary>
-    //    /// 图层信息树图
-    //    /// </summary>
-    //    DevComponents.AdvTree.AdvTree LayerTree { get; set; }
-
-    //    /// <summary>
-    //    /// 图片显示框
-    //    /// </summary>
-    //    System.Windows.Forms.PictureBox PictureBox { get; set; }
-
-    //    /// <summary>
-    //    /// 数据工程配置XML文件
-    //    /// </summary>
-    //    XmlDocument DBXmlDocument { get; set; }
-    //    /// <summary>
-    //    /// 处理数据的进程(唯一)
-    //    /// </summary>
-    //    Thread CurrentThread { get; set; }
-    //}
-
     /// <summary>
     /// 数据库集成管理子系统插件接口定义  陈亚飞添加  20100927
     /// </summary>
@@ -620,7 +491,7 @@ namespace Plugin.Application
         /// <summary>
         /// 工程信息树图
         /// </summary>
-        DevComponents.AdvTree.AdvTree ProjectTree { get; set; }
+        DevExpress.XtraTreeList.TreeList ProjectTree { get; set; }
         /// <summary>
         /// 数据工程配置XML文件
         /// </summary>
@@ -634,120 +505,7 @@ namespace Plugin.Application
         bool RefScaleVisible { get; set; }
         //end added by chulili
     }
-
-    /// <summary>
-    /// 高程数据库管理子系统插件接口定义  陈亚飞添加  20100929
-    /// </summary>
-    //public interface IAppDBContourRef : IAppArcGISRef
-    //{
-    //    /// <summary>
-    //    /// 用户控件
-    //    /// </summary>
-    //    UserControl MainUserControl { get; set; }
-
-
-    //    /// <summary>
-    //    /// 工程信息树图
-    //    /// </summary>
-    //    DevComponents.AdvTree.AdvTree ProjectTree { get; set; }
-
-    //    /// <summary>
-    //    /// 数据工程配置XML文件
-    //    /// </summary>
-    //    XmlDocument DBXmlDocument { get; set; }
-
-    //    /// <summary>
-    //    /// 处理数据的进程(唯一)
-    //    /// </summary>
-    //    Thread CurrentThread { get; set; }
-    //}
-
-
-    /// <summary>
-    /// 影像数据库管理子系统插件接口定义  陈亚飞添加  20100929
-    /// </summary>
-    //public interface IAppDBImageRef : IAppArcGISRef
-    //{
-    //    /// <summary>
-    //    /// 用户控件
-    //    /// </summary>
-    //    UserControl MainUserControl { get; set; }
-
-
-    //    /// <summary>
-    //    /// 工程信息树图
-    //    /// </summary>
-    //    DevComponents.AdvTree.AdvTree ProjectTree { get; set; }
-
-    //    /// <summary>
-    //    /// 数据工程配置XML文件
-    //    /// </summary>
-    //    XmlDocument DBXmlDocument { get; set; }
-
-    //    /// <summary>
-    //    /// 处理数据的进程(唯一)
-    //    /// </summary>
-    //    Thread CurrentThread { get; set; }
-    //}
-
-    /// <summary>
-    /// 地名数据库管理子系统插件接口定义  陈亚飞添加  20100930
-    /// </summary>
-    //public interface IAppDBAddressRef : IAppArcGISRef
-    //{
-    //    /// <summary>
-    //    /// 用户控件
-    //    /// </summary>
-    //    UserControl MainUserControl { get; set; }
-
-
-    //    /// <summary>
-    //    /// 工程信息树图
-    //    /// </summary>
-    //    DevComponents.AdvTree.AdvTree ProjectTree { get; set; }
-
-    //    /// <summary>
-    //    /// 数据工程配置XML文件
-    //    /// </summary>
-    //    XmlDocument DBXmlDocument { get; set; }
-
-    //    /// <summary>
-    //    /// 处理数据的进程(唯一)
-    //    /// </summary>
-    //    Thread CurrentThread { get; set; }
-    //}
-
-    /// <summary>
-    /// 地理编码数据库管理子系统插件接口定义  陈亚飞添加  20100930
-    /// </summary>
-    //public interface IAppDBEntityRef : IAppArcGISRef
-    //{
-    //    /// <summary>
-    //    /// 用户控件
-    //    /// </summary>
-    //    UserControl MainUserControl { get; set; }
-
-
-    //    /// <summary>
-    //    /// 工程信息树图
-    //    /// </summary>
-    //    DevComponents.AdvTree.AdvTree ProjectTree { get; set; }
-
-    //    /// <summary>
-    //    /// 数据工程配置XML文件
-    //    /// </summary>
-    //    XmlDocument DBXmlDocument { get; set; }
-
-    //    /// <summary>
-    //    /// 处理数据的进程(唯一)
-    //    /// </summary>
-    //    Thread CurrentThread { get; set; }
-    //}
-
-
     #endregion
-
-
     #region 接口实现类
     public class AppForm : IAppFormRef
     {
@@ -766,7 +524,7 @@ namespace Plugin.Application
         private XmlDocument _DataTreeXml;                              // 数据树图XML节点
         private XmlDocument _DatabaseInfoXml;                          // 连接信息XML节点
         private Plugin.Parse.PluginCollection _ColParsePlugin;         // 系统插件集合
-        private Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> _DicContextMenu;           //右键菜单集合
+        private Dictionary<string, System.Windows.Forms.ContextMenuStrip> _DicContextMenu;           //右键菜单集合
         private string _ImageResPath;                                  // 图片资源路径
         private User _user;                                          //连接的用户信息 
         //cyf 20110602 add
@@ -985,7 +743,7 @@ namespace Plugin.Application
             }
         }
 
-        public Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> DicContextMenu
+        public Dictionary<string, System.Windows.Forms.ContextMenuStrip> DicContextMenu
         {
             get
             {
@@ -1086,8 +844,8 @@ namespace Plugin.Application
             }
         }
 
-        private DevComponents.DotNetBar.ProgressBarItem _ProgressBar;
-        public DevComponents.DotNetBar.ProgressBarItem ProgressBar
+        private DevExpress.XtraEditors.Repository.RepositoryItemProgressBar _ProgressBar;
+        public DevExpress.XtraEditors.Repository.RepositoryItemProgressBar ProgressBar
         {
             get
             {
@@ -1099,8 +857,8 @@ namespace Plugin.Application
             }
         }
         //参考比例尺cmb
-        private DevComponents.DotNetBar.ComboBoxItem _RefScaleCmb;
-        public DevComponents.DotNetBar.ComboBoxItem RefScaleCmb
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox _RefScaleCmb;
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox RefScaleCmb
         {
             get
             {
@@ -1112,8 +870,8 @@ namespace Plugin.Application
             }
         }
         //当前比例尺cmb
-        private DevComponents.DotNetBar.ComboBoxItem _CurScaleCmb;
-        public DevComponents.DotNetBar.ComboBoxItem CurScaleCmb
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox _CurScaleCmb;
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox CurScaleCmb
         {
             get
             {
@@ -1125,8 +883,8 @@ namespace Plugin.Application
             }
         }
         //坐标显示文本框
-        private DevComponents.DotNetBar.TextBoxItem _CoorTxt;
-        public DevComponents.DotNetBar.TextBoxItem CoorTxt
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit _CoorTxt;
+        public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit CoorTxt
         {
             get
             {
@@ -1181,7 +939,7 @@ namespace Plugin.Application
         private XmlDocument _DataTreeXml;                              // 数据树图XML节点
         private XmlDocument _DatabaseInfoXml;                          // 连接信息XML节点
         private Plugin.Parse.PluginCollection _ColParsePlugin;         // 系统插件集合
-        private Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> _DicContextMenu;           //右键菜单集合
+        private Dictionary<string, System.Windows.Forms.ContextMenuStrip> _DicContextMenu;           //右键菜单集合
         private string _ImageResPath;                                  // 图片资源路径
         private IMapDocument _MapDocument;                            //存储的文档对象
         private IMapControlDefault _MapControl;                      //MapControl控件
@@ -1200,23 +958,23 @@ namespace Plugin.Application
         private string _CurrentTool;                                   // 当前使用的TOOL名称
         //20110518
         private object _CurrentControl;                             //当前图形显示控件    
-        private List<DevComponents.DotNetBar.ComboBoxItem> _scaleBoxList;                        //比例尺显示        
-        private Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> _dicTabs;          //将tab按照系统分类
+        private List<DevExpress.XtraEditors.Repository.RepositoryItemComboBox> _scaleBoxList;                        //比例尺显示        
+        private Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> _dicTabs;          //将tab按照系统分类
         //end
 
-        private DevComponents.AdvTree.AdvTree _ProjectTree;       // 工程信息树图
-        private DevComponents.AdvTree.AdvTree _DataTree;          // 数据处理树图
-        private DevComponents.DotNetBar.Controls.DataGridViewX _UpdateGrid;  //更新对比列表
-        private DevComponents.DotNetBar.TextBoxItem _txtDisplayPage;//更新对比列表分页显示文本框
-        private DevComponents.DotNetBar.ButtonItem _btnFirst;//更新对比列表分页显示按钮
-        private DevComponents.DotNetBar.ButtonItem _btnLast;//更新对比列表分页显示按钮
-        private DevComponents.DotNetBar.ButtonItem _btnPre;//更新对比列表分页显示按钮
-        private DevComponents.DotNetBar.ButtonItem _btnNext;//更新对比列表分页显示按钮
-        private DevComponents.DotNetBar.Controls.DataGridViewX _PolylineSearchGrid;  //接边线型记录表
-        private DevComponents.DotNetBar.Controls.DataGridViewX _PolygonSearchGrid;  //接边多边形记录表
-        private DevComponents.DotNetBar.Controls.DataGridViewX _JoinMergeResultGrid;  //接边融合结果记录表
+        private DevExpress.XtraTreeList.TreeList _ProjectTree;       // 工程信息树图
+        private DevExpress.XtraTreeList.TreeList _DataTree;          // 数据处理树图
+        private DevExpress.XtraGrid.Views.Grid.GridView _UpdateGrid;  //更新对比列表
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit _txtDisplayPage;//更新对比列表分页显示文本框
+        private DevExpress.XtraBars.BarButtonItem _btnFirst;//更新对比列表分页显示按钮
+        private DevExpress.XtraBars.BarButtonItem _btnLast;//更新对比列表分页显示按钮
+        private DevExpress.XtraBars.BarButtonItem _btnPre;//更新对比列表分页显示按钮
+        private DevExpress.XtraBars.BarButtonItem _btnNext;//更新对比列表分页显示按钮
+        private DevExpress.XtraGrid.Views.Grid.GridView _PolylineSearchGrid;  //接边线型记录表
+        private DevExpress.XtraGrid.Views.Grid.GridView _PolygonSearchGrid;  //接边多边形记录表
+        private DevExpress.XtraGrid.Views.Grid.GridView _JoinMergeResultGrid;  //接边融合结果记录表
 
-        private DevComponents.DotNetBar.Controls.DataGridViewX _DataCheckGrid;   //数据检查表格
+        private DevExpress.XtraGrid.Views.Grid.GridView _DataCheckGrid;   //数据检查表格
 
         private Thread _CurrentThread;                           //处理数据的进程(唯一)
         private XmlDocument _DBXmlDocument;                       //数据工程配置XML文件
@@ -1251,100 +1009,6 @@ namespace Plugin.Application
             //added by chulili 20110711 添加两个参数
             _ListUserPrivilegeID = ListUserPrivilegeID;
             _user = V_user;
-
-
-            #region 自定义状态栏
-            DevComponents.DotNetBar.Bar statusBar = new DevComponents.DotNetBar.Bar();
-            statusBar.Name = "GisStatusBar";
-            statusBar.TabStop = false;
-            statusBar.Stretch = true;
-            statusBar.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            statusBar.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
-            statusBar.AntiAlias = true;
-            statusBar.BarType = DevComponents.DotNetBar.eBarType.StatusBar;
-            statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            statusBar.GrabHandleStyle = DevComponents.DotNetBar.eGrabHandleStyle.ResizeHandle;
-            statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-
-            //操作提示内容
-            DevComponents.DotNetBar.LabelItem aLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aLabelItem.Name = "GisLabel";
-            aLabelItem.Stretch = true;
-            aLabelItem.PaddingLeft = 2;
-            aLabelItem.PaddingRight = 5;
-            aLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //进度条
-            DevComponents.DotNetBar.ProgressBarItem progressBarItem = new DevComponents.DotNetBar.ProgressBarItem();
-            progressBarItem.ChunkGradientAngle = 0F;
-            progressBarItem.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
-            progressBarItem.Name = "GisprogressBarItem";
-            progressBarItem.RecentlyUsed = false;
-            progressBarItem.Stretch = true;
-            progressBarItem.Visible = false;
-            progressBarItem.ColorTable = DevComponents.DotNetBar.eProgressBarItemColor.Paused;
-
-            //参考比例尺下拉框
-            DevComponents.DotNetBar.LabelItem RefLabelItem = new DevComponents.DotNetBar.LabelItem();
-            RefLabelItem.Visible = false;   //changed by chulili 20110729 将参考比例尺隐藏（目前没用到）
-            RefLabelItem.Text = "参考比例尺:";//"ReferenceScale:";
-            RefLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //参考比例尺下拉框
-            DevComponents.DotNetBar.ComboBoxItem RefScaleCmb = new DevComponents.DotNetBar.ComboBoxItem();
-            RefScaleCmb.Name = "RefScaleCmbItem";
-            RefScaleCmb.Visible = false;//changed by chulili 20110729 将参考比例尺隐藏（目前没用到）
-            RefScaleCmb.Enabled = true;
-            RefScaleCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            //cyf 20110615 add:添加国标比例尺
-            object[] objScale = null;
-            int intWidth;
-            ModScale.GetScaleConfig(out objScale,out intWidth );
-            RefScaleCmb.Items.AddRange(objScale);//changed by chulili 20110731 去掉0,500
-            //end
-
-            //当前比例尺下拉框
-            DevComponents.DotNetBar.LabelItem CurLabelItem = new DevComponents.DotNetBar.LabelItem();
-            CurLabelItem.Visible = true;
-            CurLabelItem.Text = "当前比例尺:";// "CurrentScale:";
-            CurLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-
-            //当前比例尺下拉框
-            DevComponents.DotNetBar.ComboBoxItem CurScaleCmb = new DevComponents.DotNetBar.ComboBoxItem();
-            CurScaleCmb.Name = "CurScaleCmbItem";
-            CurScaleCmb.Visible = true;
-            CurScaleCmb.Enabled = true;
-            CurScaleCmb.ComboWidth = intWidth;
-            CurScaleCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            //cyf 20110615 add:添加国标比例尺
-            CurScaleCmb.Items.AddRange(objScale);
-
-
-            //坐标文本框
-            DevComponents.DotNetBar.TextBoxItem CoorTxt = new DevComponents.DotNetBar.TextBoxItem();
-            CoorTxt.Name = "CoorTxtItem";
-            CoorTxt.Visible = true;
-            CoorTxt.Enabled = true;
-
-            //图上点坐标内容
-            DevComponents.DotNetBar.LabelItem aCoorLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aCoorLabelItem.Name = "GisCoorLabel";
-            aCoorLabelItem.Stretch = true;
-            aCoorLabelItem.PaddingLeft = 2;
-            aCoorLabelItem.PaddingRight = 2;
-            aCoorLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //用户信息内容
-            DevComponents.DotNetBar.LabelItem aUserInfoLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aUserInfoLabelItem.Name = "GisUserInfoLabel";
-            aUserInfoLabelItem.Stretch = true;
-            aUserInfoLabelItem.PaddingLeft = 2;
-            aUserInfoLabelItem.PaddingRight = 2;
-            aUserInfoLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            statusBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] { aLabelItem, progressBarItem,RefLabelItem,RefScaleCmb, CurLabelItem, CurScaleCmb });
-            this.StatusBar = statusBar;
-            #endregion
         }
 
 
@@ -1362,7 +1026,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree DataTree
+        public DevExpress.XtraTreeList.TreeList DataTree
         {
             get
             {
@@ -1374,7 +1038,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree ProjectTree
+        public DevExpress.XtraTreeList.TreeList ProjectTree
         {
             get
             {
@@ -1398,7 +1062,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.Controls.DataGridViewX UpdateGrid
+        public DevExpress.XtraGrid.Views.Grid.GridView UpdateGrid
         {
             get
             {
@@ -1409,7 +1073,7 @@ namespace Plugin.Application
                 _UpdateGrid = value;
             }
         }
-        public DevComponents.DotNetBar.Controls.DataGridViewX PolylineSearchGrid
+        public DevExpress.XtraGrid.Views.Grid.GridView PolylineSearchGrid
         {
             get
             {
@@ -1420,7 +1084,7 @@ namespace Plugin.Application
                 _PolylineSearchGrid = value;
             }
         }
-        public DevComponents.DotNetBar.Controls.DataGridViewX PolygonSearchGrid
+        public DevExpress.XtraGrid.Views.Grid.GridView PolygonSearchGrid
         {
             get
             {
@@ -1431,7 +1095,7 @@ namespace Plugin.Application
                 _PolygonSearchGrid = value;
             }
         }
-        public DevComponents.DotNetBar.Controls.DataGridViewX JoinMergeResultGrid
+        public DevExpress.XtraGrid.Views.Grid.GridView JoinMergeResultGrid
         {
             get
             {
@@ -1446,7 +1110,7 @@ namespace Plugin.Application
 
 
 
-        public DevComponents.DotNetBar.TextBoxItem TxtDisplayPage
+        public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit TxtDisplayPage
         {
             get
             {
@@ -1458,7 +1122,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.ButtonItem BtnFirst
+        public DevExpress.XtraBars.BarButtonItem BtnFirst
         {
             get
             {
@@ -1469,7 +1133,7 @@ namespace Plugin.Application
                 _btnFirst = value;
             }
         }
-        public DevComponents.DotNetBar.ButtonItem BtnLast
+        public DevExpress.XtraBars.BarButtonItem BtnLast
         {
             get
             {
@@ -1480,7 +1144,7 @@ namespace Plugin.Application
                 _btnLast = value;
             }
         }
-        public DevComponents.DotNetBar.ButtonItem BtnPre
+        public DevExpress.XtraBars.BarButtonItem BtnPre
         {
             get
             {
@@ -1491,7 +1155,7 @@ namespace Plugin.Application
                 _btnPre = value;
             }
         }
-        public DevComponents.DotNetBar.ButtonItem BtnNext
+        public DevExpress.XtraBars.BarButtonItem BtnNext
         {
             get
             {
@@ -1503,7 +1167,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.Controls.DataGridViewX DataCheckGrid
+        public DevExpress.XtraGrid.Views.Grid.GridView DataCheckGrid
         {
             get
             {
@@ -1574,7 +1238,7 @@ namespace Plugin.Application
             }
         }
 
-        public Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> DicContextMenu
+        public Dictionary<string, System.Windows.Forms.ContextMenuStrip> DicContextMenu
         {
             get
             {
@@ -1616,193 +1280,39 @@ namespace Plugin.Application
         #region 状态栏属性
         public string OperatorTips
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["GisLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["GisLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
-        public DevComponents.DotNetBar.ProgressBarItem ProgressBar
+        public DevExpress.XtraEditors.Repository.RepositoryItemProgressBar ProgressBar
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["GisprogressBarItem"] as DevComponents.DotNetBar.ProgressBarItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["GisprogressBarItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         //参考比例尺cmb
-        public DevComponents.DotNetBar.ComboBoxItem RefScaleCmb
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox RefScaleCmb
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["RefScaleCmbItem"] as DevComponents.DotNetBar.ComboBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["RefScaleCmbItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         //当前比例尺cmb
-        public DevComponents.DotNetBar.ComboBoxItem CurScaleCmb
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox CurScaleCmb
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["CurScaleCmbItem"] as DevComponents.DotNetBar.ComboBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["CurScaleCmbItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get;set;
         }
         //坐标显示文本框
-        public DevComponents.DotNetBar.TextBoxItem CoorTxt
+        public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit CoorTxt
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["CoorTxtItem"] as DevComponents.DotNetBar.TextBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["CoorTxtItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
 
         public string CoorXY
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["GisCoorLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["GisCoorLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         public string UserInfo
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["GisUserInfoLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["GisUserInfoLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         #endregion
@@ -1924,13 +1434,6 @@ namespace Plugin.Application
                 _TOCControl = value;
             }
         }
-
-       //public PictureBox p1 { get; set; }
-       //public PictureBox p2 { get; set; }
-       //public PictureBox p3 { get; set; }
-       //public PictureBox p4 { get; set; }
-
-        //cyf 20110518  
         public object CurrentControl
         {
             get
@@ -1942,7 +1445,7 @@ namespace Plugin.Application
                 _CurrentControl = value;
             }
         }
-        public List<DevComponents.DotNetBar.ComboBoxItem> ScaleBoxList
+        public List<DevExpress.XtraEditors.Repository.RepositoryItemComboBox> ScaleBoxList
         {
             get
             {
@@ -1954,7 +1457,7 @@ namespace Plugin.Application
             }
         }
 
-        public Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> DicTabs
+        public Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> DicTabs
         {
             get
             {
@@ -1965,8 +1468,6 @@ namespace Plugin.Application
                 _dicTabs = value;
             }
         }
-        //end
-
         #endregion
 
         #region IAppFormDef 成员
@@ -2153,7 +1654,7 @@ namespace Plugin.Application
         }
         #endregion
     }
-
+     
     public class AppSMPD : IAppSMPDRef, IAppFormRef
     {
         private object _LayerTree;                                      //added by chulili 20111119
@@ -2167,7 +1668,7 @@ namespace Plugin.Application
         private XmlDocument _DataTreeXml;                              // 数据树图XML节点
         private XmlDocument _DatabaseInfoXml;                          // 连接信息XML节点
         private Plugin.Parse.PluginCollection _ColParsePlugin;         // 系统插件集合
-        private Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> _DicContextMenu;           //右键菜单集合
+        private Dictionary<string, System.Windows.Forms.ContextMenuStrip> _DicContextMenu;           //右键菜单集合
         private string _ImageResPath;                                  // 图片资源路径
         private IMapDocument _MapDocument;                            //存储的文档对象
         private IMapControlDefault _MapControl;                      //MapControl控件
@@ -2180,23 +1681,23 @@ namespace Plugin.Application
         private string _CurrentTool;                                   // 当前使用的TOOL名称
         //20110518
         private object _CurrentControl;                             //当前图形显示控件 
-        private List<DevComponents.DotNetBar.ComboBoxItem> _scaleBoxList;                        //比例尺显示        
-        private Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> _dicTabs;          //将tab按照系统分类
+        private List<DevExpress.XtraEditors.Repository.RepositoryItemComboBox> _scaleBoxList;                        //比例尺显示        
+        private Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> _dicTabs;          //将tab按照系统分类
         //end
 
 
-        private DevComponents.AdvTree.AdvTree _DataTree;          // 数据处理树图
-        private DevComponents.AdvTree.AdvTree _ErrTree;           // 错误树图
-        private DevComponents.AdvTree.AdvTree _ProjectTree;       // 工程信息树图
-        private DevComponents.DotNetBar.Controls.DataGridViewX _UpdateDataGrid;   //更新对比表格
+        private DevExpress.XtraTreeList.TreeList _DataTree;          // 数据处理树图
+        private DevExpress.XtraTreeList.TreeList _ErrTree;           // 错误树图
+        private DevExpress.XtraTreeList.TreeList _ProjectTree;       // 工程信息树图
+        private DevExpress.XtraGrid.Views.Grid.GridView _UpdateDataGrid;   //更新对比表格
 
-        private DevComponents.DotNetBar.TextBoxItem _txtDisplayPage;//更新对比列表分页显示文本框
-        private DevComponents.DotNetBar.ButtonItem _btnFirst;//更新对比列表分页显示按钮
-        private DevComponents.DotNetBar.ButtonItem _btnLast;//更新对比列表分页显示按钮
-        private DevComponents.DotNetBar.ButtonItem _btnPre;//更新对比列表分页显示按钮
-        private DevComponents.DotNetBar.ButtonItem _btnNext;//更新对比列表分页显示按钮
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit _txtDisplayPage;//更新对比列表分页显示文本框
+        private DevExpress.XtraBars.BarButtonItem _btnFirst;//更新对比列表分页显示按钮
+        private DevExpress.XtraBars.BarButtonItem _btnLast;//更新对比列表分页显示按钮
+        private DevExpress.XtraBars.BarButtonItem _btnPre;//更新对比列表分页显示按钮
+        private DevExpress.XtraBars.BarButtonItem _btnNext;//更新对比列表分页显示按钮
 
-        private DevComponents.DotNetBar.Controls.DataGridViewX _DataCheckGrid;   //数据检查表格
+        private DevExpress.XtraGrid.Views.Grid.GridView _DataCheckGrid;   //数据检查表格
         private XmlDocument _DBXmlDocument;                       //数据工程配置XML文件
 
         private Thread _CurrentThread;                           //处理数据的进程(唯一)
@@ -2228,84 +1729,6 @@ namespace Plugin.Application
             _ColParsePlugin = ColParsePlugin;
             _ImageResPath = ImageResPath;
 
-            #region 自定义状态栏
-            DevComponents.DotNetBar.Bar statusBar = new DevComponents.DotNetBar.Bar();
-            statusBar.Name = "SMPDStatusBar";
-            statusBar.TabStop = false;
-            statusBar.Stretch = true;
-            statusBar.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            statusBar.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
-            statusBar.AntiAlias = true;
-            statusBar.BarType = DevComponents.DotNetBar.eBarType.StatusBar;
-            statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            statusBar.GrabHandleStyle = DevComponents.DotNetBar.eGrabHandleStyle.ResizeHandle;
-            statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-
-            //操作提示内容
-            DevComponents.DotNetBar.LabelItem aLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aLabelItem.Name = "SMPDLabel";
-            aLabelItem.Stretch = true;
-            aLabelItem.PaddingLeft = 2;
-            aLabelItem.PaddingRight = 5;
-            aLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //进度条
-            DevComponents.DotNetBar.ProgressBarItem progressBarItem = new DevComponents.DotNetBar.ProgressBarItem();
-            progressBarItem.ChunkGradientAngle = 0F;
-            progressBarItem.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
-            progressBarItem.Name = "SMPDprogressBarItem";
-            progressBarItem.RecentlyUsed = false;
-            progressBarItem.Stretch = true;
-            progressBarItem.Visible = false;
-            progressBarItem.ColorTable = DevComponents.DotNetBar.eProgressBarItemColor.Paused;
-
-            //参考比例尺下拉框
-            DevComponents.DotNetBar.LabelItem RefLabelItem = new DevComponents.DotNetBar.LabelItem();
-            RefLabelItem.Visible = true;
-            RefLabelItem.Text = "参考比例尺:";//"ReferenceScale:";
-            RefLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //参考比例尺下拉框
-            DevComponents.DotNetBar.ComboBoxItem RefScaleCmb = new DevComponents.DotNetBar.ComboBoxItem();
-            RefScaleCmb.Name = "RefScaleCmbItem";
-            RefScaleCmb.Visible = true;
-            RefScaleCmb.Enabled = true;
-            RefScaleCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            object[] objScale = null;
-            ModScale.GetScaleConfig(out objScale );
-            RefScaleCmb.Items.AddRange(objScale);
-
-            //当前比例尺下拉框
-            DevComponents.DotNetBar.LabelItem CurLabelItem = new DevComponents.DotNetBar.LabelItem();
-            CurLabelItem.Visible = true;
-            CurLabelItem.Text = "当前比例尺:";// "CurrentScale:";
-            CurLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //当前比例尺下拉框
-            DevComponents.DotNetBar.ComboBoxItem CurScaleCmb = new DevComponents.DotNetBar.ComboBoxItem();
-            CurScaleCmb.Name = "CurScaleCmbItem";
-            CurScaleCmb.Visible = true;
-            CurScaleCmb.Enabled = true;
-            CurScaleCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            CurScaleCmb.Items.AddRange(objScale);
-
-            //坐标文本框
-            DevComponents.DotNetBar.TextBoxItem CoorTxt = new DevComponents.DotNetBar.TextBoxItem();
-            CoorTxt.Name = "CoorTxtItem";
-            CoorTxt.Visible = true;
-            CoorTxt.Enabled = true;
-
-            //用户信息内容
-            DevComponents.DotNetBar.LabelItem aUserInfoLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aUserInfoLabelItem.Name = "SMPDGisUserInfoLabel";
-            aUserInfoLabelItem.Stretch = true;
-            aUserInfoLabelItem.PaddingLeft = 2;
-            aUserInfoLabelItem.PaddingRight = 2;
-            aUserInfoLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            statusBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] { aLabelItem, progressBarItem, RefLabelItem, RefScaleCmb, CurLabelItem, CurScaleCmb });
-            this.StatusBar = statusBar;
-            #endregion
         }
 
         #region IAppSMPDRef 成员
@@ -2369,7 +1792,7 @@ namespace Plugin.Application
             }
         }
 
-        public Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> DicContextMenu
+        public Dictionary<string, System.Windows.Forms.ContextMenuStrip> DicContextMenu
         {
             get
             {
@@ -2381,7 +1804,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree DataTree
+        public DevExpress.XtraTreeList.TreeList DataTree
         {
             get
             {
@@ -2393,7 +1816,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.TextBoxItem TxtDisplayPage
+        public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit TxtDisplayPage
         {
             get
             {
@@ -2405,7 +1828,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.ButtonItem BtnFirst
+        public DevExpress.XtraBars.BarButtonItem BtnFirst
         {
             get
             {
@@ -2416,7 +1839,7 @@ namespace Plugin.Application
                 _btnFirst = value;
             }
         }
-        public DevComponents.DotNetBar.ButtonItem BtnLast
+        public DevExpress.XtraBars.BarButtonItem BtnLast
         {
             get
             {
@@ -2427,7 +1850,7 @@ namespace Plugin.Application
                 _btnLast = value;
             }
         }
-        public DevComponents.DotNetBar.ButtonItem BtnPre
+        public DevExpress.XtraBars.BarButtonItem BtnPre
         {
             get
             {
@@ -2438,7 +1861,7 @@ namespace Plugin.Application
                 _btnPre = value;
             }
         }
-        public DevComponents.DotNetBar.ButtonItem BtnNext
+        public DevExpress.XtraBars.BarButtonItem BtnNext
         {
             get
             {
@@ -2450,7 +1873,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree ErrTree
+        public DevExpress.XtraTreeList.TreeList ErrTree
         {
             get
             {
@@ -2462,7 +1885,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree ProjectTree
+        public DevExpress.XtraTreeList.TreeList ProjectTree
         {
             get
             {
@@ -2474,7 +1897,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.Controls.DataGridViewX UpdateDataGrid
+        public DevExpress.XtraGrid.Views.Grid.GridView UpdateDataGrid
         {
             get
             {
@@ -2486,7 +1909,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.Controls.DataGridViewX DataCheckGrid
+        public DevExpress.XtraGrid.Views.Grid.GridView DataCheckGrid
         {
             get
             {
@@ -2538,165 +1961,33 @@ namespace Plugin.Application
         #region 状态栏属性
         public string OperatorTips
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["SMPDLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["SMPDLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get;set;
         }
 
-        public DevComponents.DotNetBar.ProgressBarItem ProgressBar
+        public DevExpress.XtraEditors.Repository.RepositoryItemProgressBar ProgressBar
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["SMPDprogressBarItem"] as DevComponents.DotNetBar.ProgressBarItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["SMPDprogressBarItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         //参考比例尺cmb
-        public DevComponents.DotNetBar.ComboBoxItem RefScaleCmb
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox RefScaleCmb
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["RefScaleCmbItem"] as DevComponents.DotNetBar.ComboBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["RefScaleCmbItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         //当前比例尺cmb
-        public DevComponents.DotNetBar.ComboBoxItem CurScaleCmb
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox CurScaleCmb
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["CurScaleCmbItem"] as DevComponents.DotNetBar.ComboBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["CurScaleCmbItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         //坐标显示文本框
-        public DevComponents.DotNetBar.TextBoxItem CoorTxt
+        public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit CoorTxt
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["CoorTxtItem"] as DevComponents.DotNetBar.TextBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["CoorTxtItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         public string UserInfo
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["SMPDGisUserInfoLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["SMPDGisUserInfoLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         public string CoorXY
@@ -2812,7 +2103,7 @@ namespace Plugin.Application
                 _CurrentControl = value;
             }
         }
-        public List<DevComponents.DotNetBar.ComboBoxItem> ScaleBoxList
+        public List<DevExpress.XtraEditors.Repository.RepositoryItemComboBox> ScaleBoxList
         {
             get
             {
@@ -2824,7 +2115,7 @@ namespace Plugin.Application
             }
         }
 
-        public Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> DicTabs
+        public Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> DicTabs
         {
             get
             {
@@ -3041,7 +2332,7 @@ namespace Plugin.Application
         private XmlDocument _DataTreeXml;                              // 数据树图XML节点
         private XmlDocument _DatabaseInfoXml;                          // 连接信息XML节点
         private Plugin.Parse.PluginCollection _ColParsePlugin;         // 系统插件集合
-        private Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> _DicContextMenu;           //右键菜单集合
+        private Dictionary<string, System.Windows.Forms.ContextMenuStrip> _DicContextMenu;           //右键菜单集合
         private string _ImageResPath;
 
 
@@ -3056,11 +2347,11 @@ namespace Plugin.Application
         private string _strLogFilePath;
         //--------------------------------------------------
 
-        private DevComponents.AdvTree.AdvTree _MainTree;          // 主配置树图
-        private DevComponents.AdvTree.AdvTree _RoleTree;           // 用户组树图
-        private DevComponents.AdvTree.AdvTree _UserTree;       // 用户树图
-        private DevComponents.AdvTree.AdvTree _privilegeTree;       //权限树
-        private DevComponents.DotNetBar.Controls.GroupPanel _CurrentPanel;       // 当前GroupPanel
+        private DevExpress.XtraTreeList.TreeList _MainTree;          // 主配置树图
+        private DevExpress.XtraTreeList.TreeList _RoleTree;           // 用户组树图
+        private DevExpress.XtraTreeList.TreeList _UserTree;       // 用户树图
+        private DevExpress.XtraTreeList.TreeList _privilegeTree;       //权限树
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup _CurrentPanel;       // 当前GroupPanel
         private User _user;                                          //连接的用户信息 
         //cyf 20110602 add
         private List<Role> _LstRoleInfo;                             //连接的用户对应的角色信息
@@ -3090,103 +2381,7 @@ namespace Plugin.Application
             _ColParsePlugin = ColParsePlugin;
             _ImageResPath = ImageResPath;
             _user = V_user;
-
             _ListUserPrivilegeID = ListUserPrivilegeID;
-
-            #region 自定义状态栏
-            DevComponents.DotNetBar.Bar statusBar = new DevComponents.DotNetBar.Bar();
-            statusBar.Name = "SMPDStatusBar";
-            statusBar.TabStop = false;
-            statusBar.Stretch = true;
-            statusBar.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            statusBar.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
-            statusBar.AntiAlias = true;
-            statusBar.BarType = DevComponents.DotNetBar.eBarType.StatusBar;
-            statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            statusBar.GrabHandleStyle = DevComponents.DotNetBar.eGrabHandleStyle.ResizeHandle;
-            statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-
-            //操作提示内容
-            DevComponents.DotNetBar.LabelItem aLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aLabelItem.Name = "SMPDLabel";
-            aLabelItem.Stretch = true;
-            aLabelItem.PaddingLeft = 2;
-            aLabelItem.PaddingRight = 5;
-            aLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //进度条
-            DevComponents.DotNetBar.ProgressBarItem progressBarItem = new DevComponents.DotNetBar.ProgressBarItem();
-            progressBarItem.ChunkGradientAngle = 0F;
-            progressBarItem.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
-            progressBarItem.Name = "SMPDprogressBarItem";
-            progressBarItem.RecentlyUsed = false;
-            progressBarItem.Stretch = true;
-            progressBarItem.Visible = false;
-            progressBarItem.ColorTable = DevComponents.DotNetBar.eProgressBarItemColor.Paused;
-            //参考比例尺下拉框
-            DevComponents.DotNetBar.LabelItem RefLabelItem = new DevComponents.DotNetBar.LabelItem();
-            RefLabelItem.Visible = true;
-            RefLabelItem.Name = "RefScaleLabel";
-            RefLabelItem.Text = "参考比例尺:";//"ReferenceScale:";
-            RefLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //参考比例尺下拉框
-            DevComponents.DotNetBar.ComboBoxItem RefScaleCmb = new DevComponents.DotNetBar.ComboBoxItem();
-            RefScaleCmb.Name = "RefScaleCmbItem";
-            RefScaleCmb.Visible = true;
-            RefScaleCmb.Enabled = true;
-            RefScaleCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            //cyf 20110615 add:添加国标比例尺
-            RefScaleCmb.Items.AddRange(new object[] { 0, 500, 1000, 2000, 5000, 10000, 50000, 250000, 1000000 });
-            //end
-
-            //当前比例尺下拉框
-            DevComponents.DotNetBar.LabelItem CurLabelItem = new DevComponents.DotNetBar.LabelItem();
-            CurLabelItem.Visible = true;
-            CurLabelItem.Name = "CurScaleLabel";
-            CurLabelItem.Text = "当前比例尺:";// "CurrentScale:";
-            CurLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-
-            //当前比例尺下拉框
-            DevComponents.DotNetBar.ComboBoxItem CurScaleCmb = new DevComponents.DotNetBar.ComboBoxItem();
-            CurScaleCmb.Name = "CurScaleCmbItem";
-            CurScaleCmb.Visible = true;
-            CurScaleCmb.Enabled = true;
-            CurScaleCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            //cyf 20110615 add:添加国标比例尺
-            CurScaleCmb.Items.AddRange(new object[] { 0, 500, 1000, 2000, 5000, 10000, 50000, 250000, 1000000 });
-
-
-            //坐标文本框
-            DevComponents.DotNetBar.TextBoxItem CoorTxt = new DevComponents.DotNetBar.TextBoxItem();
-            CoorTxt.Name = "CoorTxtItem";
-            CoorTxt.Visible = true;
-            CoorTxt.Enabled = true;
-
-            //用户信息内容
-            DevComponents.DotNetBar.LabelItem aUserInfoLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aUserInfoLabelItem.Name = "SMPDGisUserInfoLabel";
-            aUserInfoLabelItem.Stretch = true;
-            aUserInfoLabelItem.PaddingLeft = 2;
-            aUserInfoLabelItem.PaddingRight = 2;
-            aUserInfoLabelItem.TextAlignment = System.Drawing.StringAlignment.Far;
-            aUserInfoLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //图上点坐标内容
-            DevComponents.DotNetBar.LabelItem aCoorLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aCoorLabelItem.Name = "GisCoorLabel";
-            aCoorLabelItem.Stretch = true;
-            aCoorLabelItem.PaddingLeft = 2;
-            aCoorLabelItem.PaddingRight = 2;
-            aCoorLabelItem.TextAlignment = System.Drawing.StringAlignment.Far;
-            aCoorLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //cyf 20110615 modify:
-            //statusBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] { aLabelItem, progressBarItem, aUserInfoLabelItem, aCoorLabelItem });
-            statusBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] { aLabelItem, aUserInfoLabelItem, aCoorLabelItem, RefLabelItem, RefScaleCmb, CurLabelItem, CurScaleCmb });
-            this.StatusBar = statusBar;
-            #endregion
         }
 
         #region 成员
@@ -3274,7 +2469,7 @@ namespace Plugin.Application
             }
         }
 
-        public Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> DicContextMenu
+        public Dictionary<string, System.Windows.Forms.ContextMenuStrip> DicContextMenu
         {
             get
             {
@@ -3286,7 +2481,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree MainTree
+        public DevExpress.XtraTreeList.TreeList MainTree
         {
             get
             {
@@ -3298,7 +2493,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree RoleTree
+        public DevExpress.XtraTreeList.TreeList RoleTree
         {
             get
             {
@@ -3310,7 +2505,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree UserTree
+        public DevExpress.XtraTreeList.TreeList UserTree
         {
             get
             {
@@ -3322,7 +2517,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree PrivilegeTree
+        public DevExpress.XtraTreeList.TreeList PrivilegeTree
         {
             get
             {
@@ -3331,18 +2526,6 @@ namespace Plugin.Application
             set
             {
                 _privilegeTree = value;
-            }
-        }
-
-        public DevComponents.DotNetBar.Controls.GroupPanel CurrentPanel
-        {
-            get
-            {
-                return _CurrentPanel;
-            }
-            set
-            {
-                _CurrentPanel = value;
             }
         }
 
@@ -3374,61 +2557,17 @@ namespace Plugin.Application
         #region 状态栏属性
         public string OperatorTips
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["SMPDLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["SMPDLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get;set;
         }
 
-        public DevComponents.DotNetBar.ProgressBarItem ProgressBar
+        public DevExpress.XtraEditors.Repository.RepositoryItemProgressBar ProgressBar
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["SMPDprogressBarItem"] as DevComponents.DotNetBar.ProgressBarItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["SMPDprogressBarItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         //参考比例尺cmb
-        private DevComponents.DotNetBar.ComboBoxItem _RefScaleCmb;
-        public DevComponents.DotNetBar.ComboBoxItem RefScaleCmb
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox _RefScaleCmb;
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox RefScaleCmb
         {
             get
             {
@@ -3442,64 +2581,22 @@ namespace Plugin.Application
         //参考比例尺是否可见
         public bool RefScaleVisible
         {
-            get
-            {
-                DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                return statusBar.Items["RefScaleLabel"].Visible;
-            }
-            set
-            {
-                DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                statusBar.Items["RefScaleCmbItem"].Visible = value;
-                statusBar.Items["RefScaleLabel"].Visible = value;
-            }
+            get; set;
         }
         //当前比例尺是否可见
         public bool CurScaleVisible
         {
-            get
-            {
-                DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                return statusBar.Items["CurScaleLabel"].Visible;
-            }
-            set
-            {
-                DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                statusBar.Items["CurScaleCmbItem"].Visible = value;
-                statusBar.Items["CurScaleLabel"].Visible = value;
-            }
+            get; set;
         }
         //当前比例尺cmb
-        public DevComponents.DotNetBar.ComboBoxItem CurScaleCmb
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox CurScaleCmb
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["CurScaleCmbItem"] as DevComponents.DotNetBar.ComboBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["CurScaleCmbItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         //end 褚丽丽  从别处拷贝
         //坐标显示文本框
-        private DevComponents.DotNetBar.TextBoxItem _CoorTxt;
-        public DevComponents.DotNetBar.TextBoxItem CoorTxt
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit _CoorTxt;
+        public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit CoorTxt
         {
             get
             {
@@ -3513,56 +2610,12 @@ namespace Plugin.Application
 
         public string UserInfo
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["SMPDGisUserInfoLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["SMPDGisUserInfoLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         public string CoorXY
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["GisCoorLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["GisCoorLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         #endregion
 
@@ -3812,7 +2865,7 @@ namespace Plugin.Application
         private XmlDocument _DataTreeXml;                              // 数据树图XML节点
         private XmlDocument _DatabaseInfoXml;                          // 连接信息XML节点
         private Plugin.Parse.PluginCollection _ColParsePlugin;         // 系统插件集合
-        private Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> _DicContextMenu;           //右键菜单集合
+        private Dictionary<string, System.Windows.Forms.ContextMenuStrip> _DicContextMenu;           //右键菜单集合
         private string _ImageResPath;                                  // 图片资源路径
         private IMapDocument _MapDocument;                            //存储的文档对象
         private IMapControlDefault _MapControl;                      //MapControl控件
@@ -3828,19 +2881,19 @@ namespace Plugin.Application
         private ITOCControlDefault _TOCControl;                     //TOCControl控件
         private string _CurrentTool;                                   // 当前使用的TOOL名称
         private object _CurrentControl;                             //当前图形显示控件
-        private List<DevComponents.DotNetBar.ComboBoxItem> _scaleBoxList;                        //比例尺显示        
-        private Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> _dicTabs;          //将tab按照系统分类
+        private List<DevExpress.XtraEditors.Repository.RepositoryItemComboBox> _scaleBoxList;                        //比例尺显示        
+        private Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> _dicTabs;          //将tab按照系统分类
 
         private string _LayerTreeXmlPath = "";  //added by chulili 20111101 
         private object _LayerTree;  //目录树图 用来存放GeoLayerTreeLib.LayerManager.UcDataLib
         private object _LayerAdvTree;  //目录树图 用来存放advTree
-        private DevComponents.AdvTree.AdvTree _DataTree;          // 数据处理树图
-        private DevComponents.AdvTree.AdvTree _XZQTree;          // yjl20110924 add 行政区树图
-        private DevComponents.AdvTree.AdvTree _ResultFileTree;      //added by chulili 20110923 成果列表树图
-        private DevComponents.AdvTree.AdvTree _ErrTree;           // 错误树图
-        private DevComponents.AdvTree.AdvTree _ProjectTree;       // 工程信息树图
-        private DevComponents.DotNetBar.Controls.DataGridViewX _UpdateDataGrid;   //更新对比表格
-        private DevComponents.DotNetBar.Controls.DataGridViewX _DataCheckGrid;   //数据检查表格
+        private DevExpress.XtraTreeList.TreeList _DataTree;          // 数据处理树图
+        private DevExpress.XtraTreeList.TreeList _XZQTree;          // yjl20110924 add 行政区树图
+        private DevExpress.XtraTreeList.TreeList _ResultFileTree;      //added by chulili 20110923 成果列表树图
+        private DevExpress.XtraTreeList.TreeList _ErrTree;           // 错误树图
+        private DevExpress.XtraTreeList.TreeList _ProjectTree;       // 工程信息树图
+        private DevExpress.XtraGrid.Views.Grid.GridView _UpdateDataGrid;   //更新对比表格
+        private DevExpress.XtraGrid.Views.Grid.GridView _DataCheckGrid;   //数据检查表格
         private XmlDocument _DBXmlDocument;                       //数据工程配置XML文件
         private User _user;                                          //连接的用户信息 
         //cyf 20110602 add
@@ -3859,7 +2912,7 @@ namespace Plugin.Application
         private System.Windows.Forms.TreeView _TextDocTree;          // 文档树图
         private System.Windows.Forms.TreeView _UserResultTree;          // 用户成果树图
         private System.Windows.Forms.TreeView _MetadataTree;          // yjl20110926 add 元数据树
-        private DevComponents.DotNetBar.TabControl _IndextabControl;//索引树tabcontrol 席胜
+        private DevExpress.XtraBars.Ribbon.RibbonPage _IndextabControl;//索引树tabcontrol 席胜
         private System.Windows.Forms.RichTextBox _DocControl; //文档窗口
         private System.Windows.Forms.RichTextBox _tipRichBox;
         private SysCommon.BottomQueryBar _QueryBar; //added by chulili 2012-08-09
@@ -3891,104 +2944,6 @@ namespace Plugin.Application
             _ImageResPath = ImageResPath;
             _user = V_user;
             _ListUserPrivilegeID = ListUserPrivilegeID;
-
-            #region 自定义状态栏
-            DevComponents.DotNetBar.Bar statusBar = new DevComponents.DotNetBar.Bar();
-            statusBar.Name = "SMPDStatusBar";
-            statusBar.TabStop = false;
-            statusBar.Stretch = true;
-            statusBar.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            statusBar.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
-            statusBar.AntiAlias = true;
-            statusBar.BarType = DevComponents.DotNetBar.eBarType.StatusBar;
-            statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            statusBar.GrabHandleStyle = DevComponents.DotNetBar.eGrabHandleStyle.ResizeHandle;
-            statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-
-            //操作提示内容
-            DevComponents.DotNetBar.LabelItem aLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aLabelItem.Name = "SMPDLabel";
-            aLabelItem.Stretch = true;
-            aLabelItem.PaddingLeft = 2;
-            aLabelItem.PaddingRight = 5;
-            aLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //进度条
-            DevComponents.DotNetBar.ProgressBarItem progressBarItem = new DevComponents.DotNetBar.ProgressBarItem();
-            progressBarItem.ChunkGradientAngle = 0F;
-            progressBarItem.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
-            progressBarItem.Name = "SMPDprogressBarItem";
-            progressBarItem.RecentlyUsed = false;
-            progressBarItem.Stretch = true;
-            progressBarItem.Visible = false;
-            progressBarItem.ColorTable = DevComponents.DotNetBar.eProgressBarItemColor.Paused;
-            //参考比例尺下拉框
-            DevComponents.DotNetBar.LabelItem RefLabelItem = new DevComponents.DotNetBar.LabelItem();
-            RefLabelItem.Visible = false;   //changed by chulili 20110729 将参考比例尺隐藏（目前没用到）
-            RefLabelItem.Text = "参考比例尺:";//"ReferenceScale:";
-            RefLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //参考比例尺下拉框
-            DevComponents.DotNetBar.ComboBoxItem RefScaleCmb = new DevComponents.DotNetBar.ComboBoxItem();
-            RefScaleCmb.Name = "RefScaleCmbItem";
-            RefScaleCmb.Visible = false; //changed by chulili 20110729 将参考比例尺隐藏（目前没用到）
-            RefScaleCmb.Enabled = true;
-            RefScaleCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            //cyf 20110615 add:添加国标比例尺
-            object[] objScale = null;
-            int intWidth;
-            ModScale.GetScaleConfig(out objScale, out intWidth);
-            RefScaleCmb.Items.AddRange(objScale);//changed by chulili 20110731 去掉0,500
-            //end
-
-            //当前比例尺下拉框
-            DevComponents.DotNetBar.LabelItem CurLabelItem = new DevComponents.DotNetBar.LabelItem();
-            CurLabelItem.Visible = true;
-            CurLabelItem.Text = "当前比例尺:";// "CurrentScale:";
-            CurLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-
-            //当前比例尺下拉框
-            DevComponents.DotNetBar.ComboBoxItem CurScaleCmb = new DevComponents.DotNetBar.ComboBoxItem();
-            CurScaleCmb.Name = "CurScaleCmbItem";
-            CurScaleCmb.Visible = true;
-            CurScaleCmb.Enabled = true;
-            CurScaleCmb.ComboWidth = intWidth;
-            CurScaleCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            //cyf 20110615 add:添加国标比例尺
-            CurScaleCmb.Items.AddRange(objScale);//changed by chulili 20110731 去掉0,500,1000,2000
-
-
-            //坐标文本框
-            DevComponents.DotNetBar.TextBoxItem CoorTxt = new DevComponents.DotNetBar.TextBoxItem();
-            CoorTxt.Name = "CoorTxtItem";
-            CoorTxt.Visible = true;
-            CoorTxt.Enabled = true;
-
-            //用户信息内容
-            DevComponents.DotNetBar.LabelItem aUserInfoLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aUserInfoLabelItem.Name = "SMPDGisUserInfoLabel";
-            //aUserInfoLabelItem.Stretch = true;
-            aUserInfoLabelItem.PaddingLeft = 2;
-            aUserInfoLabelItem.PaddingRight = 2;
-            aUserInfoLabelItem.TextAlignment = System.Drawing.StringAlignment.Center;   //TEXT内容显示在中间 by chulili 20111117
-            aUserInfoLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //图上点坐标内容
-            DevComponents.DotNetBar.LabelItem aCoorLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aCoorLabelItem.Name = "GisCoorLabel";
-            aCoorLabelItem.Stretch = true;
-            aCoorLabelItem.PaddingLeft = 5;
-            aCoorLabelItem.PaddingRight = 5;
-            aCoorLabelItem.TextAlignment = System.Drawing.StringAlignment.Far;  //TEXT内容显示在中间 by chulili 20111117
-            aCoorLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //cyf 20110615 modify:
-            //statusBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] { aLabelItem, progressBarItem, aUserInfoLabelItem, aCoorLabelItem });
-            statusBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] { aLabelItem, aUserInfoLabelItem, aCoorLabelItem, RefLabelItem, RefScaleCmb, CurLabelItem, CurScaleCmb });
-            
-            this.StatusBar = statusBar;
-            #endregion
         }
 
         #region IAppSMPDRef 成员
@@ -4052,7 +3007,7 @@ namespace Plugin.Application
             }
         }
 
-        public Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> DicContextMenu
+        public Dictionary<string, System.Windows.Forms.ContextMenuStrip> DicContextMenu
         {
             get
             {
@@ -4064,7 +3019,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree DataTree
+        public DevExpress.XtraTreeList.TreeList DataTree
         {
             get
             {
@@ -4110,7 +3065,7 @@ namespace Plugin.Application
                 _LayerTreeXmlPath = value;
             }
         }
-        public DevComponents.AdvTree.AdvTree XZQTree
+        public DevExpress.XtraTreeList.TreeList XZQTree
         {
             get
             {
@@ -4121,7 +3076,7 @@ namespace Plugin.Application
                 _XZQTree = value;
             }
         }
-        public DevComponents.AdvTree.AdvTree ResultFileTree
+        public DevExpress.XtraTreeList.TreeList ResultFileTree
         {
             get
             {
@@ -4132,7 +3087,7 @@ namespace Plugin.Application
                 _ResultFileTree = value;
             }
         }
-        public DevComponents.AdvTree.AdvTree ErrTree
+        public DevExpress.XtraTreeList.TreeList ErrTree
         {
             get
             {
@@ -4144,7 +3099,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree ProjectTree
+        public DevExpress.XtraTreeList.TreeList ProjectTree
         {
             get
             {
@@ -4251,7 +3206,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.TabControl IndextabControl
+        public DevExpress.XtraBars.Ribbon.RibbonPage IndextabControl
         {
             get
             {
@@ -4311,7 +3266,7 @@ namespace Plugin.Application
             }
         }
         //--------------------------------------------------
-        public DevComponents.DotNetBar.Controls.DataGridViewX UpdateDataGrid
+        public DevExpress.XtraGrid.Views.Grid.GridView UpdateDataGrid
         {
             get
             {
@@ -4323,7 +3278,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.Controls.DataGridViewX DataCheckGrid
+        public DevExpress.XtraGrid.Views.Grid.GridView DataCheckGrid
         {
             get
             {
@@ -4375,143 +3330,26 @@ namespace Plugin.Application
         #region 状态栏属性
         public string OperatorTips
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["SMPDLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["SMPDLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get;set;
         }
 
-        public DevComponents.DotNetBar.ProgressBarItem ProgressBar
+        public DevExpress.XtraEditors.Repository.RepositoryItemProgressBar ProgressBar
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["SMPDprogressBarItem"] as DevComponents.DotNetBar.ProgressBarItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["SMPDprogressBarItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
-
-        ////参考比例尺cmb
-        //private DevComponents.DotNetBar.ComboBoxItem _RefScaleCmb;
-        //public DevComponents.DotNetBar.ComboBoxItem RefScaleCmb
-        //{
-        //    get
-        //    {
-        //        return _RefScaleCmb;
-        //    }
-        //    set
-        //    {
-        //        _RefScaleCmb = value;
-        //    }
-        //}
-        ////当前比例尺cmb
-        //private DevComponents.DotNetBar.ComboBoxItem _CurScaleCmb;
-        //public DevComponents.DotNetBar.ComboBoxItem CurScaleCmb
-        //{
-        //    get
-        //    {
-        //        return _CurScaleCmb;
-        //    }
-        //    set
-        //    {
-        //        _CurScaleCmb = value;
-        //    }
-        //}
-        //褚丽丽  从AppGIS中拷贝 20110705
-        //参考比例尺cmb
-        public DevComponents.DotNetBar.ComboBoxItem RefScaleCmb
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox RefScaleCmb
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["RefScaleCmbItem"] as DevComponents.DotNetBar.ComboBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["RefScaleCmbItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         //当前比例尺cmb
-        public DevComponents.DotNetBar.ComboBoxItem CurScaleCmb
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox CurScaleCmb
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["CurScaleCmbItem"] as DevComponents.DotNetBar.ComboBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["CurScaleCmbItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         //end 褚丽丽  从别处拷贝
         //坐标显示文本框
-        private DevComponents.DotNetBar.TextBoxItem _CoorTxt;
-        public DevComponents.DotNetBar.TextBoxItem CoorTxt
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit _CoorTxt;
+        public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit CoorTxt
         {
             get
             {
@@ -4525,56 +3363,12 @@ namespace Plugin.Application
 
         public string UserInfo
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["SMPDGisUserInfoLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["SMPDGisUserInfoLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         public string CoorXY
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["GisCoorLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["GisCoorLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         #endregion
 
@@ -4750,7 +3544,7 @@ namespace Plugin.Application
                 _CurrentControl = value;
             }
         }
-        public List<DevComponents.DotNetBar.ComboBoxItem> ScaleBoxList
+        public List<DevExpress.XtraEditors.Repository.RepositoryItemComboBox> ScaleBoxList
         {
             get
             {
@@ -4762,7 +3556,7 @@ namespace Plugin.Application
             }
         }
 
-        public Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> DicTabs
+        public Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> DicTabs
         {
             get
             {
@@ -4949,7 +3743,7 @@ namespace Plugin.Application
         private XmlDocument _DataTreeXml;                              // 数据树图XML节点
         private XmlDocument _DatabaseInfoXml;                          // 连接信息XML节点
         private Plugin.Parse.PluginCollection _ColParsePlugin;         // 系统插件集合
-        private Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> _DicContextMenu;           //右键菜单集合
+        private Dictionary<string, System.Windows.Forms.ContextMenuStrip> _DicContextMenu;           //右键菜单集合
         private string _ImageResPath;                                  // 图片资源路径
         private IMapDocument _MapDocument;                            //存储的文档对象
         private IMapControlDefault _MapControl;                      //MapControl控件
@@ -4962,25 +3756,25 @@ namespace Plugin.Application
         private string _CurrentTool;                                   // 当前使用的TOOL名称
         //20110518
         private object _CurrentControl;                             //当前图形显示控件
-        private List<DevComponents.DotNetBar.ComboBoxItem> _scaleBoxList;                        //比例尺显示        
-        private Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> _dicTabs;          //将tab按照系统分类
+        private List<DevExpress.XtraEditors.Repository.RepositoryItemComboBox> _scaleBoxList;                        //比例尺显示        
+        private Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> _dicTabs;          //将tab按照系统分类
         //end
 
 
-        private DevComponents.AdvTree.AdvTree _ProjectTree;       // 工程信息树
-        private DevComponents.DotNetBar.Controls.DataGridViewX _DataInfoGrid;  //数据信息列表
-        private DevComponents.DotNetBar.Controls.DataGridViewX _MetaDataGrid;  //元数据列表
+        private DevExpress.XtraTreeList.TreeList _ProjectTree;       // 工程信息树
+        private DevExpress.XtraGrid.Views.Grid.GridView _DataInfoGrid;  //数据信息列表
+        private DevExpress.XtraGrid.Views.Grid.GridView _MetaDataGrid;  //元数据列表
 
-        private DevComponents.AdvTree.AdvTree _SysSettingTree;//系统设置树图
-        private DevComponents.DotNetBar.Controls.DataGridViewX _SysSettingGrid;//系统设置列表
+        private DevExpress.XtraTreeList.TreeList _SysSettingTree;//系统设置树图
+        private DevExpress.XtraGrid.Views.Grid.GridView _SysSettingGrid;//系统设置列表
 
-        //private DevComponents.AdvTree.AdvTree _DataTree;          // 数据处理树图
-        //private DevComponents.DotNetBar.Controls.DataGridViewX _UpdateGrid;  //更新对比列表
-        private DevComponents.DotNetBar.TextBoxItem _txtDisplayPage;//更新对比列表分页显示文本框
-        private DevComponents.DotNetBar.ButtonItem _btnFirst;//更新对比列表分页显示按钮
-        private DevComponents.DotNetBar.ButtonItem _btnLast;//更新对比列表分页显示按钮
-        private DevComponents.DotNetBar.ButtonItem _btnPre;//更新对比列表分页显示按钮
-        private DevComponents.DotNetBar.ButtonItem _btnNext;//更新对比列表分页显示按钮
+        //private DevExpress.XtraTreeList.TreeList _DataTree;          // 数据处理树图
+        //private DevExpress.XtraGrid.Views.Grid.GridView _UpdateGrid;  //更新对比列表
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit _txtDisplayPage;//更新对比列表分页显示文本框
+        private DevExpress.XtraBars.BarButtonItem _btnFirst;//更新对比列表分页显示按钮
+        private DevExpress.XtraBars.BarButtonItem _btnLast;//更新对比列表分页显示按钮
+        private DevExpress.XtraBars.BarButtonItem _btnPre;//更新对比列表分页显示按钮
+        private DevExpress.XtraBars.BarButtonItem _btnNext;//更新对比列表分页显示按钮
 
         private Thread _CurrentThread;                           //处理数据的进程(唯一)
         private XmlDocument _DBXmlDocument;                       //数据工程配置XML文件
@@ -5012,92 +3806,6 @@ namespace Plugin.Application
             _DatabaseInfoXml = DatabaseInfoXml;
             _ColParsePlugin = ColParsePlugin;
             _ImageResPath = ImageResPath;
-
-            #region 自定义状态栏
-            DevComponents.DotNetBar.Bar statusBar = new DevComponents.DotNetBar.Bar();
-            statusBar.Name = "GisStatusBar";
-            statusBar.TabStop = false;
-            statusBar.Stretch = true;
-            statusBar.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            statusBar.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
-            statusBar.AntiAlias = true;
-            statusBar.BarType = DevComponents.DotNetBar.eBarType.StatusBar;
-            statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            statusBar.GrabHandleStyle = DevComponents.DotNetBar.eGrabHandleStyle.ResizeHandle;
-            statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-
-            //操作提示内容
-            DevComponents.DotNetBar.LabelItem aLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aLabelItem.Name = "GisLabel";
-            aLabelItem.Stretch = true;
-            aLabelItem.PaddingLeft = 2;
-            aLabelItem.PaddingRight = 5;
-            aLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //进度条
-            DevComponents.DotNetBar.ProgressBarItem progressBarItem = new DevComponents.DotNetBar.ProgressBarItem();
-            progressBarItem.ChunkGradientAngle = 0F;
-            progressBarItem.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
-            progressBarItem.Name = "GisprogressBarItem";
-            progressBarItem.RecentlyUsed = false;
-            progressBarItem.Stretch = true;
-            progressBarItem.Visible = false;
-            progressBarItem.ColorTable = DevComponents.DotNetBar.eProgressBarItemColor.Paused;
-
-            //参考比例尺下拉框
-            DevComponents.DotNetBar.LabelItem RefLabelItem = new DevComponents.DotNetBar.LabelItem();
-            RefLabelItem.Visible = true;
-            RefLabelItem.Text = "参考比例尺:";//"ReferenceScale:";
-            RefLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //参考比例尺下拉框
-            DevComponents.DotNetBar.ComboBoxItem RefScaleCmb = new DevComponents.DotNetBar.ComboBoxItem();
-            RefScaleCmb.Name = "RefScaleCmbItem";
-            RefScaleCmb.Visible = true;
-            RefScaleCmb.Enabled = true;
-            RefScaleCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            RefScaleCmb.Items.AddRange(new object[] { 5000, 10000, 25000, 50000 });
-
-            //当前比例尺下拉框
-            DevComponents.DotNetBar.LabelItem CurLabelItem = new DevComponents.DotNetBar.LabelItem();
-            CurLabelItem.Visible = true;
-            CurLabelItem.Text = "当前比例尺:";// "CurrentScale:";
-            CurLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-
-            //当前比例尺下拉框
-            DevComponents.DotNetBar.ComboBoxItem CurScaleCmb = new DevComponents.DotNetBar.ComboBoxItem();
-            CurScaleCmb.Name = "CurScaleCmbItem";
-            CurScaleCmb.Visible = true;
-            CurScaleCmb.Enabled = true;
-            CurScaleCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            CurScaleCmb.Items.AddRange(new object[] {  5000, 10000, 25000, 50000 });
-
-
-            //坐标文本框
-            DevComponents.DotNetBar.TextBoxItem CoorTxt = new DevComponents.DotNetBar.TextBoxItem();
-            CoorTxt.Name = "CoorTxtItem";
-            CoorTxt.Visible = true;
-            CoorTxt.Enabled = true;
-
-            //图上点坐标内容
-            DevComponents.DotNetBar.LabelItem aCoorLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aCoorLabelItem.Name = "GisCoorLabel";
-            aCoorLabelItem.Stretch = true;
-            aCoorLabelItem.PaddingLeft = 2;
-            aCoorLabelItem.PaddingRight = 2;
-            aCoorLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //用户信息内容
-            DevComponents.DotNetBar.LabelItem aUserInfoLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aUserInfoLabelItem.Name = "GisUserInfoLabel";
-            aUserInfoLabelItem.Stretch = true;
-            aUserInfoLabelItem.PaddingLeft = 2;
-            aUserInfoLabelItem.PaddingRight = 2;
-            aUserInfoLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            statusBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] { aLabelItem, progressBarItem, RefLabelItem, RefScaleCmb, CurLabelItem, CurScaleCmb });
-            this.StatusBar = statusBar;
-            #endregion
         }
 
 
@@ -5116,7 +3824,7 @@ namespace Plugin.Application
         }
 
 
-        public DevComponents.AdvTree.AdvTree ProjectTree
+        public DevExpress.XtraTreeList.TreeList ProjectTree
         {
             get
             {
@@ -5128,7 +3836,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.Controls.DataGridViewX DataInfoGrid
+        public DevExpress.XtraGrid.Views.Grid.GridView DataInfoGrid
         {
             get
             {
@@ -5140,7 +3848,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.Controls.DataGridViewX MetaDataGrid
+        public DevExpress.XtraGrid.Views.Grid.GridView MetaDataGrid
         {
             get
             {
@@ -5152,7 +3860,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.Controls.DataGridViewX SysSettingGrid
+        public DevExpress.XtraGrid.Views.Grid.GridView SysSettingGrid
         {
             get
             {
@@ -5164,7 +3872,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree SysSettingTree
+        public DevExpress.XtraTreeList.TreeList SysSettingTree
         {
             get
             {
@@ -5189,7 +3897,7 @@ namespace Plugin.Application
         }
 
 
-        public DevComponents.DotNetBar.TextBoxItem TxtDisplayPage
+        public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit TxtDisplayPage
         {
             get
             {
@@ -5201,7 +3909,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.DotNetBar.ButtonItem BtnFirst
+        public DevExpress.XtraBars.BarButtonItem BtnFirst
         {
             get
             {
@@ -5212,7 +3920,7 @@ namespace Plugin.Application
                 _btnFirst = value;
             }
         }
-        public DevComponents.DotNetBar.ButtonItem BtnLast
+        public DevExpress.XtraBars.BarButtonItem BtnLast
         {
             get
             {
@@ -5223,7 +3931,7 @@ namespace Plugin.Application
                 _btnLast = value;
             }
         }
-        public DevComponents.DotNetBar.ButtonItem BtnPre
+        public DevExpress.XtraBars.BarButtonItem BtnPre
         {
             get
             {
@@ -5234,7 +3942,7 @@ namespace Plugin.Application
                 _btnPre = value;
             }
         }
-        public DevComponents.DotNetBar.ButtonItem BtnNext
+        public DevExpress.XtraBars.BarButtonItem BtnNext
         {
             get
             {
@@ -5296,7 +4004,7 @@ namespace Plugin.Application
             }
         }
 
-        public Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> DicContextMenu
+        public Dictionary<string, System.Windows.Forms.ContextMenuStrip> DicContextMenu
         {
             get
             {
@@ -5336,193 +4044,39 @@ namespace Plugin.Application
         #region 状态栏属性
         public string OperatorTips
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["GisLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["GisLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get;set;
         }
 
-        public DevComponents.DotNetBar.ProgressBarItem ProgressBar
+        public DevExpress.XtraEditors.Repository.RepositoryItemProgressBar ProgressBar
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["GisprogressBarItem"] as DevComponents.DotNetBar.ProgressBarItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["GisprogressBarItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         //参考比例尺cmb
-        public DevComponents.DotNetBar.ComboBoxItem RefScaleCmb
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox RefScaleCmb
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["RefScaleCmbItem"] as DevComponents.DotNetBar.ComboBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["RefScaleCmbItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         //当前比例尺cmb
-        public DevComponents.DotNetBar.ComboBoxItem CurScaleCmb
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox CurScaleCmb
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["CurScaleCmbItem"] as DevComponents.DotNetBar.ComboBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["CurScaleCmbItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         //坐标显示文本框
-        public DevComponents.DotNetBar.TextBoxItem CoorTxt
+        public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit CoorTxt
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["CoorTxtItem"] as DevComponents.DotNetBar.TextBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["CoorTxtItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
 
         public string CoorXY
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["GisCoorLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["GisCoorLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         public string UserInfo
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["GisUserInfoLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["GisUserInfoLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         #endregion
@@ -5627,7 +4181,7 @@ namespace Plugin.Application
                 _CurrentControl = value;
             }
         }
-        public List<DevComponents.DotNetBar.ComboBoxItem> ScaleBoxList
+        public List<DevExpress.XtraEditors.Repository.RepositoryItemComboBox> ScaleBoxList
         {
             get
             {
@@ -5639,7 +4193,7 @@ namespace Plugin.Application
             }
         }
 
-        public Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> DicTabs
+        public Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> DicTabs
         {
             get
             {
@@ -5905,7 +4459,7 @@ namespace Plugin.Application
         private XmlDocument _DataTreeXml;                              // 数据树图XML节点
         private XmlDocument _DatabaseInfoXml;                          // 连接信息XML节点
         private Plugin.Parse.PluginCollection _ColParsePlugin;         // 系统插件集合
-        private Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> _DicContextMenu;           //右键菜单集合
+        private Dictionary<string, System.Windows.Forms.ContextMenuStrip> _DicContextMenu;           //右键菜单集合
         private string _ImageResPath;                                  // 图片资源路径
         private IMapDocument _MapDocument;                            //存储的文档对象
         private IMapControlDefault _MapControl;                      //MapControl控件
@@ -5915,10 +4469,10 @@ namespace Plugin.Application
         private IPageLayoutControlDefault _PageLayoutControl;        //PageLayoutControl控件
         private ITOCControlDefault _TOCControl;                     //TOCControl控件
         private string _CurrentTool;                                   // 当前使用的TOOL名称
-        private DevComponents.AdvTree.AdvTree _ProjectTree;       // 工程信息树图
-        //private DevComponents.DotNetBar.Controls.DataGridViewX _UpdateDataGrid;   //更新对比表格
+        private DevExpress.XtraTreeList.TreeList _ProjectTree;       // 工程信息树图
+        //private DevExpress.XtraGrid.Views.Grid.GridView _UpdateDataGrid;   //更新对比表格
 
-        //private DevComponents.DotNetBar.Controls.DataGridViewX _DataCheckGrid;   //数据检查表格
+        //private DevExpress.XtraGrid.Views.Grid.GridView _DataCheckGrid;   //数据检查表格
         private XmlDocument _DBXmlDocument;                       //数据工程配置XML文件
 
         private Thread _CurrentThread;                           //处理数据的进程(唯一)
@@ -5930,8 +4484,8 @@ namespace Plugin.Application
 
         //20110518
         private object _CurrentControl;                             //当前图形显示控件 
-        private List<DevComponents.DotNetBar.ComboBoxItem> _scaleBoxList;                        //比例尺显示        
-        private Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> _dicTabs;          //将tab按照系统分类
+        private List<DevExpress.XtraEditors.Repository.RepositoryItemComboBox> _scaleBoxList;                        //比例尺显示        
+        private Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> _dicTabs;          //将tab按照系统分类
         //end
 
         private List<string> _ListUserPrivilegeID;                   //用户权限编号
@@ -5958,105 +4512,6 @@ namespace Plugin.Application
             _ImageResPath = ImageResPath;
             _user = v_user;
             _LstRoleInfo = v_ListRole;
-
-            #region 自定义状态栏
-            DevComponents.DotNetBar.Bar statusBar = new DevComponents.DotNetBar.Bar();
-            statusBar.Name = "SMPDStatusBar";
-            statusBar.TabStop = false;
-            statusBar.Stretch = true;
-            statusBar.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            statusBar.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
-            statusBar.AntiAlias = true;
-            statusBar.BarType = DevComponents.DotNetBar.eBarType.StatusBar;
-            statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            statusBar.GrabHandleStyle = DevComponents.DotNetBar.eGrabHandleStyle.ResizeHandle;
-            statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-
-            //操作提示内容
-            DevComponents.DotNetBar.LabelItem aLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aLabelItem.Name = "SMPDLabel";
-            aLabelItem.Stretch = true;
-            aLabelItem.PaddingLeft = 2;
-            aLabelItem.PaddingRight = 5;
-            aLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //进度条
-            DevComponents.DotNetBar.ProgressBarItem progressBarItem = new DevComponents.DotNetBar.ProgressBarItem();
-            progressBarItem.ChunkGradientAngle = 0F;
-            progressBarItem.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
-            progressBarItem.Name = "SMPDprogressBarItem";
-            progressBarItem.RecentlyUsed = false;
-            progressBarItem.Stretch = true;
-            progressBarItem.Visible = false;
-            progressBarItem.ColorTable = DevComponents.DotNetBar.eProgressBarItemColor.Paused;
-
-            //参考比例尺下拉框
-            DevComponents.DotNetBar.LabelItem RefLabelItem = new DevComponents.DotNetBar.LabelItem();
-            RefLabelItem.Visible = true;
-            //added by chulili 20110722为参考比例尺控件设置名称
-            RefLabelItem.Name = "RefScaleLabel";
-            //end added by chulili
-            RefLabelItem.Text = "参考比例尺:";//"ReferenceScale:";
-            RefLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //参考比例尺下拉框
-            DevComponents.DotNetBar.ComboBoxItem RefScaleCmb = new DevComponents.DotNetBar.ComboBoxItem();
-            RefScaleCmb.Name = "RefScaleCmbItem";
-            RefScaleCmb.Visible = true;
-            RefScaleCmb.Enabled = true;
-            object[] objScale = null;
-            int intWidth;
-            ModScale.GetScaleConfig(out objScale,out intWidth );
-            RefScaleCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            RefScaleCmb.Items.AddRange(objScale);
-
-            //当前比例尺下拉框
-            DevComponents.DotNetBar.LabelItem CurLabelItem = new DevComponents.DotNetBar.LabelItem();
-            CurLabelItem.Visible = true;
-            //added by chulili 20110722为当前比例尺控件设置名称
-            CurLabelItem.Name = "CurScaleLabel";
-            //end added by chulili
-            CurLabelItem.Text = "当前比例尺:";// "CurrentScale:";
-            CurLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //当前比例尺下拉框
-            DevComponents.DotNetBar.ComboBoxItem CurScaleCmb = new DevComponents.DotNetBar.ComboBoxItem();
-            CurScaleCmb.Name = "CurScaleCmbItem";
-            CurScaleCmb.Visible = true;
-            CurScaleCmb.Enabled = true;
-            CurScaleCmb.ComboWidth = intWidth;
-            CurScaleCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            CurScaleCmb.Items.AddRange(objScale);
-
-            //坐标文本框
-            DevComponents.DotNetBar.TextBoxItem CoorTxt = new DevComponents.DotNetBar.TextBoxItem();
-            CoorTxt.Name = "CoorTxtItem";
-            CoorTxt.Visible = true;
-            CoorTxt.Enabled = true;
-
-            //图上点坐标内容 added by chulili 20110722
-            DevComponents.DotNetBar.LabelItem aCoorLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aCoorLabelItem.Name = "GisCoorLabel";
-            aCoorLabelItem.Stretch = true;
-            aCoorLabelItem.PaddingLeft = 2;
-            aCoorLabelItem.PaddingRight = 2;
-            aCoorLabelItem.TextAlignment = System.Drawing.StringAlignment.Far;
-            aCoorLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //end added by chulili 
-
-            //用户信息内容
-            DevComponents.DotNetBar.LabelItem aUserInfoLabelItem = new DevComponents.DotNetBar.LabelItem();
-            aUserInfoLabelItem.Name = "SMPDGisUserInfoLabel";
-            aUserInfoLabelItem.Stretch = true;
-            aUserInfoLabelItem.PaddingLeft = 10;//changed by chulili 20110722 左边距离设置大一点，使当前控件更居中
-            aUserInfoLabelItem.PaddingRight = 2;
-            aUserInfoLabelItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            //changed by chulili 20110722 在状态栏中添加控件，在目录管理时好显示X\Y坐标
-            //statusBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] { aLabelItem, progressBarItem, RefLabelItem, RefScaleCmb, CurLabelItem, CurScaleCmb });
-            statusBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] { aLabelItem, aUserInfoLabelItem, progressBarItem, aCoorLabelItem, RefLabelItem, RefScaleCmb, CurLabelItem, CurScaleCmb });
-            this.StatusBar = statusBar;
-            #endregion
         }
 
         #region IAppDBIntegraRef 成员
@@ -6153,7 +4608,7 @@ namespace Plugin.Application
             }
         }
 
-        public Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> DicContextMenu
+        public Dictionary<string, System.Windows.Forms.ContextMenuStrip> DicContextMenu
         {
             get
             {
@@ -6165,7 +4620,7 @@ namespace Plugin.Application
             }
         }
 
-        public DevComponents.AdvTree.AdvTree ProjectTree
+        public DevExpress.XtraTreeList.TreeList ProjectTree
         {
             get
             {
@@ -6217,194 +4672,42 @@ namespace Plugin.Application
         #region 状态栏属性
         public string OperatorTips
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["SMPDLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["SMPDLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get;set;
         }
 
-        public DevComponents.DotNetBar.ProgressBarItem ProgressBar
+        public DevExpress.XtraEditors.Repository.RepositoryItemProgressBar ProgressBar
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["SMPDprogressBarItem"] as DevComponents.DotNetBar.ProgressBarItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["SMPDprogressBarItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         //参考比例尺是否可见
         public bool RefScaleVisible
         {
-            get
-            {
-                DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                return statusBar.Items["RefScaleLabel"].Visible;
-            }
-            set
-            {
-                DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                statusBar.Items["RefScaleCmbItem"].Visible = value;
-                statusBar.Items["RefScaleLabel"].Visible = value;
-            }
+            get; set;
         }
         //当前比例尺是否可见
         public bool CurScaleVisible
         {
-            get
-            {
-                DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                return statusBar.Items["CurScaleLabel"].Visible;
-            }
-            set
-            {
-                DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                statusBar.Items["CurScaleCmbItem"].Visible = value;
-                statusBar.Items["CurScaleLabel"].Visible = value;
-            }
+            get; set;
         }
         //参考比例尺cmb
-        public DevComponents.DotNetBar.ComboBoxItem RefScaleCmb
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox RefScaleCmb
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["RefScaleCmbItem"] as DevComponents.DotNetBar.ComboBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["RefScaleCmbItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         //当前比例尺cmb
-        public DevComponents.DotNetBar.ComboBoxItem CurScaleCmb
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox CurScaleCmb
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["CurScaleCmbItem"] as DevComponents.DotNetBar.ComboBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["CurScaleCmbItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         //坐标显示文本框
-        public DevComponents.DotNetBar.TextBoxItem CoorTxt
+        public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit CoorTxt
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["CoorTxtItem"] as DevComponents.DotNetBar.TextBoxItem;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["CoorTxtItem"] = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         public string UserInfo
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["SMPDGisUserInfoLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["SMPDGisUserInfoLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
 
         //public string CoorXY
@@ -6420,29 +4723,7 @@ namespace Plugin.Application
         //changed by chulili 20110722
         public string CoorXY
         {
-            get
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    return statusBar.Items["GisCoorLabel"].Text;
-                }
-                catch
-                {
-                    return string.Empty;
-                }
-            }
-            set
-            {
-                try
-                {
-                    DevComponents.DotNetBar.Bar statusBar = this.StatusBar as DevComponents.DotNetBar.Bar;
-                    statusBar.Items["GisCoorLabel"].Text = value;
-                }
-                catch
-                {
-                }
-            }
+            get; set;
         }
         #endregion
 
@@ -6547,7 +4828,7 @@ namespace Plugin.Application
                 _CurrentControl = value;
             }
         }
-        public List<DevComponents.DotNetBar.ComboBoxItem> ScaleBoxList
+        public List<DevExpress.XtraEditors.Repository.RepositoryItemComboBox> ScaleBoxList
         {
             get
             {
@@ -6559,7 +4840,7 @@ namespace Plugin.Application
             }
         }
 
-        public Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> DicTabs
+        public Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> DicTabs
         {
             get
             {
@@ -6720,46 +5001,6 @@ namespace Plugin.Application
             {
                 _TempWks = value;
             }
-        }
-
-        #endregion
-
-        #region 子数据库combox guozheng 2010-10-8
-        private DevComponents.DotNetBar.Controls.ComboBoxEx m_cmbEntiDB;////地理编码数据库 
-        public DevComponents.DotNetBar.Controls.ComboBoxEx cmbEntiDB
-        {
-            get { return m_cmbEntiDB; }
-            set { this.m_cmbEntiDB = value; }
-        }
-        private DevComponents.DotNetBar.Controls.ComboBoxEx m_cmbFileDB;////成果文件数据库 
-        public DevComponents.DotNetBar.Controls.ComboBoxEx cmbFileDB
-        {
-            get { return m_cmbFileDB; }
-            set { this.m_cmbFileDB = value; }
-        }
-        private DevComponents.DotNetBar.Controls.ComboBoxEx m_cmbAdressDB;////地名数据库 
-        public DevComponents.DotNetBar.Controls.ComboBoxEx cmbAdressDB
-        {
-            get { return m_cmbAdressDB; }
-            set { this.m_cmbAdressDB = value; }
-        }
-        private DevComponents.DotNetBar.Controls.ComboBoxEx m_cmbDemDB;////高程数据库
-        public DevComponents.DotNetBar.Controls.ComboBoxEx cmbDemDB
-        {
-            get { return m_cmbDemDB; }
-            set { this.m_cmbDemDB = value; }
-        }
-        private DevComponents.DotNetBar.Controls.ComboBoxEx m_cmbFeatureDB;////框架要素数据库
-        public DevComponents.DotNetBar.Controls.ComboBoxEx cmbFeatureDB
-        {
-            get { return m_cmbFeatureDB; }
-            set { this.m_cmbFeatureDB = value; }
-        }
-        private DevComponents.DotNetBar.Controls.ComboBoxEx m_cmbImageDB;////影像数据库
-        public DevComponents.DotNetBar.Controls.ComboBoxEx cmbImageDB
-        {
-            get { return m_cmbImageDB; }
-            set { this.m_cmbImageDB = value; }
         }
         #endregion
     }

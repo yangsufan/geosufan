@@ -581,34 +581,8 @@ namespace SysCommon
         /// <param name="pFeatureClass">目标FeatureClass</param>
         /// <param name="fileName">导出成EXCEL文件名</param>
         /// <param name="TypeName">表头中类型名称</param>
-        public void XZQExport(IFeatureClass pFeatureclass, IFeatureCursor pFeaturecursor, string fileName, string TypeName, string fieldName, DevComponents.DotNetBar.Controls.DataGridViewX pDataGV)
+        public void XZQExport(IFeatureClass pFeatureclass, IFeatureCursor pFeaturecursor, string fileName, string TypeName, string fieldName)
         {
-            if (pDataGV == null) { return; }
-            pDataGV.DataSource = null;
-            pDataGV.Rows.Clear();
-            IList<string> liststring = GetType(pFeatureclass, fieldName);
-            sortListString(ref liststring);
-            IList<double> listArea = StatisticsArea(liststring, pFeaturecursor, fieldName);
-            IList<string> ListTypeName = null;
-
-            ListTypeName = GetDomainsName(liststring, fieldName, pFeatureclass);
-            int RowNum = listArea.Count;
-            IList<string> listPercent = null;
-            listPercent = ListPercent(listArea);
-            if (RowNum == 0)
-            {
-                return;
-            }
-            try
-            {
-                for (int i = 0; i < RowNum; i++)
-                {
-
-                    pDataGV.Rows.Add(i, ListTypeName[i], "", listArea[i].ToString(), listPercent[i]);
-                }
-            }
-            catch { }
-
 
         }
         /// <summary>
@@ -621,47 +595,9 @@ namespace SysCommon
         /// <param name="TypeName"></param>
         /// <param name="fieldName"></param>
         /// <param name="pDataGV"></param>
-        public void XZQExportLD(IFeatureClass pFeatureclass, IFeatureCursor pFeaturecursor, string fileName, string TypeName, string fieldName, DevComponents.DotNetBar.Controls.DataGridViewX pDataGV)
+        public void XZQExportLD(IFeatureClass pFeatureclass, IFeatureCursor pFeaturecursor, string fileName, string TypeName, string fieldName)
         {
-            if (pDataGV == null) { return; }
-            pDataGV.Rows.Clear();
-            IList<string> liststring = GetType(pFeatureclass, fieldName);
-            //sortListString(ref liststring);
-            IList<double> listArea = StatisticsArea(liststring, pFeaturecursor, fieldName);
-            //IList<string> ListTypeName = new List<string>();
-
-            //ListTypeName = GetDomainsName(liststring, fieldName, pFeatureclass);
-            //sortListString(ref liststring);
-
-            Dictionary<string,double > dicClassArea;
-            ClassArea(listArea, liststring,out dicClassArea ,fileName);
-            Dictionary<string ,double>.KeyCollection keys=dicClassArea .Keys ;
-            IList<string> listKeys = new List<string>();
-            foreach (string s in keys)
-            {
-                listKeys.Add(s);
-            }
-            IList<string> listPercent = null;
-            IList<double> AreaList = new List<double>();
-            for (int i = 0; i < dicClassArea.Count; i++)
-            {
-                AreaList.Add(dicClassArea[listKeys[i]]);
-            }
-                listPercent = ListPercent(AreaList);
-            if (dicClassArea.Count == 0)
-            {
-                return;
-            }
-            try
-            {
-                for (int i = 0; i < dicClassArea .Count ; i++)
-                {
-                    pDataGV.Rows.Add(i, listKeys[i], "", dicClassArea[listKeys[i]].ToString(), listPercent[i]);
-                }
-            }
-            catch (Exception ex)
-            { 
-            }
+           
 
         }
         //排序
@@ -705,90 +641,6 @@ namespace SysCommon
                 }
             }
         }
-        /// <summary>
-        /// 批量专题导出Excel
-        /// </summary>
-        /// <param name="pFeatureClass"></param>
-        /// <param name="listFileName"></param>
-        /// <param name="TypeName"></param>
-        //public void BatchSubjectExport(IFeatureClass pFeatureClass,IList<string> listFileName,string TypeName,string fieldName)
-        //{
-        //    flag = 1;
-        //    result = folderBrowerDialog.ShowDialog();
-        //    for (int i = 0; i < listFileName.Count; i++)
-        //    {
-        //        Export(pFeatureClass, listFileName[i], TypeName,fieldName);
-        //    }
-        //    flag = 0;
-        //}
-        /// <summary>
-        /// 批量导出该行政去内各种类型Excel
-        /// </summary>
-        /// <param name="ListFeatureClass"></param>
-        /// <param name="VillageName">行政区名称</param>
-        /// <param name="fieldName">统计字段名称</param>
-        //public void BatchStatisticalChart(IList<IFeatureClass > ListFeatureClass,string VillageName,string fieldName)
-        //{
-        //    flag = 1;
-        //    result = folderBrowerDialog.ShowDialog();
-        //    for (int i = 0; i < ListFeatureClass.Count; i++)
-        //    {
-        //        ExportByFeartureClassName(ListFeatureClass[i], VillageName, fieldName);
-        //    }
-        //    flag = 0;
-        //}
-        /// <summary>
-        /// 根据FeatureClass别名进行统计导出Excel表
-        /// </summary>
-        /// <param name="pFeatureClass"></param>
-        /// <param name="VillageName"></param>
-        /// <param name="fieldName"></param>
-        //private  void ExportByFeartureClassName(IFeatureClass pFeatureClass, string VillageName,string fieldName)
-        //{
-        //    switch (pFeatureClass.AliasName)
-        //    {
-        //        case "DATASYS.DATONG_LDGH":
-        //            string fileName=VillageName +"镇(乡)林地规划统计表";
-        //            Export(pFeatureClass, fileName, "林地类型",fieldName);
-        //            fileName = "";
-        //            break;
-        //        case "DATASYS.DATONG_LYYDFB":
-        //            fileName = VillageName + "镇(乡)林业用地分布统计表";
-        //            Export(pFeatureClass, fileName, "类型", fieldName);
-        //            fileName = "";
-        //            break ;
-        //        case "DATASYS.DATONG_BAOHU_DJ":
-        //            fileName = VillageName + "镇(乡)林地保护等级分布统计表";
-        //            Export(pFeatureClass, fileName, "林地保护等级级别", fieldName);
-        //            fileName = "";
-        //            break;
-        //        case "DATASYS.DATONG_ZDGNQ":
-        //            fileName = VillageName + "镇(乡)林地主导功能区分布统计表";
-        //            Export(pFeatureClass, fileName, "主导功能区类型", fieldName);
-        //            fileName = "";
-        //            break;
-        //        case "DATASYS.DATONG_LDLY":
-        //            fileName = VillageName + "镇(乡)林地利用现状统计表";
-        //            Export(pFeatureClass, fileName, "林地利用现状类型", fieldName);
-        //            fileName = "";
-        //            break;
-        //        case "DATASYS.DATONG_LDJG":
-        //            fileName = VillageName + "镇(乡)林地结构现状统计表";
-        //            Export(pFeatureClass, fileName, "林地结构类型", fieldName);
-        //            fileName = "";
-        //            break;
-        //        case "DATASYS.DATONG_ZHILIANG_DJ":
-        //            fileName = VillageName + "镇(乡)林地质量等级现状统计表";
-        //            Export(pFeatureClass, fileName, "林地质量等级类型", fieldName);
-        //            fileName = "";
-        //            break;
-        //        case "DATASYS.DATONG_LC":
-        //            fileName = VillageName + "镇(乡)林场统计表";
-        //            Export(pFeatureClass, fileName, "林场名称", fieldName);
-        //            fileName = "";
-        //            break;
-        //    }
-        //}
         /// <summary>
         /// 得到属性域的值
         /// </summary>
@@ -849,50 +701,9 @@ namespace SysCommon
         /// <param name="pFeatureClass">目标FeatureClass</param>
         /// <param name="fileName">导出成EXCEL文件名</param>
         /// <param name="TypeName">表头中类型名称</param>
-        public void XZQExportLDFB(IFeatureClass pFeatureclass, IFeatureCursor pFeaturecursor, string fileName, string TypeName, string fieldName, DevComponents.DotNetBar.Controls.DataGridViewX pDataGV)
+        public void XZQExportLDFB(IFeatureClass pFeatureclass, IFeatureCursor pFeaturecursor, string fileName, string TypeName, string fieldName,DevExpress.XtraGrid.Views.Grid.GridView pDataGV)
         {
-            if (pDataGV == null) { return; }
-            pDataGV.Rows.Clear();
-            IList<string> liststring = GetType(pFeatureclass, fieldName);
-            sortListString(ref liststring);
-            IList<double> listArea = StatisticsArea(liststring, pFeaturecursor, fieldName);
-            IList<string> ListTypeName = new List<string>();
-
-            ListTypeName = GetDomainsName(liststring, fieldName, pFeatureclass);
-            sortListString(ref liststring);
-            int RowNum = listArea.Count;
-            double Total = GetTotalArea(listArea);
-            double LDarea = 0, FLDarea = 0;
-            TJLingDI(listArea, liststring, out LDarea, out FLDarea);
-            IList<string> listPercent = null;
-            listPercent = ListPercent(listArea);
-            if (RowNum == 0)
-            {
-                return;
-            }
-            try
-            {
-                for (int i = 0; i < RowNum; i++)
-                {
-                    if (Convert.ToInt16(liststring[i]) >= 111 && Convert.ToInt16(liststring[i]) <= 180)
-                    {
-                        pDataGV.Rows.Add(i, "林地", ListTypeName[i], listArea[i].ToString(), listPercent[i]);
-                    }
-                    else
-                    {
-                        pDataGV.Rows.Add(i,  "非林地",ListTypeName[i], listArea[i].ToString(), listPercent[i]);
-
-                    }
-
-
-                }
-                pDataGV.Rows.Add("", "", "", "", "");
-                pDataGV.Rows.Add("", "林地总面积", "", LDarea.ToString(), Math.Round((LDarea / Total) * 100, 2).ToString() + "%");
-                pDataGV.Rows.Add("", "非林地总面积", "", FLDarea.ToString(), Math.Round((FLDarea / Total) * 100, 2).ToString() + "%");
-
-            }
-            catch { }
-
+       
         }
 
         //找出林地与非林地相关面积

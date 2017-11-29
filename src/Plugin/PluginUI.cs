@@ -75,8 +75,8 @@ namespace Plugin
             get { return _Timer;}
         }
         //插件与界面上对应关系
-        private static Dictionary<DevComponents.DotNetBar.BaseItem, string> _dicBaseItems = new Dictionary<DevComponents.DotNetBar.BaseItem, string>();
-        public static Dictionary<DevComponents.DotNetBar.BaseItem, string> DicBaseItems
+        private static Dictionary<DevExpress.XtraBars.BarItem, string> _dicBaseItems = new Dictionary<DevExpress.XtraBars.BarItem, string>();
+        public static Dictionary<DevExpress.XtraBars.BarItem, string> DicBaseItems
         {
             get { return _dicBaseItems; }
         }
@@ -85,9 +85,9 @@ namespace Plugin
         private static SysCommon.Log.SysLocalLog _SysLocalLog;
         
         //将tab按照系统分类
-        private static Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> _dicTabs = new Dictionary<RibbonTabItem, string>();
+        private static Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> _dicTabs = new Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string>();
 
-        public static Dictionary<DevComponents.DotNetBar.RibbonTabItem, string> DicTabs
+        public static Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> DicTabs
         {
             get 
             {
@@ -113,11 +113,8 @@ namespace Plugin
                 _pIAppFrm = value;
             }
         }
-
-        //创建SuperTooltip
-        private static DevComponents.DotNetBar.SuperTooltip _superTooltip = new DevComponents.DotNetBar.SuperTooltip();
         //全局记录当前选择的按钮-----应用功能高亮显示
-        private static DevComponents.DotNetBar.ButtonItem m_pBaseItem = null;
+        private static DevExpress.XtraBars.BarButtonItem m_pBaseItem = null;
         //初始化
         public static void IntialModuleCommon(List<string> ListUserPrivilegeID, XmlDocument aXmlDocument, string strResPath, PluginCollection pluginCol, string strLogPath)
         {
@@ -224,55 +221,21 @@ namespace Plugin
 
             //创建RibbonControl
             pAppFormRef.MainForm.Size = new System.Drawing.Size(1028, 742);
-            DevComponents.DotNetBar.RibbonControl aRibbonControl = new DevComponents.DotNetBar.RibbonControl();
-            aRibbonControl.CaptionVisible = true;
+            DevExpress.XtraBars.Ribbon.RibbonControl aRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             aRibbonControl.Dock = System.Windows.Forms.DockStyle.Top;
-            aRibbonControl.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
             aRibbonControl.Location = new System.Drawing.Point(4, 1);
             aRibbonControl.Name = "ribbonControlMain";
            // aRibbonControl.Size = new System.Drawing.Size(1028, 102);
             aRibbonControl.Size = new System.Drawing.Size(1028, 140);
-            aRibbonControl.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            aRibbonControl.TabGroupHeight = 14;
-            aRibbonControl.Office2007ColorTable = DevComponents.DotNetBar.Rendering.eOffice2007ColorScheme.Blue;
-            aRibbonControl.UseCustomizeDialog = false;
             pAppFormRef.ControlContainer = aRibbonControl as Control;
 
             //创建StartButton
-            DevComponents.DotNetBar.Office2007StartButton aStartButton = new DevComponents.DotNetBar.Office2007StartButton();
-            aStartButton.AutoExpandOnClick = true;
-            aStartButton.CanCustomize = false;
-            aStartButton.HotTrackingStyle = DevComponents.DotNetBar.eHotTrackingStyle.Image;
-            if (File.Exists(_ResPath + "\\buttonSystems.png"))
-            {
-                aStartButton.Image = Image.FromFile(_ResPath + "\\buttonSystems.png");
-            }
+            DevExpress.XtraBars.Ribbon.ApplicationMenu aStartButton = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
 
-            aStartButton.ImagePaddingHorizontal = 2;
-            aStartButton.ImagePaddingVertical = 2;
+
             aStartButton.Name = "buttonSystems";
-            aStartButton.ShowSubItems = false;
-            aStartButton.Text = "系统列表";
-            aStartButton.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            //aStartButton.Enabled = false;
-            aRibbonControl.QuickToolbarItems.AddRange(new DevComponents.DotNetBar.BaseItem[] { aStartButton });
 
-            DevComponents.DotNetBar.ItemContainer menuSystemContainer = new DevComponents.DotNetBar.ItemContainer();
-            menuSystemContainer.BackgroundStyle.Class = "RibbonSystemMenuContainer";
-            menuSystemContainer.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            menuSystemContainer.MinimumSize = new System.Drawing.Size(0, 0);
-            menuSystemContainer.Name = "menuSystemContainer";
-            menuSystemContainer.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            aStartButton.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] { menuSystemContainer });
 
-            DevComponents.DotNetBar.ItemContainer menuSystemItems = new DevComponents.DotNetBar.ItemContainer();
-            menuSystemItems.BackgroundStyle.Class = "RibbonSystemItemsContainer";
-            menuSystemItems.ItemSpacing = 5;
-            menuSystemItems.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            menuSystemItems.MinimumSize = new System.Drawing.Size(120, 0);
-            menuSystemItems.Name = "menuSystemItems";
-            menuSystemItems.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            menuSystemContainer.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] { menuSystemItems });
 
             _SysLocalLog.WriteLocalLog("完成系统主界面初始化");
             if (xmlnode.HasChildNodes == false)
@@ -280,9 +243,8 @@ namespace Plugin
                 _SysLocalLog.WriteLocalLog("异常：" + "XML中无相关插件内容");
                 return false;
             }
-
             //右键菜单集合
-            Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> dicContextMenu = new Dictionary<string, DevComponents.DotNetBar.ContextMenuBar>();
+            Dictionary<string, DevExpress.Utils.ContextButton> dicContextMenu = new Dictionary<string, DevExpress.Utils.ContextButton>();
             string sNodeName = "";
             string sNodeID = "";
             string sNodeCaption = "";
@@ -320,73 +282,46 @@ namespace Plugin
                     _SysLocalLog.WriteLocalLog("***************************************");
                     _SysLocalLog.WriteLocalLog("开始加载" + sNodeName);
 
-                    SysCommon.SysLogInfoChangedEvent newEvent = new SysCommon.SysLogInfoChangedEvent("加载" + sNodeCaption+"...");
+                    SysCommon.SysLogInfoChangedEvent newEvent = new SysCommon.SysLogInfoChangedEvent("加载" + sNodeCaption + "...");
                     SysLogInfoChnaged(null, newEvent);
 
                     if (sControlType == "UserControl")
                     {
                         #region 根据XML初始化快捷菜单按钮menuSystemItems子项
-                        DevComponents.DotNetBar.ButtonItem aSysItem = new DevComponents.DotNetBar.ButtonItem();
-                        aSysItem.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+                        DevExpress.XtraBars.BarButtonItem aSysItem = new DevExpress.XtraBars.BarButtonItem();
+                        aSysItem.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
                         if (File.Exists(_ResPath + "\\" + sNodeName + ".png"))
                         {
-                            aSysItem.Image = Image.FromFile(_ResPath + "\\" + sNodeName + ".png");
+                            aSysItem.ImageUri = new DevExpress.Utils.DxImageUri(_ResPath + "\\" + sNodeName + ".png");
                         }
-                        aSysItem.ImagePaddingHorizontal = 8;
                         aSysItem.Name = sNodeName;
-                        aSysItem.SubItemsExpandWidth = 24;
-                        aSysItem.Text = sNodeCaption;
-                        aSysItem.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+                        aSysItem.Caption = sNodeCaption;
                         if (sBackgroudLoad != bool.FalseString.ToLower())
                         {
-                            menuSystemItems.SubItems.Add(aSysItem);   //把子系统的名称加载到左上角的按钮列表中  wgf 20110602
-                        }
-                     
 
-                        //快捷菜单按钮menuSystemItems的click方法
-                        aSysItem.Click += new EventHandler(menuSystemItem_Click);
-                        #endregion
+                            //快捷菜单按钮menuSystemItems的click方法
+                            aSysItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(menuSystemItem_Click);
+                            #endregion
 
-                        //判断插件中是否存在该项
-                        if (v_dicPlugins.ContainsKey(sNodeName))
-                        {
-                            //根据IControlRef初始化加载用户自定义控件内容
-                            PluginOnCreate(v_dicPlugins[sNodeName], pApplication);
+                            //判断插件中是否存在该项
+                            if (v_dicPlugins.ContainsKey(sNodeName))
+                            {
+                                //根据IControlRef初始化加载用户自定义控件内容
+                                PluginOnCreate(v_dicPlugins[sNodeName], pApplication);
+                            }
+                            else
+                            {
+                                bRes = false;
+                                _SysLocalLog.WriteLocalLog("加载" + sNodeName + "异常：" + "未找到对应的插件");
+                                _SysLocalLog.WriteLocalLog("完成加载" + sNodeName);
+                                _SysLocalLog.WriteLocalLog("***************************************");
+                                continue;
+                            }
                         }
-                        else
-                        {
-                            bRes = false;
-                            _SysLocalLog.WriteLocalLog("加载" + sNodeName + "异常：" + "未找到对应的插件");
-                            _SysLocalLog.WriteLocalLog("完成加载" + sNodeName);
-                            _SysLocalLog.WriteLocalLog("***************************************");
-                            continue;
-                        }
+                        _SysLocalLog.WriteLocalLog("完成加载" + sNodeName);
+                        _SysLocalLog.WriteLocalLog("***************************************");
+
                     }
-                    else  //加载右键菜单（菜单栏、工具栏）插件按钮(暂时无对应内容)
-                    {
-                        //if (LoadButtonView(null, xmlnodeChild, pApplication, dicContextMenu) == false)
-                        //{
-                        //    bRes = false;
-                        //}
-
-                        //pAppFormRef.DicContextMenu = dicContextMenu;
-                        //#region 主窗体固定功能将右键菜单和aRibbonControl邦定
-                        
-                        //if (dicContextMenu.ContainsKey(sNodeName))
-                        //{
-                        //    DevComponents.DotNetBar.ContextMenuBar aContextMenuBar = dicContextMenu[sNodeName] as DevComponents.DotNetBar.ContextMenuBar;
-                        //    if (aContextMenuBar != null)
-                        //    {
-                        //        _ContextMenuButtonItem = aContextMenuBar.Items["ContextMenu" + sNodeName] as DevComponents.DotNetBar.ButtonItem;
-                        //        aRibbonControl.MouseDown += new MouseEventHandler(RibbonControl_MouseDown);
-                        //    }
-                        //}
-                        //#endregion
-                    }
-
-                    _SysLocalLog.WriteLocalLog("完成加载" + sNodeName);
-                    _SysLocalLog.WriteLocalLog("***************************************");
-
                 }
                 catch (Exception e)
                 {
@@ -398,12 +333,7 @@ namespace Plugin
             //添加工具、状态栏
             pAppFormRef.MainForm.Controls.Add(aRibbonControl);
 
-            //初始化选中第一项
-            if(menuSystemItems.SubItems.Count>0)
-            {
-                 EventArgs e = new EventArgs();
-                 menuSystemItem_Click(menuSystemItems.SubItems[0], e);
-            }
+
 
             _SysLocalLog.LogClose();
             return bRes;
@@ -424,7 +354,6 @@ namespace Plugin
                 _SysLocalLog.WriteLocalLog("异常：" + "AppFormRef中变量MainForm未设置");
                 return false;
             }
-
             //修改窗体标题
             string xPath = "//Main";
             XmlNode xmlnode = _SysXmlDocument.SelectSingleNode(xPath);
@@ -434,12 +363,8 @@ namespace Plugin
                 return false;
             }
            string sNodeName = "";
-            string sNodeID = "";
-            string sNodeCaption = "";
             string sControlType = "";
             string sVisible = "";
-            string sEnabled = "";
-            string sBackgroudLoad = "";
 
             //初始化加载控件
             bool bRes = true;
@@ -451,23 +376,12 @@ namespace Plugin
                     XmlElement xmlelementChild = xmlnodeChild as XmlElement;
                     sNodeName = xmlelementChild.GetAttribute("Name").Trim();
                     sControlType = xmlelementChild.GetAttribute("ControlType").Trim();
-
-                    //if (pAppFormRef.ConnUser.Name.ToLower() != "admin")
-                    //{
-                    //    if (sNodeID == "") continue;
-                    //    if (!_ListUserPrivilegeID.Contains(sNodeID)) continue;
-                    //}
-
                     if (sVisible == bool.FalseString.ToLower())  //获取子系统是否加载 对应Visible
                         continue;
                     _SysLocalLog.WriteLocalLog("***************************************");
                     _SysLocalLog.WriteLocalLog("开始加载" + sNodeName);
-
-
                     if (sControlType == "UserControl")
                     {
-
-
                         //判断插件中是否存在该项
                         if (v_dicPlugins.ContainsKey(sNodeName))
                         {
@@ -494,7 +408,6 @@ namespace Plugin
                     _SysLocalLog.WriteLocalLog("出错：" + e.Message);
                 }
             }
-
             _SysLocalLog.LogClose();
             return bRes;
         }
@@ -510,7 +423,7 @@ namespace Plugin
                 return false;
             }
 
-            DevComponents.DotNetBar.RibbonControl aRibbonControl = aControl as DevComponents.DotNetBar.RibbonControl;
+            DevExpress.XtraBars.Ribbon.RibbonControl aRibbonControl = aControl as DevExpress.XtraBars.Ribbon.RibbonControl;
             if (aRibbonControl == null)
             {
                 _SysLocalLog.WriteLocalLog("异常：" + "控件容器类型不是RibbonControl");
@@ -534,7 +447,7 @@ namespace Plugin
             }
             aRibbonControl.Height = 120;        //added by chulili 限制整栏菜单的高度
             //右键菜单集合
-            Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> dicContextMenu = new Dictionary<string, DevComponents.DotNetBar.ContextMenuBar>();
+            Dictionary<string, DevExpress.XtraBars.PopupMenu> dicContextMenu = new Dictionary<string, DevExpress.XtraBars.PopupMenu>();
             IAppFormRef pAppFormRef = pApplication as IAppFormRef;
             bool bRes = true;
             foreach (XmlNode xmlnodeChild in xmlnode.ChildNodes)
@@ -562,31 +475,24 @@ namespace Plugin
 
                     if (sControlType == "RibbonTabItem")   //菜单类型节点  根据XML中xmlnodeChild相关属性UI化界面Tab
                     {
-                        DevComponents.DotNetBar.RibbonPanel aRibbonPanel = new DevComponents.DotNetBar.RibbonPanel();
+                        DevExpress.XtraBars.Ribbon.RibbonPage aRibbonPanel = new DevExpress.XtraBars.Ribbon.RibbonPage();
                         aRibbonPanel.Name = "RibbonPanel" + sNodeName;
-                        aRibbonPanel.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-                        aRibbonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-                        aRibbonPanel.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-                        
-                        DevComponents.DotNetBar.RibbonTabItem aRibbonTabItem = new DevComponents.DotNetBar.RibbonTabItem();
+
+                        DevExpress.XtraBars.Ribbon.RibbonPage aRibbonTabItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
                         aRibbonTabItem.Name = sNodeName;
                         aRibbonTabItem.Text = sNodeCaption;
-                        aRibbonTabItem.Panel = aRibbonPanel;
-                        aRibbonTabItem.ImagePaddingHorizontal = 8;
                         aRibbonTabItem.Visible = Convert.ToBoolean(sVisible);
-                        aRibbonTabItem.Enabled = Convert.ToBoolean(sEnabled);
-                        aRibbonTabItem.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
                         
-                        if (aRibbonControl.Controls.ContainsKey(aRibbonPanel.Name) || aRibbonControl.Items.Contains(aRibbonTabItem.Name))
-                        {
-                            bRes = false;
-                             _SysLocalLog.WriteLocalLog("异常：存在相同名称的RibbonTabItem节点");
-                            continue;
-                        }
+                        //if (aRibbonControl.Controls.ContainsKey(aRibbonPanel.Name) || aRibbonControl.Items.Contains(aRibbonTabItem.Name))
+                        //{
+                        //    bRes = false;
+                        //     _SysLocalLog.WriteLocalLog("异常：存在相同名称的RibbonTabItem节点");
+                        //    continue;
+                        //}
                         
-                        aRibbonControl.Controls.Add(aRibbonPanel);
-                        aRibbonControl.Items.Add(aRibbonTabItem);
-                        aRibbonControl.Expanded = true;
+                        //aRibbonControl.Controls.Add(aRibbonPanel);
+                        //aRibbonControl.Items.Add(aRibbonTabItem);
+                        //aRibbonControl.Expanded = true;
 
                         _dicTabs.Add(aRibbonTabItem, strNameSys);
                         //绑定菜单事件
@@ -594,19 +500,19 @@ namespace Plugin
 
                         foreach (XmlNode aXmlnode in xmlnodeChild.ChildNodes)
                         {
-                            if (LoadButtonView(aRibbonPanel, aXmlnode, pApplication, dicContextMenu) == null)
-                            {
-                                bRes = false;
-                            }
+                            //if (LoadButtonView(aRibbonPanel, aXmlnode, pApplication, dicContextMenu) == null)
+                            //{
+                            //    bRes = false;
+                            //}
                         }
                         continue;
                     }
 
                     //右键菜单
-                    if (LoadButtonView(null, xmlnodeChild, pApplication, dicContextMenu) == null)
-                    {
-                        bRes = false;
-                    }
+                    //if (LoadButtonView(null, xmlnodeChild, pApplication, dicContextMenu) == null)
+                    //{
+                    //    bRes = false;
+                    //}
                 }
                 catch (Exception e)
                 {
@@ -618,7 +524,7 @@ namespace Plugin
             //IAppFormRef pAppFormRef = pApplication as IAppFormRef;
             if (pAppFormRef != null)
             {
-                pAppFormRef.DicContextMenu = dicContextMenu;
+                //pAppFormRef.DicContextMenu = dicContextMenu;
             }
            
 
@@ -626,14 +532,14 @@ namespace Plugin
         }
 
         /// <summary>
-        /// //菜单栏、工具栏、右键菜单 不执行PluginOnCreate，通过以下代码直接UI化添加
+        /// 菜单栏、工具栏、右键菜单 不执行PluginOnCreate，通过以下代码直接UI化添加
         /// </summary>
         /// <param name="aControl"></param>
         /// <param name="xmlnodeChild"></param>
         /// <param name="pApplication"></param>
         /// <param name="dicContextMenu"></param>
         /// <returns></returns>
-        public static Control LoadButtonView(Control aControl, XmlNode xmlnodeChild, IApplicationRef pApplication, Dictionary<string, DevComponents.DotNetBar.ContextMenuBar> dicContextMenu)
+        public static Control LoadButtonView(Control aControl, XmlNode xmlnodeChild, IApplicationRef pApplication, Dictionary<string, System.Windows.Forms.ContextMenu> dicContextMenu)
         {
             string sNodeName = "";
             string sNodeID = "";
@@ -693,11 +599,7 @@ namespace Plugin
             }
             aBarControl.Name = sNodeName;
             aBarControl.Text = sNodeCaption;
-            if (sNodeCaption == "" && sControlType == "RibbonBar")      //added by chulili 不显示下面的标题栏
-            {
-                DevComponents.DotNetBar.RibbonBar pRibbonbar = aBarControl as DevComponents.DotNetBar.RibbonBar;
-                pRibbonbar.TitleVisible = false;
-            }
+
             aBarControl.Enabled = Convert.ToBoolean(sEnabled);
             aBarControl.Visible = Convert.ToBoolean(sVisible);
 
@@ -735,32 +637,7 @@ namespace Plugin
                 _SysLocalLog.WriteLocalLog("异常：" +sNodeName + "节点下无相关内容");
             }
 
-            if (sControlType == "ContextMenuBar")
-            {
-                DevComponents.DotNetBar.ContextMenuBar aContextMenuBar = aBarControl as DevComponents.DotNetBar.ContextMenuBar;
-                if (aContextMenuBar != null)
-                {
-                    DevComponents.DotNetBar.ButtonItem aButtonItem = new DevComponents.DotNetBar.ButtonItem();
-                    aButtonItem.Name = "ContextMenu" + sNodeName;
-                    aButtonItem.Text = sNodeCaption;
-                    aButtonItem.Enabled = Convert.ToBoolean(sEnabled);
-                    aButtonItem.Visible = Convert.ToBoolean(sVisible);
-                    aButtonItem.Style = eDotNetBarStyle.Office2007;
-                    aContextMenuBar.Items.Add(aButtonItem);
-                    
-                    AddItemsByXmlNode(aButtonItem, xmlnodeChild, bNotToolBar, pApplication);
-                    dicContextMenu.Add(sNodeName, aContextMenuBar);
-                }
-            }
-            else
-            {
-                AddItemsByXmlNode(aBarControl, xmlnodeChild, bNotToolBar, pApplication);
-                if (aControl != null)
-                {
-                    aControl.Controls.Add(aBarControl);
-                    aControl.Controls.SetChildIndex(aBarControl, 0);
-                }
-            }
+
 
             return aBarControl;
         }
@@ -895,7 +772,7 @@ namespace Plugin
                     }
                     Object newObject = Activator.CreateInstance(aType);
 
-                    DevComponents.DotNetBar.BaseItem aBaseItem = newObject as DevComponents.DotNetBar.BaseItem;
+                    DevExpress.XtraBars.BarItem aBaseItem = newObject as DevExpress.XtraBars.BarItem;
                     if (aBaseItem == null)
                     {
                         bRes = false;
@@ -904,17 +781,12 @@ namespace Plugin
                     }
 
                     aBaseItem.Name = sNodeName;
-                    aBaseItem.Text = sNodeCaption;
                     aBaseItem.Enabled = Convert.ToBoolean(sEnabled);
-                    aBaseItem.Visible = Convert.ToBoolean(sVisible);
-                    aBaseItem.BeginGroup = Convert.ToBoolean(sNewGroup);
-                    aBaseItem.Style=DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
                    
 
                     XmlElement xmlelementTips = (XmlElement)aXmlnode.SelectSingleNode(".//Tips");
                     if(xmlelementTips==null || sTips!="")
                     {
-                        aBaseItem.Tooltip = sTips;
                     }
                     else if(xmlelementTips!=null)
                     {
@@ -930,129 +802,26 @@ namespace Plugin
                         {
                             footerImage = Image.FromFile(_ResPath + "\\" + strfooterImage + ".png");
                         }
-                        DevComponents.DotNetBar.SuperTooltipInfo aInfo=new DevComponents.DotNetBar.SuperTooltipInfo(xmlelementTips.GetAttribute("HeaderText"),
-                            xmlelementTips.GetAttribute("FooterText"),xmlelementTips.GetAttribute("BodyText"),bogyImage,footerImage,DevComponents.DotNetBar.eTooltipColor.Gray);
-                        _superTooltip.SetSuperTooltip(aBaseItem, aInfo);
                     }
 
                     //状态栏提示
-                    aBaseItem.MouseEnter+=new EventHandler(BaseItem_MouseEnter);
-                    aBaseItem.MouseLeave+=new EventHandler(BaseItem_MouseLeave);
 
                     _dicBaseItems.Add(aBaseItem, sNodeName);
 
-                    //根据不同的类型来判断控件添加图像
-                     //从本地资源文件中加载图像
-                    if (File.Exists(_ResPath + "\\" + sNodeNameImage + ".png"))
-                    {
-                        DevComponents.DotNetBar.SideBarPanelItem aSideBarPanelItem = aBaseItem as DevComponents.DotNetBar.SideBarPanelItem;
-                        if (aSideBarPanelItem != null)
-                        {
-                            aSideBarPanelItem.Image = Image.FromFile(_ResPath + "\\" + sNodeNameImage + ".png");
-                        }
 
-                        DevComponents.DotNetBar.LabelItem aLabelItem = aBaseItem as DevComponents.DotNetBar.LabelItem;
-                        if (aLabelItem != null)
-                        {
-                            aLabelItem.Image = Image.FromFile(_ResPath + "\\" + sNodeNameImage + ".png");
-                            aLabelItem.ImagePosition = DevComponents.DotNetBar.eImagePosition.Left;
-                        }
 
-                        DevComponents.DotNetBar.ExplorerBarGroupItem aExplorerBarGroupItem = aBaseItem as DevComponents.DotNetBar.ExplorerBarGroupItem;
-                        if (aExplorerBarGroupItem != null)
-                        {
-                            aExplorerBarGroupItem.Image = Image.FromFile(_ResPath + "\\" + sNodeNameImage + ".png");
-                        }
 
-                        DevComponents.DotNetBar.DockContainerItem aDockContainerItemm = aBaseItem as DevComponents.DotNetBar.DockContainerItem;
-                        if (aDockContainerItemm != null)
-                        {
-                            aDockContainerItemm.Image = Image.FromFile(_ResPath + "\\" + sNodeNameImage + ".png");
-                        }
 
-                        DevComponents.DotNetBar.ButtonItem aButtonItem = aBaseItem as DevComponents.DotNetBar.ButtonItem;
-                        if (aButtonItem != null)
-                        {
-                            if (bImageAndText == true)
-                            {
-                                aButtonItem.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-                            }
-                           // aButtonItem.ImagePosition = DevComponents.DotNetBar.eImagePosition.Left;
 
-                            //wgf 修改菜单按钮图片的位置 20110518
-                            aButtonItem.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-                            aButtonItem.SplitButton = true;
-                            //end
-
-                            aButtonItem.Image = Image.FromFile(_ResPath + "\\" + sNodeNameImage + ".png");
-                        }
-                    }
-                    else
-                    {
-                        DirectoryInfo dir = new DirectoryInfo(_ResPath);
-                        foreach (FileInfo aFile in dir.GetFiles())
-                        {
-                            if(sNodeNameImage.Contains(aFile.Name.Substring(0,aFile.Name.Length-4)))
-                            {
-                                DevComponents.DotNetBar.SideBarPanelItem aSideBarPanelItem = aBaseItem as DevComponents.DotNetBar.SideBarPanelItem;
-                                if (aSideBarPanelItem != null)
-                                {
-                                    aSideBarPanelItem.Image = Image.FromFile(_ResPath + "\\" + aFile.Name);
-                                }
-
-                                DevComponents.DotNetBar.LabelItem aLabelItem = aBaseItem as DevComponents.DotNetBar.LabelItem;
-                                if (aLabelItem != null)
-                                {
-                                    aLabelItem.Image = Image.FromFile(_ResPath + "\\" + aFile.Name );
-                                    aLabelItem.ImagePosition = DevComponents.DotNetBar.eImagePosition.Left;
-                                }
-
-                                DevComponents.DotNetBar.ExplorerBarGroupItem aExplorerBarGroupItem = aBaseItem as DevComponents.DotNetBar.ExplorerBarGroupItem;
-                                if (aExplorerBarGroupItem != null)
-                                {
-                                    aExplorerBarGroupItem.Image = Image.FromFile(_ResPath + "\\" + aFile.Name );
-                                }
-
-                                DevComponents.DotNetBar.DockContainerItem aDockContainerItemm = aBaseItem as DevComponents.DotNetBar.DockContainerItem;
-                                if (aDockContainerItemm != null)
-                                {
-                                    aDockContainerItemm.Image = Image.FromFile(_ResPath + "\\" + aFile.Name);
-                                }
-
-                                DevComponents.DotNetBar.ButtonItem aButtonItem = aBaseItem as DevComponents.DotNetBar.ButtonItem;
-                                if (aButtonItem != null)
-                                {
-                                    if (bImageAndText == true)
-                                    {
-                                        aButtonItem.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-                                    }
-                                    aButtonItem.ImagePosition = DevComponents.DotNetBar.eImagePosition.Left;
-                                    aButtonItem.Image = Image.FromFile(_ResPath + "\\" + aFile.Name);
-                                }
-                            }
-                        }
-                    }
-
-                    //具体命令按钮实现
-                    aBaseItem.Click+=new EventHandler(BaseItem_Click);
-
-                    //添加到菜单栏、工具栏、右键菜单中
-                    DevComponents.DotNetBar.Bar aBar = aControl as DevComponents.DotNetBar.Bar;
-                    if (aBar != null)
-                    {
-                        aBar.Items.Add(aBaseItem);
-                    }
-
-                    DevComponents.DotNetBar.RibbonBar aRibbonBar = aControl as DevComponents.DotNetBar.RibbonBar;
+                    
+                   DevExpress.XtraBars.Bar aRibbonBar = aControl as DevExpress.XtraBars.Bar;
                     if (aRibbonBar != null)
                     {
-                        aRibbonBar.Items.Add(aBaseItem);
                     }
 
-                    DevComponents.DotNetBar.ButtonItem contextMemuButtonItem = aControl as DevComponents.DotNetBar.ButtonItem;
+                    DevExpress.XtraBars.BarButtonItem contextMemuButtonItem = aControl as DevExpress.XtraBars.BarButtonItem;
                     if (contextMemuButtonItem != null)
                     {
-                        contextMemuButtonItem.SubItems.Add(aBaseItem);
                     }
 
 
@@ -1246,38 +1015,17 @@ namespace Plugin
 
         private static void BaseItem_Click(object sender, EventArgs e)
         {
-            DevComponents.DotNetBar.BaseItem aBaseItem = sender as DevComponents.DotNetBar.BaseItem;
+            DevExpress.XtraBars.BarItem aBaseItem = sender as DevExpress.XtraBars.BarItem;
             string sKey = aBaseItem.Name.ToString().Trim();
-            //yjl20120809 add 为了满足 当前功能按钮高亮显示 需求 
             if (m_pBaseItem == null)
             {
-                m_pBaseItem = aBaseItem as DevComponents.DotNetBar.ButtonItem;
-                m_pBaseItem.Checked = true;
+                m_pBaseItem = aBaseItem as DevExpress.XtraBars.BarButtonItem;
             }
             else
             {
                 if (!m_pBaseItem.Equals(aBaseItem))
                 {
-                    
-                    m_pBaseItem.Checked = false;
-                    if (m_pBaseItem.Parent != null)
-                    {
-                        DevComponents.DotNetBar.ButtonItem pBI = m_pBaseItem.Parent as DevComponents.DotNetBar.ButtonItem;
-                        if (pBI != null)
-                        {
-                            pBI.Checked = false;
-                        }
-                    }
-                    m_pBaseItem = aBaseItem as DevComponents.DotNetBar.ButtonItem;
-                    m_pBaseItem.Checked = true;
-                    if (m_pBaseItem.Parent != null)
-                    {
-                        DevComponents.DotNetBar.ButtonItem pBI=m_pBaseItem.Parent as DevComponents.DotNetBar.ButtonItem;
-                        if (pBI != null)
-                        {
-                            pBI.Checked = true;
-                        }
-                    }
+                    m_pBaseItem = aBaseItem as DevExpress.XtraBars.BarButtonItem;
                 }
             }
             //end
@@ -1301,19 +1049,11 @@ namespace Plugin
             {
                 foreach (KeyValuePair<string, ICommandRef> keyvalue in v_dicCommands)
                 {
-                    foreach(KeyValuePair<DevComponents.DotNetBar.BaseItem, string> kvCmd in _dicBaseItems)
+                    foreach(KeyValuePair<DevExpress.XtraBars.BarItem, string> kvCmd in _dicBaseItems)
                     {
                         if (kvCmd.Value == keyvalue.Key)
                         {
                             kvCmd.Key.Enabled = keyvalue.Value.Enabled;
-                            kvCmd.Key.Visible = keyvalue.Value.Visible;
-                            //yjl20120809 cmt 为了满足 当前功能按钮高亮显示 需求 
-                            //DevComponents.DotNetBar.ButtonItem aButtonItem = kvCmd.Key as DevComponents.DotNetBar.ButtonItem;
-                            //if (aButtonItem != null)
-                            //{
-                            //    aButtonItem.Checked = keyvalue.Value.Checked;
-                            //}
-                            //end
                         }
                     }
                 }
@@ -1323,30 +1063,13 @@ namespace Plugin
             {
                 foreach (KeyValuePair<string, IToolRef> keyvalue in v_dicTools)
                 {
-                    foreach (KeyValuePair<DevComponents.DotNetBar.BaseItem, string> kvTool in _dicBaseItems)
+                    foreach (KeyValuePair<DevExpress.XtraBars.BarItem, string> kvTool in _dicBaseItems)
                     {
                         if (kvTool.Value == keyvalue.Key)
                         {
                             kvTool.Key.Enabled = keyvalue.Value.Enabled;
-                            kvTool.Key.Visible = keyvalue.Value.Visible;
-                            //yjl20120809 cmt 为了满足 当前功能按钮高亮显示 需求 
-                            //DevComponents.DotNetBar.ButtonItem aButtonItem = kvTool.Key as DevComponents.DotNetBar.ButtonItem;
-                            //if (aButtonItem != null)
-                            //{
-                            //    aButtonItem.Checked = keyvalue.Value.Checked;
-                            //}
-                            //end
                         }
                     }
-                }
-            }
-
-            if (_pIAppFrm != null)
-            {
-                DevComponents.DotNetBar.RibbonControl aRibbonControl = _pIAppFrm.ControlContainer as DevComponents.DotNetBar.RibbonControl;
-                if (aRibbonControl != null)
-                {
-                    aRibbonControl.RecalcLayout();
                 }
             }
         }
@@ -1355,11 +1078,11 @@ namespace Plugin
         //wgf 20110602 左上角系统切换
         private static void menuSystemItem_Click(object sender, EventArgs e)
         {
-            DevComponents.DotNetBar.ButtonItem aSysItem = sender as DevComponents.DotNetBar.ButtonItem;
+            DevExpress.XtraBars.BarButtonItem aSysItem = sender as DevExpress.XtraBars.BarButtonItem;
             if (aSysItem == null || _dicTabs == null || _pIAppFrm == null) return;
 
             _pIAppFrm.CurrentSysName = aSysItem.Name;
-            _pIAppFrm.Caption = SysCommon.ModSysSetting.GetSystemName() + aSysItem.Text; //added by chulili 20111022 修改子系统标题名
+            _pIAppFrm.Caption = SysCommon.ModSysSetting.GetSystemName() + aSysItem.Caption; //added by chulili 20111022 修改子系统标题名
 
             bool bEnable = false;
             bool bVisible = false;
@@ -1367,23 +1090,16 @@ namespace Plugin
             //刷新菜单列表 wgf 20111109
             int i = 0;
             Mod.WriteLocalLog("_dicTabs start");
-            foreach (KeyValuePair<DevComponents.DotNetBar.RibbonTabItem, string> keyValue in _dicTabs)
+            foreach (KeyValuePair<DevExpress.XtraBars.Ribbon.RibbonPage, string> keyValue in _dicTabs)
             {
                 if (keyValue.Value == aSysItem.Name)
                 {
                     i = i + 1;
                     keyValue.Key.Visible = true;
-                    keyValue.Key.Enabled = true;
-                    if (i == 1)
-                    {
-                        //默认选中第一项
-                        keyValue.Key.Checked = true;
-                    }
                 }
                 else
                 {
                     keyValue.Key.Visible = false;
-                    keyValue.Key.Enabled = false;
                 }
             }
             Mod.WriteLocalLog("_dicTabs end");
@@ -1412,20 +1128,10 @@ namespace Plugin
             }
             Mod.WriteLocalLog("v_dicControls end");
         }
-
-        //菜单栏事件
-        //private static void RibbonTabItem_Click(object sender, EventArgs e)
-        //{
-        //    DevComponents.DotNetBar.RibbonTabItem aRibbonTabItem = sender as DevComponents.DotNetBar.RibbonTabItem;
-        //    if (_dicTabs == null) return;
-
-            //aRibbonTabItem.Click();
-        //}
-        
         private static void BaseItem_MouseEnter(object sender, EventArgs e)
         {
             string strMessage=string.Empty;
-            DevComponents.DotNetBar.BaseItem aBaseItem = sender as DevComponents.DotNetBar.BaseItem;
+            DevExpress.XtraBars.BarItem aBaseItem = sender as DevExpress.XtraBars.BarItem;
             if (aBaseItem == null) return;
 
             string sKey = aBaseItem.Name.ToString().Trim();
@@ -1444,7 +1150,7 @@ namespace Plugin
         }
         private static void BaseItem_MouseLeave(object sender, EventArgs e)
         {
-            DevComponents.DotNetBar.BaseItem aBaseItem = sender as DevComponents.DotNetBar.BaseItem;
+            DevExpress.XtraBars.BarItem aBaseItem = sender as DevExpress.XtraBars.BarItem;
             if (aBaseItem == null) return;
 
             string sKey = aBaseItem.Name.ToString().Trim();

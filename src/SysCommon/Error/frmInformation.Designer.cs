@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInformation));
-            this.labelX = new DevComponents.DotNetBar.LabelX();
-            this.buttonXOk = new DevComponents.DotNetBar.ButtonX();
-            this.buttonXCancel = new DevComponents.DotNetBar.ButtonX();
+            this.labelX = new DevExpress.XtraEditors.LabelControl();
+            this.buttonXOk = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonXCancel = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -42,7 +42,6 @@
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(277, 66);
             this.labelX.TabIndex = 0;
-            this.labelX.WordWrap = true;
             // 
             // buttonXOk
             // 
@@ -94,9 +93,9 @@
 
         #endregion
 
-        private DevComponents.DotNetBar.LabelX labelX;
-        private DevComponents.DotNetBar.ButtonX buttonXOk;
-        private DevComponents.DotNetBar.ButtonX buttonXCancel;
+        private DevExpress.XtraEditors.LabelControl labelX;
+        private DevExpress.XtraEditors.SimpleButton buttonXOk;
+        private DevExpress.XtraEditors.SimpleButton buttonXCancel;
         private System.Windows.Forms.PictureBox pictureBox;
     }
 }

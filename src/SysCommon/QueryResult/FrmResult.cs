@@ -90,70 +90,70 @@ namespace SysCommon
 
         private void cbStyle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbStyle.Text == "") { return; }
-            switch (cbStyle.Text)
-            {
-                case "柱状图":
-                    chartlet1.AppearanceStyle = FanG.Chartlet.AppearanceStyles.Bar_2D_Aurora_FlatCrystal_Glow_NoBorder;
-                    break;
-                case "线状图":
-                    chartlet1.AppearanceStyle = FanG.Chartlet.AppearanceStyles.Line_3D_Aurora_FlatCrystalSquare_NoGlow_NoBorder;
-                    break;
-                case "饼状图":
-                    chartlet1.AppearanceStyle = FanG.Chartlet.AppearanceStyles.Pie_3D_Aurora_FlatCrystal_NoGlow_NoBorder;
-                    break;
-                default :
-                    break;
+            //if (cbStyle.Text == "") { return; }
+            //switch (cbStyle.Text)
+            //{
+            //    case "柱状图":
+            //        chartlet1.AppearanceStyle = FanG.Chartlet.AppearanceStyles.Bar_2D_Aurora_FlatCrystal_Glow_NoBorder;
+            //        break;
+            //    case "线状图":
+            //        chartlet1.AppearanceStyle = FanG.Chartlet.AppearanceStyles.Line_3D_Aurora_FlatCrystalSquare_NoGlow_NoBorder;
+            //        break;
+            //    case "饼状图":
+            //        chartlet1.AppearanceStyle = FanG.Chartlet.AppearanceStyles.Pie_3D_Aurora_FlatCrystal_NoGlow_NoBorder;
+            //        break;
+            //    default :
+            //        break;
 
-            }
-            //每次希望修改属性后立即重绘图形就需要调用 Refresh()方法
-            chartlet1.Refresh();
+            //}
+            ////每次希望修改属性后立即重绘图形就需要调用 Refresh()方法
+            //chartlet1.Refresh();
         }
 
         private void btnExportChart_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SaveFileDialog pSaveFileDialog = new SaveFileDialog();
-                pSaveFileDialog.Filter = "JPEG|*.jpg|BMP|*.bmp";
-                if (pSaveFileDialog.ShowDialog() != DialogResult.OK)
-                {
-                    return;
-                }
-                string strPath = pSaveFileDialog.FileName;
-                if (System.IO.File.Exists(strPath))
-                {
-                    try
-                    {
-                        System.IO.File.Delete(strPath);
-                    }
-                    catch { MessageBox.Show("图片导出失败！", "提示！"); return; }
+            //try
+            //{
+            //    SaveFileDialog pSaveFileDialog = new SaveFileDialog();
+            //    pSaveFileDialog.Filter = "JPEG|*.jpg|BMP|*.bmp";
+            //    if (pSaveFileDialog.ShowDialog() != DialogResult.OK)
+            //    {
+            //        return;
+            //    }
+            //    string strPath = pSaveFileDialog.FileName;
+            //    if (System.IO.File.Exists(strPath))
+            //    {
+            //        try
+            //        {
+            //            System.IO.File.Delete(strPath);
+            //        }
+            //        catch { MessageBox.Show("图片导出失败！", "提示！"); return; }
 
-                }
-                Image myImage = new Bitmap(chartlet1.Width , chartlet1.Height);
-                //从一个继承自Image类的对象中创建Graphics对象
-               // Graphics g = Graphics.FromImage(myImage);
-                //抓屏并拷贝到myimage里
-               // g.CopyFromScreen(this.Location, chartlet1.Location, new Size(chartlet1.Width + 20, chartlet1.Height + 45));
-                Bitmap pBitmap = new Bitmap(myImage);
-                //Bitmap vBitmap;
-                ///将抓屏获得图片在进行截取 由于通过抓屏无法获得最小的统计图
-                 Rectangle cloneRect = new Rectangle(chartlet1.Location ,chartlet1.Size );
-                //vBitmap = pBitmap.Clone(cloneRect, pBitmap.PixelFormat);
-                //保存为文件
-                 chartlet1.DrawToBitmap(pBitmap, cloneRect);//更新图片导出功能 ygc 2012-9-3
-                 pBitmap.Save(strPath);
-                //myImage.Save(strPath);
-                 pBitmap.Dispose();
-                //g.Dispose();
-                myImage.Dispose();
-                //chartlet.BackgroundImage.Save(pSaveFileDialog.FileName);
-                MessageBox.Show("图片导出成功！", "提示！");
-            }
-            catch
-            {
-                MessageBox.Show("图片导出失败！", "提示！");
-            }
+            //    }
+            //    Image myImage = new Bitmap(chartlet1.Width , chartlet1.Height);
+            //    //从一个继承自Image类的对象中创建Graphics对象
+            //   // Graphics g = Graphics.FromImage(myImage);
+            //    //抓屏并拷贝到myimage里
+            //   // g.CopyFromScreen(this.Location, chartlet1.Location, new Size(chartlet1.Width + 20, chartlet1.Height + 45));
+            //    Bitmap pBitmap = new Bitmap(myImage);
+            //    //Bitmap vBitmap;
+            //    ///将抓屏获得图片在进行截取 由于通过抓屏无法获得最小的统计图
+            //     Rectangle cloneRect = new Rectangle(chartlet1.Location ,chartlet1.Size );
+            //    //vBitmap = pBitmap.Clone(cloneRect, pBitmap.PixelFormat);
+            //    //保存为文件
+            //     chartlet1.DrawToBitmap(pBitmap, cloneRect);//更新图片导出功能 ygc 2012-9-3
+            //     pBitmap.Save(strPath);
+            //    //myImage.Save(strPath);
+            //     pBitmap.Dispose();
+            //    //g.Dispose();
+            //    myImage.Dispose();
+            //    //chartlet.BackgroundImage.Save(pSaveFileDialog.FileName);
+            //    MessageBox.Show("图片导出成功！", "提示！");
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("图片导出失败！", "提示！");
+            //}
            
         }
 
@@ -244,9 +244,9 @@ namespace SysCommon
                 m_Lst.Add(pDic);
             }
             //////
-            chartlet1.ChartTitle.Text = m_Title;
-            chartlet1.XLabels.UnitText = m_XLabels;
-            chartlet1.YLabels.UnitText = m_YLabels;
+            //chartlet1.ChartTitle.Text = m_Title;
+            //chartlet1.XLabels.UnitText = m_XLabels;
+            //chartlet1.YLabels.UnitText = m_YLabels;
             //chartlet.Crystal.Enable = true;
             //chartlet.Crystal.CoverFull = true;
             //chartlet.Crystal.Contraction = 4;
@@ -254,7 +254,7 @@ namespace SysCommon
             pDic = m_Lst[0];
             foreach (ArrayList vArrXLable in pDic.Keys)
             {
-                chartlet1.InitializeData(pDic[vArrXLable], vArrXLable, m_ColorGuider);
+                //chartlet1.InitializeData(pDic[vArrXLable], vArrXLable, m_ColorGuider);
             }
             ///判断下页按钮是否可用
             if (m_Lst.Count > 1 && m_iPage != m_Lst.Count)
@@ -263,7 +263,7 @@ namespace SysCommon
             }
             txtPageCount.Text = m_iPage + "/" + m_Lst.Count;
             //chartlet.MaxValueY = chartlet.MaxValueY + chartlet.MaxValueY / 10;
-            chartlet1.Refresh();
+            //chartlet1.Refresh();
         }
 
         private void btnNextPage_Click(object sender, EventArgs e)
@@ -281,10 +281,10 @@ namespace SysCommon
             foreach (ArrayList vArrXLable in pDic.Keys)
             {
                 ///重新加载统计页面
-                chartlet1.InitializeData(pDic[vArrXLable], vArrXLable, m_ColorGuider);
+                //chartlet1.InitializeData(pDic[vArrXLable], vArrXLable, m_ColorGuider);
                 
             }
-            chartlet1.Refresh();
+            //chartlet1.Refresh();
             btnLastPage.Enabled = true;
             if (m_iPage == m_Lst.Count)
             {
@@ -306,9 +306,9 @@ namespace SysCommon
             pDic = m_Lst[m_iPage - 1];
             foreach (ArrayList vArrXLable in pDic.Keys)
             {
-                chartlet1.InitializeData(pDic[vArrXLable], vArrXLable, m_ColorGuider);
+                //chartlet1.InitializeData(pDic[vArrXLable], vArrXLable, m_ColorGuider);
             }
-            chartlet1.Refresh();
+            //chartlet1.Refresh();
             if (m_iPage == 1)
             {
                btnLastPage.Enabled = false;

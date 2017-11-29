@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SysCommon.Error
 {
-    public partial class frmErrorHandle : DevComponents.DotNetBar.Office2007Form
+    public partial class frmErrorHandle : BaseForm
     {
         public frmErrorHandle(string strCaption, string strDes)
         {

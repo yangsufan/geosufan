@@ -107,31 +107,4 @@ namespace SysCommon.Error
             }
         }
     }
-
-    //wgf 20110518
-      //public  void ShowFrmError(string sCaption, string sErrDescription)
-      //  {
-      //      frmError newFrm = null;
-      //      FormCollection frmCol = null;
-      //      try
-      //      {
-      //          newFrm = new frmError(sCaption, sErrDescription);
-      //          //暂时取第2个窗体(主窗体).....有待修改
-      //          frmCol = Application.OpenForms;
-      //          if (frmCol != null && frmCol.Count > 1)
-      //          {
-      //              if (frmCol[frmCol.Count - 1] != null)
-      //              {
-      //                  newFrm.Owner = frmCol[frmCol.Count - 1];
-      //              }
-      //          }
-
-      //          newFrm.ShowDialog(frmCol[frmCol.Count - 1]);
-      //      }
-      //      catch
-      //      {
-      //      }
-      //  }
-
-    public enum Err_Description { 连接错误, 写入错误, 分析错误 };
 }

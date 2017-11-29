@@ -220,13 +220,10 @@ namespace GeoDatabaseManager
             curWks.Version = Mod.CurVersion;
             curWks.DBType = Mod.CurdbType;
             Mod.v_AppForm.CurWksInfo = curWks;
-
             //分类解析、获取插件
             Plugin.ModuleCommon.IntialModuleCommon(lstUserPrivilegeID,docXml, Mod.m_ResPath, pluginCol, Mod.m_LogPath);
-            
             //根据XML加载插件界面
             Plugin.ModuleCommon.LoadFormByXmlNode(Mod.v_AppForm as Plugin.Application.IApplicationRef);
-
             SysCommon.SysLogInfoChangedEvent newEvent = new SysCommon.SysLogInfoChangedEvent("加载数据...");
             SysLogInfoChnaged(null, newEvent);
             //根据XML加载插件界面
@@ -289,9 +286,6 @@ namespace GeoDatabaseManager
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //DialogResult dr = MessageBox.Show("是否退出系统？", "退出确认", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
-            //if (dr == DialogResult.Cancel) 
-            //{ e.Cancel = true; }
             SysCommon.FrmExit pFrm = new SysCommon.FrmExit();
             DialogResult pRes = pFrm.ShowDialog();
             pFrm = null;
@@ -313,12 +307,6 @@ namespace GeoDatabaseManager
                 string strExecutablePath = Application.ExecutablePath;
                 Application.ExitThread();
                 Application.Exit();
-                //Process[] pro = System.Diagnostics.Process.GetProcessesByName("GeoDatabaseManager");
-                //foreach (Process pc in pro)
-                //{
-                //    pc.Kill();
-                //}
-
                 string picPath;
                 System.Diagnostics.Process p = new System.Diagnostics.Process(); 
                 picPath = string.Concat(System.IO.Path.GetDirectoryName(strExecutablePath), "\\GeoDatabaseManager.exe");

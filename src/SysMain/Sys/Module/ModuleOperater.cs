@@ -14,6 +14,7 @@ using SysCommon;
 using ESRI.ArcGIS.Geodatabase;
 using SysCommon.DataBase;
 using System.Data.OracleClient;
+using System.Data.OleDb;
 namespace GeoDatabaseManager
 {
     public static class ModuleOperator
@@ -29,43 +30,45 @@ namespace GeoDatabaseManager
         public static bool AddSystemXML(string name, out Exception eError)
         {
             eError = null;
-            User user;
-            try
-            {
-                SysGisDB gisDb = new SysGisDB();
-                GeoUtilities.clsDBConnect DBConn = new GeoUtilities.clsDBConnect();
-                DBConn.GetConInfo();
-                IWorkspace pWorkSpace = DBConn.GetWorkspace();
-                gisDb.WorkSpace = pWorkSpace;
-                SysGisTable sysTable = new SysGisTable(gisDb);
-                Dictionary<string, object> dicData = sysTable.GetRow("ICE_USERINFO", "U_NAME='" + name + "'", out eError);
-                if (dicData == null || dicData.Count == 0)
-                {
-                    SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示","用户不存在！");
-                    return false;
-                }
-                if (dicData != null && dicData.Count > 0)
-                {
-                    user = new User();
-                    user.ID = int.Parse(dicData["U_ID"].ToString());
-                    user.Name = dicData["U_NAME"].ToString();
-                    user.Password = dicData["U_PWD"].ToString();
-                    //user.Sex = int.Parse(dicData["U_SEX"].ToString());
-                    user.Position = dicData["U_JOB"].ToString();
-                    user.Remark = dicData["U_REMARK"].ToString();
-                    user.LoginInfo = dicData["LOGININFO"].ToString();
-                    //将用户信息和相应权限信息保存起来，在加载插件时用到
-                    Mod.v_AppUser = user;
-                    Mod.v_SystemXml = GetPrivilegeXml(user, gisDb, out eError);
-                    return true;
-                }
-                return false;
-            }
-            catch (Exception ex)
-            {
-                eError = ex;
-                return false;
-            }
+            return false;
+            //eError = null;
+            //User user;
+            //try
+            //{
+            //    SysGisDB gisDb = new SysGisDB();
+            //    GeoUtilities.clsDBConnect DBConn = new GeoUtilities.clsDBConnect();
+            //    DBConn.GetConInfo();
+            //    IWorkspace pWorkSpace = DBConn.GetWorkspace();
+            //    gisDb.WorkSpace = pWorkSpace;
+            //    SysGisTable sysTable = new SysGisTable(gisDb);
+            //    Dictionary<string, object> dicData = sysTable.GetRow("ICE_USERINFO", "U_NAME='" + name + "'", out eError);
+            //    if (dicData == null || dicData.Count == 0)
+            //    {
+            //        SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示","用户不存在！");
+            //        return false;
+            //    }
+            //    if (dicData != null && dicData.Count > 0)
+            //    {
+            //        user = new User();
+            //        user.ID = int.Parse(dicData["U_ID"].ToString());
+            //        user.Name = dicData["U_NAME"].ToString();
+            //        user.Password = dicData["U_PWD"].ToString();
+            //        //user.Sex = int.Parse(dicData["U_SEX"].ToString());
+            //        user.Position = dicData["U_JOB"].ToString();
+            //        user.Remark = dicData["U_REMARK"].ToString();
+            //        user.LoginInfo = dicData["LOGININFO"].ToString();
+            //        //将用户信息和相应权限信息保存起来，在加载插件时用到
+            //        Mod.v_AppUser = user;
+            //        Mod.v_SystemXml = GetPrivilegeXml(user, gisDb, out eError);
+            //        return true;
+            //    }
+            //    return false;
+            //}
+            //catch (Exception ex)
+            //{
+            //    eError = ex;
+            //    return false;
+            //}
         }
         /// <summary>
         /// 权限文档合并
@@ -144,7 +147,6 @@ namespace GeoDatabaseManager
                 return null;
             }
         }
-
         /// <summary>
         /// 合并XML文档
         /// </summary>
@@ -250,24 +252,24 @@ namespace GeoDatabaseManager
             }
             //默认显示子系统界面的第一项
             int i = 0;
-            foreach (KeyValuePair<DevComponents.DotNetBar.RibbonTabItem, string> keyValue in Plugin.ModuleCommon.DicTabs)
+            foreach (KeyValuePair<DevExpress.XtraBars.Ribbon.RibbonPage, string> keyValue in Plugin.ModuleCommon.DicTabs)
             {
-                if (keyValue.Value == pSysName)
-                {
-                    i = i + 1;
-                    keyValue.Key.Visible = true;
-                    keyValue.Key.Enabled = true;
-                    if (i == 1)
-                    {
-                        //默认选中第一项
-                        keyValue.Key.Checked = true;
-                    }
-                }
-                else
-                {
-                    keyValue.Key.Visible = false;
-                    keyValue.Key.Enabled = false;
-                }
+                //if (keyValue.Value == pSysName)
+                //{
+                //    i = i + 1;
+                //    keyValue.Key.Visible = true;
+                //    keyValue.Key.Enabled = true;
+                //    if (i == 1)
+                //    {
+                //        //默认选中第一项
+                //        keyValue.Key.Checked = true;
+                //    }
+                //}
+                //else
+                //{
+                //    keyValue.Key.Visible = false;
+                //    keyValue.Key.Enabled = false;
+                //}
             }
         }
 
@@ -300,7 +302,6 @@ namespace GeoDatabaseManager
                 return false;
             }
         }
-
         //测试链接信息是否可用
         public static bool CanOpenConnect(SysCommon.Gis.SysGisDB vgisDb, string strType, string strServer, string strService, string strDatabase, string strUser, string strPassword, string strVersion)
         {
@@ -324,7 +325,6 @@ namespace GeoDatabaseManager
             return blnOpen;
 
         }
-
         /// <summary>
         /// 登陆控制
         /// </summary>

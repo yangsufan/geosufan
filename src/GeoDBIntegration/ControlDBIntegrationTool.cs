@@ -18,7 +18,8 @@ namespace GeoDBIntegration
         private Plugin.Application.IAppFormRef _hook;
         private UserControlDBIntegra _ControlDBIntegra;
 
-        //构造函数
+        //构造函数
+
         public ControlDBIntegrationTool()
         {
             base._Name = "GeoDBIntegration.ControlDBIntegrationTool";
@@ -180,7 +181,8 @@ namespace GeoDBIntegration
             {
             }
         }
-        //参考比例尺事件　陈亚飞添加
+        //参考比例尺事件　陈亚飞添加
+
         private void RefScaleCmb_SelectedIndexChanged(object sender, EventArgs e)
         {
             //try
@@ -193,7 +195,8 @@ namespace GeoDBIntegration
             //}
             //ModuleData.v_AppDBIntegra.MapControl.ActiveView.Refresh();
         }
-        //当前比例尺事件 陈亚飞添加
+        //当前比例尺事件 陈亚飞添加
+
         private void CurScaleCmb_SelectedIndexChanged(object sender, EventArgs e)
         {
             try

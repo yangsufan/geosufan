@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SysCommon.Error
 {
-    public partial class frmInformation : DevComponents.DotNetBar.Office2007Form
+    public partial class frmInformation : BaseForm
     {
         public frmInformation(string strOkName, string strCancelName, string strDes)
         {
