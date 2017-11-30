@@ -13,7 +13,7 @@ using System.IO;
 using SysCommon;
 using System.Collections;
 
-namespace GeoDatabaseManager
+namespace GDBM
 {
     public partial class frmLogin :SysCommon.BaseForm
     {
@@ -57,6 +57,31 @@ namespace GeoDatabaseManager
             catch { }
         }
 
+        public frmLogin()
+        {
+            InitializeComponent();
+            if (!IsConnectFileExist())
+            {
+                //show config form
+            }
+        }
+        /// <summary>             
+        /// Get The Connect File
+        /// </summary>
+        /// <returns></returns>
+        private bool IsConnectFileExist()
+        {
+            if (!System.IO.File.Exists(SysCommon.ModuleConfig.m_ConnectFileName))
+            {
+                return false;
+            }
+            else
+            {
+                //Read The Connect Info from the config file
+
+            }
+            return false;
+        }
         private void buttonX1_Click(object sender, EventArgs e)
         {
             Exception eError;

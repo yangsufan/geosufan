@@ -10,7 +10,7 @@ using System.IO;
 using ESRI.ArcGIS.esriSystem;
 using System.Data.OracleClient;
 
-namespace GeoDatabaseManager
+namespace GDBM
 {
     public class frmMain : SysCommon.BaseRibbonForm
     {
@@ -294,7 +294,7 @@ namespace GeoDatabaseManager
                 Plugin.LogTable.Writelog("退出系统");//yjl记录用户退出系统
                 Application.ExitThread();
                 Application.Exit();
-                System.Diagnostics.Process[] pro = System.Diagnostics.Process.GetProcessesByName("GeoDatabaseManager");
+                System.Diagnostics.Process[] pro = System.Diagnostics.Process.GetProcessesByName("GDBM");
                 foreach (System.Diagnostics.Process pc in pro)
                 {
                     pc.Kill();
@@ -309,7 +309,7 @@ namespace GeoDatabaseManager
                 Application.Exit();
                 string picPath;
                 System.Diagnostics.Process p = new System.Diagnostics.Process(); 
-                picPath = string.Concat(System.IO.Path.GetDirectoryName(strExecutablePath), "\\GeoDatabaseManager.exe");
+                picPath = string.Concat(System.IO.Path.GetDirectoryName(strExecutablePath), "\\GDBM.exe");
                 System.Diagnostics.Process.Start(picPath);
             }
             else

@@ -1,4 +1,4 @@
-﻿namespace GeoDatabaseManager
+﻿namespace GDBM
 {
     partial class frmDBSet
     {

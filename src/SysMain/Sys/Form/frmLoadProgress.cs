@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace GeoDatabaseManager
+namespace GDBM
 {
     public partial class frmLoadProgress : SysCommon.BaseForm
     {
@@ -35,7 +35,8 @@ namespace GeoDatabaseManager
                     this.BackgroundImage = Image.FromFile(Application.StartupPath + "\\..\\Res\\Pic\\系统初始化.png");
                 }
             }
-            catch { }
+            catch { }
+
         }
     }
 }

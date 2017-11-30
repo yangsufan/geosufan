@@ -1,4 +1,4 @@
-﻿namespace GeoDatabaseManager
+﻿namespace GDBM
 {
     partial class frmSelectLogin
     {
@@ -41,7 +41,7 @@
             this.btnDataManage.Appearance.ForeColor = System.Drawing.Color.Green;
             this.btnDataManage.Appearance.Options.UseFont = true;
             this.btnDataManage.Appearance.Options.UseForeColor = true;
-            this.btnDataManage.ImageOptions.Image = global::GeoDatabaseManager.Properties.Resources.btn1;
+            this.btnDataManage.ImageOptions.Image = global::GDBM.Properties.Resources.btn1;
             this.btnDataManage.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnDataManage.Location = new System.Drawing.Point(251, 229);
             this.btnDataManage.Name = "btnDataManage";
@@ -58,7 +58,7 @@
             this.btnDBIntegration.Appearance.ForeColor = System.Drawing.Color.Green;
             this.btnDBIntegration.Appearance.Options.UseFont = true;
             this.btnDBIntegration.Appearance.Options.UseForeColor = true;
-            this.btnDBIntegration.ImageOptions.Image = global::GeoDatabaseManager.Properties.Resources.btn2;
+            this.btnDBIntegration.ImageOptions.Image = global::GDBM.Properties.Resources.btn2;
             this.btnDBIntegration.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnDBIntegration.Location = new System.Drawing.Point(195, 329);
             this.btnDBIntegration.Name = "btnDBIntegration";
@@ -75,7 +75,7 @@
             this.btnUpdata.Appearance.ForeColor = System.Drawing.Color.Green;
             this.btnUpdata.Appearance.Options.UseFont = true;
             this.btnUpdata.Appearance.Options.UseForeColor = true;
-            this.btnUpdata.ImageOptions.Image = global::GeoDatabaseManager.Properties.Resources.btn3;
+            this.btnUpdata.ImageOptions.Image = global::GDBM.Properties.Resources.btn3;
             this.btnUpdata.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnUpdata.Location = new System.Drawing.Point(450, 329);
             this.btnUpdata.Name = "btnUpdata";
@@ -105,7 +105,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
-            this.BackgroundImageStore = global::GeoDatabaseManager.Properties.Resources.bg;
+            this.BackgroundImageStore = global::GDBM.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(789, 555);
             this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.btnUpdata);

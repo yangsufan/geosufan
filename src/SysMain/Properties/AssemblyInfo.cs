@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过下列属性集
 // 控制。更改这些属性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("NGCC")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Fan.DBM")]
+[assembly: AssemblyDescription("GDBM")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ngcc.sbsm.gov.cn")]
-[assembly: AssemblyProduct("BaseSys")]
-[assembly: AssemblyCopyright("版权所有 (C)NGCC 2011")]
+[assembly: AssemblyCompany("SufanGeo")]
+[assembly: AssemblyProduct("GDBM")]
+[assembly: AssemblyCopyright("Copyright ©  SufanGeo 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

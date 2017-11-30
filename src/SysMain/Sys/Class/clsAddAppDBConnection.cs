@@ -7,7 +7,7 @@ using System.IO;
 using System.Data.OracleClient;
 using System.Data;
 
-namespace GeoDatabaseManager
+namespace GDBM
 {
     /*
      * guozheng 2010-10-8

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoDatabaseManager", "SysMain\GeoDatabaseManager.csproj", "{FF8FDB39-57AA-4F05-8F35-911D431BBC94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fan.GDBM", "SysMain\Fan.GDBM.csproj", "{FF8FDB39-57AA-4F05-8F35-911D431BBC94}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElementCommandTool", "ElementCommandTool\ElementCommandTool.csproj", "{FD4032B6-1D66-4464-86B6-40DC2EF15E18}"
 EndProject
@@ -275,7 +275,7 @@ Global
 		{FD4C4953-4740-47B4-B539-0B1B2C483AA6} = {C06E141D-8F3C-4C2E-8F8F-3A994CB94CC9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 		SolutionGuid = {EC22706C-4205-480C-B473-C557531935EB}
+		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 EndGlobal

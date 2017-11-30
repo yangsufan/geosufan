@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using SysCommon.Authorize;
 using System.Xml;
 
-namespace GeoDatabaseManager
+namespace GDBM
 {
     public static class Mod
     {

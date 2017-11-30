@@ -12,7 +12,7 @@ using SysCommon.Gis;
 using SysCommon.Error;
 using ESRI.ArcGIS.Geodatabase;
 
-namespace GeoDatabaseManager
+namespace GDBM
 {
     public partial class frmDBSet :SysCommon.BaseForm
     {

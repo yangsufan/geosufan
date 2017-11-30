@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // 控制。更改这些属性值可修改
 // 与程序集关联的信息。
 
-[assembly: AssemblyTitle("Plugin")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Fan.Plugin")]
+[assembly: AssemblyDescription("GDBM")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("WwW.YlmF.CoM")]
-[assembly: AssemblyProduct("Plugin")]
-[assembly: AssemblyCopyright("版权所有 (C) WwW.YlmF.CoM 2009")]
+[assembly: AssemblyCompany("SufanGeo")]
+[assembly: AssemblyProduct("GDBM")]
+[assembly: AssemblyCopyright("Copyright ©  SufanGeo 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

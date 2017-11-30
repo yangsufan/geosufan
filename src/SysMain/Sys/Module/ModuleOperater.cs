@@ -15,7 +15,7 @@ using ESRI.ArcGIS.Geodatabase;
 using SysCommon.DataBase;
 using System.Data.OracleClient;
 using System.Data.OleDb;
-namespace GeoDatabaseManager
+namespace GDBM
 {
     public static class ModuleOperator
     {
@@ -643,7 +643,6 @@ namespace GeoDatabaseManager
                 return false;
             }
         }
-
         // ***************************************************************
         // *功能函数：将用户对应的角色信息保存起来
         // *添 加 者：陈亚飞
@@ -847,6 +846,5 @@ namespace GeoDatabaseManager
                 }
             }
         }
-
     }
 }
