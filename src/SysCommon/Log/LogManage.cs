@@ -27,5 +27,12 @@ namespace SysCommon
                 m_sysLog.WriteLog(ex, strContent);
             }
         }
+        public static void WriteLog(string strLog)
+        {
+            if (m_sysLog != null)
+            {
+                m_sysLog.WriteLog(strLog);
+            }
+        }
     }
 }

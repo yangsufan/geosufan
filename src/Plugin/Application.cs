@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using System.Data;
 using System.Xml;
 using System.Threading;
-using SysCommon.Authorize;
 using System.Drawing.Printing;
 
 using ESRI.ArcGIS.Carto;
@@ -14,6 +13,7 @@ using ESRI.ArcGIS.Controls;
 
 using SysCommon.Gis;
 using ESRI.ArcGIS.Geometry;
+using SysCommon;
 
 namespace Plugin.Application
 {

@@ -1,208 +1,206 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Fan.DataBase;
+using System.Data;
+using Fan.DataBase.Module;
 
-namespace SysCommon.Authorize
+namespace SysCommon
 {
     public class User
     {
+        #region Construction 
         /// <summary>
-        /// 有效期  wgf 20111102
+        /// 用户读取
         /// </summary>
-        private string U_UserDate;
-        public string UserDate
+        /// <param name="usercodeStr"></param>
+        /// <param name="userPasswordStr"></param>
+        /// <param name="iDBOperate"></param>
+        public User(string usercodeStr,string userPasswordStr,IDBOperate iDBOperate)
         {
-            get { return U_UserDate; }
-            set { U_UserDate = value; }
+            m_UserCode = usercodeStr;
+            m_UserPassword = userPasswordStr;
+            m_dbOperate = iDBOperate;
         }
         /// <summary>
-        /// 用户科室信息 ygc 20130319
+        /// 用户操作
         /// </summary>
-        private string U_UserDepartment;
-        public string UserDepartment
+        /// <param name="iDBOperate"></param>
+        public User(IDBOperate iDBOperate)
         {
-            get { return U_UserDepartment; }
-            set { U_UserDepartment = value; }
+            m_dbOperate = iDBOperate;
         }
-
-        /// <summary>
-        /// 编号
-        /// </summary>
-        private int U_ID;
-        public int ID
+        #endregion
+        #region Class Attribute 
+        private string m_UserCode = string.Empty;
+        public string UserCode
         {
-            get { return U_ID; }
-            set { U_ID = value; }
+            get { return m_UserCode; }
         }
-
-        /// <summary>
-        /// 用户名
-        /// </summary>
-        private string U_NAME;
-        public string Name
+        private string m_UserPassword = string.Empty;
+        public string UserPassword
         {
-            get { return U_NAME; }
-            set { U_NAME = value; }
+            get { return m_UserPassword; }
         }
-
-        /// <summary>
-        /// 密码
-        /// </summary>
-        private string U_PWD;
-        public string Password
+        private Role m_UserRole = default(Role);
+        public Role UserRole
         {
-            get { return U_PWD; }
-            set { U_PWD = value; }
+            get { return m_UserRole; }
         }
-
-        /// <summary>
-        /// 用户角色
-        /// </summary>
-        private string U_ROLE;
-        public string Role
+        private string m_UserName = string.Empty;
+        public string UserName
         {
-            get { return U_ROLE; }
-            set { U_ROLE = value; }
+            get { return m_UserName; }
         }
-
+        private IDBOperate m_dbOperate = default(IDBOperate);
+        #endregion
+        #region  Class Function
         /// <summary>
-        /// 用户角色类型
+        /// 检查是否可以进行登录，只是进行用户名和密码匹配
         /// </summary>
-        private int U_RoleTypeID;
-        public int RoleTypeID
+        /// <returns></returns>
+        public string CheckLogin()
         {
-            get
+            DataTable dtUser = m_dbOperate.GetTable(TableName.VUserInfo, string.Format("{0}='{1}'", ColumnName.UserCode, m_UserCode));
+            if (dtUser == null || dtUser.Rows.Count <= 0)
             {
-                return U_RoleTypeID;
+                return string.Format("未知帐号");
             }
-            set
+            DataRow pRow = dtUser.Rows[0];
+            string UserPass = Encryption.Decrypt(pRow[ColumnName.UserPassword].ToString());
+            if (m_UserPassword != UserPass)
             {
-                U_RoleTypeID = value;
+                return string.Format("密码错误!");
             }
-        }
-
-        /// <summary>
-        /// 性别
-        /// </summary>
-        private string U_SEX;
-        public string Sex
-        {
-            get { return U_SEX; }
-            set { U_SEX = value; }
-        }
-
-        /// <summary>
-        /// 职称
-        /// </summary>
-        private string U_JOB;
-        public string Position
-        {
-            get { return U_JOB; }
-            set { U_JOB = value; }
+            m_UserRole = new Role(pRow[ColumnName.RoleID].ToString(), m_dbOperate);
+            m_UserName = pRow[ColumnName.UserName].ToString();
+            return string.Empty;
         }
         /// <summary>
-        /// 职称
+        /// 添加用户
         /// </summary>
-        private double U_ExportArea;
-        public double  ExportArea
+        /// <param name="dicUser">用户信息</param>
+        /// <returns></returns>
+        public string AddUser(Dictionary<string,string> dicUser)
         {
-            get { return U_ExportArea; }
-            set { U_ExportArea = value; }
-        }
-        /// <summary>
-        /// 备注
-        /// </summary>
-        private string U_REMARK;
-        public string Remark
-        {
-            get { return U_REMARK; }
-            set { U_REMARK = value; }
-        }
-
-        private string _loginInfo;
-        public string LoginInfo
-        {
-            get
+            foreach (string key in dicUser.Keys)
             {
-                return _loginInfo;
+                switch (key)
+                {
+                    case ColumnName.UserCode:
+                        m_UserCode = dicUser[key];
+                        break;
+                    case ColumnName.UserName:
+                        m_UserName = dicUser[key];
+                        break;
+                    case ColumnName.UserPassword:
+                        m_UserPassword = Encryption.Encrypt(dicUser[key]);
+                        break;
+                    case ColumnName.RoleID:
+                        m_UserRole = new Role(dicUser[key], m_dbOperate);
+                        break;
+                }
             }
-            set
+            if (string.IsNullOrEmpty(m_UserCode))
             {
-                _loginInfo = value;
+                return  string.Format("无法添加用户:用户ID不能为空");
             }
+            DataTable pTable = m_dbOperate.GetTable(TableName.TUser, string.Format("{0}='{1}'", ColumnName.UserCode, m_UserCode));
+            if (pTable.Rows.Count > 0)
+            {
+                return string.Format("无法添加用户:当前用户ID已经存在");
+            }
+            if (!m_dbOperate.AddRow(TableName.TUser,new List<string> { ColumnName.UserCode, ColumnName.UserName, ColumnName.UserPassword},
+                string.Format("'{0}'",m_UserCode),
+                 string.Format("'{0}'", m_UserName),
+                 string.Format("'{0}'", m_UserPassword)))
+            {
+                return string.Format("添加用户失败:请查询相应日志信息");
+            }
+            else
+            {
+                if (!m_dbOperate.AddRow(TableName.TUserRole, new List<string> { ColumnName.UserCode, ColumnName.RoleID },
+                    string.Format("'{0}'", m_UserCode),
+                   string.Format("'{0}'", m_UserRole.RoleID)))
+                {
+                    return string.Format("新用户授权失败:请查询相应日志信息");
+                }
+            }
+            return string.Empty;
         }
-
-
-        //20110518  add
         /// <summary>
-        /// 编号
+        /// 更新用户
         /// </summary>
-        private string _idStr;
-        public string IDStr
+        /// <param name="dicUser">用户信息</param>
+        /// <returns></returns>
+        public string UpdateUser(Dictionary<string,string> dicUser)
         {
-            get { return _idStr; }
-            set { _idStr = value; }
+            foreach (string key in dicUser.Keys)
+            {
+                switch (key)
+                {
+                    case ColumnName.UserCode:
+                        m_UserCode = dicUser[key];
+                        break;
+                    case ColumnName.UserName:
+                        m_UserName = dicUser[key];
+                        break;
+                    case ColumnName.UserPassword:
+                        m_UserPassword = Encryption.Encrypt(dicUser[key]);
+                        break;
+                    case ColumnName.RoleID:
+                        m_UserRole = new Role(dicUser[key], m_dbOperate);
+                        break;
+                }
+            }
+            if (string.IsNullOrEmpty(m_UserCode))
+            {
+                return string.Format("无法修改用户:用户ID不能为空");
+            }
+            DataTable pTable = m_dbOperate.GetTable(TableName.TUser, string.Format("{0}='{1}'", ColumnName.UserCode, m_UserCode));
+            if (pTable.Rows.Count <= 0)
+            {
+                return string.Format("无法修改用户:当前用户ID不存在");
+            }
+            if (!m_dbOperate.UpdateTable(TableName.TUser,
+                string.Format("{0}='{1}'",ColumnName.UserCode,m_UserCode),
+                string.Format("{0}='{1}'", ColumnName.UserName, m_UserName),
+                string.Format("{0}='{1}'", ColumnName.UserPassword, m_UserPassword)
+               ))
+            {
+                return string.Format("修改用户失败:请查询相应日志信息");
+            }
+            else
+            {
+                if (!m_dbOperate.UpdateTable(TableName.TUserRole,
+                    string.Format("{0}='{1}'", ColumnName.UserCode, m_UserCode),
+                    string.Format("{0}='{1}'", ColumnName.RoleID, m_UserRole.RoleID)))
+                {
+                    return string.Format("修改用户授权失败:请查询相应日志信息");
+                }
+            }
+            return string.Empty;
         }
-
         /// <summary>
-        /// 用户名称（简称）
+        /// 删除用户
         /// </summary>
-        //private string _name;
-        //public string NameStr
-        //{
-        //    get { return _name; }
-        //    set { _name = value; }
-        //}
-
-        /// <summary>
-        /// 用户名称（真实名）
-        /// </summary>
-        private string _trueName;
-        public string TrueName
+        /// <returns></returns>
+        public string DeleteUser()
         {
-            get { return _trueName; }
-            set { _trueName = value; }
+            if (string.IsNullOrEmpty(m_UserCode))
+            {
+                return string.Format("删除用户失败:用户ID为空");
+            }
+            if(!m_dbOperate.DeleteRow(TableName.TUserRole,string.Format("{0}='{1}'",ColumnName.UserCode,m_UserCode)))
+            {
+                return string.Format("删除用户权限失败:请查询相应日志信息");
+            }
+            if (!m_dbOperate.DeleteRow(TableName.TUser, string.Format("{0}='{1}'", ColumnName.UserCode, m_UserCode)))
+            {
+                return string.Format("删除用户失败:请查询相应日志信息");
+            }
+            return string.Empty;
         }
-
-        /// <summary>
-        /// 密码
-        /// </summary>
-        //private string _password;
-        //public string Password
-        //{
-        //    get { return _password; }
-        //    set { _password = value; }
-        //}
-
-        /// <summary>
-        /// 性别
-        /// </summary>
-        private int _sex;
-        public int SexInt
-        {
-            get { return _sex; }
-            set { _sex = value; }
-        }
-
-        /// <summary>
-        /// 职称
-        /// </summary>
-        //private string _position;
-        //public string Position
-        //{
-        //    get { return _position; }
-        //    set { _position = value; }
-        //}
-
-        /// <summary>
-        /// 备注
-        /// </summary>
-        //private string _remark;
-        //public string Remark
-        //{
-        //    get { return _remark; }
-        //    set { _remark = value; }
-        //}
-        //
+        #endregion
     }
 }

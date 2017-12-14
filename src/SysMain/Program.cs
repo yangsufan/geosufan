@@ -26,12 +26,53 @@ namespace GDBM
             //m_AoInitialize.IsProductCodeAvailable(esriLicenseProductCode.esriLicenseProductCodeEngineGeoDB);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //登陆主窗体条件设置
-            if (ModuleOperator.CheckLogin())
+            //check the config file 
+            frmDBSet setDbFrom=null;
+            if (!System.IO.File.Exists(SysCommon.ModuleConfig.m_ConnectFileName))
             {
+                setDbFrom = new frmDBSet();
+                if (setDbFrom.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+                else
+                {
+                    Mod.m_SysDbOperate = setDbFrom.Dbop;
+                }
+            }
+            else
+            {
+                //Read The Connect Info from the config file
+                Fan.DataBase.DBConfig dbConfig = new Fan.DataBase.DBConfig();
+                dbConfig.ReadConfigFromFile(SysCommon.ModuleConfig.m_ConnectFileName);
+                Fan.DataBase.DBOperatorFactory dbFac = new Fan.DataBase.DBOperatorFactory(dbConfig);
+                Mod.m_SysDbOperate=dbFac.GetDbOperate();
+                if (Mod.m_SysDbOperate == null||!Mod.m_SysDbOperate.TestConnect())
+                {
+                    setDbFrom = new frmDBSet();
+                    if (setDbFrom.ShowDialog() != DialogResult.OK)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        Mod.m_SysDbOperate = setDbFrom.Dbop;
+                    }
+                }
+            }
+            if (setDbFrom != null) setDbFrom.Dispose();
+            frmLogin LoginFrom = new frmLogin();
+            //登陆主窗体条件设置
+            if (LoginFrom.ShowDialog() == DialogResult.OK)
+            {
+                LoginFrom.Dispose();
                 ISelectionEnvironmentThreshold threshold = new SelectionEnvironmentClass();
                 threshold.WarningThreshold = 2000;
                 Application.Run(new frmMain());
+            }
+            else
+            {
+                return;
             }
             //m_AoInitialize.Shutdown();
             //m_AoInitialize = null;

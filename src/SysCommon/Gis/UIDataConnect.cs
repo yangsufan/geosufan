@@ -22,28 +22,23 @@ namespace SysCommon.Gis
         {
             InitializeComponent();
         }
-
         private string m_strTitle = "数据连接";
         public string strTitle
         {
             get { return m_strTitle; }
             set { m_strTitle = value; }
         }
-
         public void BindAtt()
         {
             this.groupPanel.Text = m_strTitle;
         }
-
         private IWorkspace m_pWks=null;
-
         private string m_strDatabaseType;
         public string DatabaseType
         {
             get { return m_strDatabaseType; }
             set { m_strDatabaseType = value; }
         }
-
         private string  m_Server="";
         public string Server
         {
@@ -80,14 +75,11 @@ namespace SysCommon.Gis
             get { return this.cboVersion.Text; }
             set { m_Version = value; }
         }
-
-
         public IWorkspace GetWks()
         {
             m_pWks = GetWksBySetting();
             return m_pWks;
         }
-
         public void IntiForm()
         {
             this.cboDataType.Properties.Items.Clear();
@@ -126,7 +118,6 @@ namespace SysCommon.Gis
             this.txtDataBase.Text = m_DataBase;
             this.cboVersion.Text = m_Version;
         }
-
         private IWorkspace GetWksBySetting()
         {
             if(this.cboDataType.Tag==null) return null;
@@ -282,7 +273,6 @@ namespace SysCommon.Gis
                 return null;
             }
         }
-
         /// <summary>
         /// 设置PDB、GDB工作区
         /// </summary>
@@ -323,7 +313,6 @@ namespace SysCommon.Gis
                 return null;
             }
         }
-
         public void GetVersionInfo(IWorkspace workspace)    
         {
             if (workspace.Type != esriWorkspaceType.esriRemoteDatabaseWorkspace) return;
@@ -343,7 +332,6 @@ namespace SysCommon.Gis
                 version = (IVersionInfo)enumVersionInfo.Next();       
             }    
         }
-
         private void cboDataType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.cboDataType.Text == "")
@@ -415,7 +403,6 @@ namespace SysCommon.Gis
                 m_strDatabaseType = "ACCESS";
             }
         }
-
         private void buttonXTest_Click(object sender, EventArgs e)
         {
             if (m_pWks == null)
@@ -431,7 +418,6 @@ namespace SysCommon.Gis
                 MessageBox.Show("连接成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void buttonXOK_Click(object sender, EventArgs e)
         {
             GetWks();
@@ -440,7 +426,6 @@ namespace SysCommon.Gis
                 MessageBox.Show("连接成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void btnServer_Click(object sender, EventArgs e)
         {
             if (this.cboDataType.Tag == null) return;
@@ -473,12 +458,10 @@ namespace SysCommon.Gis
             this.buttonXTest.Enabled = true;
             _Addtag = "Old";
         }
-
         private void UIDataConnect_Load(object sender, EventArgs e)
         {
             IntiForm();
         }
-
         private void btnNew_Click(object sender, EventArgs e)
         {
             if (this.cboDataType.Tag == null) return;
@@ -504,7 +487,6 @@ namespace SysCommon.Gis
             this.buttonXTest.Enabled=false;
             _Addtag = "New";
         }
-
         private void buttonX1_Click(object sender, EventArgs e)
         {
             if (m_pWks == null)

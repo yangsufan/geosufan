@@ -33,12 +33,11 @@ namespace Plugin
         {
             if (m_gisDb == null)
             {
-                user = (Plugin.ModuleCommon.AppUser == null) ? "" : Plugin.ModuleCommon.AppUser.Name;
+                user = (Plugin.ModuleCommon.AppUser == null) ? "" : Plugin.ModuleCommon.AppUser.UserCode;
                 string strHostName = Dns.GetHostName();  //得到本机的主机名
                 IPHostEntry ipEntry = Dns.GetHostByName(strHostName); //取得本机IP
                 userIP = ipEntry.AddressList[0].ToString();
                 SysCommon.Gis.SysGisDB vgisDb = new SysGisDB();
-                SysCommon.Authorize.AuthorizeClass.GetConnectInfo(Mod.v_ConfigPath, out Mod.Server, out Mod.Instance, out Mod.Database, out Mod.User, out Mod.Password, out Mod.Version, out Mod.dbType);
                 bool blnCanConnect = CanOpenConnect(vgisDb, Mod.dbType, Mod.Server, Mod.Instance, Mod.Database, Mod.User, Mod.Password, Mod.Version);
 
                 if (blnCanConnect == false)
@@ -107,7 +106,6 @@ namespace Plugin
         }
         private static void SetWorkSpace()
         {
-            SysCommon.Authorize.AuthorizeClass.GetConnectInfo(Mod.v_ConfigPath, out Mod.Server, out Mod.Instance, out Mod.Database, out Mod.User, out Mod.Password, out Mod.Version, out Mod.dbType);
             bool blnCanConnect = CanOpenConnect(m_gisDb, Mod.dbType, Mod.Server, Mod.Instance, Mod.Database, Mod.User, Mod.Password, Mod.Version);
 
             if (blnCanConnect == false)

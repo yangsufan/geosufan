@@ -194,8 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Active.cs" />
-    <Compile Include="Authorize\AuthorizeClass.cs" />
-    <Compile Include="Authorize\ComboBoxItem.cs" />
     <Compile Include="Form\BaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -430,6 +428,13 @@
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fan.DataBase\Fan.DataBase.csproj">
+      <Project>{fd4c4953-4740-47b4-b539-0b1b2c483aa6}</Project>
+      <Name>Fan.DataBase</Name>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

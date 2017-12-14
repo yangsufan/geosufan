@@ -35,10 +35,10 @@
             this.buttonX1 = new DevExpress.XtraEditors.SimpleButton();
             this.buttonX3 = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxNotPassWord = new DevExpress.XtraEditors.CheckEdit();
-            this.comboBoxUser = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtUser = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxXPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxNotPassWord.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxXPassword
@@ -95,17 +95,17 @@
             this.checkBoxNotPassWord.Properties.Caption = "记住密码";
             this.checkBoxNotPassWord.Size = new System.Drawing.Size(88, 19);
             this.checkBoxNotPassWord.TabIndex = 7;
+            this.checkBoxNotPassWord.Visible = false;
             // 
-            // comboBoxUser
+            // txtUser
             // 
-            this.comboBoxUser.Location = new System.Drawing.Point(252, 166);
-            this.comboBoxUser.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxUser.Name = "comboBoxUser";
-            this.comboBoxUser.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBoxUser.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxUser.Size = new System.Drawing.Size(234, 26);
-            this.comboBoxUser.TabIndex = 8;
-            this.comboBoxUser.SelectedIndexChanged += new System.EventHandler(this.comboBoxUser_SelectedIndexChanged);
+            this.txtUser.Location = new System.Drawing.Point(252, 167);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtUser.Properties.Appearance.Options.UseFont = true;
+            this.txtUser.Size = new System.Drawing.Size(234, 26);
+            this.txtUser.TabIndex = 8;
             // 
             // frmLogin
             // 
@@ -116,7 +116,7 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = global::GDBM.Properties.Resources.bglogin;
             this.ClientSize = new System.Drawing.Size(675, 476);
-            this.Controls.Add(this.comboBoxUser);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.checkBoxNotPassWord);
             this.Controls.Add(this.buttonX3);
             this.Controls.Add(this.buttonX1);
@@ -130,11 +130,9 @@
             this.Text = "登录";
             this.TopMost = true;
             this.Activated += new System.EventHandler(this.frmLogin_Activated);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textBoxXPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxNotPassWord.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -145,6 +143,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonX1;
         private DevExpress.XtraEditors.SimpleButton buttonX3;
         private DevExpress.XtraEditors.CheckEdit checkBoxNotPassWord;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxUser;
+        private DevExpress.XtraEditors.TextEdit txtUser;
     }
 }

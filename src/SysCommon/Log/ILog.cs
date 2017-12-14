@@ -51,5 +51,6 @@ namespace SysCommon.Log
         /// <param name="strOperatorName"></param>
         /// <returns></returns>
         bool WriteLog(Exception ex, params string[] strContent);
+        bool WriteLog(string strLog);
     }
 }

@@ -198,5 +198,27 @@ namespace SysCommon.Log
                 return false;
             }
         }
+        public bool WriteLog(string strLog)
+        {
+            try
+            {
+                DateTime RecTime = DateTime.Now;
+                FileStream Fs = new FileStream(LogFileName, FileMode.Append);
+                StreamWriter SW = new StreamWriter(Fs);
+                SW.WriteLine();
+                SW.Write(RecTime.ToString("G") + "  :“Ï≥££∫");
+                SW.WriteLine();
+                SW.Write(string.Format("Log:", strLog));
+                SW.Write("***********************************************************************");
+                SW.Flush();
+                SW.Close();
+                SW.Dispose();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

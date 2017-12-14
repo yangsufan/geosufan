@@ -11,232 +11,227 @@ using SysCommon;
 using SysCommon.Gis;
 using SysCommon.Error;
 using ESRI.ArcGIS.Geodatabase;
+using Fan.DataBase;
 
 namespace GDBM
 {
     public partial class frmDBSet :SysCommon.BaseForm
     {
-        private enumWSType wsType;                 //工作库数据库类型
-        public enumWSType WsType
-        {
-            set { wsType = value; }
-            get { return wsType; }
-        }
-
-        private SysGisDataSet gisDataSet;           //数据库操作类
-
-        /// <summary>
-        /// 工作库
-        /// </summary>
-        private IWorkspace _Workspace;
-        public IWorkspace WorkSpace
-        {
-            get { return _Workspace; }
-            set { _Workspace = value; }
-        }
-
-        /// <summary>
-        /// 现势库
-        /// </summary>
-        private IWorkspace _CurWorkspace;
-        public IWorkspace CurWorkSpace
-        {
-            get { return _CurWorkspace; }
-            set { _CurWorkspace = value; }
-        }
-
-        //string server;              //服务器
-        //string service ;            //服务名
-        //string dataBase ;           //数据库
-        //string user ;               //用户名
-        //string password ;           //密码
-        //string version ;            //版本
-
         public frmDBSet()
         {
             InitializeComponent();
         }
-
-        /// <summary>
-        /// 得到工作空间
-        /// </summary>
-        /// <param name="eError"></param>
-        /// <returns></returns>
-        public IWorkspace GetWorkspace(string server,string service,string dataBase,string user,string password,string version,enumWSType type,out Exception eError)
+        private DBConfig m_dbConfig = new DBConfig();
+        private DBOperatorType m_DBoType = DBOperatorType.UnKnowOperator;
+        private DBType m_dbType = DBType.DEFAULT;
+        private Dictionary<string, string> dicDbconfig = new Dictionary<string, string>()
         {
-            eError = null;
-            bool result = false;
-            
-            if (gisDataSet == null)
+            ["server"] = string.Empty,
+            ["serverice"] = string.Empty,
+            ["database"] = string.Empty,
+            ["user"] = string.Empty,
+            ["password"] = string.Empty,
+            ["version"] = string.Empty,
+            ["serverport"] = string.Empty
+        };
+        private Dictionary<string, string> dicDbOpType = new Dictionary<string, string>() {
+            ["ODBC"] ="ODBC",
+            ["EsriOperator"] ="Esri DataBase Operator"
+        };
+        private Dictionary<string, string> dicODBCDbType = new Dictionary<string, string>()
+        {
+            ["ODBCMDB"]="Access DataBase",
+            ["ODBCSQL"]="SQL Server",
+            ["ODBCORACLE"] ="Oracle",
+            ["ODBCPOST"]="Postgresql"
+        };
+        private Dictionary<string, string> dicEsriDbType = new Dictionary<string, string>()
+        {
+            ["ESRISDEOracle"] = "ArcSDE(For Oracle)",
+            ["ESRISDESqlServer"]="ArcSDE(For SQL Server)",
+            ["ESRIPDB"]= "Prersonal Geodatabase",
+            ["ESRIGDB"] ="File Geodatabase"
+        };
+        private IDBOperate m_DbOp = null;
+        public IDBOperate Dbop
+        {
+            get { return m_DbOp; }
+        }
+        private void buttonXOK_Click(object sender, EventArgs e)
+        {
+            switch (m_DBoType)
             {
-                gisDataSet = new SysGisDataSet();
+                case DBOperatorType.EsriOperator:
+                    dicDbconfig["server"] = txtEsriServer.Text;
+                    dicDbconfig["serverice"] = txtService.Text;
+                    dicDbconfig["database"] = txtEsriDb.Text;
+                    dicDbconfig["user"] = txtEsriUser.Text;
+                    dicDbconfig["password"] = txtEsriPassword.Text;
+                    break;
+                case DBOperatorType.ODBC:
+                    dicDbconfig["server"] = txtODBCServer.Text;
+                    dicDbconfig["database"] = txtODBCDb.Text;
+                    dicDbconfig["user"] = txtODBCUser.Text;
+                    dicDbconfig["password"] = txtODBCPassword.Text;
+                    dicDbconfig["serverport"] = txtODBCPort.Text;
+                    break;
             }
-
-            try
+            m_dbConfig.SetConfig(m_DBoType, m_dbType, dicDbconfig);
+            DBOperatorFactory pFac = new DBOperatorFactory(m_dbConfig);
+            m_DbOp = pFac.GetDbOperate();
+            if (m_DbOp != null)
             {
-                switch (type)
+                if (!m_DbOp.TestConnect())
                 {
-                    case enumWSType.SDE:
-                        result=gisDataSet.SetWorkspace(server, service, dataBase, user, password, version, out eError);
-                        break;
-                    case enumWSType.PDB:
-                    case enumWSType.GDB:
-                        result=gisDataSet.SetWorkspace(server, wsType,out eError);
-                        break;
-                    default:
-                        break;
-                }
-                if (result)
-                {
-                    return gisDataSet.WorkSpace;
+                    MessageBox.Show("无法连接数据库，请检查设置！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
                 else
                 {
-                    return null;
+                    m_dbConfig.SaveConfig(SysCommon.ModuleConfig.m_ConnectFileName);
+                    this.DialogResult = DialogResult.OK;
                 }
-            }
-            catch (Exception ex)
-            {
-                eError = ex;
-                return null;
-            }
-        }
-
-        private void frmDBSet_Load(object sender, EventArgs e)
-        {
-            //判断现实库的连接
-            try
-            {
-                if (File.Exists(Mod.v_ConfigPath))
-                {
-                    //工作库
-                    string strServer, strType, strInstance, strDatabase, strUser, strPassword, strVersion;
-                    SysCommon.Authorize.AuthorizeClass.GetConnectInfo(Mod.v_ConfigPath, out strServer, out strInstance, out strDatabase, out strUser, out strPassword, out strVersion, out strType);
-                    this.ConSet.DatabaseType = strType;
-                    this.ConSet.Server = strServer;
-                    this.ConSet.Service = strInstance;
-                    this.ConSet.DataBase = strDatabase;
-                    this.ConSet.User = strUser;
-                    this.ConSet.Password = strPassword;
-                    this.ConSet.Version = strVersion;
-                }
-            }
-            catch 
-            {
-                
-            }
-        }
-
-        private void buttonXOK_Click(object sender, EventArgs e)
-        {
-            Exception eError = null;
-            if (_Workspace == null)
-            {
-                _Workspace = this.ConSet.GetWks();
-            }
-            if (_Workspace == null)
-            {
-                MessageBox.Show("无法连接指定数据库，请检查连接信息。","提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            //获得正式库连接信息
-            string strServer = "";
-            string strSevice = "";
-            string strDatabase = "";
-            string strUser = "";
-            string strPass = "";
-            string strVersion = "";
-            string strType = "";
-
-            enumWSType WsCurType = enumWSType.SDE;
-            //if (_CurWorkspace == null)
-            //{
-            //    SysCommon.Authorize.AuthorizeClass.GetCurWks(_Workspace, out strServer, out strSevice, out strDatabase, out strUser, out strPass, out strVersion, out strType);
-
-            //    if (strType.ToUpper() == "ORACLE" || strType.ToUpper() == "SQUSERVER")
-            //    {
-            //        WsCurType = enumWSType.SDE;
-            //    }
-            //    else if (strType.ToUpper() == "ACCESS")
-            //    {
-            //        WsCurType = enumWSType.PDB;
-            //    }
-            //    else if (strType.ToUpper() == "FILE")
-            //    {
-            //        WsCurType = enumWSType.GDB;
-            //    }
-
-            //    Exception Err = null;
-            //    _CurWorkspace = GetWorkspace(strServer, strSevice, strDatabase, strUser, strPass, strVersion, WsCurType, out Err);
-            //}
-
-            if (_Workspace != null)
-            {
-                //进行序列化
-                System.Collections.Hashtable conset = new System.Collections.Hashtable();
-                ////工作库
-                conset.Add("dbtype", this.ConSet.DatabaseType);
-                conset.Add("server", this.ConSet.Server);
-                conset.Add("service", this.ConSet.Service);
-                conset.Add("database", this.ConSet.DataBase);
-                conset.Add("user", this.ConSet.User);
-                conset.Add("password", this.ConSet.Password);
-                conset.Add("version", this.ConSet.Version);
-
-                SysCommon.Authorize.AuthorizeClass.Serialize(conset, Mod.v_ConfigPath);
-
-                //设一下工作库
-                Mod.Server = this.ConSet.Server;
-                Mod.Instance = this.ConSet.Service;
-                Mod.Database = this.ConSet.DataBase;
-                Mod.User = this.ConSet.User;
-                Mod.Password = this.ConSet.Password;
-                Mod.Version = this.ConSet.Version;
-                Mod.dbType = this.ConSet.DatabaseType;
-                Mod.TempWks = _Workspace;
-
-                //初始化系统配置 added by chulili 20110531
-                IWorkspaceFactory pWorkspaceFactory = null;
-                IWorkspace pWorkspace = null;
-                ESRI.ArcGIS.esriSystem.IPropertySet pPropertySet = new ESRI.ArcGIS.esriSystem.PropertySetClass();
-                //获取初始化系统配置的表格模板
-                string dataPath = Application.StartupPath + "\\..\\Template\\DbInfoTemplate.gdb";
-                pPropertySet.SetProperty("DATABASE", dataPath);
-                pWorkspaceFactory = new ESRI.ArcGIS.DataSourcesGDB.FileGDBWorkspaceFactoryClass();
-                pWorkspace = pWorkspaceFactory.Open(pPropertySet, 0);
-                if (pWorkspace != null)
-                {
-
-                    try//加保护，xisheng 20110817 若连接失败弹出信息。不要挂掉、
-                    { //是否覆盖：false  如果原库有系统配置表，则不覆盖
-                        ModuleOperator.InitSystemByXML(pWorkspace, _Workspace, false);
-                    }
-                    catch(Exception err)
-                    {
-
-                        SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "系统维护表初始化失败！");
-                        _Workspace = null;//连接失败后，将原来配置库设置为空 xisheng 20110817 
-                        return;
-                    }
-                }//end  added by chulili 20110531
-
-                this.DialogResult = DialogResult.OK;
-
             }
             else
             {
-                if (eError != null)
-                {
-                    ErrorHandle.ShowInform("提示", eError.Message);
-                }
+                MessageBox.Show("无法连接数据库，请检查设置！","提示",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
         private void buttonXCancel_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+        private void cbSelectDbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectStr = getKeyFromValue(dicODBCDbType, cbSelectDbType.SelectedItem.ToString());
+            Enum.TryParse<DBType>(selectStr, out m_dbType);
+            switch (m_dbType)
+            {
+                case DBType.ODBCMDB:
+                    txtODBCDb.Width = 406;
+                    btnSelectDB.Visible = true;
+                    txtODBCServer.Enabled = false;
+                    txtODBCPort.Enabled = false;
+                    txtODBCUser.Enabled = false;
+                    break;
+                case DBType.ODBCORACLE:
+                case DBType.ODBCPOST:
+                case DBType.ODBCSQL:
+                    txtODBCPort.Width = 455;
+                    btnSelectDB.Visible = false;
+                    txtODBCPort.Enabled = true;
+                    txtODBCServer.Enabled = true;
+                    txtODBCUser.Enabled = true;
+                    break;
+                    
+            }
+        }
 
+        private void cbEsriDbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectStr = getKeyFromValue(dicEsriDbType, cbEsriDbType.SelectedItem.ToString());
+            Enum.TryParse<DBType>(selectStr, out m_dbType);
+            switch (m_dbType)
+            {
+                case DBType.ESRIGDB:
+                case DBType.ESRIPDB:
+                    txtEsriDb.Width = 406;
+                    btnSelectEsriDb.Visible = true;
+                    txtEsriPassword.Enabled = false;
+                    txtEsriServer.Enabled = false;
+                    txtEsriUser.Enabled = false;
+                    txtEsriVersion.Enabled = false;
+                    txtService.Enabled = false;
+                    break;
+                case DBType.ESRISDEOracle:
+                case DBType.ESRISDESqlServer:
+                    txtEsriDb.Width = 455;
+                    btnSelectEsriDb.Visible = false;
+                    txtEsriPassword.Enabled = true;
+                    txtEsriServer.Enabled = true;
+                    txtEsriUser.Enabled = true;
+                    txtEsriVersion.Enabled = true;
+                    txtService.Enabled = true;
+                    break;
+            }
+        }
+
+        private void cbSelectDbOpType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selctText = getKeyFromValue(dicDbOpType, cbSelectDbOpType.SelectedItem.ToString());
+            Enum.TryParse<DBOperatorType>(selctText, out m_DBoType);
+            switch (m_DBoType)
+            {
+                case DBOperatorType.EsriOperator:
+                    gpODBCConnect.Visible = false;
+                    gpEsri.Visible = true;
+                    gpEsri.Location = new Point(7, 115);
+                    cbEsriDbType.Properties.Items.Clear();
+                    cbEsriDbType.Properties.Items.AddRange(dicEsriDbType.Values);
+                    cbEsriDbType.SelectedIndex = 0;
+                    break;
+                case DBOperatorType.ODBC:
+                    gpEsri.Visible = false;
+                    gpODBCConnect.Visible = true;
+                    cbSelectDbType.Properties.Items.Clear();
+                    cbSelectDbType.Properties.Items.AddRange(dicODBCDbType.Values);
+                    cbSelectDbType.SelectedIndex = 0;
+                    break;
+            }
+        }
+        private void frmDBSet_Load(object sender, EventArgs e)
+        {
+            cbSelectDbOpType.Properties.Items.Clear();
+            cbSelectDbOpType.Properties.Items.AddRange(dicDbOpType.Values);
+            cbSelectDbOpType.SelectedIndex = 0;
+        }
+        private string getKeyFromValue(Dictionary<string, string> dic,string vaule)
+        {
+            foreach (string key in dic.Keys)
+            {
+                if (dic[key] == vaule)
+                {
+                    return key;
+                }
+            }
+            return string.Empty;
+        }
+
+        private void btnSelectDB_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "*.mdb|*.mdb";
+            openFile.Multiselect = false;
+            if (openFile.ShowDialog() != DialogResult.OK) return;
+            txtODBCDb.Text = openFile.FileName;
+        }
+
+        private void btnSelectEsriDb_Click(object sender, EventArgs e)
+        {
+            if (m_dbType == DBType.ESRIPDB)
+            {
+                OpenFileDialog openfile = new OpenFileDialog();
+                openfile.Filter = "*.mdb|*.mdb";
+                openfile.Multiselect = false;
+                if (openfile.ShowDialog() != DialogResult.OK) return;
+                txtEsriDb.Text = openfile.FileName;
+            }
+            else
+            {
+                FolderBrowserDialog openFolder = new FolderBrowserDialog();
+                openFolder.ShowNewFolderButton = false;
+                if (openFolder.ShowDialog() != DialogResult.OK) return;
+                string selectFolder = openFolder.SelectedPath;
+                if (!selectFolder.EndsWith("gdb"))
+                {
+                    MessageBox.Show("请选择正确的GDB路径", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                txtEsriDb.Text = selectFolder;
+            }
+        }
     }
 }

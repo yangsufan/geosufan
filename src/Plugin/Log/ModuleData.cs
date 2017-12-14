@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Text;
 using System.Windows.Forms;
-using SysCommon.Authorize;
 using System.IO;
+using SysCommon;
 
 namespace Plugin
 {

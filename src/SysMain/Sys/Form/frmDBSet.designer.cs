@@ -43,8 +43,38 @@
             this.labelX4 = new DevExpress.XtraEditors.LabelControl();
             this.buttonXCancel = new DevExpress.XtraEditors.SimpleButton();
             this.buttonXOK = new DevExpress.XtraEditors.SimpleButton();
-            this.ConSet = new SysCommon.Gis.UIDataConnect();
-            this.groupPanel1 = new DevExpress.XtraEditors.GroupControl();
+            this.gpODBCConnect = new DevExpress.XtraEditors.GroupControl();
+            this.gpEsri = new DevExpress.XtraEditors.GroupControl();
+            this.btnSelectEsriDb = new DevExpress.XtraEditors.SimpleButton();
+            this.txtEsriVersion = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.txtEsriPassword = new DevExpress.XtraEditors.TextEdit();
+            this.txtEsriUser = new DevExpress.XtraEditors.TextEdit();
+            this.txtEsriDb = new DevExpress.XtraEditors.TextEdit();
+            this.txtService = new DevExpress.XtraEditors.TextEdit();
+            this.txtEsriServer = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.cbEsriDbType = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.btnSelectDB = new DevExpress.XtraEditors.SimpleButton();
+            this.txtODBCPassword = new DevExpress.XtraEditors.TextEdit();
+            this.txtODBCUser = new DevExpress.XtraEditors.TextEdit();
+            this.txtODBCDb = new DevExpress.XtraEditors.TextEdit();
+            this.txtODBCPort = new DevExpress.XtraEditors.TextEdit();
+            this.txtODBCServer = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.cbSelectDbType = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lblDbType = new DevExpress.XtraEditors.LabelControl();
+            this.cbSelectDbOpType = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.lblDbOperatorType = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelEx)).BeginInit();
             this.panelEx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
@@ -52,8 +82,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelEx1)).BeginInit();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupPanel1)).BeginInit();
-            this.groupPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gpODBCConnect)).BeginInit();
+            this.gpODBCConnect.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gpEsri)).BeginInit();
+            this.gpEsri.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsriVersion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsriPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsriUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsriDb.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtService.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsriServer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEsriDbType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtODBCPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtODBCUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtODBCDb.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtODBCPort.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtODBCServer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbSelectDbType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbSelectDbOpType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEx
@@ -97,15 +143,12 @@
             // 
             // panelEx1
             // 
-            this.panelEx1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelEx1.Controls.Add(this.pictureBox1);
             this.panelEx1.Controls.Add(this.labelX3);
             this.panelEx1.Controls.Add(this.labelX4);
-            this.panelEx1.Location = new System.Drawing.Point(2, 5);
+            this.panelEx1.Location = new System.Drawing.Point(7, 5);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(566, 96);
+            this.panelEx1.Size = new System.Drawing.Size(555, 68);
             this.panelEx1.TabIndex = 65;
             // 
             // pictureBox1
@@ -121,9 +164,9 @@
             // 
             this.labelX3.Location = new System.Drawing.Point(12, 38);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(216, 14);
+            this.labelX3.Size = new System.Drawing.Size(120, 14);
             this.labelX3.TabIndex = 1;
-            this.labelX3.Text = "主要是对系统运维配置及临时库进行设置";
+            this.labelX3.Text = "主要是对系统运维配置";
             // 
             // labelX4
             // 
@@ -136,7 +179,7 @@
             // buttonXCancel
             // 
             this.buttonXCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonXCancel.Location = new System.Drawing.Point(463, 383);
+            this.buttonXCancel.Location = new System.Drawing.Point(475, 371);
             this.buttonXCancel.Name = "buttonXCancel";
             this.buttonXCancel.Size = new System.Drawing.Size(87, 27);
             this.buttonXCancel.TabIndex = 68;
@@ -146,50 +189,308 @@
             // buttonXOK
             // 
             this.buttonXOK.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonXOK.Location = new System.Drawing.Point(369, 383);
+            this.buttonXOK.Location = new System.Drawing.Point(380, 371);
             this.buttonXOK.Name = "buttonXOK";
             this.buttonXOK.Size = new System.Drawing.Size(87, 27);
             this.buttonXOK.TabIndex = 67;
             this.buttonXOK.Text = "确 定";
             this.buttonXOK.Click += new System.EventHandler(this.buttonXOK_Click);
             // 
-            // ConSet
+            // gpODBCConnect
             // 
-            this.ConSet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ConSet.DataBase = "";
-            this.ConSet.DatabaseType = "ORACLE";
-            this.ConSet.Location = new System.Drawing.Point(0, 1);
-            this.ConSet.Name = "ConSet";
-            this.ConSet.Password = "";
-            this.ConSet.Server = "";
-            this.ConSet.Service = "5151";
-            this.ConSet.Size = new System.Drawing.Size(559, 324);
-            this.ConSet.strTitle = "数据连接";
-            this.ConSet.TabIndex = 0;
-            this.ConSet.User = "";
-            this.ConSet.Version = "SDE.DEFAULT";
+            this.gpODBCConnect.Controls.Add(this.btnSelectDB);
+            this.gpODBCConnect.Controls.Add(this.txtODBCPassword);
+            this.gpODBCConnect.Controls.Add(this.txtODBCUser);
+            this.gpODBCConnect.Controls.Add(this.txtODBCDb);
+            this.gpODBCConnect.Controls.Add(this.txtODBCPort);
+            this.gpODBCConnect.Controls.Add(this.txtODBCServer);
+            this.gpODBCConnect.Controls.Add(this.labelControl5);
+            this.gpODBCConnect.Controls.Add(this.labelControl4);
+            this.gpODBCConnect.Controls.Add(this.labelControl3);
+            this.gpODBCConnect.Controls.Add(this.labelControl1);
+            this.gpODBCConnect.Controls.Add(this.cbSelectDbType);
+            this.gpODBCConnect.Controls.Add(this.labelControl2);
+            this.gpODBCConnect.Controls.Add(this.lblDbType);
+            this.gpODBCConnect.Location = new System.Drawing.Point(7, 115);
+            this.gpODBCConnect.Name = "gpODBCConnect";
+            this.gpODBCConnect.Size = new System.Drawing.Size(555, 228);
+            this.gpODBCConnect.TabIndex = 69;
             // 
-            // groupPanel1
+            // gpEsri
             // 
-            this.groupPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupPanel1.Controls.Add(this.ConSet);
-            this.groupPanel1.Location = new System.Drawing.Point(2, 80);
-            this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(566, 294);
-            this.groupPanel1.TabIndex = 66;
+            this.gpEsri.Controls.Add(this.btnSelectEsriDb);
+            this.gpEsri.Controls.Add(this.txtEsriVersion);
+            this.gpEsri.Controls.Add(this.labelControl12);
+            this.gpEsri.Controls.Add(this.txtEsriPassword);
+            this.gpEsri.Controls.Add(this.txtEsriUser);
+            this.gpEsri.Controls.Add(this.txtEsriDb);
+            this.gpEsri.Controls.Add(this.txtService);
+            this.gpEsri.Controls.Add(this.txtEsriServer);
+            this.gpEsri.Controls.Add(this.labelControl6);
+            this.gpEsri.Controls.Add(this.labelControl7);
+            this.gpEsri.Controls.Add(this.labelControl8);
+            this.gpEsri.Controls.Add(this.labelControl9);
+            this.gpEsri.Controls.Add(this.cbEsriDbType);
+            this.gpEsri.Controls.Add(this.labelControl10);
+            this.gpEsri.Controls.Add(this.labelControl11);
+            this.gpEsri.Location = new System.Drawing.Point(95, 106);
+            this.gpEsri.Name = "gpEsri";
+            this.gpEsri.Size = new System.Drawing.Size(555, 250);
+            this.gpEsri.TabIndex = 72;
+            // 
+            // btnSelectEsriDb
+            // 
+            this.btnSelectEsriDb.Location = new System.Drawing.Point(500, 118);
+            this.btnSelectEsriDb.Name = "btnSelectEsriDb";
+            this.btnSelectEsriDb.Size = new System.Drawing.Size(43, 23);
+            this.btnSelectEsriDb.TabIndex = 98;
+            this.btnSelectEsriDb.Text = "...";
+            this.btnSelectEsriDb.Click += new System.EventHandler(this.btnSelectEsriDb_Click);
+            // 
+            // txtEsriVersion
+            // 
+            this.txtEsriVersion.EditValue = "SDE.DEFAULT";
+            this.txtEsriVersion.Location = new System.Drawing.Point(88, 212);
+            this.txtEsriVersion.Name = "txtEsriVersion";
+            this.txtEsriVersion.Size = new System.Drawing.Size(455, 20);
+            this.txtEsriVersion.TabIndex = 97;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Location = new System.Drawing.Point(12, 214);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(64, 14);
+            this.labelControl12.TabIndex = 96;
+            this.labelControl12.Text = "版         本:";
+            // 
+            // txtEsriPassword
+            // 
+            this.txtEsriPassword.Location = new System.Drawing.Point(88, 185);
+            this.txtEsriPassword.Name = "txtEsriPassword";
+            this.txtEsriPassword.Properties.PasswordChar = '*';
+            this.txtEsriPassword.Size = new System.Drawing.Size(455, 20);
+            this.txtEsriPassword.TabIndex = 95;
+            // 
+            // txtEsriUser
+            // 
+            this.txtEsriUser.Location = new System.Drawing.Point(88, 152);
+            this.txtEsriUser.Name = "txtEsriUser";
+            this.txtEsriUser.Size = new System.Drawing.Size(455, 20);
+            this.txtEsriUser.TabIndex = 94;
+            // 
+            // txtEsriDb
+            // 
+            this.txtEsriDb.Location = new System.Drawing.Point(88, 118);
+            this.txtEsriDb.Name = "txtEsriDb";
+            this.txtEsriDb.Size = new System.Drawing.Size(406, 20);
+            this.txtEsriDb.TabIndex = 93;
+            // 
+            // txtService
+            // 
+            this.txtService.EditValue = "5151";
+            this.txtService.Location = new System.Drawing.Point(88, 86);
+            this.txtService.Name = "txtService";
+            this.txtService.Size = new System.Drawing.Size(455, 20);
+            this.txtService.TabIndex = 92;
+            // 
+            // txtEsriServer
+            // 
+            this.txtEsriServer.Location = new System.Drawing.Point(88, 54);
+            this.txtEsriServer.Name = "txtEsriServer";
+            this.txtEsriServer.Size = new System.Drawing.Size(455, 20);
+            this.txtEsriServer.TabIndex = 91;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(12, 188);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(64, 14);
+            this.labelControl6.TabIndex = 90;
+            this.labelControl6.Text = "密         码:";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(12, 155);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(64, 14);
+            this.labelControl7.TabIndex = 89;
+            this.labelControl7.Text = "用   户   名:";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(12, 121);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(64, 14);
+            this.labelControl8.TabIndex = 88;
+            this.labelControl8.Text = "数   据   库:";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(12, 89);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(64, 14);
+            this.labelControl9.TabIndex = 87;
+            this.labelControl9.Text = "服   务   名:";
+            // 
+            // cbEsriDbType
+            // 
+            this.cbEsriDbType.Location = new System.Drawing.Point(88, 23);
+            this.cbEsriDbType.Name = "cbEsriDbType";
+            this.cbEsriDbType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbEsriDbType.Size = new System.Drawing.Size(455, 20);
+            this.cbEsriDbType.TabIndex = 86;
+            this.cbEsriDbType.SelectedIndexChanged += new System.EventHandler(this.cbEsriDbType_SelectedIndexChanged);
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(12, 57);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(64, 14);
+            this.labelControl10.TabIndex = 85;
+            this.labelControl10.Text = "服务器地址:";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(12, 26);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(64, 14);
+            this.labelControl11.TabIndex = 84;
+            this.labelControl11.Text = "数据库类型:";
+            // 
+            // btnSelectDB
+            // 
+            this.btnSelectDB.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSelectDB.Location = new System.Drawing.Point(500, 116);
+            this.btnSelectDB.Name = "btnSelectDB";
+            this.btnSelectDB.Size = new System.Drawing.Size(43, 27);
+            this.btnSelectDB.TabIndex = 72;
+            this.btnSelectDB.Text = "...";
+            this.btnSelectDB.Click += new System.EventHandler(this.btnSelectDB_Click);
+            // 
+            // txtODBCPassword
+            // 
+            this.txtODBCPassword.Location = new System.Drawing.Point(88, 186);
+            this.txtODBCPassword.Name = "txtODBCPassword";
+            this.txtODBCPassword.Properties.PasswordChar = '*';
+            this.txtODBCPassword.Size = new System.Drawing.Size(455, 20);
+            this.txtODBCPassword.TabIndex = 83;
+            // 
+            // txtODBCUser
+            // 
+            this.txtODBCUser.Location = new System.Drawing.Point(88, 153);
+            this.txtODBCUser.Name = "txtODBCUser";
+            this.txtODBCUser.Size = new System.Drawing.Size(455, 20);
+            this.txtODBCUser.TabIndex = 82;
+            // 
+            // txtODBCDb
+            // 
+            this.txtODBCDb.Location = new System.Drawing.Point(88, 119);
+            this.txtODBCDb.Name = "txtODBCDb";
+            this.txtODBCDb.Size = new System.Drawing.Size(406, 20);
+            this.txtODBCDb.TabIndex = 81;
+            // 
+            // txtODBCPort
+            // 
+            this.txtODBCPort.Location = new System.Drawing.Point(88, 87);
+            this.txtODBCPort.Name = "txtODBCPort";
+            this.txtODBCPort.Size = new System.Drawing.Size(455, 20);
+            this.txtODBCPort.TabIndex = 80;
+            // 
+            // txtODBCServer
+            // 
+            this.txtODBCServer.Location = new System.Drawing.Point(88, 55);
+            this.txtODBCServer.Name = "txtODBCServer";
+            this.txtODBCServer.Size = new System.Drawing.Size(455, 20);
+            this.txtODBCServer.TabIndex = 79;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(12, 189);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(64, 14);
+            this.labelControl5.TabIndex = 78;
+            this.labelControl5.Text = "密         码:";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(12, 156);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(64, 14);
+            this.labelControl4.TabIndex = 77;
+            this.labelControl4.Text = "用   户   名:";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(12, 122);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(64, 14);
+            this.labelControl3.TabIndex = 76;
+            this.labelControl3.Text = "数   据   库:";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(12, 90);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(64, 14);
+            this.labelControl1.TabIndex = 75;
+            this.labelControl1.Text = "服务器端口:";
+            // 
+            // cbSelectDbType
+            // 
+            this.cbSelectDbType.Location = new System.Drawing.Point(88, 24);
+            this.cbSelectDbType.Name = "cbSelectDbType";
+            this.cbSelectDbType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbSelectDbType.Size = new System.Drawing.Size(455, 20);
+            this.cbSelectDbType.TabIndex = 74;
+            this.cbSelectDbType.SelectedIndexChanged += new System.EventHandler(this.cbSelectDbType_SelectedIndexChanged);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(12, 58);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(64, 14);
+            this.labelControl2.TabIndex = 73;
+            this.labelControl2.Text = "服务器地址:";
+            // 
+            // lblDbType
+            // 
+            this.lblDbType.Location = new System.Drawing.Point(12, 27);
+            this.lblDbType.Name = "lblDbType";
+            this.lblDbType.Size = new System.Drawing.Size(64, 14);
+            this.lblDbType.TabIndex = 72;
+            this.lblDbType.Text = "数据库类型:";
+            // 
+            // cbSelectDbOpType
+            // 
+            this.cbSelectDbOpType.Location = new System.Drawing.Point(77, 80);
+            this.cbSelectDbOpType.Name = "cbSelectDbOpType";
+            this.cbSelectDbOpType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbSelectDbOpType.Size = new System.Drawing.Size(473, 20);
+            this.cbSelectDbOpType.TabIndex = 70;
+            this.cbSelectDbOpType.SelectedIndexChanged += new System.EventHandler(this.cbSelectDbOpType_SelectedIndexChanged);
+            // 
+            // lblDbOperatorType
+            // 
+            this.lblDbOperatorType.Location = new System.Drawing.Point(19, 83);
+            this.lblDbOperatorType.Name = "lblDbOperatorType";
+            this.lblDbOperatorType.Size = new System.Drawing.Size(52, 14);
+            this.lblDbOperatorType.TabIndex = 71;
+            this.lblDbOperatorType.Text = "连接方式:";
             // 
             // frmDBSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 413);
+            this.ClientSize = new System.Drawing.Size(569, 410);
+            this.Controls.Add(this.gpEsri);
+            this.Controls.Add(this.lblDbOperatorType);
+            this.Controls.Add(this.cbSelectDbOpType);
+            this.Controls.Add(this.gpODBCConnect);
             this.Controls.Add(this.buttonXCancel);
             this.Controls.Add(this.buttonXOK);
-            this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.panelEx1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -199,6 +500,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "数据库连接信息";
+            this.Load += new System.EventHandler(this.frmDBSet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelEx)).EndInit();
             this.panelEx.ResumeLayout(false);
             this.panelEx.PerformLayout();
@@ -208,9 +510,28 @@
             this.panelEx1.ResumeLayout(false);
             this.panelEx1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupPanel1)).EndInit();
-            this.groupPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gpODBCConnect)).EndInit();
+            this.gpODBCConnect.ResumeLayout(false);
+            this.gpODBCConnect.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gpEsri)).EndInit();
+            this.gpEsri.ResumeLayout(false);
+            this.gpEsri.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsriVersion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsriPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsriUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsriDb.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtService.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsriServer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEsriDbType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtODBCPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtODBCUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtODBCDb.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtODBCPort.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtODBCServer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbSelectDbType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbSelectDbOpType.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -227,7 +548,37 @@
         private DevExpress.XtraEditors.LabelControl labelX4;
         private DevExpress.XtraEditors.SimpleButton buttonXCancel;
         private DevExpress.XtraEditors.SimpleButton buttonXOK;
-        private DevExpress.XtraEditors.GroupControl groupPanel1;
-        private SysCommon.Gis.UIDataConnect ConSet;
+        private DevExpress.XtraEditors.GroupControl gpODBCConnect;
+        private DevExpress.XtraEditors.LabelControl lblDbOperatorType;
+        private DevExpress.XtraEditors.ComboBoxEdit cbSelectDbOpType;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl lblDbType;
+        private DevExpress.XtraEditors.ComboBoxEdit cbSelectDbType;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtODBCPassword;
+        private DevExpress.XtraEditors.TextEdit txtODBCUser;
+        private DevExpress.XtraEditors.TextEdit txtODBCDb;
+        private DevExpress.XtraEditors.TextEdit txtODBCPort;
+        private DevExpress.XtraEditors.TextEdit txtODBCServer;
+        private DevExpress.XtraEditors.SimpleButton btnSelectDB;
+        private DevExpress.XtraEditors.GroupControl gpEsri;
+        private DevExpress.XtraEditors.TextEdit txtEsriPassword;
+        private DevExpress.XtraEditors.TextEdit txtEsriUser;
+        private DevExpress.XtraEditors.TextEdit txtEsriDb;
+        private DevExpress.XtraEditors.TextEdit txtService;
+        private DevExpress.XtraEditors.TextEdit txtEsriServer;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEsriDbType;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.TextEdit txtEsriVersion;
+        private DevExpress.XtraEditors.SimpleButton btnSelectEsriDb;
     }
 }

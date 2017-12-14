@@ -5,8 +5,9 @@ using System.Windows.Forms;
 using System.IO;
 using System.Data.OracleClient;
 using System.Data.SqlClient;
-using SysCommon.Authorize;
 using System.Xml;
+using Fan.DataBase;
+using SysCommon;
 
 namespace GDBM
 {
@@ -18,7 +19,11 @@ namespace GDBM
         public readonly static string m_PluginFolderPath = Application.StartupPath + "\\..\\Plugins";
         public readonly static string m_LogPath = Application.StartupPath + "\\..\\Log\\系统初始化";
         public static string filestr = Application.StartupPath + "\\dbSet.txt";
-
+        /// <summary>
+        /// 业务操作连接
+        /// </summary>
+        public static IDBOperate m_SysDbOperate = null;
+        public static User m_LoginUser = null;
         public static bool LoginState = false;//控件登陆后，最终是否显示主界面
 
         public static Plugin.Application.AppForm v_AppForm;
@@ -27,9 +32,7 @@ namespace GDBM
         /////guozheng 2011-2-14 added 系统维护库库体定义模板文件
         public static string v_SystemFunctionDBSchema = Application.StartupPath + "\\..\\Res\\Schema\\SystemFunctionDBConfiguration.sql";
         //连接信息
-        public static User v_AppUser;
         //cyf 20110602 add:连接用户对应的角色信息列表
-        public static List<Role> v_LstRole;                             //连接用户对应角色信息
         //end
         public static XmlDocument v_SystemXml;
 

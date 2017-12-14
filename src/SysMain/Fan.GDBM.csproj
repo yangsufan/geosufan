@@ -230,6 +230,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fan.DataBase\Fan.DataBase.csproj">
+      <Project>{fd4c4953-4740-47b4-b539-0b1b2c483aa6}</Project>
+      <Name>Fan.DataBase</Name>
+      <Private>False</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Plugin\Plugin.csproj">
       <Project>{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}</Project>
       <Name>Plugin</Name>

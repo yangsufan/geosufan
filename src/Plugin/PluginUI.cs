@@ -55,8 +55,8 @@ namespace Plugin
             get { return _ListUserdataPriID; }
             set { _ListUserdataPriID = value; }
         }
-        private static SysCommon.Authorize.User _AppUser;
-        public static SysCommon.Authorize.User AppUser
+        private static SysCommon.User _AppUser;
+        public static SysCommon.User AppUser
         {
             get { return _AppUser; }
             set { _AppUser = value; }
@@ -271,7 +271,7 @@ namespace Plugin
                     sNodeID = "";
                     if (xmlelementChild.GetAttribute("ID") != null) sNodeID = xmlelementChild.GetAttribute("ID").Trim();
 
-                    if (pAppFormRef.ConnUser.Name.ToLower() != "admin")
+                    if (pAppFormRef.ConnUser.UserCode.ToLower() != "admin")
                     {
                         if (sNodeID == "") continue;
                         if (!_ListUserPrivilegeID.Contains(sNodeID)) continue;
@@ -462,7 +462,7 @@ namespace Plugin
                     string sControlType = xmlelementChild.GetAttribute("ControlType").Trim();
                     string sVisible = xmlelementChild.GetAttribute("Visible").Trim();
                     string sEnabled = xmlelementChild.GetAttribute("Enabled").Trim();
-                    if (pAppFormRef.ConnUser.Name.ToLower() != "admin")
+                    if (pAppFormRef.ConnUser.UserCode.ToLower() != "admin")
                     {
                         if (sNodeID == "")
                         {
@@ -561,7 +561,7 @@ namespace Plugin
             {
                 sDockStyle = xmlelementChild.GetAttribute("DockStyle").Trim();
             }
-            if (pAppFormRef.ConnUser.Name.ToLower() != "admin")
+            if (pAppFormRef.ConnUser.UserCode.ToLower() != "admin")
             {
                 if (sNodeID == "") return null;
                 if (!_ListUserPrivilegeID.Contains(sNodeID)) return null;
@@ -690,7 +690,7 @@ namespace Plugin
                     {
                         sTips = xmlelementChild.GetAttribute("Tips").Trim();
                     }
-                    if (pAppFormRef.ConnUser.Name.ToLower() != "admin")
+                    if (pAppFormRef.ConnUser.UserCode.ToLower() != "admin")
                     {
                         if (sNodeID == "") continue;
                         if (!_ListUserPrivilegeID.Contains(sNodeID)) continue;

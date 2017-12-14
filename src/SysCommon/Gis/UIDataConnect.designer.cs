@@ -46,13 +46,13 @@
             this.labelX6 = new DevExpress.XtraEditors.LabelControl();
             this.labelX5 = new DevExpress.XtraEditors.LabelControl();
             this.btnServer = new DevExpress.XtraEditors.SimpleButton();
-            this.cboDataType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.errorServer = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorService = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorUser = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorPassWord = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorVersion = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorDataBase = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cboDataType = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupPanel)).BeginInit();
             this.groupPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboVersion.Properties)).BeginInit();
@@ -61,13 +61,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtService.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtServer.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboDataType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorServer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorService)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorPassWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorVersion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorDataBase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboDataType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel
@@ -260,16 +260,6 @@
             this.btnServer.Text = "...";
             this.btnServer.Click += new System.EventHandler(this.btnServer_Click);
             // 
-            // cboDataType
-            // 
-            this.cboDataType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboDataType.Location = new System.Drawing.Point(75, 0);
-            this.cboDataType.Name = "cboDataType";
-            this.cboDataType.Size = new System.Drawing.Size(238, 20);
-            this.cboDataType.TabIndex = 6;
-            this.cboDataType.SelectedIndexChanged += new System.EventHandler(this.cboDataType_SelectedIndexChanged);
-            // 
             // errorServer
             // 
             this.errorServer.ContainerControl = this;
@@ -294,6 +284,18 @@
             // 
             this.errorDataBase.ContainerControl = this;
             // 
+            // cboDataType
+            // 
+            this.cboDataType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDataType.EditValue = "<Null>";
+            this.errorDataBase.SetIconAlignment(this.cboDataType, System.Windows.Forms.ErrorIconAlignment.BottomRight);
+            this.cboDataType.Location = new System.Drawing.Point(75, 0);
+            this.cboDataType.Name = "cboDataType";
+            this.cboDataType.Size = new System.Drawing.Size(238, 20);
+            this.cboDataType.TabIndex = 6;
+            this.cboDataType.SelectedIndexChanged += new System.EventHandler(this.cboDataType_SelectedIndexChanged);
+            // 
             // UIDataConnect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -311,13 +313,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtService.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtServer.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboDataType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorServer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorService)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorPassWord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorVersion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorDataBase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboDataType.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -337,7 +339,6 @@
         private DevExpress.XtraEditors.LabelControl labelX6;
         private DevExpress.XtraEditors.LabelControl labelX5;
         private DevExpress.XtraEditors.SimpleButton btnServer;
-        private DevExpress.XtraEditors.ComboBoxEdit cboDataType;
         private DevExpress.XtraEditors.ComboBoxEdit cboVersion;
         private DevExpress.XtraEditors.SimpleButton buttonXTest;
         private DevExpress.XtraEditors.SimpleButton buttonXOK;
@@ -348,5 +349,6 @@
         private System.Windows.Forms.ErrorProvider errorPassWord;
         private System.Windows.Forms.ErrorProvider errorVersion;
         private System.Windows.Forms.ErrorProvider errorDataBase;
+        private DevExpress.XtraEditors.ComboBoxEdit cboDataType;
     }
 }

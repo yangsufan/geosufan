@@ -4,9 +4,7 @@ using System.Text;
 using System.Xml;
 using System.Windows.Forms;
 using System.IO;
-
 using ESRI.ArcGIS.Geodatabase;
-using SysCommon.Authorize;
 using SysCommon.Gis;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.DataSourcesGDB;
@@ -538,7 +536,7 @@ namespace SysCommon
             double ExportArea = -1;
             Gis.SysGisTable sysTable = new Gis.SysGisTable(pTmpWorkSpace);
             Exception eError = null;
-            Dictionary<string, object> dicData = sysTable.GetRow("user_info", "NAME='" + pUser.Name + "'", out eError);
+            Dictionary<string, object> dicData = sysTable.GetRow("user_info", "NAME='" + pUser.UserName + "'", out eError);
             if (dicData != null && dicData.Count > 0)
             {
                 if (dicData["EXPORTAREA"].ToString() != "")//added by chulili 20110926 提取面积限制

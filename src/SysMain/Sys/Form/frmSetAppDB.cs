@@ -122,7 +122,6 @@ namespace GDBM
             conset.Add("password", strPass);
             conset.Add("version", strVersion);
 
-            SysCommon.Authorize.AuthorizeClass.Serialize(conset, v_ConfigPath);
 
         }
 

@@ -165,20 +165,6 @@ namespace GDBM
 
                 Plugin.ModuleCommon.ListUserPrivilegeID = Mod.v_ListUserPrivilegeID;
                 Plugin.ModuleCommon.ListUserdataPriID = Mod.v_ListUserdataPriID;
-                Plugin.ModuleCommon.AppUser = Mod.v_AppUser;
-            //}
-            //else if(docXml == null && name != "Admin")
-            //{
-            //    //if (SysCommon.Error.ErrorHandle.ShowFrmInformation("是", "否", "该用户未配置任何权限,请联系管理员!\n是否终止退出?"))
-            //    //{
-            //    //    _Res = true;
-            //    //    return;
-            //    //}
-            //    //return;
-            //    SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "您未被分配权限，请联系管理员给您分配权限！");
-            //    _Res = true;
-            //    return;
-            //}
 
             _frmTemp.SysInfo = "获取系统功能插件中...";
             _frmTemp.RefreshLable();
@@ -187,17 +173,9 @@ namespace GDBM
             Plugin.Parse.PluginHandle pluginHandle = new Plugin.Parse.PluginHandle();
             pluginHandle.PluginFolderPath = Mod.m_PluginFolderPath;
             Plugin.Parse.PluginCollection pluginCol = pluginHandle.GetPluginFromDLL();
-
             Mod.m_PluginCol = pluginCol;
-
             //初始化主框架对象
             Mod.v_AppForm = new Plugin.Application.AppForm(this,null, docXml, null, null, pluginCol, Mod.m_ResPath);
-            Mod.v_AppForm.ConnUser = Mod.v_AppUser;//将用户信息保存起来，以便后面使用
-
-            //cyf 20110602 add: 将用户对应的角色信息保存起来，以便后面使用
-            Mod.v_AppForm.LstRoleInfo = Mod.v_LstRole;
-            //end
-
             //获得数据库连接信息
             Plugin.Application.ICustomWks tempWks = new Plugin.Application.ICustomWks();
             tempWks.Wks = Mod.TempWks;
