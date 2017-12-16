@@ -24,7 +24,7 @@ namespace GDBM
         {
             InitializeComponent();
 
-            try //zhangqi 2012-08-06
+            try 
             {
                 if (System.IO.File.Exists(Application.StartupPath + "\\..\\Res\\Pic\\系统初始化.jpg"))
                 {

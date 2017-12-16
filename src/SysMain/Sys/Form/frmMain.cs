@@ -20,9 +20,7 @@ namespace GDBM
         /// 必需的设计器变量。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
         private bool _Res=false;
-
         /// <summary>
         /// 清理所有正在使用的资源。
         /// </summary>
@@ -68,7 +66,6 @@ namespace GDBM
             //    return;
             //}
         }
-
         public frmMain(string userName, string UserPassword, string userType)
         {
             //让线程等待，知道窗口句柄创建完毕
@@ -144,7 +141,6 @@ namespace GDBM
                 Mod.v_SysLog.Write("进入配置管理子系统", Pra, DateTime.Now);
             }
         }
-
         /// <summary>
         ///初始化界面
         /// </summary>
@@ -209,15 +205,11 @@ namespace GDBM
         }
         private void SysLogInfoChnaged(object sender, SysCommon.SysLogInfoChangedEvent e)
         {
-            //cyf 20110613 modify :先清空信息
             _frmTemp.SysInfo = "";
             _frmTemp.RefreshLable();
-            //end
-            
             _frmTemp.SysInfo = e.Information;
             _frmTemp.RefreshLable();
         }
-
         #region Windows 窗体设计代码
         /// <summary>
         /// 窗体设计
@@ -247,7 +239,6 @@ namespace GDBM
 
         }
         #endregion
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             if (_Res)

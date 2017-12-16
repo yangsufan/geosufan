@@ -530,7 +530,6 @@ namespace Plugin
 
             return bRes;
         }
-
         /// <summary>
         /// 菜单栏、工具栏、右键菜单 不执行PluginOnCreate，通过以下代码直接UI化添加
         /// </summary>
@@ -641,7 +640,6 @@ namespace Plugin
 
             return aBarControl;
         }
-
         //<summary>
         //根据XML匹配添加菜单栏、工具栏、右键菜单等内容子项
         //</summary>
@@ -843,7 +841,6 @@ namespace Plugin
 
             return bRes;
         }
-         
         /// <summary>
         /// 插件接口分类解析
         /// </summary>
@@ -866,7 +863,6 @@ namespace Plugin
             v_dicDockableWindows = parsePluginCol.GetDockableWindows;
             v_dicControls = parsePluginCol.GetControls;
         }
-
         private static void PluginOnWriteLog(IPlugin plugin, string strWritelog)
         {
             bool Writelog = true;
@@ -1073,8 +1069,6 @@ namespace Plugin
                 }
             }
         }
-
-
         //wgf 20110602 左上角系统切换
         private static void menuSystemItem_Click(object sender, EventArgs e)
         {
