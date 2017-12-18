@@ -159,52 +159,52 @@ namespace SysCommon
 
         private void btnExportExecl_Click(object sender, EventArgs e)
         {
-            Microsoft.Office.Interop.Excel.Application excel = null;
-            Microsoft.Office.Interop.Excel.Workbook wb = null;
-            try
-            {
-                ///统计长度或面积总和
-                double DSum = 0;
-                //建立Excel对象
-                excel = new Microsoft.Office.Interop.Excel.Application();
-                wb = excel.Application.Workbooks.Add(true);
-                excel.Visible = true;
-                wb.Application.ActiveWindow.Caption = m_Title + " 统计表";
-                excel.Cells[1, 1] = m_XLabels;
-                excel.Cells[1, 2] = m_Title.Substring(0, m_Title.Length - 3);
-                ///遍历获得X轴和对应的值
-                for (int i = 0; i < m_XLable.Count; i++)
-                {
-                    excel.Cells[i + 2, 1] = m_XLable[i];
-                    excel.Cells[i + 2, 2] = m_CharData[0][i];
-                    DSum = DSum + Convert.ToDouble(m_CharData[0][i].ToString());
-                }
-                excel.Cells[m_XLable.Count + 2, 1] = "合计为：";
-                excel.Cells[m_XLable.Count + 2, 2] = DSum.ToString();
-                ///弹出对话保存生成统计表的路径
-                Microsoft.Office.Core.FileDialog fd = wb.Application.get_FileDialog(Microsoft.Office.Core.MsoFileDialogType.msoFileDialogSaveAs);
-                fd.InitialFileName = m_Title + " 统计表";
-                int result = fd.Show();
-                if (result == 0) return;
-                string fileName = fd.InitialFileName;
-                if (!string.IsNullOrEmpty(fileName))
-                {
-                    if (fileName.IndexOf(".xls") == -1)
-                    {
-                        fileName += ".xls";
-                    }
-                    ///保存生成的统计表
-                    wb.SaveAs(fileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-                }
+            //Microsoft.Office.Interop.Excel.Application excel = null;
+            //Microsoft.Office.Interop.Excel.Workbook wb = null;
+            //try
+            //{
+            //    ///统计长度或面积总和
+            //    double DSum = 0;
+            //    //建立Excel对象
+            //    excel = new Microsoft.Office.Interop.Excel.Application();
+            //    wb = excel.Application.Workbooks.Add(true);
+            //    excel.Visible = true;
+            //    wb.Application.ActiveWindow.Caption = m_Title + " 统计表";
+            //    excel.Cells[1, 1] = m_XLabels;
+            //    excel.Cells[1, 2] = m_Title.Substring(0, m_Title.Length - 3);
+            //    ///遍历获得X轴和对应的值
+            //    for (int i = 0; i < m_XLable.Count; i++)
+            //    {
+            //        excel.Cells[i + 2, 1] = m_XLable[i];
+            //        excel.Cells[i + 2, 2] = m_CharData[0][i];
+            //        DSum = DSum + Convert.ToDouble(m_CharData[0][i].ToString());
+            //    }
+            //    excel.Cells[m_XLable.Count + 2, 1] = "合计为：";
+            //    excel.Cells[m_XLable.Count + 2, 2] = DSum.ToString();
+            //    ///弹出对话保存生成统计表的路径
+            //    Microsoft.Office.Core.FileDialog fd = wb.Application.get_FileDialog(Microsoft.Office.Core.MsoFileDialogType.msoFileDialogSaveAs);
+            //    fd.InitialFileName = m_Title + " 统计表";
+            //    int result = fd.Show();
+            //    if (result == 0) return;
+            //    string fileName = fd.InitialFileName;
+            //    if (!string.IsNullOrEmpty(fileName))
+            //    {
+            //        if (fileName.IndexOf(".xls") == -1)
+            //        {
+            //            fileName += ".xls";
+            //        }
+            //        ///保存生成的统计表
+            //        wb.SaveAs(fileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            //    }
 
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(wb);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(excel);
-                GC.Collect();
-            }
-            catch
-            {
+            //    System.Runtime.InteropServices.Marshal.ReleaseComObject(wb);
+            //    System.Runtime.InteropServices.Marshal.ReleaseComObject(excel);
+            //    GC.Collect();
+            //}
+            //catch
+            //{
 
-            }
+            //}
         }
 
         private void FrmResult_Load(object sender, EventArgs e)

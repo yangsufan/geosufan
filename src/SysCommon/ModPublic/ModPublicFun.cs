@@ -385,15 +385,7 @@ namespace SysCommon
             }
             return pGon;
         }
-        public static void OpenExcelFile(string filepath)
-        {
-            Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.Application();
-            object MissingValue = Type.Missing;
-            Microsoft.Office.Interop.Excel.Workbook xBook = xApp.Workbooks._Open(filepath, MissingValue, MissingValue, MissingValue, MissingValue, MissingValue, MissingValue, MissingValue, MissingValue, MissingValue, MissingValue, MissingValue, MissingValue);
-            Microsoft.Office.Interop.Excel.Worksheet xSheet = (Microsoft.Office.Interop.Excel.Worksheet)xBook.Sheets[1];
-            xApp.Visible = true;
 
-        }
         //added by chulili 20111119 获取图层是否真正的可见
         public static bool GetVisibleOfLayerScale(double dCurScale, ILayer pLayer)
         {

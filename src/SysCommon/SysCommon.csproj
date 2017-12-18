@@ -172,14 +172,6 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>False</Private>
     </Reference>
@@ -260,10 +252,8 @@
     <Compile Include="Map\ModuleMap.cs" />
     <Compile Include="Map\ModuleRenderer.cs" />
     <Compile Include="Map\XMLOperation.cs" />
-    <Compile Include="ModPublic\ExportToExcel.cs" />
     <Compile Include="ModPublic\mdlPublic.cs" />
     <Compile Include="ModPublic\modCalArea.cs" />
-    <Compile Include="ModPublic\ModExcel.cs" />
     <Compile Include="ModPublic\ModField.cs" />
     <Compile Include="ModPublic\ModPublicFun.cs" />
     <Compile Include="ModPublic\ModuleConfig.cs" />

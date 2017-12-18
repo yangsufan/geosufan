@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fan.GDBM", "SysMain\Fan.GDBM.csproj", "{FF8FDB39-57AA-4F05-8F35-911D431BBC94}"
 EndProject
@@ -239,8 +239,8 @@ Global
 		{ED46ED62-E155-4491-8750-1D76CEAF2CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED46ED62-E155-4491-8750-1D76CEAF2CDD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ED46ED62-E155-4491-8750-1D76CEAF2CDD}.Release|x86.ActiveCfg = Release|Any CPU
-		{FD4C4953-4740-47B4-B539-0B1B2C483AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD4C4953-4740-47B4-B539-0B1B2C483AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD4C4953-4740-47B4-B539-0B1B2C483AA6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{FD4C4953-4740-47B4-B539-0B1B2C483AA6}.Debug|Any CPU.Build.0 = Debug|x86
 		{FD4C4953-4740-47B4-B539-0B1B2C483AA6}.Debug|x86.ActiveCfg = Debug|x86
 		{FD4C4953-4740-47B4-B539-0B1B2C483AA6}.Debug|x86.Build.0 = Debug|x86
 		{FD4C4953-4740-47B4-B539-0B1B2C483AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -275,7 +275,7 @@ Global
 		{FD4C4953-4740-47B4-B539-0B1B2C483AA6} = {C06E141D-8F3C-4C2E-8F8F-3A994CB94CC9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EC22706C-4205-480C-B473-C557531935EB}
 		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {EC22706C-4205-480C-B473-C557531935EB}
 	EndGlobalSection
 EndGlobal
