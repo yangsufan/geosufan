@@ -74,6 +74,7 @@
     <Compile Include="Module\ColumnName.cs" />
     <Compile Include="Module\DBConfig.cs" />
     <Compile Include="Module\Encryption .cs" />
+    <Compile Include="ODBCOperate\SQLServerOperate.cs" />
     <Compile Include="Module\TableName.cs" />
     <Compile Include="ODBCOperate\MDBOperate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
