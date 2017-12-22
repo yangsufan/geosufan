@@ -11,7 +11,7 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Data.OracleClient;
 
-namespace SysCommon.DataBase
+namespace Fan.Common.DataBase
 {
     public interface IDataBase
     {

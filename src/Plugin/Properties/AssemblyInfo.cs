@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // 控制。更改这些属性值可修改
 // 与程序集关联的信息。
 
-[assembly: AssemblyTitle("Fan.Plugin")]
+[assembly: AssemblyTitle("Fan.Fan.Plugin")]
 [assembly: AssemblyDescription("GDBM")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SufanGeo")]

@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using SysCommon.Authorize;
-using SysCommon.Error;
+using Fan.Common.Authorize;
+using Fan.Common.Error;
 
 namespace GeoUserManager
 {
-    public class ControlsDelUser : Plugin.Interface.CommandRefBase
+    public class ControlsDelUser : Fan.Plugin.Interface.CommandRefBase
     {
-        private Plugin.Application.IAppPrivilegesRef m_Hook;                //传入的窗体对象
+        private Fan.Plugin.Application.IAppPrivilegesRef m_Hook;                //传入的窗体对象
         private User m_AppUser;                                             //当前登陆的用户
 
         public ControlsDelUser()
@@ -54,7 +54,7 @@ namespace GeoUserManager
         {
             get
             {
-                Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Plugin.Application.IAppPrivilegesRef;
+                Fan.Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Fan.Plugin.Application.IAppPrivilegesRef;
                 if (pAppFormRef != null)
                 {
                     pAppFormRef.OperatorTips = base._Message;
@@ -65,7 +65,7 @@ namespace GeoUserManager
 
         public override void ClearMessage()
         {
-            Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Plugin.Application.IAppPrivilegesRef;
+            Fan.Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Fan.Plugin.Application.IAppPrivilegesRef;
             if (pAppFormRef != null)
             {
                 pAppFormRef.OperatorTips = string.Empty;
@@ -98,7 +98,7 @@ namespace GeoUserManager
                     {
                         if (this.WriteLog)
                         {
-                            Plugin.LogTable.Writelog(Caption);//xisheng 2011.07.09 增加日志
+                            Fan.Plugin.LogTable.Writelog(Caption);//xisheng 2011.07.09 增加日志
                         }
                         m_Hook.UserTree.SelectedNode.Remove();
                     }
@@ -114,11 +114,11 @@ namespace GeoUserManager
             }
         }
 
-        public override void OnCreate(Plugin.Application.IApplicationRef hook)
+        public override void OnCreate(Fan.Plugin.Application.IApplicationRef hook)
         {
             if (hook == null) return;
-            m_Hook = hook as Plugin.Application.IAppPrivilegesRef;
-            m_AppUser = (m_Hook as Plugin.Application.IAppFormRef).ConnUser;
+            m_Hook = hook as Fan.Plugin.Application.IAppPrivilegesRef;
+            m_AppUser = (m_Hook as Fan.Plugin.Application.IAppFormRef).ConnUser;
         }
 
     }

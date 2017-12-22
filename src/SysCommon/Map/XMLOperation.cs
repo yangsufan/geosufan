@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace SysCommon
+namespace Fan.Common
 {
     public static class XmlOperation
     {

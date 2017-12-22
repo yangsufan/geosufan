@@ -18,7 +18,7 @@ using ESRI.ArcGIS.DataSourcesRaster;
 using ESRI.ArcGIS.Geoprocessor;
 using System.Data;
 
-namespace SysCommon.Gis
+namespace Fan.Common.Gis
 {
 
     public class SysGisDB : IGisDB, IDisposable
@@ -73,9 +73,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -124,9 +124,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -153,9 +153,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -183,9 +183,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -210,9 +210,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -245,9 +245,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -354,9 +354,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -438,9 +438,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -466,9 +466,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return null;
@@ -494,9 +494,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return null;
@@ -516,9 +516,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return null;
@@ -561,7 +561,7 @@ namespace SysCommon.Gis
             }
             catch (Exception ex)
             {
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", ex.Message);
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", ex.Message);
                 return null;
             }
         }
@@ -997,9 +997,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return null;
@@ -1035,9 +1035,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return null;
@@ -1075,9 +1075,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 count = -1;
@@ -1121,9 +1121,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 count = -1;
@@ -1169,9 +1169,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 count = -1;
@@ -1213,9 +1213,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return null;
@@ -1256,9 +1256,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return null;
@@ -1297,9 +1297,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return null;
@@ -1339,9 +1339,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return null;
@@ -1448,9 +1448,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -1508,9 +1508,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -1567,9 +1567,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 if (Edit == true)
                 {
@@ -1637,9 +1637,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 if (Edit == true)
                 {
@@ -1725,9 +1725,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 if (Edit == true)
                 {
@@ -1794,9 +1794,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 if (Edit == true)
                 {
@@ -1884,9 +1884,9 @@ namespace SysCommon.Gis
                 {
                     //********************************
                     //guozheng added  system exception log
-                    if (SysCommon.Log.Module.SysLog == null)
-                        SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                    SysCommon.Log.Module.SysLog.Write(eX);
+                    if (Fan.Common.Log.Module.SysLog == null)
+                        Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                    Fan.Common.Log.Module.SysLog.Write(eX);
                     //********************************
                     eError = eX;
                     if (bIngore == false)
@@ -1984,9 +1984,9 @@ namespace SysCommon.Gis
                 {
                     //********************************
                     //guozheng added  system exception log
-                    if (SysCommon.Log.Module.SysLog == null)
-                        SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                    SysCommon.Log.Module.SysLog.Write(eX);
+                    if (Fan.Common.Log.Module.SysLog == null)
+                        Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                    Fan.Common.Log.Module.SysLog.Write(eX);
                     //********************************
                     eError = eX;
                     if (bIngore == false)
@@ -2084,9 +2084,9 @@ namespace SysCommon.Gis
                 {
                     //********************************
                     //guozheng added  system exception log
-                    if (SysCommon.Log.Module.SysLog == null)
-                        SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                    SysCommon.Log.Module.SysLog.Write(eX);
+                    if (Fan.Common.Log.Module.SysLog == null)
+                        Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                    Fan.Common.Log.Module.SysLog.Write(eX);
                     //********************************
                     eError = eX;
                     if (bIngore == false)
@@ -2189,9 +2189,9 @@ namespace SysCommon.Gis
                 {
                     //********************************
                     //guozheng added  system exception log
-                    if (SysCommon.Log.Module.SysLog == null)
-                        SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                    SysCommon.Log.Module.SysLog.Write(eX);
+                    if (Fan.Common.Log.Module.SysLog == null)
+                        Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                    Fan.Common.Log.Module.SysLog.Write(eX);
                     //********************************
                     eError = eX;
                     if (bIngore == false)
@@ -2290,9 +2290,9 @@ namespace SysCommon.Gis
                 {
                     //********************************
                     //guozheng added  system exception log
-                    if (SysCommon.Log.Module.SysLog == null)
-                        SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                    SysCommon.Log.Module.SysLog.Write(eX);
+                    if (Fan.Common.Log.Module.SysLog == null)
+                        Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                    Fan.Common.Log.Module.SysLog.Write(eX);
                     //********************************
                     eError = eX;
                     if (bIngore == false)
@@ -2391,9 +2391,9 @@ namespace SysCommon.Gis
                 {
                     //********************************
                     //guozheng added  system exception log
-                    if (SysCommon.Log.Module.SysLog == null)
-                        SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                    SysCommon.Log.Module.SysLog.Write(eX);
+                    if (Fan.Common.Log.Module.SysLog == null)
+                        Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                    Fan.Common.Log.Module.SysLog.Write(eX);
                     //********************************
                     eError = eX;
                     if (bIngore == false)
@@ -2510,9 +2510,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 if (Edit == true)
                 {
@@ -2583,9 +2583,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 if (Edit == true)
                 {
@@ -2651,9 +2651,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 if (bEdit == true)
                 {
@@ -2750,9 +2750,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -2776,9 +2776,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -2822,9 +2822,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -2845,9 +2845,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return null;
@@ -2895,9 +2895,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return null;
@@ -2966,9 +2966,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //********************************
                 eError = ex;
                 return null;
@@ -3084,9 +3084,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return null;
@@ -3177,9 +3177,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //********************************
                 eError = ex;
                 return false;
@@ -3200,9 +3200,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //********************************
                 eError = ex;
                 return false;
@@ -3221,9 +3221,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //********************************
                 eError = ex;
                 return false;
@@ -3258,9 +3258,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //********************************
                 return false;
             }
@@ -3290,9 +3290,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //********************************
                 eError = ex;
                 return false;
@@ -3314,9 +3314,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //********************************
                 eError = ex;
                 return false;
@@ -3341,9 +3341,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -3484,7 +3484,7 @@ namespace SysCommon.Gis
                 ///如果库体存在，则先删除原有库体
                 //if (File.Exists(IPoPath))
                 //{
-                    //if (!SysCommon.Error.ErrorHandle.ShowFrmInformation("是", "否", "是否库体中创建数据集"))
+                    //if (!Fan.Common.Error.ErrorHandle.ShowFrmInformation("是", "否", "是否库体中创建数据集"))
                     //{
                     //    File.Delete(IPoPath);
                     //}
@@ -3538,7 +3538,7 @@ namespace SysCommon.Gis
             {
                 //***********************
                 //guozheng 2010-12-17 added
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "连接数据库失败！\n原因：" + ex.Message);
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "连接数据库失败！\n原因：" + ex.Message);
                 //***********************
                 return false;
             }
@@ -3788,7 +3788,7 @@ namespace SysCommon.Gis
             //    System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
             //    //***********************
             //    //guozheng 2010-12-17 added
-            //    SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "创建数据库失败！\n原因：" + e.Message);
+            //    Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "创建数据库失败！\n原因：" + e.Message);
             //    //***********************
             //    return false;
             //}
@@ -3922,7 +3922,7 @@ namespace SysCommon.Gis
             //    System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
             //    //***********************
             //    //guozheng 2010-12-17 added
-            //    SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "创建数据库失败！\n原因：" + e.Message);
+            //    Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "创建数据库失败！\n原因：" + e.Message);
             //    //***********************
             //    return false;
             //}
@@ -4083,7 +4083,7 @@ namespace SysCommon.Gis
             //    System.Runtime.InteropServices.Marshal.ReleaseComObject(pFeatureWorkSpace);
             //    //***********************
             //    //guozheng 2010-12-17 added
-            //    SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "创建数据库失败！\n原因：" + e.Message);
+            //    Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "创建数据库失败！\n原因：" + e.Message);
             //    //***********************
             //    return false;
             //}
@@ -4235,7 +4235,7 @@ namespace SysCommon.Gis
 
             //        if (File.Exists(FileName))
             //        {
-            //            if (!SysCommon.Error.ErrorHandle.ShowFrmInformation("是", "否", "日志文件'" + fName + "'已存在,\n是否替换？"))
+            //            if (!Fan.Common.Error.ErrorHandle.ShowFrmInformation("是", "否", "日志文件'" + fName + "'已存在,\n是否替换？"))
             //            {
             //                return true;
             //            }
@@ -4797,9 +4797,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //********************************
                 eError = eX;
                 return false;
@@ -5262,9 +5262,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //********************************
                 eError = ex;
                 return null;
@@ -5295,9 +5295,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //********************************
                 eError = ex;
                 return null;
@@ -5531,10 +5531,10 @@ namespace SysCommon.Gis
                     eError = new Exception("字段" + keyValue.Key + "类型与值不匹配");
                     //********************************
                     //guozheng added  system exception log
-                    if (SysCommon.Log.Module.SysLog == null)
-                        SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                    SysCommon.Log.Module.SysLog.Write(eX);
-                    SysCommon.Log.Module.SysLog.Write(eError);
+                    if (Fan.Common.Log.Module.SysLog == null)
+                        Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                    Fan.Common.Log.Module.SysLog.Write(eX);
+                    Fan.Common.Log.Module.SysLog.Write(eError);
                     //********************************
                     return false;
                 }
@@ -5548,9 +5548,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eR);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eR);
                 //********************************
                 eError = eR;
                 return false;
@@ -5592,10 +5592,10 @@ namespace SysCommon.Gis
                     eError = new Exception("字段" + keyValue.Key + "类型与值不匹配");
                     //********************************
                     //guozheng added  system exception log
-                    if (SysCommon.Log.Module.SysLog == null)
-                        SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                    SysCommon.Log.Module.SysLog.Write(eX);
-                    SysCommon.Log.Module.SysLog.Write(eError);
+                    if (Fan.Common.Log.Module.SysLog == null)
+                        Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                    Fan.Common.Log.Module.SysLog.Write(eX);
+                    Fan.Common.Log.Module.SysLog.Write(eError);
                     //********************************
                     return false;
                 }
@@ -5609,9 +5609,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eR);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eR);
                 //********************************
                 eError = eR;
                 return false;
@@ -5639,9 +5639,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eR);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eR);
                 //********************************
                 eError = eR;
                 return false;
@@ -5672,9 +5672,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eR);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eR);
                 //********************************
                 eError = new Exception("过滤查询条件设置错误");
                 return false;
@@ -5702,10 +5702,10 @@ namespace SysCommon.Gis
                     eError = new Exception("字段" + keyValue.Key + "类型与值不匹配");
                     //********************************
                     //guozheng added  system exception log
-                    if (SysCommon.Log.Module.SysLog == null)
-                        SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                    SysCommon.Log.Module.SysLog.Write(eR);
-                    SysCommon.Log.Module.SysLog.Write(eError);
+                    if (Fan.Common.Log.Module.SysLog == null)
+                        Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                    Fan.Common.Log.Module.SysLog.Write(eR);
+                    Fan.Common.Log.Module.SysLog.Write(eError);
                     //********************************
                     return false;
                 }
@@ -5719,9 +5719,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eR);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eR);
                 //********************************
                 eError = eR;
                 return false;
@@ -5752,9 +5752,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eR);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eR);
                 //********************************
                 eError = new Exception("过滤查询条件设置错误");
                 return false;
@@ -5782,10 +5782,10 @@ namespace SysCommon.Gis
                     eError = new Exception("字段" + keyValue.Key + "类型与值不匹配");
                     //********************************
                     //guozheng added  system exception log
-                    if (SysCommon.Log.Module.SysLog == null)
-                        SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                    SysCommon.Log.Module.SysLog.Write(eR);
-                    SysCommon.Log.Module.SysLog.Write(eError);
+                    if (Fan.Common.Log.Module.SysLog == null)
+                        Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                    Fan.Common.Log.Module.SysLog.Write(eR);
+                    Fan.Common.Log.Module.SysLog.Write(eError);
                     //********************************
                     return false;
                 }
@@ -5799,9 +5799,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eR);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eR);
                 //********************************
                 eError = eR;
                 return false;
@@ -5838,9 +5838,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(exError);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(exError);
                 //********************************
                 eError = exError;
             }
@@ -5930,9 +5930,9 @@ namespace SysCommon.Gis
             {
                 //********************************
                 //guozheng added  system exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(err);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(err);
                 //********************************
                 errOut = err;
             }

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SysCommon.Error
+namespace Fan.Common.Error
 {
     public partial class frmErrorHandleEx : BaseForm
     {
@@ -31,9 +31,9 @@ namespace SysCommon.Error
             List<string> Pra = new List<string>();
             Pra.Add(strCaption);
             Pra.Add(strDes);
-            if (null == SysCommon.Log.Module.SysLog)
-                SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-            SysCommon.Log.Module.SysLog.Write(1, Pra);
+            if (null == Fan.Common.Log.Module.SysLog)
+                Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+            Fan.Common.Log.Module.SysLog.Write(1, Pra);
             //********************************************
         }
 

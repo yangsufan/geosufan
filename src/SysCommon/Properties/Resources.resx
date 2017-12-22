@@ -112,61 +112,9 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SysCommon.Mapsheet.MapNum" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SysCommon.Mapsheet.MapNum.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SysCommon.MapSheet.FaultMapNum" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SysCommon.MapSheet.FaultMapNum.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GeoUtilities.ControlsSelectTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GeoUtilities.ControlsSelectTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GeoUtilities.ControlsMapZoomInFixedCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GeoUtilities.ControlsMapZoomInFixedCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GeoUtilities.ControlsMapFullExtentCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GeoUtilities.ControlsMapFullExtentCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GeoUtilities.ControlsMapZoomOutFixedCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GeoUtilities.ControlsMapZoomOutFixedCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GeoUtilities.ControlsMapPanTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GeoUtilities.ControlsMapPanTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GeoUtilities.ControlsMapRefreshViewCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GeoUtilities.ControlsMapRefreshViewCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GeoUtilities.ControlsMapZoomOutTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GeoUtilities.ControlsMapZoomOutTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GeoUtilities.ControlsMapZoomToLastExtentForwardCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GeoUtilities.ControlsMapZoomToLastExtentForwardCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GeoUtilities.ControlsMapZoomInTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GeoUtilities.ControlsMapZoomInTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SysCommon.MapSheet.RightMapNum" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SysCommon.MapSheet.RightMapNum.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GeoUtilities.ControlsSelectFeaturesTool" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GeoUtilities.ControlsSelectFeaturesTool.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GeoUtilities.ControlsClearSelectionCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GeoUtilities.ControlsClearSelectionCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GeoUtilities.ControlsMapZoomToLastExtentBackCommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GeoUtilities.ControlsMapZoomToLastExtentBackCommand.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save_as_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save_as_2.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

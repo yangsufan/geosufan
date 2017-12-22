@@ -13,7 +13,7 @@ using System.Data.OracleClient;
 using System.Windows.Forms;
 using System.IO;
 
-namespace SysCommon.DataBase
+namespace Fan.Common.DataBase
 {
     public class SysDataBase : IDataBase
     {
@@ -88,9 +88,9 @@ namespace SysCommon.DataBase
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //******************************************
                 eError = eX;
                 return;
@@ -186,9 +186,9 @@ namespace SysCommon.DataBase
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //******************************************
                 eError = ex;
                 return false;
@@ -241,9 +241,9 @@ namespace SysCommon.DataBase
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //******************************************
                 eError = ex;
                 return false;
@@ -293,9 +293,9 @@ namespace SysCommon.DataBase
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //******************************************
                 return null;
             }
@@ -336,9 +336,9 @@ namespace SysCommon.DataBase
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //******************************************
                 return null;
 
@@ -364,9 +364,9 @@ namespace SysCommon.DataBase
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //******************************************
                 return null;
             }
@@ -415,9 +415,9 @@ namespace SysCommon.DataBase
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //******************************************
                 return null;
             }
@@ -464,9 +464,9 @@ namespace SysCommon.DataBase
                 {
                     //******************************************
                     //guozheng added System Exception log
-                    if (SysCommon.Log.Module.SysLog == null)
-                        SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                    SysCommon.Log.Module.SysLog.Write(eX);
+                    if (Fan.Common.Log.Module.SysLog == null)
+                        Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                    Fan.Common.Log.Module.SysLog.Write(eX);
                     //******************************************
                     eError = new Exception("获取数据出错!");
                     return null;
@@ -478,9 +478,9 @@ namespace SysCommon.DataBase
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //******************************************
                 eError = ex;
                 return null;
@@ -529,9 +529,9 @@ namespace SysCommon.DataBase
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //******************************************
                 eError = ex;
                 return null;
@@ -579,9 +579,9 @@ namespace SysCommon.DataBase
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //******************************************
                 eError = ex;
                 return null;
@@ -631,9 +631,9 @@ namespace SysCommon.DataBase
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(ex);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(ex);
                 //******************************************
                 eError = ex;
                 return null;

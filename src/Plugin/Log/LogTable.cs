@@ -5,12 +5,12 @@ using System.IO;
 using System.Windows.Forms;
 
 using ESRI.ArcGIS.Geodatabase;
-using SysCommon.Gis;
-using SysCommon.Error;
+using Fan.Common.Gis;
+using Fan.Common.Error;
 using System.Net;
 
 using System.Data.OleDb;
-namespace Plugin
+namespace Fan.Plugin
 {
     /// <summary>
     /// 作者：cll
@@ -33,11 +33,11 @@ namespace Plugin
         {
             if (m_gisDb == null)
             {
-                user = (Plugin.ModuleCommon.AppUser == null) ? "" : Plugin.ModuleCommon.AppUser.UserCode;
+                user = (Fan.Plugin.ModuleCommon.AppUser == null) ? "" : Fan.Plugin.ModuleCommon.AppUser.UserCode;
                 string strHostName = Dns.GetHostName();  //得到本机的主机名
                 IPHostEntry ipEntry = Dns.GetHostByName(strHostName); //取得本机IP
                 userIP = ipEntry.AddressList[0].ToString();
-                SysCommon.Gis.SysGisDB vgisDb = new SysGisDB();
+                Fan.Common.Gis.SysGisDB vgisDb = new SysGisDB();
                 bool blnCanConnect = CanOpenConnect(vgisDb, Mod.dbType, Mod.Server, Mod.Instance, Mod.Database, Mod.User, Mod.Password, Mod.Version);
 
                 if (blnCanConnect == false)
@@ -65,7 +65,7 @@ namespace Plugin
             Exception err;
             //SetWorkSpace();
             //m_sysTable = new SysGisTable(m_gisDb);
-            m_sysTable.WorkSpace = Plugin.ModuleCommon.TmpWorkSpace;//获得业务库工作空间
+            m_sysTable.WorkSpace = Fan.Plugin.ModuleCommon.TmpWorkSpace;//获得业务库工作空间
             ITable pTable = m_sysTable.OpenTable(m_LogNAME, out err); //OpenTable(m_LogNAME, out err);
             if (pTable != null)
             {
@@ -98,7 +98,7 @@ namespace Plugin
             pEdit.Length_2 = 255;
             pFieldsEdit.AddField(pField);
             IFieldChecker pFieldChecker = new FieldCheckerClass();//检查字段有效性
-            pFieldChecker.ValidateWorkspace = Plugin.ModuleCommon.TmpWorkSpace;//xisheng 20111221 
+            pFieldChecker.ValidateWorkspace = Fan.Plugin.ModuleCommon.TmpWorkSpace;//xisheng 20111221 
             IFields pValidFields = null;
             IEnumFieldError pEFE = null;
             pFieldChecker.Validate(pFields, out pEFE, out pValidFields);
@@ -192,7 +192,7 @@ namespace Plugin
             }
             catch (Exception eX)
             {
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", eX.Message);
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", eX.Message);
                 return;
             }
             Exception exError;
@@ -258,7 +258,7 @@ namespace Plugin
             }
             catch (Exception eX)
             {
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", eX.Message);
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", eX.Message);
                 return;
             }
             Exception exError;
@@ -276,7 +276,7 @@ namespace Plugin
             }
         }
         //测试链接信息是否可用
-        public static bool CanOpenConnect(SysCommon.Gis.SysGisDB vgisDb, string strType, string strServer, string strService, string strDatabase, string strUser, string strPassword, string strVersion)
+        public static bool CanOpenConnect(Fan.Common.Gis.SysGisDB vgisDb, string strType, string strServer, string strService, string strDatabase, string strUser, string strPassword, string strVersion)
         {
             bool blnOpen = false;
 
@@ -288,11 +288,11 @@ namespace Plugin
             }
             else if (strType.ToUpper() == "ACCESS")
             {
-                blnOpen = vgisDb.SetWorkspace(strServer, SysCommon.enumWSType.PDB, out Err);
+                blnOpen = vgisDb.SetWorkspace(strServer, Fan.Common.enumWSType.PDB, out Err);
             }
             else if (strType.ToUpper() == "FILE")
             {
-                blnOpen = vgisDb.SetWorkspace(strServer, SysCommon.enumWSType.GDB, out Err);
+                blnOpen = vgisDb.SetWorkspace(strServer, Fan.Common.enumWSType.GDB, out Err);
             }
 
             return blnOpen;
@@ -466,7 +466,7 @@ namespace Plugin
             }
             catch (Exception eX)
             {
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", eX.Message);
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", eX.Message);
                 return;
             }
             Exception exError;
@@ -516,7 +516,7 @@ namespace Plugin
                 }
                 catch (Exception eX)
                 {
-                    SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", eX.Message);
+                    Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", eX.Message);
                     return;
                 }
                 Exception exError;

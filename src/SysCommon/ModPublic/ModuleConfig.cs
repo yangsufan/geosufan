@@ -6,7 +6,7 @@ using System.Text;
 /// System Config Static Class
 /// Set The System Config Item
 /// </summary>
-namespace SysCommon
+namespace Fan.Common
 {
   public static  class ModuleConfig
     {

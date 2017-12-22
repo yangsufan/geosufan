@@ -7,9 +7,9 @@ using ESRI.ArcGIS.Geodatabase;
 
 namespace GeoUserManager
 {
-    public class CommandUpdateSymbol : Plugin.Interface.CommandRefBase
+    public class CommandUpdateSymbol : Fan.Plugin.Interface.CommandRefBase
     {
-        private Plugin.Application.IAppGisUpdateRef _AppHk;
+        private Fan.Plugin.Application.IAppGisUpdateRef _AppHk;
 
         public CommandUpdateSymbol()
         {
@@ -36,7 +36,7 @@ namespace GeoUserManager
         {
             get
             {
-                Plugin.Application.IAppFormRef pAppFormRef = _AppHk as Plugin.Application.IAppFormRef;
+                Fan.Plugin.Application.IAppFormRef pAppFormRef = _AppHk as Fan.Plugin.Application.IAppFormRef;
                 if (pAppFormRef != null)
                 {
                     pAppFormRef.OperatorTips = base._Message;
@@ -47,7 +47,7 @@ namespace GeoUserManager
 
         public override void ClearMessage()
         {
-            Plugin.Application.IAppFormRef pAppFormRef = _AppHk as Plugin.Application.IAppFormRef;
+            Fan.Plugin.Application.IAppFormRef pAppFormRef = _AppHk as Fan.Plugin.Application.IAppFormRef;
             if (pAppFormRef != null)
             {
                 pAppFormRef.OperatorTips = string.Empty;
@@ -72,19 +72,19 @@ namespace GeoUserManager
             //获得所有的符号信息 并进行序列化
             if (SaveMxdSymbolToXML(pMapDoc, System.Windows.Forms.Application.StartupPath + "\\..\\Template\\SymbolInfo.xml"))
             {
-                SysCommon.Error.ErrorHandle.ShowInform("提示", "符号信息更新成功！");
+                Fan.Common.Error.ErrorHandle.ShowInform("提示", "符号信息更新成功！");
             }
             else
             {
-                SysCommon.Error.ErrorHandle.ShowInform("提示", "无法更新符号信息！");
+                Fan.Common.Error.ErrorHandle.ShowInform("提示", "无法更新符号信息！");
             }
             
         }
 
-        public override void OnCreate(Plugin.Application.IApplicationRef hook)
+        public override void OnCreate(Fan.Plugin.Application.IApplicationRef hook)
         {
             if (hook == null) return;
-            _AppHk = hook as Plugin.Application.IAppGisUpdateRef;
+            _AppHk = hook as Fan.Plugin.Application.IAppGisUpdateRef;
         }
 
         private bool SaveMxdSymbolToXML(IMapDocument pMapDoc, string strXMLFile)
@@ -145,7 +145,7 @@ namespace GeoUserManager
             }
 
             string strXml = "";
-            SysCommon.XML.XMLClass.XmlSerializer(pFeaRender, "", out strXml);
+            Fan.Common.XML.XMLClass.XmlSerializer(pFeaRender, "", out strXml);
             pElement.RemoveAll();
             pElement.AppendChild(pXmlDoc.CreateTextNode(strXml));
 

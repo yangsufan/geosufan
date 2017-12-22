@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using SysCommon.Gis;
-using SysCommon.Error;
+using Fan.Common.Gis;
+using Fan.Common.Error;
 
 namespace GeoUserManager
 {
@@ -54,7 +54,7 @@ namespace GeoUserManager
             //}
             Exception Exerror=null ;
             Dictionary<string, object> newdic = new Dictionary<string, object>();
-            SysGisTable ksTable = new SysGisTable(Plugin.ModuleCommon.TmpWorkSpace);
+            SysGisTable ksTable = new SysGisTable(Fan.Plugin.ModuleCommon.TmpWorkSpace);
             newdic.Add("DEPARTMENTNAME",txtDepartmentName .Text);
             //if (m_id != null && m_id != "")
             //{
@@ -120,7 +120,7 @@ namespace GeoUserManager
             {
                 this.Text = m_FrmText;
                 btnOk.Text = m_BtnText;
-                SysGisTable ksTable = new SysGisTable(Plugin.ModuleCommon.TmpWorkSpace);
+                SysGisTable ksTable = new SysGisTable(Fan.Plugin.ModuleCommon.TmpWorkSpace);
                 Exception error=null ;
                 Dictionary<string, object> newdic = new Dictionary<string, object>();
                 newdic = ksTable.GetRow("USER_DEPARTMENT", "DEPARTMENTID='" + m_id + "'",out error);

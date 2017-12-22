@@ -5,35 +5,31 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using SysCommon.Gis;
-using SysCommon.Error;
-using SysCommon.Authorize;
+using Fan.Common.Gis;
+using Fan.Common.Error;
+using Fan.Common;
 
 namespace GeoUserManager
 {
-    public partial class AddGroup : DevComponents.DotNetBar.Office2007Form
+    public partial class AddGroup : BaseForm
     {
         Role _role = null;                      //用户组类
         bool isUpdate = false;                  //判断当前是否为更新
-
         public AddGroup()
         {
             InitializeComponent();
         }
-
         public AddGroup(Role role)
         {
             InitializeComponent();
             _role = role;
             isUpdate = true;
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-
         private void btnAddRole_Click(object sender, EventArgs e)
         {
             Exception exError = null;

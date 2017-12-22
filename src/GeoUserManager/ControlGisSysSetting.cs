@@ -6,9 +6,9 @@ using System.Threading;
 
 namespace GeoUserManager
 {
-    class ControlGisSysSetting:Plugin.Interface.ControlRefBase
+    class ControlGisSysSetting:Fan.Plugin.Interface.ControlRefBase
     {
-        private Plugin.Application.IAppFormRef _hook;
+        private Fan.Plugin.Application.IAppFormRef _hook;
         private UserControl _ControlSetting;
 
         //构造函数
@@ -84,14 +84,14 @@ namespace GeoUserManager
             }
         }
 
-        public override void OnCreate(Plugin.Application.IApplicationRef hook)
+        public override void OnCreate(Fan.Plugin.Application.IApplicationRef hook)
         {
-            _hook = hook as Plugin.Application.IAppFormRef;
+            _hook = hook as Fan.Plugin.Application.IAppFormRef;
 
             if (_hook == null) return;
 
             //设一下静态变量
-            SysCommon.Authorize.AuthorizeClass.GetConnectInfo(ModData.v_ConfigPath, out SdeConfig.Server, out SdeConfig.Instance, out SdeConfig.Database, out SdeConfig.User, out SdeConfig.Password, out SdeConfig.Version, out SdeConfig.dbType);
+            Fan.Common.Authorize.AuthorizeClass.GetConnectInfo(ModData.v_ConfigPath, out SdeConfig.Server, out SdeConfig.Instance, out SdeConfig.Database, out SdeConfig.User, out SdeConfig.Password, out SdeConfig.Version, out SdeConfig.dbType);
             SdeConfig.Server = _hook.TempWksInfo.Server;
             SdeConfig.Instance = _hook.TempWksInfo.Service;
             SdeConfig.Database = _hook.TempWksInfo.DataBase;
@@ -101,8 +101,8 @@ namespace GeoUserManager
             SdeConfig.dbType = _hook.TempWksInfo.DBType;
 
             //权限控制
-            ModData.v_AppPrivileges = new Plugin.Application.AppPrivileges(_hook.MainForm, _hook.ControlContainer, _hook.ListUserPrivilegeID, _hook.SystemXml, _hook.DataTreeXml, _hook.DatabaseInfoXml, _hook.ColParsePlugin, _hook.ImageResPath, _hook.ConnUser);
-            //ModData.v_AppPrivileges = new Plugin.Application.AppPrivileges(_hook.MainForm, _hook.ControlContainer, _hook.SystemXml, _hook.DataTreeXml, _hook.DatabaseInfoXml, _hook.ColParsePlugin, _hook.ImageResPath, _hook.ConnUser);
+            ModData.v_AppPrivileges = new Fan.Plugin.Application.AppPrivileges(_hook.MainForm, _hook.ControlContainer, _hook.ListUserPrivilegeID, _hook.SystemXml, _hook.DataTreeXml, _hook.DatabaseInfoXml, _hook.ColParseFan.Plugin, _hook.ImageResPath, _hook.ConnUser);
+            //ModData.v_AppPrivileges = new Fan.Plugin.Application.AppPrivileges(_hook.MainForm, _hook.ControlContainer, _hook.SystemXml, _hook.DataTreeXml, _hook.DatabaseInfoXml, _hook.ColParseFan.Plugin, _hook.ImageResPath, _hook.ConnUser);
             ModData.v_AppPrivileges.TempWksInfo = _hook.TempWksInfo;
             ModData.v_AppPrivileges.CurWksInfo = _hook.CurWksInfo;
 
@@ -126,12 +126,12 @@ namespace GeoUserManager
         //在退出系统前如正在处理数据应提示
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Plugin.Application.IAppPrivilegesRef pApp = ModData.v_AppPrivileges as Plugin.Application.IAppPrivilegesRef;
+            Fan.Plugin.Application.IAppPrivilegesRef pApp = ModData.v_AppPrivileges as Fan.Plugin.Application.IAppPrivilegesRef;
             if (pApp == null) return;
             if (pApp.CurrentThread != null)
             {
                 pApp.CurrentThread.Suspend();
-                if (SysCommon.Error.ErrorHandle.ShowFrmInformation("确定", "取消", "当前任务正在进行,是否终止退出?") == true)
+                if (Fan.Common.Error.ErrorHandle.ShowFrmInformation("确定", "取消", "当前任务正在进行,是否终止退出?") == true)
                 {
                     pApp.CurrentThread.Resume();
                     pApp.CurrentThread.Abort();
@@ -149,7 +149,7 @@ namespace GeoUserManager
         {
             //得到Xml的System节点,根据XML加载插件界面
             string xPath = ".//System[@Name='" + this.Name + "']";
-            Plugin.ModuleCommon.LoadButtonViewByXmlNode(ModData.v_AppPrivileges.ControlContainer, xPath, ModData.v_AppPrivileges);
+            Fan.Plugin.ModuleCommon.LoadButtonViewByXmlNode(ModData.v_AppPrivileges.ControlContainer, xPath, ModData.v_AppPrivileges);
         }
     }
 }

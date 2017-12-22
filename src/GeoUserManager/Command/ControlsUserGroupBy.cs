@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using SysCommon.Error;
+using Fan.Common.Error;
 
 namespace GeoUserManager
 {
-    public class ControlsUserGroupBy : Plugin.Interface.CommandRefBase
+    public class ControlsUserGroupBy : Fan.Plugin.Interface.CommandRefBase
     {
-        private Plugin.Application.IAppPrivilegesRef m_Hook;
+        private Fan.Plugin.Application.IAppPrivilegesRef m_Hook;
         public ControlsUserGroupBy()
         {
             base._Name = "GeoUserManager.ControlsUserGroupBy";
@@ -43,7 +43,7 @@ namespace GeoUserManager
         {
             get
             {
-                Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Plugin.Application.IAppPrivilegesRef;
+                Fan.Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Fan.Plugin.Application.IAppPrivilegesRef;
                 if (pAppFormRef != null)
                 {
                     pAppFormRef.OperatorTips = base._Message;
@@ -54,7 +54,7 @@ namespace GeoUserManager
 
         public override void ClearMessage()
         {
-            Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Plugin.Application.IAppPrivilegesRef;
+            Fan.Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Fan.Plugin.Application.IAppPrivilegesRef;
             if (pAppFormRef != null)
             {
                 pAppFormRef.OperatorTips = string.Empty;
@@ -66,7 +66,7 @@ namespace GeoUserManager
             Exception eError;
             if (this.WriteLog)
             {
-                Plugin.LogTable.Writelog(Caption);//xisheng 2011.07.09 增加日志
+                Fan.Plugin.LogTable.Writelog(Caption);//xisheng 2011.07.09 增加日志
             }
             frmUserGroupQuery fm = new frmUserGroupQuery();
             if (fm.ShowDialog() == DialogResult.OK&&fm.GroupName!="")
@@ -81,10 +81,10 @@ namespace GeoUserManager
             }
         }
 
-        public override void OnCreate(Plugin.Application.IApplicationRef hook)
+        public override void OnCreate(Fan.Plugin.Application.IApplicationRef hook)
         {
             if (hook == null) return;
-            m_Hook = hook as Plugin.Application.IAppPrivilegesRef;
+            m_Hook = hook as Fan.Plugin.Application.IAppPrivilegesRef;
         }
 
     }

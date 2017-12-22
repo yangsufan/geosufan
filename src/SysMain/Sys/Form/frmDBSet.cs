@@ -7,15 +7,15 @@ using System.Drawing;
 using System.Xml;
 using System.Text;
 using System.Windows.Forms;
-using SysCommon;
-using SysCommon.Gis;
-using SysCommon.Error;
+using Fan.Common;
+using Fan.Common.Gis;
+using Fan.Common.Error;
 using ESRI.ArcGIS.Geodatabase;
 using Fan.DataBase;
 
 namespace GDBM
 {
-    public partial class frmDBSet :SysCommon.BaseForm
+    public partial class frmDBSet :Fan.Common.BaseForm
     {
         public frmDBSet()
         {
@@ -88,7 +88,7 @@ namespace GDBM
                 }
                 else
                 {
-                    m_dbConfig.SaveConfig(SysCommon.ModuleConfig.m_ConnectFileName);
+                    m_dbConfig.SaveConfig(Fan.Common.ModuleConfig.m_ConnectFileName);
                     this.DialogResult = DialogResult.OK;
                 }
             }

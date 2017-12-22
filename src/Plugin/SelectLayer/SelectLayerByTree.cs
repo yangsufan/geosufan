@@ -9,9 +9,9 @@ using System.Xml;
 using System.IO;
 
 //xisheng 20111119 增加选择图层的功能。
-namespace Plugin
+namespace Fan.Plugin
 {
-    public partial class SelectLayerByTree : SysCommon.BaseForm
+    public partial class SelectLayerByTree : Fan.Common.BaseForm
 
     {
         public string _LayerTreePath = System.Windows.Forms.Application.StartupPath + "\\..\\res\\xml\\查询图层树.xml"; //图层目录文件路径
@@ -35,9 +35,9 @@ namespace Plugin
         
         private void SelectLayerByTree_Load(object sender, EventArgs e)
         {
-            if (SysCommon.ModField._DicFieldName.Keys.Count == 0)
+            if (Fan.Common.ModField._DicFieldName.Keys.Count == 0)
             {
-                SysCommon.ModField.InitNameDic(Plugin.ModuleCommon.TmpWorkSpace, SysCommon.ModField._DicFieldName, "属性对照表");
+                Fan.Common.ModField.InitNameDic(Fan.Plugin.ModuleCommon.TmpWorkSpace, Fan.Common.ModField._DicFieldName, "属性对照表");
             }
             if (_DicLayerList == null)
             {
@@ -93,7 +93,7 @@ namespace Plugin
                 }
                 //用Xml子节点的"NodeKey"和"NodeText"属性来构造树子节点
                 string sNodeKey = xmlElementChild.GetAttribute("NodeKey");
-                if (!Plugin.ModuleCommon.ListUserdataPriID.Contains(sNodeKey))
+                if (!Fan.Plugin.ModuleCommon.ListUserdataPriID.Contains(sNodeKey))
                 {
                     continue;
                 }

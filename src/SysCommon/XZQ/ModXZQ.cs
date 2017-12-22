@@ -8,7 +8,7 @@ using System.IO;
 using ESRI.ArcGIS.Geodatabase;
 
 
-namespace SysCommon
+namespace Fan.Common
 {
     public static class ModXZQ
     {

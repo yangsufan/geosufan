@@ -7,7 +7,7 @@ using System.Data.OracleClient;
 using System.Data.SqlClient;
 using System.Xml;
 using Fan.DataBase;
-using SysCommon;
+using Fan.Common;
 
 namespace GDBM
 {
@@ -26,7 +26,7 @@ namespace GDBM
         public static User m_LoginUser = null;
         public static bool LoginState = false;//控件登陆后，最终是否显示主界面
 
-        public static Plugin.Application.AppForm v_AppForm;
+        public static Fan.Plugin.Application.AppForm v_AppForm;
 
         public readonly static string v_AppDBConectXml = Application.StartupPath + "\\AppDBConectInfo.xml";////////////系统维护库连接字符串 
         /////guozheng 2011-2-14 added 系统维护库库体定义模板文件
@@ -36,10 +36,10 @@ namespace GDBM
         //end
         public static XmlDocument v_SystemXml;
 
-        public static Plugin.Parse.PluginCollection m_PluginCol;      //插件口袋
+        public static Fan.Plugin.Parse.PluginCollection m_PluginCol;      //插件口袋
 
         ///////////////////////////////////////系统运行日志
-        public static SysCommon.Log.clsWriteSystemFunctionLog v_SysLog;
+        public static Fan.Common.Log.clsWriteSystemFunctionLog v_SysLog;
 
         public static string v_UserInfoPath = Application.StartupPath + "\\user.dat";//added by chulili 20110707 记住密码文件
 

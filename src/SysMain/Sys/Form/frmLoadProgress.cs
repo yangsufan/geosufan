@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace GDBM
 {
-    public partial class frmLoadProgress : SysCommon.BaseForm
+    public partial class frmLoadProgress : Fan.Common.BaseForm
     {
         public string SysInfo
         {

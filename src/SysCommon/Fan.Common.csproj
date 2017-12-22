@@ -7,8 +7,8 @@
     <ProjectGuid>{D0D978A2-2F5A-41A4-931F-72CDECD61513}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SysCommon</RootNamespace>
-    <AssemblyName>SysCommon</AssemblyName>
+    <RootNamespace>Fan.Common</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -359,57 +359,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\GeoUtilities.ControlsMapPanTool.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GeoUtilities.ControlsMapZoomInTool.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GeoUtilities.ControlsClearSelectionCommand.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GeoUtilities.ControlsMapFullExtentCommand.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GeoUtilities.ControlsMapRefreshViewCommand.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GeoUtilities.ControlsMapZoomInFixedCommand.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GeoUtilities.ControlsMapZoomOutFixedCommand.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GeoUtilities.ControlsMapZoomOutTool.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GeoUtilities.ControlsMapZoomToLastExtentBackCommand.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GeoUtilities.ControlsMapZoomToLastExtentForwardCommand.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GeoUtilities.ControlsSelectFeaturesTool.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GeoUtilities.ControlsSelectTool.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SysCommon.MapSheet.FaultMapNum.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SysCommon.MapSheet.RightMapNum.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SysCommon.Mapsheet.MapNum.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save_as_2.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <COMReference Include="VBIDE">
       <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>5</VersionMajor>
@@ -425,6 +374,9 @@
       <Name>Fan.DataBase</Name>
       <Private>False</Private>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

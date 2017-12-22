@@ -81,10 +81,7 @@
     <RegisterForComInterop>true</RegisterForComInterop>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevComponents.DotNetBar2">
-      <HintPath>..\..\Bin\DevComponents.DotNetBar2.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
@@ -275,23 +272,6 @@
     <Compile Include="SymbolManager\CommandUpdateSymbol.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GeoSymbology\GeoSymbology.csproj">
-      <Project>{3C433A2D-43B2-491E-851A-347C67A5F130}</Project>
-      <Name>GeoSymbology</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugin\Plugin.csproj">
-      <Project>{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}</Project>
-      <Name>Plugin</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\SysCommon\SysCommon.csproj">
-      <Project>{D0D978A2-2F5A-41A4-931F-72CDECD61513}</Project>
-      <Name>SysCommon</Name>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Resources\role.png" />
     <None Include="Resources\rulemanager.png" />
     <None Include="Resources\usemanager.png" />
@@ -320,6 +300,23 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fan.DataBase\Fan.DataBase.csproj">
+      <Project>{fd4c4953-4740-47b4-b539-0b1b2c483aa6}</Project>
+      <Name>Fan.DataBase</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin\Fan.Plugin.csproj">
+      <Project>{bc54cbad-763e-40e5-b2c4-ff9faa9cc318}</Project>
+      <Name>Fan.Plugin</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SysCommon\Fan.Common.csproj">
+      <Project>{d0d978a2-2f5a-41a4-931f-72cdecd61513}</Project>
+      <Name>Fan.Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

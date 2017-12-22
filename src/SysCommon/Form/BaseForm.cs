@@ -11,7 +11,7 @@ using System.Windows.Forms;
  * 日期：2017-11-10
  * 描述：所有基础窗体基类
  */
-namespace SysCommon
+namespace Fan.Common
 {
     public partial class BaseForm : DevExpress.XtraEditors.XtraForm
     {

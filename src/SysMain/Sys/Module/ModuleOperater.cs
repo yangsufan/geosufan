@@ -4,14 +4,14 @@ using System.Text;
 using System.Data;
 using System.Xml;
 using System.Windows.Forms;
-using SysCommon.Gis;
-using SysCommon.Error;
+using Fan.Common.Gis;
+using Fan.Common.Error;
 using System.Collections;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using SysCommon;
+using Fan.Common;
 using ESRI.ArcGIS.Geodatabase;
-using SysCommon.DataBase;
+using Fan.Common.DataBase;
 using System.Data.OracleClient;
 using System.Data.OleDb;
 namespace GDBM
@@ -25,22 +25,22 @@ namespace GDBM
         /// <param name="pSysCaption">子系统caption</param>
         public static void InitialForm(string pSysName, string pSysCaption)
         {
-            if (Plugin.ModuleCommon.DicTabs == null || Plugin.ModuleCommon.AppFrm == null) return;
+            if (Fan.Plugin.ModuleCommon.DicTabs == null || Fan.Plugin.ModuleCommon.AppFrm == null) return;
             //初始化当前应用成素的名称和标题
-            Plugin.ModuleCommon.AppFrm.CurrentSysName = pSysName;
-            Plugin.ModuleCommon.AppFrm.Caption = pSysCaption;
+            Fan.Plugin.ModuleCommon.AppFrm.CurrentSysName = pSysName;
+            Fan.Plugin.ModuleCommon.AppFrm.Caption = pSysCaption;
 
             //显示选定的子系统界面
             bool bEnable = false;
             bool bVisible = false;
-            if (Plugin.ModuleCommon.DicControls != null)
+            if (Fan.Plugin.ModuleCommon.DicControls != null)
             {
-                foreach (KeyValuePair<string, Plugin.Interface.IControlRef> keyValue in Plugin.ModuleCommon.DicControls)
+                foreach (KeyValuePair<string, Fan.Plugin.Interface.IControlRef> keyValue in Fan.Plugin.ModuleCommon.DicControls)
                 {
                     bEnable = keyValue.Value.Enabled;
                     bVisible = keyValue.Value.Visible;
 
-                    Plugin.Interface.ICommandRef pCmd = keyValue.Value as Plugin.Interface.ICommandRef;
+                    Fan.Plugin.Interface.ICommandRef pCmd = keyValue.Value as Fan.Plugin.Interface.ICommandRef;
                     if (pCmd != null)
                     {
                         if (keyValue.Key == pSysName)
@@ -52,7 +52,7 @@ namespace GDBM
             }
             //默认显示子系统界面的第一项
             int i = 0;
-            foreach (KeyValuePair<DevExpress.XtraBars.Ribbon.RibbonPage, string> keyValue in Plugin.ModuleCommon.DicTabs)
+            foreach (KeyValuePair<DevExpress.XtraBars.Ribbon.RibbonPage, string> keyValue in Fan.Plugin.ModuleCommon.DicTabs)
             {
                 //if (keyValue.Value == pSysName)
                 //{

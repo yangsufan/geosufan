@@ -11,7 +11,7 @@ using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Geodatabase;
 
 //xisheng 20111119 增加选择图层的功能。
-namespace SysCommon
+namespace Fan.Common
 {
     public partial class SelectLayerByTree : BaseForm
 
@@ -100,11 +100,11 @@ namespace SysCommon
         {
             if (m_TmpWorkSpace != null)
             {
-                SysCommon.ModSysSetting.CopyLayerTreeXmlFromDataBase(m_TmpWorkSpace, _LayerTreePath);
+                Fan.Common.ModSysSetting.CopyLayerTreeXmlFromDataBase(m_TmpWorkSpace, _LayerTreePath);
             }
-            if (SysCommon.ModField._DicFieldName.Keys.Count == 0)
+            if (Fan.Common.ModField._DicFieldName.Keys.Count == 0)
             {
-                SysCommon.ModField.InitNameDic(m_TmpWorkSpace, SysCommon.ModField._DicFieldName, "属性对照表");
+                Fan.Common.ModField.InitNameDic(m_TmpWorkSpace, Fan.Common.ModField._DicFieldName, "属性对照表");
             }
             if (_DicLayerList == null)
             {

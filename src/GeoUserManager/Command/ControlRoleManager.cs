@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace GeoUserManager
 {
-    public class ControlRoleManager : Plugin.Interface.CommandRefBase
+    public class ControlRoleManager : Fan.Plugin.Interface.CommandRefBase
     {
         private UserControl ucCtl = null;
-        private Plugin.Application.IAppPrivilegesRef m_Hook;
-        private Plugin.Application.IAppFormRef _hook;
+        private Fan.Plugin.Application.IAppPrivilegesRef m_Hook;
+        private Fan.Plugin.Application.IAppFormRef _hook;
 
         public ControlRoleManager()
         {
@@ -44,7 +44,7 @@ namespace GeoUserManager
         {
             get
             {
-                Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Plugin.Application.IAppPrivilegesRef;
+                Fan.Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Fan.Plugin.Application.IAppPrivilegesRef;
                 if (pAppFormRef != null)
                 {
                     pAppFormRef.OperatorTips = base._Message;
@@ -55,7 +55,7 @@ namespace GeoUserManager
 
         public override void ClearMessage()
         {
-            Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Plugin.Application.IAppPrivilegesRef;
+            Fan.Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Fan.Plugin.Application.IAppPrivilegesRef;
             if (pAppFormRef != null)
             {
                 pAppFormRef.OperatorTips = string.Empty;
@@ -72,15 +72,15 @@ namespace GeoUserManager
             pRole.ChangeUC("Role");
             if (this.WriteLog)
             {
-                Plugin.LogTable.Writelog(Caption);//xisheng 2011.07.09 增加日志
+                Fan.Plugin.LogTable.Writelog(Caption);//xisheng 2011.07.09 增加日志
             }
         }
 
-        public override void OnCreate(Plugin.Application.IApplicationRef hook)
+        public override void OnCreate(Fan.Plugin.Application.IApplicationRef hook)
         {
             if (hook == null) return;
-            m_Hook = hook as Plugin.Application.IAppPrivilegesRef;
-            _hook = hook as Plugin.Application.IAppFormRef;
+            m_Hook = hook as Fan.Plugin.Application.IAppPrivilegesRef;
+            _hook = hook as Fan.Plugin.Application.IAppFormRef;
 
         }
 

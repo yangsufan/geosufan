@@ -16,8 +16,8 @@ namespace GeoUserManager
         }
 
         //pl
-        SysCommon.Gis.SysGisDataSet m_pGisDb;
-        public SysCommon.Gis.SysGisDataSet GisDB
+        Fan.Common.Gis.SysGisDataSet m_pGisDb;
+        public Fan.Common.Gis.SysGisDataSet GisDB
         {
             set { m_pGisDb = value; }
         }
@@ -36,35 +36,35 @@ namespace GeoUserManager
             Exception Err;
             if (this.txtOldSec.Text.Trim() == "" || this.txtNewSec.Text.Trim()=="" || this.txtNewSec2.Text=="")
             {
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示","新旧密码都不能为空。");
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示","新旧密码都不能为空。");
                 return;
             }
             if (this.txtNewSec2.Text.Trim() != this.txtNewSec.Text.Trim())
             {
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "两次输入的新密码不一致。");
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "两次输入的新密码不一致。");
                 return;
             }
             
             //开始修改密码
-            SysCommon.Gis.SysGisTable vGisTb = new SysCommon.Gis.SysGisTable(m_pGisDb);
+            Fan.Common.Gis.SysGisTable vGisTb = new Fan.Common.Gis.SysGisTable(m_pGisDb);
 
             string strOldPass = vGisTb.GetFieldValue("USER_INFO", "UPWD", "USERID='" + m_intUserID.ToString()+"'", out Err).ToString();
-            if (SysCommon.Authorize.AuthorizeClass.ComputerSecurity(this.txtOldSec.Text.Trim()) != strOldPass)
+            if (Fan.Common.Authorize.AuthorizeClass.ComputerSecurity(this.txtOldSec.Text.Trim()) != strOldPass)
             {
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "输入的旧密码不正确。");
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "输入的旧密码不正确。");
                 return;
             }
 
             Dictionary<string, object> dicvalue = new Dictionary<string, object>();
-            dicvalue.Add("UPWD", SysCommon.Authorize.AuthorizeClass.ComputerSecurity(this.txtNewSec.Text.Trim()));
+            dicvalue.Add("UPWD", Fan.Common.Authorize.AuthorizeClass.ComputerSecurity(this.txtNewSec.Text.Trim()));
             if (vGisTb.UpdateRow("USER_INFO", "USERID='" + m_intUserID.ToString()+"'", dicvalue, out Err))
             {
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "修改密码成功。");
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "修改密码成功。");
                 this.Close();
             }
             else
             {
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "系统不能正确的修改密码。");
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "系统不能正确的修改密码。");
                 return;
             }
         }

@@ -5,9 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using SysCommon.Gis;
-using SysCommon.Error;
-using SysCommon.Authorize;
+using Fan.Common.Gis;
+using Fan.Common.Error;
+using Fan.Common.Authorize;
 
 namespace GeoUserManager
 {
@@ -57,7 +57,7 @@ namespace GeoUserManager
                 this.dateTimePicker.Text = user.UserDate; //wgf 20111102
 
                 //新增科室 ygc20130319
-                SysGisTable ksTable = new SysGisTable(Plugin.ModuleCommon.TmpWorkSpace);
+                SysGisTable ksTable = new SysGisTable(Fan.Plugin.ModuleCommon.TmpWorkSpace);
                 Exception ex = null;
                 Dictionary<string, object> newdic = new Dictionary<string, object>();
                 newdic = ksTable.GetRow("USER_DEPARTMENT", "DEPARTMENTID='" + _user.UserDepartment  + "'", out ex);
@@ -101,7 +101,7 @@ namespace GeoUserManager
         {
             List<Dictionary<string, object>> listDepartment = new List<Dictionary<string, object>>();
             Exception ex = null;
-            SysGisTable sysTable = new SysGisTable(Plugin.ModuleCommon.TmpWorkSpace);
+            SysGisTable sysTable = new SysGisTable(Fan.Plugin.ModuleCommon.TmpWorkSpace);
             listDepartment = sysTable.GetRows("USER_DEPARTMENT", "", out ex);
             if (listDepartment !=null|| listDepartment.Count != 0)
             {
@@ -171,7 +171,7 @@ namespace GeoUserManager
                 //如果是更新用户 并且用户密码框为空 则不更新密码
                 if (!(isUpdate && this.txtPassword.Text.Trim()==""))
                 {
-                    dicData.Add("upwd", SysCommon.Authorize.AuthorizeClass.ComputerSecurity(this.txtPassword.Text.Trim()));
+                    dicData.Add("upwd", Fan.Common.Authorize.AuthorizeClass.ComputerSecurity(this.txtPassword.Text.Trim()));
                 }
                     
                 dicData.Add("usex", (this.comboSex.SelectedItem as ComboBoxItem).Value);
@@ -180,7 +180,7 @@ namespace GeoUserManager
                 dicData.Add("TRUTHNAME", this.txtTrueName.Text);
 
                 //新增科室 ygc20130319
-                SysGisTable ksTable = new SysGisTable(Plugin.ModuleCommon.TmpWorkSpace);
+                SysGisTable ksTable = new SysGisTable(Fan.Plugin.ModuleCommon.TmpWorkSpace);
                 Exception ex = null;
                 Dictionary<string, object> newdic = new Dictionary<string, object>();
                 newdic = ksTable.GetRow("USER_DEPARTMENT", "DEPARTMENTNAME='" + this.cbDepartment.Text + "'", out ex);

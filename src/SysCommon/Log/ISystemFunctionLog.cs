@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SysCommon.Log
+namespace Fan.Common.Log
 {
     interface ISystemFunctionLog
     {

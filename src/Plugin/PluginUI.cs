@@ -7,16 +7,16 @@ using System.Collections;
 using System.IO;
 using System.Reflection;
 using System.Xml;
-using Plugin.Interface;
-using Plugin.Application;
-using Plugin.Parse;
+using Fan.Plugin.Interface;
+using Fan.Plugin.Application;
+using Fan.Plugin.Parse;
 
-namespace Plugin
+namespace Fan.Plugin
 {
     #region 从XML读取解析插件UI化,并与插件实现进行绑定
     public static class ModuleCommon
     {
-        public static event SysCommon.SysLogInfoChangedHandle SysLogInfoChnaged;
+        public static event Common.SysLogInfoChangedHandle SysLogInfoChnaged;
         #region 插件对象集合
         private static Dictionary<string, IPlugin> v_dicPlugins;
         private static Dictionary<string, ICommandRef> v_dicCommands;
@@ -55,8 +55,8 @@ namespace Plugin
             get { return _ListUserdataPriID; }
             set { _ListUserdataPriID = value; }
         }
-        private static SysCommon.User _AppUser;
-        public static SysCommon.User AppUser
+        private static Fan.Common.User _AppUser;
+        public static Fan.Common.User AppUser
         {
             get { return _AppUser; }
             set { _AppUser = value; }
@@ -67,10 +67,9 @@ namespace Plugin
             get { return _TmpWks; }
             set { _TmpWks = value; }
         }
-
         //刷新按钮Enable属性
-        private static System.Windows.Forms.Timer _Timer = new System.Windows.Forms.Timer();
-        public static System.Windows.Forms.Timer RefreshTimer
+        private static Timer _Timer = new Timer();
+        public static Timer RefreshTimer
         {
             get { return _Timer;}
         }
@@ -80,13 +79,10 @@ namespace Plugin
         {
             get { return _dicBaseItems; }
         }
-
         //记录插件加载过程日志
-        private static SysCommon.Log.SysLocalLog _SysLocalLog;
-        
+        private static Fan.Common.Log.SysLocalLog _SysLocalLog;
         //将tab按照系统分类
         private static Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> _dicTabs = new Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string>();
-
         public static Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> DicTabs
         {
             get 
@@ -98,11 +94,9 @@ namespace Plugin
                 _dicTabs=value;
             }
         }
-
         //主应用程序APP
-        private static Plugin.Application.IAppFormRef _pIAppFrm;
-
-        public static Plugin.Application.IAppFormRef AppFrm
+        private static IAppFormRef _pIAppFrm;
+        public static IAppFormRef AppFrm
         {
             get
             {
@@ -120,34 +114,30 @@ namespace Plugin
         {
             _SysXmlDocument = aXmlDocument;
             _ResPath = strResPath;
-            _SysLocalLog = new SysCommon.Log.SysLocalLog(strLogPath);
+            _SysLocalLog = new Fan.Common.Log.SysLocalLog(strLogPath);
             _SysLocalLog.CreateLogFile("系统加载插件日志.txt");
-
             _ListUserPrivilegeID = ListUserPrivilegeID;
-
             //分类解析插件
-            SysCommon.ModSysSetting.WriteLog("分类解析插件"); //@日志测试
+            Fan.Common.ModSysSetting.WriteLog("分类解析插件"); //@日志测试
             try
             {
                 ParsePlugins(pluginCol);
             }
             catch (Exception err)
             {
-                SysCommon.ModSysSetting.WriteLog("分类解析插件错误，信息："+err.Message); //@日志测试
+                Fan.Common.ModSysSetting.WriteLog("分类解析插件错误，信息："+err.Message); //@日志测试
             }
-            SysCommon.ModSysSetting.WriteLog("分类解析插件结束"); //@日志测试
+            Fan.Common.ModSysSetting.WriteLog("分类解析插件结束"); //@日志测试
             //实时刷新命令按钮Enable属性
             _Timer.Interval = 500;
             _Timer.Enabled = true;
             _Timer.Tick+=new EventHandler(Timer_Tick);
         }
-
-        //初始化  added by chulili 20110601 ListUserPrivilegeID在sysmain里面传入一次就可以
         public static void IntialModuleCommon( XmlDocument aXmlDocument, string strResPath, PluginCollection pluginCol, string strLogPath)
         {
             _SysXmlDocument = aXmlDocument;
             _ResPath = strResPath;
-            _SysLocalLog = new SysCommon.Log.SysLocalLog(strLogPath);
+            _SysLocalLog = new Fan.Common.Log.SysLocalLog(strLogPath);
             _SysLocalLog.CreateLogFile("系统加载插件日志.txt");
 
             //_ListUserPrivilegeID = ListUserPrivilegeID;
@@ -160,7 +150,6 @@ namespace Plugin
             _Timer.Enabled = true;
             _Timer.Tick += new EventHandler(Timer_Tick);
         }
-
         /// <summary>
         /// 根据XML初始化主窗体
         /// </summary>
@@ -170,10 +159,9 @@ namespace Plugin
         {
             if (_SysXmlDocument == null || v_dicPlugins == null || pApplication == null) return false;
 
-            _pIAppFrm = pApplication as Plugin.Application.IAppFormRef;
+            _pIAppFrm = pApplication as IAppFormRef;
             //根据XML内容进行插件事件绑定
             LoadEventsByXmlNode();
-
             //根据XML加载系统界面
             return LoadControlsByXmlNode(pApplication);
 
@@ -182,12 +170,11 @@ namespace Plugin
         {
             if (_SysXmlDocument == null || v_dicPlugins == null || pApplication == null) return false;
 
-            _pIAppFrm = pApplication as Plugin.Application.IAppFormRef;
+            _pIAppFrm = pApplication as IAppFormRef;
 
             return LoadDataByXmlNode(pApplication);
 
         }
-
         /// <summary>
         /// 根据XML加载系统界面
         /// </summary>
@@ -204,7 +191,6 @@ namespace Plugin
                 _SysLocalLog.WriteLocalLog("异常：" + "AppFormRef中变量MainForm未设置");
                 return false;
             }
-            
             //修改窗体标题
             string xPath = "//Main";
             XmlNode xmlnode = _SysXmlDocument.SelectSingleNode(xPath);
@@ -218,25 +204,17 @@ namespace Plugin
             {
                 pAppFormRef.Caption = aXmlElement.GetAttribute("Caption");
             }
-
             //创建RibbonControl
-            pAppFormRef.MainForm.Size = new System.Drawing.Size(1028, 742);
+            pAppFormRef.MainForm.Size = new Size(1028, 742);
             DevExpress.XtraBars.Ribbon.RibbonControl aRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            aRibbonControl.Dock = System.Windows.Forms.DockStyle.Top;
-            aRibbonControl.Location = new System.Drawing.Point(4, 1);
+            aRibbonControl.Dock = DockStyle.Top;
+            aRibbonControl.Location = new Point(4, 1);
             aRibbonControl.Name = "ribbonControlMain";
-           // aRibbonControl.Size = new System.Drawing.Size(1028, 102);
-            aRibbonControl.Size = new System.Drawing.Size(1028, 140);
+            aRibbonControl.Size = new Size(1028, 140);
             pAppFormRef.ControlContainer = aRibbonControl as Control;
-
             //创建StartButton
             DevExpress.XtraBars.Ribbon.ApplicationMenu aStartButton = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
-
-
             aStartButton.Name = "buttonSystems";
-
-
-
             _SysLocalLog.WriteLocalLog("完成系统主界面初始化");
             if (xmlnode.HasChildNodes == false)
             {
@@ -252,10 +230,8 @@ namespace Plugin
             string sVisible = "";
             string sEnabled = "";
             string sBackgroudLoad = "";
-
             //初始化加载控件
             bool bRes = true;
-
             foreach (XmlNode xmlnodeChild in xmlnode.ChildNodes)
             {
                 try
@@ -282,7 +258,7 @@ namespace Plugin
                     _SysLocalLog.WriteLocalLog("***************************************");
                     _SysLocalLog.WriteLocalLog("开始加载" + sNodeName);
 
-                    SysCommon.SysLogInfoChangedEvent newEvent = new SysCommon.SysLogInfoChangedEvent("加载" + sNodeCaption + "...");
+                    Fan.Common.SysLogInfoChangedEvent newEvent = new Fan.Common.SysLogInfoChangedEvent("加载" + sNodeCaption + "...");
                     SysLogInfoChnaged(null, newEvent);
 
                     if (sControlType == "UserControl")
@@ -299,14 +275,10 @@ namespace Plugin
                         if (sBackgroudLoad != bool.FalseString.ToLower())
                         {
 
-                            //快捷菜单按钮menuSystemItems的click方法
                             aSysItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(menuSystemItem_Click);
                             #endregion
-
-                            //判断插件中是否存在该项
                             if (v_dicPlugins.ContainsKey(sNodeName))
                             {
-                                //根据IControlRef初始化加载用户自定义控件内容
                                 PluginOnCreate(v_dicPlugins[sNodeName], pApplication);
                             }
                             else
@@ -329,12 +301,7 @@ namespace Plugin
                     _SysLocalLog.WriteLocalLog("出错：" + e.Message);
                 }
             }
-
-            //添加工具、状态栏
             pAppFormRef.MainForm.Controls.Add(aRibbonControl);
-
-
-
             _SysLocalLog.LogClose();
             return bRes;
         }
@@ -365,10 +332,8 @@ namespace Plugin
            string sNodeName = "";
             string sControlType = "";
             string sVisible = "";
-
             //初始化加载控件
             bool bRes = true;
-
             foreach (XmlNode xmlnodeChild in xmlnode.ChildNodes)
             {
                 try
@@ -397,7 +362,6 @@ namespace Plugin
                             continue;
                         }
                     }
-                   
                     _SysLocalLog.WriteLocalLog("完成加载" + sNodeName);
                     _SysLocalLog.WriteLocalLog("***************************************");
 
@@ -411,7 +375,6 @@ namespace Plugin
             _SysLocalLog.LogClose();
             return bRes;
         }
-
         /// <summary>
         /// 匹配所有的Xml节点(菜单栏、工具栏、右键菜单)来构造界面
         /// </summary>
@@ -470,7 +433,7 @@ namespace Plugin
                         }
                         if (!_ListUserPrivilegeID.Contains(sNodeID)) continue;
                     }
-                    SysCommon.SysLogInfoChangedEvent newEvent = new SysCommon.SysLogInfoChangedEvent("加载" + sNodeCaption + "...");
+                    Fan.Common.SysLogInfoChangedEvent newEvent = new Fan.Common.SysLogInfoChangedEvent("加载" + sNodeCaption + "...");
                     SysLogInfoChnaged(null, newEvent);
 
                     if (sControlType == "RibbonTabItem")   //菜单类型节点  根据XML中xmlnodeChild相关属性UI化界面Tab
@@ -567,7 +530,7 @@ namespace Plugin
             }
             if (sVisible == bool.FalseString.ToLower()) return null;
 
-            SysCommon.SysLogInfoChangedEvent newEvent = new SysCommon.SysLogInfoChangedEvent("加载" + sNodeCaption + "...");
+            Fan.Common.SysLogInfoChangedEvent newEvent = new Fan.Common.SysLogInfoChangedEvent("加载" + sNodeCaption + "...");
             SysLogInfoChnaged(null, newEvent);
 
             //实例化菜单栏、工具栏、右键菜单插件对应UI对象
@@ -640,9 +603,6 @@ namespace Plugin
 
             return aBarControl;
         }
-        //<summary>
-        //根据XML匹配添加菜单栏、工具栏、右键菜单等内容子项
-        //</summary>
         private static bool AddItemsByXmlNode(object aControl, XmlNode xmlNodeCol, bool bImageAndText, IApplicationRef pApplication)
         {
             if (xmlNodeCol.HasChildNodes == false)
@@ -698,7 +658,7 @@ namespace Plugin
                     if (sVisible == bool.FalseString.ToLower()) continue;
                     _SysLocalLog.WriteLocalLog("加载" + sNodeName);
 
-                    SysCommon.SysLogInfoChangedEvent newEvent = new SysCommon.SysLogInfoChangedEvent("加载" + sNodeCaption + "...");
+                    Fan.Common.SysLogInfoChangedEvent newEvent = new Fan.Common.SysLogInfoChangedEvent("加载" + sNodeCaption + "...");
                     SysLogInfoChnaged(null, newEvent);
 
                     //判断插件中是否存在该项(注意：sNodeName中可能是组合字符串——代表要实例化插件用于避免冲突)
@@ -847,13 +807,11 @@ namespace Plugin
         private static void ParsePlugins(PluginCollection pluginCol)
         {
             if (pluginCol == null) return;
-
-            //分类解析、获取插件
-            SysCommon.ModSysSetting.WriteLog("parsePluginCol"); //@日志测试
+            Fan.Common.ModSysSetting.WriteLog("parsePluginCol");
             ParsePluginCol parsePluginCol = new ParsePluginCol();
-            SysCommon.ModSysSetting.WriteLog("GetPluginArray start"); //@日志测试
+            Fan.Common.ModSysSetting.WriteLog("GetPluginArray start"); 
             parsePluginCol.GetPluginArray(pluginCol);
-            SysCommon.ModSysSetting.WriteLog("GetPluginArray end"); //@日志测试
+            Fan.Common.ModSysSetting.WriteLog("GetPluginArray end"); 
 
             v_dicPlugins = parsePluginCol.GetPlugins;
             v_dicCommands = parsePluginCol.GetCommands;
@@ -890,41 +848,34 @@ namespace Plugin
         /// <param name="pApplication"></param>
         private static void PluginOnCreate(IPlugin plugin, IApplicationRef pApplication)
         {
-            ICommandRef cmd = plugin as ICommandRef;
-            if (cmd != null)
+            if (plugin is ICommandRef)
             {
+                ICommandRef cmd = plugin as ICommandRef;
                 cmd.OnCreate(pApplication);
             }
-
-
-            IToolRef atool = plugin as IToolRef;
-            if (atool != null)
+            else if (plugin is IToolRef)
             {
+                IToolRef atool = plugin as IToolRef;
                 atool.OnCreate(pApplication);
             }
-
-
-            IMenuRef aMenu = plugin as IMenuRef;
-            if (aMenu != null)
+            else if (plugin is IMenuRef)
             {
+                IMenuRef aMenu = plugin as IMenuRef;
                 aMenu.OnCreate(pApplication);
             }
-
-            IToolBarRef aToolBar = plugin as IToolBarRef;
-            if (aToolBar != null)
+            else if (plugin is IToolBarRef)
             {
+                IToolBarRef aToolBar = plugin as IToolBarRef;
                 aToolBar.OnCreate(pApplication);
             }
-
-            IDockableWindowRef aDockableWindow = plugin as IDockableWindowRef;
-            if (aDockableWindow != null)
+            else if (plugin is IDockableWindowRef)
             {
+                IDockableWindowRef aDockableWindow = plugin as IDockableWindowRef;
                 aDockableWindow.OnCreate(pApplication);
             }
-
-            IControlRef aControl = plugin as IControlRef;
-            if (aControl != null)
+            else if (plugin is IControlRef)
             {
+                IControlRef aControl = plugin as IControlRef;
                 aControl.OnCreate(pApplication);
             }
         }
@@ -1008,7 +959,6 @@ namespace Plugin
             }
         }
         #endregion
-
         private static void BaseItem_Click(object sender, EventArgs e)
         {
             DevExpress.XtraBars.BarItem aBaseItem = sender as DevExpress.XtraBars.BarItem;
@@ -1037,7 +987,6 @@ namespace Plugin
                 pToolRef.OnClick();
             }
         }
-
         private static void Timer_Tick(object sender, EventArgs e)
         {
             if(_dicBaseItems==null) return;
@@ -1069,19 +1018,16 @@ namespace Plugin
                 }
             }
         }
-        //wgf 20110602 左上角系统切换
         private static void menuSystemItem_Click(object sender, EventArgs e)
         {
             DevExpress.XtraBars.BarButtonItem aSysItem = sender as DevExpress.XtraBars.BarButtonItem;
             if (aSysItem == null || _dicTabs == null || _pIAppFrm == null) return;
 
             _pIAppFrm.CurrentSysName = aSysItem.Name;
-            _pIAppFrm.Caption = SysCommon.ModSysSetting.GetSystemName() + aSysItem.Caption; //added by chulili 20111022 修改子系统标题名
+            _pIAppFrm.Caption = Fan.Common.ModSysSetting.GetSystemName() + aSysItem.Caption; 
 
             bool bEnable = false;
             bool bVisible = false;
-
-            //刷新菜单列表 wgf 20111109
             int i = 0;
             Mod.WriteLocalLog("_dicTabs start");
             foreach (KeyValuePair<DevExpress.XtraBars.Ribbon.RibbonPage, string> keyValue in _dicTabs)
@@ -1097,7 +1043,6 @@ namespace Plugin
                 }
             }
             Mod.WriteLocalLog("_dicTabs end");
-            //刷新窗口控件 wgf 20111109
             if (v_dicControls != null)
             {
                 foreach (KeyValuePair<string, IControlRef> keyValue in v_dicControls)

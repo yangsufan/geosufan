@@ -4,9 +4,9 @@ using System.Xml;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using SysCommon;
+using Fan.Common;
 
-namespace Plugin
+namespace Fan.Plugin
 {
     public static class Mod
     {
@@ -27,9 +27,9 @@ namespace Plugin
 
         public static User v_AppUser;
         public static XmlDocument v_SystemXml;
-        public static Plugin.Application.AppForm v_AppForm;
+        public static Fan.Plugin.Application.AppForm v_AppForm;
         public static Dictionary<string, List<string>> m_Dic = new Dictionary<string, List<string>>();//记录图层比例尺 xisheng  20111117
-        private static string _LogFilePath = System.Windows.Forms.Application.StartupPath + "\\..\\Log\\Plugin.txt";
+        private static string _LogFilePath = System.Windows.Forms.Application.StartupPath + "\\..\\Log\\Fan.Plugin.txt";
         public static void WriteLocalLog(string strLog)
         {
             //判断文件是否存在  不存在就创建添加写日志的函数，为了测试加载历史数据的效率

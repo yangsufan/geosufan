@@ -45,9 +45,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoUserManager", "GeoUserMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoUtilities", "GeoUtilities\GeoUtilities.csproj", "{AE24821E-0814-4C91-A076-D647201DAC9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin", "Plugin\Plugin.csproj", "{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fan.Plugin", "Plugin\Fan.Plugin.csproj", "{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysCommon", "SysCommon\SysCommon.csproj", "{D0D978A2-2F5A-41A4-931F-72CDECD61513}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fan.Common", "SysCommon\Fan.Common.csproj", "{D0D978A2-2F5A-41A4-931F-72CDECD61513}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SceneCommonTools", "SceneCommonTools\SceneCommonTools.csproj", "{D220ADA0-F691-416D-AAC2-3455B7490A9C}"
 EndProject
@@ -275,7 +275,7 @@ Global
 		{FD4C4953-4740-47B4-B539-0B1B2C483AA6} = {C06E141D-8F3C-4C2E-8F8F-3A994CB94CC9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 		SolutionGuid = {EC22706C-4205-480C-B473-C557531935EB}
+		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 EndGlobal

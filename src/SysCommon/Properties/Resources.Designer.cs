@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SysCommon.Properties {
+namespace Fan.Common.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SysCommon.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SysCommon.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fan.Common.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,176 +57,6 @@ namespace SysCommon.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap GeoUtilities_ControlsClearSelectionCommand {
-            get {
-                object obj = ResourceManager.GetObject("GeoUtilities.ControlsClearSelectionCommand", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap GeoUtilities_ControlsMapFullExtentCommand {
-            get {
-                object obj = ResourceManager.GetObject("GeoUtilities.ControlsMapFullExtentCommand", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap GeoUtilities_ControlsMapPanTool {
-            get {
-                object obj = ResourceManager.GetObject("GeoUtilities.ControlsMapPanTool", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap GeoUtilities_ControlsMapRefreshViewCommand {
-            get {
-                object obj = ResourceManager.GetObject("GeoUtilities.ControlsMapRefreshViewCommand", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap GeoUtilities_ControlsMapZoomInFixedCommand {
-            get {
-                object obj = ResourceManager.GetObject("GeoUtilities.ControlsMapZoomInFixedCommand", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap GeoUtilities_ControlsMapZoomInTool {
-            get {
-                object obj = ResourceManager.GetObject("GeoUtilities.ControlsMapZoomInTool", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap GeoUtilities_ControlsMapZoomOutFixedCommand {
-            get {
-                object obj = ResourceManager.GetObject("GeoUtilities.ControlsMapZoomOutFixedCommand", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap GeoUtilities_ControlsMapZoomOutTool {
-            get {
-                object obj = ResourceManager.GetObject("GeoUtilities.ControlsMapZoomOutTool", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap GeoUtilities_ControlsMapZoomToLastExtentBackCommand {
-            get {
-                object obj = ResourceManager.GetObject("GeoUtilities.ControlsMapZoomToLastExtentBackCommand", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap GeoUtilities_ControlsMapZoomToLastExtentForwardCommand {
-            get {
-                object obj = ResourceManager.GetObject("GeoUtilities.ControlsMapZoomToLastExtentForwardCommand", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap GeoUtilities_ControlsSelectFeaturesTool {
-            get {
-                object obj = ResourceManager.GetObject("GeoUtilities.ControlsSelectFeaturesTool", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap GeoUtilities_ControlsSelectTool {
-            get {
-                object obj = ResourceManager.GetObject("GeoUtilities.ControlsSelectTool", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap save {
-            get {
-                object obj = ResourceManager.GetObject("save", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap save_as_2 {
-            get {
-                object obj = ResourceManager.GetObject("save_as_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap SysCommon_MapSheet_FaultMapNum {
-            get {
-                object obj = ResourceManager.GetObject("SysCommon.MapSheet.FaultMapNum", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap SysCommon_Mapsheet_MapNum {
-            get {
-                object obj = ResourceManager.GetObject("SysCommon.Mapsheet.MapNum", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap SysCommon_MapSheet_RightMapNum {
-            get {
-                object obj = ResourceManager.GetObject("SysCommon.MapSheet.RightMapNum", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SysCommon
+namespace Fan.Common
 {
     /// <summary>
     /// 进度条内容改变的类型

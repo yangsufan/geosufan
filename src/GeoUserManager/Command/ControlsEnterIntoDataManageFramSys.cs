@@ -11,9 +11,9 @@ namespace GeoUserManager
     // *开发者：陈亚飞
     // *时  间：20110518
     // *=========================================================================
-   public class ControlsEnterIntoDataManageFramSys: Plugin.Interface.CommandRefBase
+   public class ControlsEnterIntoDataManageFramSys: Fan.Plugin.Interface.CommandRefBase
     {
-        private Plugin.Application.IAppDBIntegraRef m_Hook;
+        private Fan.Plugin.Application.IAppDBIntegraRef m_Hook;
        //构造函数
         public ControlsEnterIntoDataManageFramSys()
         {
@@ -53,7 +53,7 @@ namespace GeoUserManager
         {
             get
             {
-                Plugin.Application.IAppFormRef pAppFormRef = m_Hook as Plugin.Application.IAppFormRef;
+                Fan.Plugin.Application.IAppFormRef pAppFormRef = m_Hook as Fan.Plugin.Application.IAppFormRef;
                 if (pAppFormRef != null)
                 {
                     pAppFormRef.OperatorTips = base._Message;
@@ -64,7 +64,7 @@ namespace GeoUserManager
        //清楚按钮的提示信息
         public override void ClearMessage()
         {
-            Plugin.Application.IAppFormRef pAppFormRef = m_Hook as Plugin.Application.IAppFormRef;
+            Fan.Plugin.Application.IAppFormRef pAppFormRef = m_Hook as Fan.Plugin.Application.IAppFormRef;
             if (pAppFormRef != null)
             {
                 pAppFormRef.OperatorTips = string.Empty;
@@ -85,7 +85,7 @@ namespace GeoUserManager
             XmlNode sysNode = sysXml.SelectSingleNode("//Main//System[@Name='" + pSysName + "']");
             if (sysNode == null)
             {
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "不存在Name为" + pSysName + "的系统");
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "不存在Name为" + pSysName + "的系统");
                 return;
             }
             pSysCaption = (sysNode as XmlElement).GetAttribute("Caption").Trim();  //caption
@@ -102,10 +102,10 @@ namespace GeoUserManager
         }
 
        //创建按钮
-        public override void OnCreate(Plugin.Application.IApplicationRef hook)
+        public override void OnCreate(Fan.Plugin.Application.IApplicationRef hook)
         {
             if (hook == null) return;
-            m_Hook = hook as Plugin.Application.IAppDBIntegraRef;
+            m_Hook = hook as Fan.Plugin.Application.IAppDBIntegraRef;
         }
 
     }

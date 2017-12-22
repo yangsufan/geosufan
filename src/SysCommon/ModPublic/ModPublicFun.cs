@@ -5,7 +5,7 @@ using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Carto;
 
-namespace SysCommon
+namespace Fan.Common
 {
     public static class ModPublicFun
     {
@@ -420,7 +420,7 @@ namespace SysCommon
         public static bool GetAllDataSets(string strServer,string strServerName,string strDataBase,string strUser,string strPassWord,string strVersion,string strDataType,out List<string> listDatasets)
         {
             //cyf 20110609 测试数据库连接 包括SDE、PDB、gdb
-            SysCommon.Gis.SysGisDataSet pSysDt = new SysCommon.Gis.SysGisDataSet();
+            Fan.Common.Gis.SysGisDataSet pSysDt = new Fan.Common.Gis.SysGisDataSet();
             Exception pError = null;
             listDatasets = null;
             //if (this.combox_DBFormat.SelectedValue.ToString() == enumInterDBFormat.ARCGISGDB.GetHashCode().ToString())

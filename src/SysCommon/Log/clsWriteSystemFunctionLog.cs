@@ -1,5 +1,5 @@
 ﻿using System;
-namespace SysCommon.Log
+namespace Fan.Common.Log
 {
     public class clsWriteSystemFunctionLog
     {
@@ -71,17 +71,17 @@ namespace SysCommon.Log
             //guozheng 2010-11-22 系统运行日志目录
             try
             {
-                if (!System.IO.Directory.Exists(SysCommon.Log.Module.v_sLogFilePath))
+                if (!System.IO.Directory.Exists(Fan.Common.Log.Module.v_sLogFilePath))
                 {
-                    System.IO.Directory.CreateDirectory(SysCommon.Log.Module.v_sLogFilePath);
+                    System.IO.Directory.CreateDirectory(Fan.Common.Log.Module.v_sLogFilePath);
                 }
-                if (!System.IO.File.Exists(SysCommon.Log.Module.v_sLogFilePath + "\\" + DateTime.Now.ToShortDateString() + ".log"))
+                if (!System.IO.File.Exists(Fan.Common.Log.Module.v_sLogFilePath + "\\" + DateTime.Now.ToShortDateString() + ".log"))
                 {
-                    SysCommon.Log.TextSystemFuntionLOG SysLog = new SysCommon.Log.TextSystemFuntionLOG();
-                    SysLog.CreateLogFile(SysCommon.Log.Module.v_sLogFilePath + "\\" + DateTime.Now.ToShortDateString() + ".log");
-                    //SysLog.Initial(SysCommon.Log.Module.v_sLogFilePath + "\\" + DateTime.Now.ToShortDateString() + ".log", DateTime.Now);
+                    Fan.Common.Log.TextSystemFuntionLOG SysLog = new Fan.Common.Log.TextSystemFuntionLOG();
+                    SysLog.CreateLogFile(Fan.Common.Log.Module.v_sLogFilePath + "\\" + DateTime.Now.ToShortDateString() + ".log");
+                    //SysLog.Initial(Fan.Common.Log.Module.v_sLogFilePath + "\\" + DateTime.Now.ToShortDateString() + ".log", DateTime.Now);
                 }
-                this.m_sLofFileName = SysCommon.Log.Module.v_sLogFilePath + "\\" + DateTime.Now.ToShortDateString() + ".log";
+                this.m_sLofFileName = Fan.Common.Log.Module.v_sLogFilePath + "\\" + DateTime.Now.ToShortDateString() + ".log";
             }
             catch
             {

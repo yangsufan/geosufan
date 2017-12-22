@@ -7,9 +7,9 @@ using System.Xml;
 
 namespace GeoUserManager
 {
-    public class CommandSaveToDatabase : Plugin.Interface.CommandRefBase
+    public class CommandSaveToDatabase : Fan.Plugin.Interface.CommandRefBase
     {
-        private Plugin.Application.IAppGisUpdateRef _AppHk;
+        private Fan.Plugin.Application.IAppGisUpdateRef _AppHk;
 
         public CommandSaveToDatabase()
         {
@@ -38,7 +38,7 @@ namespace GeoUserManager
         {
             get
             {
-                Plugin.Application.IAppFormRef pAppFormRef = _AppHk as Plugin.Application.IAppFormRef;
+                Fan.Plugin.Application.IAppFormRef pAppFormRef = _AppHk as Fan.Plugin.Application.IAppFormRef;
                 if (pAppFormRef != null)
                 {
                     pAppFormRef.OperatorTips = base._Message;
@@ -49,7 +49,7 @@ namespace GeoUserManager
 
         public override void ClearMessage()
         {
-            Plugin.Application.IAppFormRef pAppFormRef = _AppHk as Plugin.Application.IAppFormRef;
+            Fan.Plugin.Application.IAppFormRef pAppFormRef = _AppHk as Fan.Plugin.Application.IAppFormRef;
             if (pAppFormRef != null)
             {
                 pAppFormRef.OperatorTips = string.Empty;
@@ -67,7 +67,7 @@ namespace GeoUserManager
                 //上传到符号库中去
                 Exception Err;
                 bool result = false;
-                SysCommon.Gis.SysGisDB vGisdb = new SysCommon.Gis.SysGisDB();
+                Fan.Common.Gis.SysGisDB vGisdb = new Fan.Common.Gis.SysGisDB();
                 result = vGisdb.SetWorkspace(SdeConfig.Server, SdeConfig.Instance, SdeConfig.Database, SdeConfig.User, SdeConfig.Password, SdeConfig.Version, out Err);
                 if (!result) return;
 
@@ -98,19 +98,19 @@ namespace GeoUserManager
 
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(pCursor);
 
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "符号信息上传服务器成功！");
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "符号信息上传服务器成功！");
             }
             catch (Exception ex)
             {
 
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "符号信息上传服务器出现错误！" + ex.Message);
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "符号信息上传服务器出现错误！" + ex.Message);
             }
         }
 
-        public override void OnCreate(Plugin.Application.IApplicationRef hook)
+        public override void OnCreate(Fan.Plugin.Application.IApplicationRef hook)
         {
             if (hook == null) return;
-            _AppHk = hook as Plugin.Application.IAppGisUpdateRef;
+            _AppHk = hook as Fan.Plugin.Application.IAppGisUpdateRef;
 
         }
     }

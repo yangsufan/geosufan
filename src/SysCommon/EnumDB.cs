@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SysCommon
+namespace Fan.Common
 {
     //WorkSpace¿‡–Õ
     public enum enumWSType

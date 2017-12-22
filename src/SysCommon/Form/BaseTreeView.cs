@@ -8,7 +8,7 @@ using System.Text;
 /// <summary>
 /// 基础树控件
 /// </summary>
-namespace SysCommon
+namespace Fan.Common
 {
     public partial class BaseTreeView : DevExpress.XtraTreeList.TreeList
     {

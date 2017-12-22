@@ -7,11 +7,11 @@ using System.Text;
 using System.Xml;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
-using SysCommon.Gis;
-using SysCommon.Error;
-using SysCommon.Authorize;
+using Fan.Common.Gis;
+using Fan.Common.Error;
+using Fan.Common.Authorize;
 using ESRI.ArcGIS.esriSystem;
-using SysCommon;
+using Fan.Common;
 
 namespace GeoUserManager
 {
@@ -69,7 +69,7 @@ namespace GeoUserManager
         {
             //得到Xml的System节点,根据XML加载插件界面
             string xPath = ".//System[@Name='" + this.Name + "']";
-            Plugin.ModuleCommon.LoadButtonViewByXmlNode(ModData.v_AppPrivileges.ControlContainer, xPath, ModData.v_AppPrivileges);
+            Fan.Plugin.ModuleCommon.LoadButtonViewByXmlNode(ModData.v_AppPrivileges.ControlContainer, xPath, ModData.v_AppPrivileges);
 
             _dicContextMenu = ModData.v_AppPrivileges.DicContextMenu;
 
@@ -84,7 +84,7 @@ namespace GeoUserManager
                 ModuleOperator.DisplayInLstView(doc, priTree);
             }
             //将图层目录从工作库拷贝到本地目录
-            ModuleOperator.CopyLayerTreeXmlFromDataBase(Plugin.ModuleCommon.TmpWorkSpace, ModData.m_DataXmlPath);
+            ModuleOperator.CopyLayerTreeXmlFromDataBase(Fan.Plugin.ModuleCommon.TmpWorkSpace, ModData.m_DataXmlPath);
             XmlDocument datadoc = new XmlDocument();
             datadoc.Load(ModData.m_DataXmlPath);
             if (datadoc != null)
@@ -469,7 +469,7 @@ namespace GeoUserManager
         public void RefreshDataList()
         {
             //将图层目录从工作库拷贝到本地目录
-            ModuleOperator.CopyLayerTreeXmlFromDataBase(Plugin.ModuleCommon.TmpWorkSpace, ModData.m_DataXmlPath);
+            ModuleOperator.CopyLayerTreeXmlFromDataBase(Fan.Plugin.ModuleCommon.TmpWorkSpace, ModData.m_DataXmlPath);
             XmlDocument datadoc = new XmlDocument();
             datadoc.Load(ModData.m_DataXmlPath);
             if (datadoc != null)
@@ -711,7 +711,7 @@ namespace GeoUserManager
                     //cyf 20110613  :add：添加对树节点的选中状态的保护，不然会死机
                     if (roleTree.SelectedNode == null)
                     {
-                        SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "请选择一个角色节点。");
+                        Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "请选择一个角色节点。");
                         return;
                     }
                     //end

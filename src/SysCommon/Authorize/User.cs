@@ -5,7 +5,7 @@ using Fan.DataBase;
 using System.Data;
 using Fan.DataBase.Module;
 
-namespace SysCommon
+namespace Fan.Common
 {
     public class User
     {

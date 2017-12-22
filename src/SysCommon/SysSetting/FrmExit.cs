@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SysCommon
+namespace Fan.Common
 {
     public partial class FrmExit :BaseForm
     {

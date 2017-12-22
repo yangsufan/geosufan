@@ -5,7 +5,7 @@ using System.Xml;
 using System.IO;
 using ESRI.ArcGIS.Carto;
 
-namespace SysCommon.SelectLayer
+namespace Fan.Common.SelectLayer
 {
     public class ClsSelectLayerByTree
     {
@@ -157,7 +157,7 @@ namespace SysCommon.SelectLayer
                     //判断Map中是否存在
                     if (pMap != null && xmlElementChild.Name == "Layer")
                     {
-                        player = SysCommon.ModuleMap.GetLayerByNodeKey(null, pMap, sNodeKey, null);
+                        player = Fan.Common.ModuleMap.GetLayerByNodeKey(null, pMap, sNodeKey, null);
                         if (!isTbClick)//判断是不是点击同步了
                         {
                             if (player == null) continue;
@@ -228,7 +228,7 @@ namespace SysCommon.SelectLayer
                 //判断Map中是否存在
                 if (pMap != null && xmlElementChild.Name == "Layer")
                 {
-                    player = SysCommon.ModuleMap.GetLayerByNodeKey(null, pMap, sNodeKey, null);
+                    player = Fan.Common.ModuleMap.GetLayerByNodeKey(null, pMap, sNodeKey, null);
                     if (!isTbClick)//判断是不是点击同步了
                     {
                         if (player == null) continue;

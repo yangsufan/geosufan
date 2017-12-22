@@ -11,11 +11,11 @@ using ESRI.ArcGIS.DataSourcesRaster;
 using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Geometry;
-using SysCommon.Gis;
-using SysCommon.Error;
+using Fan.Common.Gis;
+using Fan.Common.Error;
 using System.Windows.Forms;
 using ESRI.ArcGIS.GISClient;
-namespace SysCommon
+namespace Fan.Common
 {
     public static class ModuleMap
     {
@@ -359,7 +359,7 @@ namespace SysCommon
         }
         
        
-        public static void ReadLayerToDataBaseEx(ILayer pLayer, IWorkspace pWKS, bool iscover,SysCommon.CProgress vProg)
+        public static void ReadLayerToDataBaseEx(ILayer pLayer, IWorkspace pWKS, bool iscover,Fan.Common.CProgress vProg)
         {
             if (pLayer == null)
                 return;
@@ -466,7 +466,7 @@ namespace SysCommon
             if (pTransactions.InTransaction) pTransactions.CommitTransaction();
             return;
         }
-        public static void ReadGroupLayerToDataBaseEx(IGroupLayer pGroupLayer,IWorkspace pWKS, bool iscover,SysCommon.CProgress vProg)
+        public static void ReadGroupLayerToDataBaseEx(IGroupLayer pGroupLayer,IWorkspace pWKS, bool iscover,Fan.Common.CProgress vProg)
         {
             ICompositeLayer pComLayer = pGroupLayer as ICompositeLayer;
             if (pComLayer != null)
@@ -486,7 +486,7 @@ namespace SysCommon
             }
         }
         //added by chulili 20110711 改为直接把layer保存为字段值，导入mxd符号模板，存储到工作库里面，存储的表名为Render
-        public static bool ReadmxdToDataBaseEx(string mxdpath, string password, IWorkspace pWKS, bool iscover,SysCommon.CProgress vProgress)
+        public static bool ReadmxdToDataBaseEx(string mxdpath, string password, IWorkspace pWKS, bool iscover,Fan.Common.CProgress vProgress)
         {
             try
             {
@@ -651,7 +651,7 @@ namespace SysCommon
         {
             Exception exError;
             DicDataLibWks.Clear();
-            SysCommon.Gis.SysGisTable  sysTable = new SysCommon.Gis.SysGisTable(pConfigWks);
+            Fan.Common.Gis.SysGisTable  sysTable = new Fan.Common.Gis.SysGisTable(pConfigWks);
             List<Dictionary<string, object>> lstDicData = sysTable.GetRows("DATABASEMD", "", out exError);
             if (lstDicData == null)
                 return;
@@ -703,12 +703,12 @@ namespace SysCommon
             InitDBSourceDic(pConfigWks, DicDataLibWks, null);
         }
 
-        ////初始化图层名称数据字典（英文名映射中文名）key:英文  value:中文   ZQ 2011020  modify 移植到sysCommon
+        ////初始化图层名称数据字典（英文名映射中文名）key:英文  value:中文   ZQ 2011020  modify 移植到Fan.Common
         //public static void InitLayerNameDic(IWorkspace pConfigWks, IDictionary<string, string > DicLayername)
         //{
         //    Exception exError=null;
         //    DicLayername.Clear();
-        //    SysCommon.Gis.SysGisTable sysTable = new SysCommon.Gis.SysGisTable(pConfigWks);
+        //    Fan.Common.Gis.SysGisTable sysTable = new Fan.Common.Gis.SysGisTable(pConfigWks);
         //    List<Dictionary<string, object>> lstDicData = sysTable.GetRows("标准图层代码表", "", out exError);
         //    if (lstDicData == null)
         //        return;
@@ -1222,7 +1222,7 @@ namespace SysCommon
         {
             Exception exError = null;
             IWorkspace pWorkspace = null;
-            SysCommon.Gis.SysGisTable  sysTable = new SysCommon.Gis.SysGisTable(pWks);
+            Fan.Common.Gis.SysGisTable  sysTable = new Fan.Common.Gis.SysGisTable(pWks);
             Dictionary<string, object> DicData = sysTable.GetRow("DATABASEMD", "ID="+strConnectKey+"", out exError);
             if (DicData == null)
                 return pWorkspace;
@@ -2141,7 +2141,7 @@ namespace SysCommon
         public static IDictionary<string, IWorkspace> _DicDataLibWks = new Dictionary<string, IWorkspace>();
 
 
-        //changed by chulili 20110922 作为全局变量放到SysCommon工程里面
+        //changed by chulili 20110922 作为全局变量放到Fan.Common工程里面
         //private  static bool _IsLayerTreeChanged = false;//added by chulili 20110701 表示图层目录配置是否有所修改
         //public static bool IsLayerTreeChanged
         //{

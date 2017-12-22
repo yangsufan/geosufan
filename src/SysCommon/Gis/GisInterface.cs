@@ -7,7 +7,7 @@ using System.Collections;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 
-namespace SysCommon.Gis
+namespace Fan.Common.Gis
 {
     public interface IGisDB
     {
@@ -21,7 +21,7 @@ namespace SysCommon.Gis
             //SDE连接
             bool SetWorkspace(String sServer, String sService, String sDatabase, String sUser, String sPassword,string strVersion,out Exception eError);
             //FDB、PDB连接
-            bool SetWorkspace(string sFilePath, SysCommon.enumWSType wstype, out Exception eError);
+            bool SetWorkspace(string sFilePath, Fan.Common.enumWSType wstype, out Exception eError);
             #endregion
         #endregion
 
@@ -238,7 +238,7 @@ namespace SysCommon.Gis
     public interface IGisCommon
     {
         //设置工作空间
-        bool SetWorkSpace(XmlElement aElemnet, SysCommon.enumWSType wstype);
+        bool SetWorkSpace(XmlElement aElemnet, Fan.Common.enumWSType wstype);
 
         #region 异构 创建数据表
         bool CreateTable(XmlElement aTableElement);

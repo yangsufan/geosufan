@@ -7,9 +7,9 @@ using ESRI.ArcGIS.Carto;
 
 namespace GeoUserManager
 {
-    public class ControlsMoveUp : Plugin.Interface.CommandRefBase
+    public class ControlsMoveUp : Fan.Plugin.Interface.CommandRefBase
     {
-        private Plugin.Application.IAppPrivilegesRef m_Hook;
+        private Fan.Plugin.Application.IAppPrivilegesRef m_Hook;
         public ControlsMoveUp()
         {
             base._Name = "GeoUserManager.ControlsMoveUp";
@@ -63,7 +63,7 @@ namespace GeoUserManager
         {
             get
             {
-                Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Plugin.Application.IAppPrivilegesRef;
+                Fan.Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Fan.Plugin.Application.IAppPrivilegesRef;
                 if (pAppFormRef != null)
                 {
                     pAppFormRef.OperatorTips = base._Message;
@@ -74,7 +74,7 @@ namespace GeoUserManager
 
         public override void ClearMessage()
         {
-            Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Plugin.Application.IAppPrivilegesRef;
+            Fan.Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Fan.Plugin.Application.IAppPrivilegesRef;
             if (pAppFormRef != null)
             {
                 pAppFormRef.OperatorTips = string.Empty;
@@ -106,10 +106,10 @@ namespace GeoUserManager
             }
         }
 
-        public override void OnCreate(Plugin.Application.IApplicationRef hook)
+        public override void OnCreate(Fan.Plugin.Application.IApplicationRef hook)
         {
             if (hook == null) return;
-            m_Hook = hook as Plugin.Application.IAppPrivilegesRef;
+            m_Hook = hook as Fan.Plugin.Application.IAppPrivilegesRef;
         }
 
     }

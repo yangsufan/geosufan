@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
-using SysCommon.Gis;
+using Fan.Common.Gis;
 
 namespace GeoUserManager
 {
     public static class ModData
     {
-        public static Plugin.Application.AppPrivileges v_AppPrivileges;
+        public static Fan.Plugin.Application.AppPrivileges v_AppPrivileges;
         public static string v_ConfigPath = Application.StartupPath + "\\conn.dat";
         public readonly static string m_SysXmlPath = Application.StartupPath + "\\..\\Res\\Xml\\SysXml.xml";
         public readonly static string m_DataXmlPath = Application.StartupPath + "\\..\\Res\\Xml\\权限图层树.xml";
@@ -41,7 +41,7 @@ namespace GeoUserManager
     }
     public static class ModFrameData
     {
-        public static Plugin.Application.AppPrivileges v_AppPrivileges;
+        public static Fan.Plugin.Application.AppPrivileges v_AppPrivileges;
         public static string v_ConfigPath = Application.StartupPath + "\\conn.dat";
 
         //记录数据操作时间
@@ -51,7 +51,7 @@ namespace GeoUserManager
 
         //======================================================
         //系统运行日志  cyf 20110518
-        public static SysCommon.Log.clsWriteSystemFunctionLog v_SysLog;
+        public static Fan.Common.Log.clsWriteSystemFunctionLog v_SysLog;
         public static string m_SysXmlPath = Application.StartupPath + "\\..\\Res\\Xml\\SysXml.Xml";                 //所有系统界面xml
         //系统维护库连接信息 cyf 20110520
         public readonly static string v_AppDBConectXml = Application.StartupPath + "\\AppDBConectInfo.xml";////////////系统维护库连接字符串 

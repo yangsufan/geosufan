@@ -4,9 +4,9 @@ using System.Text;
 
 namespace GeoUserManager
 {
-    public class ControlsMoveDown : Plugin.Interface.CommandRefBase
+    public class ControlsMoveDown : Fan.Plugin.Interface.CommandRefBase
     {
-        private Plugin.Application.IAppPrivilegesRef m_Hook;
+        private Fan.Plugin.Application.IAppPrivilegesRef m_Hook;
         public ControlsMoveDown()
         {
             base._Name = "GeoUserManager.ControlsMoveDown";
@@ -62,7 +62,7 @@ namespace GeoUserManager
         {
             get
             {
-                Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Plugin.Application.IAppPrivilegesRef;
+                Fan.Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Fan.Plugin.Application.IAppPrivilegesRef;
                 if (pAppFormRef != null)
                 {
                     pAppFormRef.OperatorTips = base._Message;
@@ -73,7 +73,7 @@ namespace GeoUserManager
 
         public override void ClearMessage()
         {
-            Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Plugin.Application.IAppPrivilegesRef;
+            Fan.Plugin.Application.IAppPrivilegesRef pAppFormRef = m_Hook as Fan.Plugin.Application.IAppPrivilegesRef;
             if (pAppFormRef != null)
             {
                 pAppFormRef.OperatorTips = string.Empty;
@@ -105,10 +105,10 @@ namespace GeoUserManager
             }
         }
 
-        public override void OnCreate(Plugin.Application.IApplicationRef hook)
+        public override void OnCreate(Fan.Plugin.Application.IApplicationRef hook)
         {
             if (hook == null) return;
-            m_Hook = hook as Plugin.Application.IAppPrivilegesRef;
+            m_Hook = hook as Fan.Plugin.Application.IAppPrivilegesRef;
         }
 
     }

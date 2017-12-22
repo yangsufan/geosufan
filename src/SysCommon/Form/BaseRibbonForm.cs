@@ -8,7 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 
-namespace SysCommon
+namespace Fan.Common
 {
     public partial class BaseRibbonForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {

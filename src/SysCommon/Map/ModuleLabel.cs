@@ -6,7 +6,7 @@ using System.Xml;
 using ESRI.ArcGIS.Display;
 using stdole;
 
-namespace SysCommon
+namespace Fan.Common
 {
     public static class ModuleLabel
     {

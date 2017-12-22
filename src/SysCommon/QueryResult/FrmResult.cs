@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections;
 
-namespace SysCommon
+namespace Fan.Common
 {
     public partial class FrmResult :BaseForm
     {

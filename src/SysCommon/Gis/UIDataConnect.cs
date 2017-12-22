@@ -9,7 +9,7 @@ using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.DataSourcesGDB;
 using System.IO;
-namespace SysCommon.Gis
+namespace Fan.Common.Gis
 {
     public partial class UIDataConnect : BaseControl
     {
@@ -219,14 +219,14 @@ namespace SysCommon.Gis
 
                 if (pTempWks == null && err!=null )
                 {
-                    SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "无法连接数据库：" + this.txtServer.Text + err.Message);
+                    Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "无法连接数据库：" + this.txtServer.Text + err.Message);
                     return null;
                 }
 
             }
             catch (Exception  ex)
             {
-                SysCommon.Error.ErrorHandle.ShowFrmErrorHandle("提示", "无法连接数据库：" + this.txtServer.Text + " " + ex.Message);
+                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", "无法连接数据库：" + this.txtServer.Text + " " + ex.Message);
             }
 
             return pTempWks;

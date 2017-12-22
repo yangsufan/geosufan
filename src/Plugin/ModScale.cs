@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.Collections;
 using System.IO;
 using System.Xml;
-namespace Plugin
+namespace Fan.Plugin
 {
     public static class ModScale
     {

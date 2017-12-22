@@ -8,9 +8,9 @@ using System.IO;
 using System.Reflection;
 using System.Xml;
 
-using Plugin.Interface;
+using Fan.Plugin.Interface;
 
-namespace Plugin.Parse
+namespace Fan.Plugin.Parse
 {
     #region 插件接口获取访问与动态加载、解析
     //插件接口容器
@@ -97,105 +97,82 @@ namespace Plugin.Parse
             return new PluginCollectionEnumerator(this);
         }
     }
-
     //插件接口迭代器
     public class PluginCollectionEnumerator : IEnumerator
     {
         private IEnumerable temp;
         private IEnumerator enumerator;
-
         public PluginCollectionEnumerator(PluginCollection PluginCollection)
         {
             temp = (IEnumerable)PluginCollection;
             enumerator = temp.GetEnumerator();
         }
-
         public object Current
         {
             get { return enumerator.Current; }
         }
-
         public bool MoveNext()
         {
             return enumerator.MoveNext();
         }
-
         public void Reset()
         {
             enumerator.Reset();
         }
     }
-
     //插件接口分类解析
     public class ParsePluginCol
     {
         // plugin集合
         private Dictionary<string, IPlugin> dicPlugins = new Dictionary<string, IPlugin>();
-
         //command集合
         private Dictionary<string, ICommandRef> dicCommands = new Dictionary<string, ICommandRef>();
-
         //tool集合
         private Dictionary<string, IToolRef> dicTools = new Dictionary<string, IToolRef>();
-
         //memu集合
         private Dictionary<string, IMenuRef> dicMenus = new Dictionary<string, IMenuRef>();
-
         //toolbar集合
         private Dictionary<string, IToolBarRef> dicToolBars = new Dictionary<string, IToolBarRef>();
-
         //DockableWindow集合
         private Dictionary<string, IDockableWindowRef> dicDockableWindows = new Dictionary<string, IDockableWindowRef>();
-
         //control集合
         private Dictionary<string, IControlRef> dicControls = new Dictionary<string, IControlRef>();
-
         //类型集合
         private ArrayList ArraylstCommandCategory = new ArrayList();
-
         public Dictionary<string, IPlugin> GetPlugins
         {
             get { return this.dicPlugins; }
         }
-
         public Dictionary<string, ICommandRef> GetCommands
         {
             get { return this.dicCommands; }
         }
-
         public Dictionary<string, IToolRef> GetTools
         {
             get { return this.dicTools; }
         }
-
         public Dictionary<string, IMenuRef> GetMenus
         {
             get { return this.dicMenus; }
         }
-
         public Dictionary<string, IToolBarRef> GetToolBars
         {
             get { return this.dicToolBars; }
         }
-
         public Dictionary<string, IDockableWindowRef> GetDockableWindows
         {
             get { return this.dicDockableWindows; }
         }
-
         public Dictionary<string, IControlRef> GetControls
         {
             get { return this.dicControls; }
         }
-
         public ArrayList GetCommandCategory
         {
             get { return this.ArraylstCommandCategory; }
         }
-
         public void GetPluginArray(PluginCollection pluginCol)
         {
-
             foreach (IPlugin plugin in pluginCol)
             {
                 try
@@ -204,7 +181,6 @@ namespace Plugin.Parse
                     {
                         dicPlugins.Add(plugin.ToString(), plugin);
                     }
-
                     ICommandRef cmd = plugin as ICommandRef;
                     if (cmd != null)
                     {
@@ -221,8 +197,6 @@ namespace Plugin.Parse
                             }
                         }
                     }
-
-
                     IToolRef atool = plugin as IToolRef;
                     if (atool != null)
                     {
@@ -239,8 +213,6 @@ namespace Plugin.Parse
                             }
                         }
                     }
-
-
                     IMenuRef aMenu = plugin as IMenuRef;
                     if (aMenu != null)
                     {
@@ -249,7 +221,6 @@ namespace Plugin.Parse
                             dicMenus.Add(aMenu.ToString(), aMenu);
                         }
                     }
-
                     IToolBarRef aToolBar = plugin as IToolBarRef;
                     if (aToolBar != null)
                     {
@@ -258,7 +229,6 @@ namespace Plugin.Parse
                             dicToolBars.Add(aToolBar.ToString(), aToolBar);
                         }
                     }
-
                     IDockableWindowRef aDockableWindow = plugin as IDockableWindowRef;
                     if (aDockableWindow != null)
                     {
@@ -267,7 +237,6 @@ namespace Plugin.Parse
                             dicDockableWindows.Add(aDockableWindow.ToString(), aDockableWindow);
                         }
                     }
-
                     IControlRef aControl = plugin as IControlRef;
                     if (aControl != null)
                     {
@@ -279,12 +248,11 @@ namespace Plugin.Parse
                 }
                 catch (Exception err)
                 {
-                    SysCommon.ModSysSetting.WriteLog("GetPluginArray 函数内错误，信息：" + err.Message);//@日志测试
+                    Fan.Common.ModSysSetting.WriteLog("GetPluginArray 函数内错误，信息：" + err.Message);//@日志测试
                 }
             }
         }
     }
-
     //根据反射机制获取插件并装入插件接口容器
     public class PluginHandle
     {
@@ -300,7 +268,6 @@ namespace Plugin.Parse
                 _pluginFolder = value;
             }
         }
-
         private void GetPluginObject(PluginCollection PluginCol, Type type)
         {
             IPlugin plugin = null;
@@ -322,7 +289,6 @@ namespace Plugin.Parse
                 }
             }
         }
-
         public PluginCollection GetPluginFromDLL()
         {
             //插件接口容器

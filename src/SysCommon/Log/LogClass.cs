@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-namespace SysCommon.Log
+namespace Fan.Common.Log
 {
     //本地日志
     public class SysLocalLog

@@ -7,7 +7,7 @@
     <ProjectGuid>{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Plugin</RootNamespace>
+    <RootNamespace>Fan.Plugin</RootNamespace>
     <AssemblyName>Plugin</AssemblyName>
     <SccProjectName>
     </SccProjectName>
@@ -142,9 +142,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SysCommon\SysCommon.csproj">
+    <ProjectReference Include="..\SysCommon\Fan.Common.csproj">
       <Project>{D0D978A2-2F5A-41A4-931F-72CDECD61513}</Project>
-      <Name>SysCommon</Name>
+      <Name>Fan.Common</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

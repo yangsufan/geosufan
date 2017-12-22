@@ -1,4 +1,4 @@
-﻿namespace Plugin
+﻿namespace Fan.Plugin
 {
     partial class SelectLayerByTree
     {

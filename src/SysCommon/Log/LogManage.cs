@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SysCommon
+namespace Fan.Common
 {
     public static class LogManage
     {
         private static string m_sysLogFileName = Application.StartupPath + "\\..\\Log\\log.log";
-        private static SysCommon.Log.ISysLog m_sysLog = new SysCommon.Log.SysLogClass(m_sysLogFileName);
-        private static SysCommon.Log.ILog m_functionLog = new SysCommon.Log.FunctionLogClass();
+        private static Fan.Common.Log.ISysLog m_sysLog = new Fan.Common.Log.SysLogClass(m_sysLogFileName);
+        private static Fan.Common.Log.ILog m_functionLog = new Fan.Common.Log.FunctionLogClass();
 
         public static void WriteErrorLog(Exception ex)
         {

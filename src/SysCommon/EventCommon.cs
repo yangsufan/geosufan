@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SysCommon
+namespace Fan.Common
 {
     #region 系统登陆时信息提示 委托事件定义
     //定义委托

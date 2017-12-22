@@ -5,14 +5,14 @@ using System.Xml;
 using System.Windows.Forms;
 using System.IO;
 using ESRI.ArcGIS.Geodatabase;
-using SysCommon.Gis;
+using Fan.Common.Gis;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.DataSourcesGDB;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.Carto;
 
 
-namespace SysCommon
+namespace Fan.Common
 {
     public static class ModSysSetting
     {
@@ -26,7 +26,7 @@ namespace SysCommon
 
         //加载xml文件
         public static string m_strInitXmlPath = Application.StartupPath + "\\..\\Res\\Xml\\DataTreeInitIndex.xml";
-        //added by chulili 图层目录是否修改的标志  以前放在GeoLayerTreeLib工程，现在挪到SysCommon工程
+        //added by chulili 图层目录是否修改的标志  以前放在GeoLayerTreeLib工程，现在挪到Fan.Common工程
         private static bool _IsLayerTreeChanged = false;//该变量用于配置系统内部
         public static bool IsLayerTreeChanged
         {
@@ -81,7 +81,7 @@ namespace SysCommon
         public static string GetLinBanLayerNodeKey(IWorkspace pTmpWorkSpace)
         {
             string strConfigPath = Application.StartupPath + "\\..\\res\\xml\\小班查询.xml";
-            SysCommon.ModSysSetting.CopyConfigXml(pTmpWorkSpace, "最大林斑号", strConfigPath);
+            Fan.Common.ModSysSetting.CopyConfigXml(pTmpWorkSpace, "最大林斑号", strConfigPath);
             string LinBanLayerKey = "";
             XmlDocument pXmlDoc = new XmlDocument();
             pXmlDoc.Load(strConfigPath);
@@ -131,7 +131,7 @@ namespace SysCommon
         {
             try
             {
-                SysGisTable mSystable = new SysCommon.Gis.SysGisTable(pWks);
+                SysGisTable mSystable = new Fan.Common.Gis.SysGisTable(pWks);
                 Exception err = null;
                 Dictionary<string, object> pDic = mSystable.GetRow("SYSSETTING", "SETTINGNAME='" + Settingname + "'", out err);
                 if (pDic != null)
@@ -168,7 +168,7 @@ namespace SysCommon
                 try
                 {
                     //读取数据库表内容
-                    SysCommon.Gis.SysGisTable sysTable = new SysCommon.Gis.SysGisTable(pWorkspace);
+                    Fan.Common.Gis.SysGisTable sysTable = new Fan.Common.Gis.SysGisTable(pWorkspace);
                     Exception err = null;
                     Dictionary<string, object> pDic = sysTable.GetRow(_MxdListTable, strCondition , out err);
                     if (pDic != null)
@@ -210,7 +210,7 @@ namespace SysCommon
                 try
                 {
                     //读取数据库表内容
-                    SysCommon.Gis.SysGisTable sysTable = new SysCommon.Gis.SysGisTable(pWorkspace);
+                    Fan.Common.Gis.SysGisTable sysTable = new Fan.Common.Gis.SysGisTable(pWorkspace);
                     Exception err = null;
                     Dictionary<string, object> pDic = sysTable.GetRow("SYSSETTING", "SETTINGNAME='" + strSettingName + "'", out err);
                     if (pDic != null)

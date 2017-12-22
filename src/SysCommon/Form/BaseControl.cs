@@ -12,7 +12,7 @@ using DevExpress.XtraEditors;
  * 创建日期：2017-11-10
  * 描述：所有相关控件基类
  */
-namespace SysCommon
+namespace Fan.Common
 {
     public partial class BaseControl : DevExpress.XtraEditors.XtraUserControl
     {

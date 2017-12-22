@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SysCommon.XML
+namespace Fan.Common.XML
 {
     public class XMLClass
     {

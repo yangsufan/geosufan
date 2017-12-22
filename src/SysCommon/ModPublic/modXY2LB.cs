@@ -3,7 +3,7 @@ using System.Collections.Generic;
 //using System.Linq;
 using System.Text;
 
-namespace SysCommon
+namespace Fan.Common
 {
     public static class modXY2LB
     {

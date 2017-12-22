@@ -7,13 +7,13 @@ using System.Xml;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using SysCommon;
+using Fan.Common;
 using System.Collections;
 using Fan.DataBase.Module;
 
 namespace GDBM
 {
-    public partial class frmLogin :SysCommon.BaseForm
+    public partial class frmLogin :Fan.Common.BaseForm
     {
         public frmLogin()
         {

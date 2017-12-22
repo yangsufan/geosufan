@@ -1,4 +1,4 @@
-﻿namespace SysCommon.Gis
+﻿namespace Fan.Common.Gis
 {
     partial class UIDataConnect
     {

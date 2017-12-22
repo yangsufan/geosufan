@@ -18,7 +18,7 @@ using System.Collections;
 using System.Xml;
 using ESRI.ArcGIS.DataSourcesGDB;
 
-namespace SysCommon
+namespace Fan.Common
 {
     public partial class BottomQueryBar : BaseControl
     {
@@ -101,7 +101,7 @@ namespace SysCommon
         //            if (fields != "Shape"&&fields!="SHAPE")
         //            {
         //                DataColumn colName = new DataColumn(fields);
-        //                colName.Caption = SysCommon.ModField.GetChineseNameOfField(fields);
+        //                colName.Caption = Fan.Common.ModField.GetChineseNameOfField(fields);
         //                colName.DataType = System.Type.GetType("System.String");
         //                m_dataSourceGrid.Columns.Add(colName);
         //            }
@@ -126,7 +126,7 @@ namespace SysCommon
         //public void EmergeQueryData(IMap pMap, IGeometry pGeometry, esriSpatialRelEnum pesriSpatialRelEnum)
         //{
         //    ListLayerName.Clear();
-        //    SysCommon.ScreenDraw.list.Add(AfterDraw);
+        //    Fan.Common.ScreenDraw.list.Add(AfterDraw);
         //   // m_dataSourceGrid.Rows.Clear();
         //    m_Map = pMap;
         //    m_Geometry = pGeometry;
@@ -159,12 +159,12 @@ namespace SysCommon
         //    }
         //    ILayer pDefaultLayer = null;
 
-        //    pDefaultLayer = SysCommon.ModuleMap.GetLayerByNodeKey(ListLayer, _DefaultNodeKey);
+        //    pDefaultLayer = Fan.Common.ModuleMap.GetLayerByNodeKey(ListLayer, _DefaultNodeKey);
 
         //    if (pDefaultLayer == null)
         //    {
         //        pDefaultLayer = ListLayer[0];
-        //        _DefaultNodeKey = SysCommon.ModuleMap.GetNodeKeyOfLayer(pDefaultLayer);
+        //        _DefaultNodeKey = Fan.Common.ModuleMap.GetNodeKeyOfLayer(pDefaultLayer);
         //    }
 
         //    InitializeGrid(pDefaultLayer, pGeometry, pesriSpatialRelEnum);
@@ -186,7 +186,7 @@ namespace SysCommon
         ///// <param name="pFeatLay"></param>
         ///// <param name="pQueryFilter"></param>
         ///// <param name="pSelectionResult"></param>
-        //public void EmergeQueryData(IMap pMap, IFeatureLayer pFeatLay, IQueryFilter pQueryFilter, esriSelectionResultEnum pSelectionResult,SysCommon.CProgress vProgress)
+        //public void EmergeQueryData(IMap pMap, IFeatureLayer pFeatLay, IQueryFilter pQueryFilter, esriSelectionResultEnum pSelectionResult,Fan.Common.CProgress vProgress)
         //{
 
         //    m_dataSourceGrid = null;
@@ -196,7 +196,7 @@ namespace SysCommon
         //    Dictionary<string, Dictionary<string, string>> ChineseDic = ModXZQ.InitialDic(m_WorkSpace);
         //    dataGridViewX1.Rows.Clear();
         //    dataGridViewX1.Refresh();
-        //    SysCommon.ScreenDraw.list.Add(AfterDraw);
+        //    Fan.Common.ScreenDraw.list.Add(AfterDraw);
         //    m_FeatureClass = pFeatLay.FeatureClass;
         //    _DefaultNodeKey = ModuleMap.GetNodeKeyOfLayer(pFeatLay as ILayer);
         //    comboLayers.Text = pFeatLay.Name;
@@ -256,7 +256,7 @@ namespace SysCommon
         //            IFieldInfo pFieldInfo = pLayerFields.get_FieldInfo(i);
         //            if (pFieldInfo.Visible || pFieldType==esriFieldType.esriFieldTypeOID)
         //            {
-        //               // Values = SysCommon.ModXZQ.GetChineseName(m_WorkSpace, FieldName, Values);
+        //               // Values = Fan.Common.ModXZQ.GetChineseName(m_WorkSpace, FieldName, Values);
         //                if (ChineseDic.ContainsKey(FieldName))
         //                {
         //                    Dictionary<string, string> tempDic = ChineseDic[FieldName];
@@ -320,7 +320,7 @@ namespace SysCommon
         ///// <param name="pFeatLay"></param>
         ///// <param name="pQueryFilter"></param>
         ///// <param name="pSelectionResult"></param>
-        //public void EmergeQueryData(IFeatureLayer pFeatLay, IQueryFilter pQueryFilter, SysCommon.CProgress vProgress)
+        //public void EmergeQueryData(IFeatureLayer pFeatLay, IQueryFilter pQueryFilter, Fan.Common.CProgress vProgress)
         //{
         //    m_dataSourceGrid = null;
         //    dataGridViewX1.DataSource = null;
@@ -328,7 +328,7 @@ namespace SysCommon
         //    dataGridViewX1.Refresh();
         //    //ygc 20130416 获取字典
         //    Dictionary<string, Dictionary<string, string>> ChineseDic = ModXZQ.InitialDic(m_WorkSpace);
-        //    SysCommon.ScreenDraw.list.Add(AfterDraw);
+        //    Fan.Common.ScreenDraw.list.Add(AfterDraw);
         //    m_FeatureClass = pFeatLay.FeatureClass;
         //    _DefaultNodeKey = ModuleMap.GetNodeKeyOfLayer(pFeatLay as ILayer);
         //    comboLayers.Text = pFeatLay.Name;
@@ -389,7 +389,7 @@ namespace SysCommon
         //            IFieldInfo pFieldInfo = pLayerFields.get_FieldInfo(i);
         //            if (pFieldInfo.Visible || pFieldType == esriFieldType.esriFieldTypeOID)
         //            {
-        //               // Values = SysCommon.ModXZQ.GetChineseName(m_WorkSpace, FieldName, Values);
+        //               // Values = Fan.Common.ModXZQ.GetChineseName(m_WorkSpace, FieldName, Values);
         //                if (ChineseDic.ContainsKey(FieldName))
         //                {
         //                    Dictionary<string, string> tempDic = ChineseDic[FieldName];
@@ -480,7 +480,7 @@ namespace SysCommon
         //        { }
         //    }
 
-        //    SysCommon.CProgress vProgress = new SysCommon.CProgress();
+        //    Fan.Common.CProgress vProgress = new Fan.Common.CProgress();
         //    vProgress.ShowDescription = true;
         //    vProgress.ShowProgressNumber = true;
         //    vProgress.TopMost = true;
@@ -511,7 +511,7 @@ namespace SysCommon
         //            IFieldInfo pFieldinfo = pLayerFields.get_FieldInfo(i);
         //            if (pFieldinfo.Visible || pFieldType==esriFieldType.esriFieldTypeOID)
         //            {
-        //                //Values = SysCommon.ModXZQ .GetChineseName (m_WorkSpace, fieldName, Values);
+        //                //Values = Fan.Common.ModXZQ .GetChineseName (m_WorkSpace, fieldName, Values);
         //                if (ChineseDic.ContainsKey(fieldName))
         //                {
         //                    Dictionary<string, string> tempDic = ChineseDic[fieldName];
@@ -783,7 +783,7 @@ namespace SysCommon
         //        string strFieldOID = GetOIDfield(m_FeatureClass);
         //        string OID = dataGridViewX1.CurrentRow.Cells[strFieldOID].Value.ToString().Trim();
         //        IFeature pCurrentFea = GetFeatureByOID(OID, m_FeatureClass);
-        //        SysCommon.Gis.ModGisPub.ZoomToFeature(m_pMapControl, pCurrentFea);
+        //        Fan.Common.Gis.ModGisPub.ZoomToFeature(m_pMapControl, pCurrentFea);
         //        m_DrawGeometry = pCurrentFea.Shape;
         //        m_pMapControl.ActiveView.ScreenDisplay.UpdateWindow();
         //        m_pMapControl.FlashShape(m_DrawGeometry, 3, 200, null);
@@ -896,14 +896,14 @@ namespace SysCommon
         //    this.advTreeLayers.Visible = true;
         //    this.advTreeLayers.Focus();
         //    //IWorkspace pWok = m_WorkSpace;
-        //    //SysCommon.SelectLayerByTree frm = null;
+        //    //Fan.Common.SelectLayerByTree frm = null;
         //    //if (_CurQueryType == enumQueryType.enumDomainQuery)
         //    //{
-        //    //    frm = new SysCommon.SelectLayerByTree(pWok,null,_ListDomainNodeKeys);
+        //    //    frm = new Fan.Common.SelectLayerByTree(pWok,null,_ListDomainNodeKeys);
         //    //}
         //    //else
         //    //{
-        //    //    frm = new SysCommon.SelectLayerByTree(pWok, _ListDataNodeKeys);
+        //    //    frm = new Fan.Common.SelectLayerByTree(pWok, _ListDataNodeKeys);
         //    //}
 
         //    //if (frm.ShowDialog() == DialogResult.OK)
@@ -1035,9 +1035,9 @@ namespace SysCommon
         //            strValue = string.Format("{0:f2}", dblTempa);
         //        }
         //        //added by chulili 20110818 统一对字段值进行中英文映射
-        //        if (SysCommon.ModField._DicMatchFieldValue.Keys.Contains(strCaption))
+        //        if (Fan.Common.ModField._DicMatchFieldValue.Keys.Contains(strCaption))
         //        {
-        //            strValue = SysCommon.ModField.GetChineseOfFieldValue(strCaption, strValue);
+        //            strValue = Fan.Common.ModField.GetChineseOfFieldValue(strCaption, strValue);
         //        }
         //        vRow[strColumnName] = strValue;
         //    }
@@ -1171,7 +1171,7 @@ namespace SysCommon
         //                displayColumnsCount++;
         //            }
         //        }
-        //        SysCommon.CProgress vProgress = new SysCommon.CProgress();
+        //        Fan.Common.CProgress vProgress = new Fan.Common.CProgress();
         //        //设置进度条   
 
         //        vProgress.ShowProgress();
@@ -1265,9 +1265,9 @@ namespace SysCommon
         //    {
         //        if (pFields.get_Field(i).Type == esriFieldType.esriFieldTypeDouble || pFields.get_Field(i).Type == esriFieldType.esriFieldTypeSingle || pFields.get_Field(i).Type==esriFieldType .esriFieldTypeInteger)
         //        {
-        //            cbStatisticsField.Items.Add(SysCommon.ModField.GetChineseNameOfField(pFields.get_Field(i).Name.ToString()));
+        //            cbStatisticsField.Items.Add(Fan.Common.ModField.GetChineseNameOfField(pFields.get_Field(i).Name.ToString()));
         //        }
-        //        cbClassifyField.Items.Add(SysCommon.ModField.GetChineseNameOfField(pFields.get_Field(i).Name.ToString ()));
+        //        cbClassifyField.Items.Add(Fan.Common.ModField.GetChineseNameOfField(pFields.get_Field(i).Name.ToString ()));
         //    }
         //    if (cbStatisticsField.Items.Count > 0)
         //    {
@@ -1382,7 +1382,7 @@ namespace SysCommon
         //            XLable.Add(Keys);
         //            CharData[0].Add(values[Keys]);
         //        }
-        //        //Plugin.LogTable.Writelog("出统计图,分类字段为" + this.comboType.Text + ",统计的是" + strColumnTitle);
+        //        //Fan.Plugin.LogTable.Writelog("出统计图,分类字段为" + this.comboType.Text + ",统计的是" + strColumnTitle);
         //        ////更换统计图显示的控件    ZQ 20111014  Modify
         //        FrmResult pfrm = new FrmResult();
         //        pfrm.strTitle = strTitle;
@@ -1454,7 +1454,7 @@ namespace SysCommon
         //                string Values = pFeature.get_Value(i).ToString();
         //                string fieldName = pFeature.Fields.get_Field(i).Name;
 
-        //                //Values = SysCommon.ModField.GetDomainValueOfFieldValue(m_FeatureClass, fieldName, Values);
+        //                //Values = Fan.Common.ModField.GetDomainValueOfFieldValue(m_FeatureClass, fieldName, Values);
         //                if (ChineseDic.ContainsKey(fieldName))
         //                {
         //                    Dictionary<string, string> tempDic = ChineseDic[fieldName];

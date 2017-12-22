@@ -4,7 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace SysCommon.Log
+namespace Fan.Common.Log
 {
     public static  class Module
     {

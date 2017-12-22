@@ -6,7 +6,7 @@ using System.IO;
 using System.Xml;
 using System.Windows.Forms;
 
-namespace SysCommon
+namespace Fan.Common
 {
     public static class ModField
     {
@@ -219,7 +219,7 @@ namespace SysCommon
                 DicFieldname = new Dictionary<string, string>();//changed by chulili 20110731
             }
             DicFieldname.Clear();
-            SysCommon.Gis.SysGisTable sysTable = new SysCommon.Gis.SysGisTable(pConfigWks);
+            Fan.Common.Gis.SysGisTable sysTable = new Fan.Common.Gis.SysGisTable(pConfigWks);
             List<Dictionary<string, object>> lstDicData = sysTable.GetRows(DicTableName, "", out exError);
             if (lstDicData == null)
                 return;
@@ -254,7 +254,7 @@ namespace SysCommon
         {
             Exception exError = null;
             DicLayername.Clear();
-            SysCommon.Gis.SysGisTable sysTable = new SysCommon.Gis.SysGisTable(pConfigWks);
+            Fan.Common.Gis.SysGisTable sysTable = new Fan.Common.Gis.SysGisTable(pConfigWks);
             List<Dictionary<string, object>> lstDicData = sysTable.GetRows("标准图层代码表", "", out exError);
             if (lstDicData == null)
                 return;

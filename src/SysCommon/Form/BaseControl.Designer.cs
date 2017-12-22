@@ -1,4 +1,4 @@
-﻿namespace SysCommon
+﻿namespace Fan.Common
 {
     partial class BaseControl
     {

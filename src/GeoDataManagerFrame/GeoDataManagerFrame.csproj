@@ -22,7 +22,7 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -48,6 +48,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -57,17 +59,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AxInterop.FlexCell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Bin\AxInterop.FlexCell.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevComponents.DotNetBar2">
-      <HintPath>..\..\Bin\DevComponents.DotNetBar2.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
@@ -131,26 +125,7 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="exontrol.exgrid, Version=5.1.3810.19833, Culture=neutral, PublicKeyToken=13a475c87baa762e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Bin\exontrol.exgrid.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Interop.FlexCell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>..\..\Bin\Interop.FlexCell.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
@@ -554,38 +529,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GeoDataCenterFunLib\GeoDataCenterFunLib.csproj">
-      <Project>{D60941B6-1AF7-4A25-8DFF-EEA1460236AD}</Project>
-      <Name>GeoDataCenterFunLib</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\GeoPageLayout\GeoPageLayout.csproj">
-      <Project>{3F97FA5B-EEDB-4E74-8068-7017F9CD335B}</Project>
-      <Name>GeoPageLayout</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\GeoProperties\GeoProperties.csproj">
-      <Project>{B3516D71-DEF2-447A-9A74-14038883BB01}</Project>
-      <Name>GeoProperties</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\GeoSymbology\GeoSymbology.csproj">
-      <Project>{3C433A2D-43B2-491E-851A-347C67A5F130}</Project>
-      <Name>GeoSymbology</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugin\Plugin.csproj">
-      <Project>{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}</Project>
-      <Name>Plugin</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\SysCommon\SysCommon.csproj">
-      <Project>{D0D978A2-2F5A-41A4-931F-72CDECD61513}</Project>
-      <Name>SysCommon</Name>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <COMReference Include="stdole">
       <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>2</VersionMajor>
@@ -610,6 +553,20 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fan.DataBase\Fan.DataBase.csproj">
+      <Project>{fd4c4953-4740-47b4-b539-0b1b2c483aa6}</Project>
+      <Name>Fan.DataBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin\Fan.Plugin.csproj">
+      <Project>{bc54cbad-763e-40e5-b2c4-ff9faa9cc318}</Project>
+      <Name>Fan.Plugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SysCommon\Fan.Common.csproj">
+      <Project>{d0d978a2-2f5a-41a4-931f-72cdecd61513}</Project>
+      <Name>Fan.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

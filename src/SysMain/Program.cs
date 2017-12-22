@@ -20,6 +20,8 @@ namespace GDBM
                 MessageBox.Show("没有安装ArcGIS","提示",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
+            DevExpress.UserSkins.BonusSkins.Register();
+            DevExpress.Skins.SkinManager.EnableFormSkins();
             //扩展许可判断
             //IAoInitialize m_AoInitialize = new AoInitialize();
             //esriLicenseStatus status=m_AoInitialize.Initialize(esriLicenseProductCode.esriLicenseProductCodeEngineGeoDB);
@@ -28,7 +30,7 @@ namespace GDBM
             Application.SetCompatibleTextRenderingDefault(false);
             //check the config file 
             frmDBSet setDbFrom=null;
-            if (!System.IO.File.Exists(SysCommon.ModuleConfig.m_ConnectFileName))
+            if (!System.IO.File.Exists(Fan.Common.ModuleConfig.m_ConnectFileName))
             {
                 setDbFrom = new frmDBSet();
                 if (setDbFrom.ShowDialog() != DialogResult.OK)
@@ -44,7 +46,7 @@ namespace GDBM
             {
                 //Read The Connect Info from the config file
                 Fan.DataBase.DBConfig dbConfig = new Fan.DataBase.DBConfig();
-                dbConfig.ReadConfigFromFile(SysCommon.ModuleConfig.m_ConnectFileName);
+                dbConfig.ReadConfigFromFile(Fan.Common.ModuleConfig.m_ConnectFileName);
                 Fan.DataBase.DBOperatorFactory dbFac = new Fan.DataBase.DBOperatorFactory(dbConfig);
                 Mod.m_SysDbOperate=dbFac.GetDbOperate();
                 if (Mod.m_SysDbOperate == null||!Mod.m_SysDbOperate.TestConnect())

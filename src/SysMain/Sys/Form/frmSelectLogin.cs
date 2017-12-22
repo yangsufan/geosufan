@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace GDBM
 {
-    public partial class frmSelectLogin :SysCommon.BaseForm
+    public partial class frmSelectLogin :Fan.Common.BaseForm
     {
         private SystemTypeEnum _Systemtype;
         public frmSelectLogin()

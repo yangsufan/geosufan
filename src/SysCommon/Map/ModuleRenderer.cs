@@ -7,7 +7,7 @@ using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Geometry;
 
-namespace SysCommon
+namespace Fan.Common
 {
 
     public static class ModuleRenderer
@@ -157,7 +157,7 @@ namespace SysCommon
         public static object GetLayerConfigFromBlob(string sql, IWorkspace pConfigWks)
         {
             Exception err = null;
-            SysCommon.Gis.IGisTable pGISTable = new SysCommon.Gis.SysGisTable(pConfigWks);
+            Fan.Common.Gis.IGisTable pGISTable = new Fan.Common.Gis.SysGisTable(pConfigWks);
 
             //获取Layer
             byte[] LayerByte = pGISTable.GetFieldValue("Render", "LayerConfig", sql, out err) as byte[];
@@ -208,7 +208,7 @@ namespace SysCommon
         public static object GetRendererFromBlob(string sql, IWorkspace pConfigWks)
         {
             Exception err = null;
-            SysCommon.Gis.IGisTable pGISTable = new SysCommon.Gis.SysGisTable(pConfigWks);
+            Fan.Common.Gis.IGisTable pGISTable = new Fan.Common.Gis.SysGisTable(pConfigWks);
 
             //获取Renderer
             byte[] renderByte = pGISTable.GetFieldValue("Render", "Render", sql, out err) as byte[];

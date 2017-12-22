@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SysCommon.Error
+namespace Fan.Common.Error
 {
     public static class ErrorHandle
     {
@@ -22,9 +22,9 @@ namespace SysCommon.Error
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //******************************************
             }
         }
@@ -43,9 +43,9 @@ namespace SysCommon.Error
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //******************************************
             }
         }
@@ -69,9 +69,9 @@ namespace SysCommon.Error
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //******************************************
             }
         }
@@ -99,9 +99,9 @@ namespace SysCommon.Error
             {
                 //******************************************
                 //guozheng added System Exception log
-                if (SysCommon.Log.Module.SysLog == null)
-                    SysCommon.Log.Module.SysLog = new SysCommon.Log.clsWriteSystemFunctionLog();
-                SysCommon.Log.Module.SysLog.Write(eX);
+                if (Fan.Common.Log.Module.SysLog == null)
+                    Fan.Common.Log.Module.SysLog = new Fan.Common.Log.clsWriteSystemFunctionLog();
+                Fan.Common.Log.Module.SysLog.Write(eX);
                 //******************************************
                 return false;
             }

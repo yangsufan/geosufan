@@ -19,7 +19,7 @@ using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.Controls;
 
-namespace SysCommon
+namespace Fan.Common
 {
     public partial class SQLSecondfrm :BaseForm
     {
@@ -59,7 +59,7 @@ namespace SysCommon
             for (int j = 0; j < m_pFeaCls.Fields.FieldCount; j++)
             {
                 //ZQ 2011 modify  添加中文对照
-                fieldlistBox.Items.Add(m_pFeaCls.Fields.get_Field(j).Name + "【" + SysCommon.ModField.GetChineseNameOfField(m_pFeaCls.Fields.get_Field(j).AliasName) + "】");
+                fieldlistBox.Items.Add(m_pFeaCls.Fields.get_Field(j).Name + "【" + Fan.Common.ModField.GetChineseNameOfField(m_pFeaCls.Fields.get_Field(j).AliasName) + "】");
             }
             if (fieldlistBox.SelectedItem == null)
             {

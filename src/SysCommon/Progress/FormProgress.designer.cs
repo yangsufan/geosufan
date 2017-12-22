@@ -1,4 +1,4 @@
-﻿namespace SysCommon.Progress
+﻿namespace Fan.Common.Progress
 {
     partial class FormProgress
     {
