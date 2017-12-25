@@ -305,6 +305,7 @@
       <DependentUpon>FrmExit.cs</DependentUpon>
     </Compile>
     <Compile Include="SysSetting\ModuleSysSetting.cs" />
+    <Compile Include="SysSetting\SysConfig.cs" />
     <Compile Include="XML\XMLClass.cs" />
     <Compile Include="XZQ\ModXZQ.cs" />
   </ItemGroup>

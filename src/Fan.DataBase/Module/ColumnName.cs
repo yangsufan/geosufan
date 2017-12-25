@@ -29,5 +29,10 @@ namespace Fan.DataBase.Module
         public const string FID = "FID";
         public const string Tips = "Tips";
         #endregion
+        #region Table SysConfig
+        public const string ConfigCode = "ConfigCode";
+        public const string ConfigName = "ConfigName";
+        public const string ConfigValue = "ConfigValue";
+        #endregion
     }
 }

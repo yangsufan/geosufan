@@ -52,14 +52,14 @@ namespace Fan.DataBase
         {
             if (m_Config != null)
             {
-                if (string.IsNullOrEmpty(m_Config.m_Password))
+                if (string.IsNullOrEmpty(m_Config.Password))
                 {
-                    ConnectString = string.Format("Provider = Microsoft.Jet.OLEDB.4.0; Data Source ={0}", m_Config.m_Database);
+                    ConnectString = string.Format("Provider = Microsoft.Jet.OLEDB.4.0; Data Source ={0}", m_Config.Database);
                 }
                 else
                 {
                     ConnectString = string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Jet OLEDB:Database Password={1}",
-                        m_Config.m_Database,m_Config.m_Password);
+                        m_Config.Database,m_Config.Password);
                 }
                 try
                 {

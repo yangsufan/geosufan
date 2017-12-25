@@ -21,6 +21,7 @@ namespace GDBM
         {
             InitializeComponent();
         }
+        #region 窗体变量
         private DBConfig m_dbConfig = new DBConfig();
         private DBOperatorType m_DBoType = DBOperatorType.UnKnowOperator;
         private DBType m_dbType = DBType.DEFAULT;
@@ -53,10 +54,12 @@ namespace GDBM
             ["ESRIGDB"] ="File Geodatabase"
         };
         private IDBOperate m_DbOp = null;
+        #endregion
         public IDBOperate Dbop
         {
             get { return m_DbOp; }
         }
+        #region 窗体操作事件
         private void buttonXOK_Click(object sender, EventArgs e)
         {
             switch (m_DBoType)
@@ -98,7 +101,6 @@ namespace GDBM
                 return;
             }
         }
-
         private void buttonXCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -119,17 +121,22 @@ namespace GDBM
                     break;
                 case DBType.ODBCORACLE:
                 case DBType.ODBCPOST:
-                case DBType.ODBCSQL:
                     txtODBCPort.Width = 455;
                     btnSelectDB.Visible = false;
                     txtODBCPort.Enabled = true;
                     txtODBCServer.Enabled = true;
                     txtODBCUser.Enabled = true;
                     break;
-                    
+                case DBType.ODBCSQL:
+                    txtODBCPort.Width = 455;
+                    btnSelectDB.Visible = false;
+                    txtODBCPort.Enabled = false;
+                    txtODBCServer.Enabled = true;
+                    txtODBCUser.Enabled = true;
+                    break;
+
             }
         }
-
         private void cbEsriDbType_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectStr = getKeyFromValue(dicEsriDbType, cbEsriDbType.SelectedItem.ToString());
@@ -158,7 +165,6 @@ namespace GDBM
                     break;
             }
         }
-
         private void cbSelectDbOpType_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selctText = getKeyFromValue(dicDbOpType, cbSelectDbOpType.SelectedItem.ToString());
@@ -199,7 +205,6 @@ namespace GDBM
             }
             return string.Empty;
         }
-
         private void btnSelectDB_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
@@ -208,7 +213,6 @@ namespace GDBM
             if (openFile.ShowDialog() != DialogResult.OK) return;
             txtODBCDb.Text = openFile.FileName;
         }
-
         private void btnSelectEsriDb_Click(object sender, EventArgs e)
         {
             if (m_dbType == DBType.ESRIPDB)
@@ -233,5 +237,6 @@ namespace GDBM
                 txtEsriDb.Text = selectFolder;
             }
         }
+        #endregion
     }
 }
