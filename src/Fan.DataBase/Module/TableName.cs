@@ -14,6 +14,7 @@ namespace Fan.DataBase.Module
         public const string TSysFunction = "SysFunction";
         public const string TRoleFunction = "RoleFunction";
         public const string TUserRole = "UserRole";
+        public const string TSysConfig = "SysConfig";
         #endregion
 
         #region  ViewName 

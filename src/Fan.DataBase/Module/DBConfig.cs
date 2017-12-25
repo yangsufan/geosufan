@@ -17,50 +17,50 @@ namespace Fan.DataBase
 
         }
         #region Class property 
-        private DBOperatorType OperatorType = DBOperatorType.UnKnowOperator;
-        public DBOperatorType m_OperatorType
+        private DBOperatorType m_OperatorType = DBOperatorType.UnKnowOperator;
+        public DBOperatorType OperatorType
         {
-            get { return OperatorType; }
+            get { return m_OperatorType; }
         }
-        private DBType ConnectType = DBType.DEFAULT;
-        public DBType m_ConnectType
+        private DBType m_ConnectType = DBType.DEFAULT;
+        public DBType ConnectType
         {
-            get { return ConnectType; }
+            get { return m_ConnectType; }
         }
-        private string Server = string.Empty;
-        public string m_Server
+        private string m_Server = string.Empty;
+        public string Server
         {
-            get { return Server; }
+            get { return m_Server; }
         }
-        private string Service = string.Empty;
-        public string m_Service
+        private string m_Service = string.Empty;
+        public string Service
         {
-            get { return Service; }
+            get { return m_Service; }
         }
-        private string Database = string.Empty;
-        public string m_Database
+        private string m_Database = string.Empty;
+        public string Database
         {
-            get { return Database; }
+            get { return m_Database; }
         }
-        private string User = string.Empty;
-        public string m_User
+        private string m_User = string.Empty;
+        public string User
         {
-            get { return User; }
+            get { return m_User; }
         }
-        private string Password = string.Empty;
-        public string m_Password
+        private string m_Password = string.Empty;
+        public string Password
         {
-            get { return Password; }
+            get { return m_Password; }
         }
-        private string Version = string.Empty;
-        public string m_Version
+        private string m_Version = string.Empty;
+        public string Version
         {
             get { return m_Version; }
         }
-        private string ServerPort = string.Empty;
-        public string m_ServerPort
+        private string m_ServerPort = string.Empty;
+        public string ServerPort
         {
-            get { return ServerPort; }
+            get { return m_ServerPort; }
         }
         #endregion
         #region Class Funcion
@@ -80,66 +80,66 @@ namespace Fan.DataBase
                 switch (configitem[0])
                 {
                     case "server":
-                        Server = configitem[1];
+                        m_Server = configitem[1];
                         break;
                     case "serverice":
-                        Service = configitem[1];
+                        m_Service = configitem[1];
                         break;
                     case "database":
-                        Database = configitem[1];
+                        m_Database = configitem[1];
                         break;
                     case "user":
-                        User = configitem[1];
+                        m_User = configitem[1];
                         break;
                     case "password":
-                        Password = configitem[1];
+                        m_Password = configitem[1];
                         break;
                     case "version":
-                        Version = configitem[1];
+                        m_Version = configitem[1];
                         break;
                     case "serverport":
-                        ServerPort = configitem[1];
+                        m_ServerPort = configitem[1];
                         break;
                     case "operatortype":
                         int.TryParse(configitem[1],out temp);
-                        OperatorType = (DBOperatorType)temp;
+                        m_OperatorType = (DBOperatorType)temp;
                         break;
                     case "dbtype":
                         int.TryParse(configitem[1],out temp);
-                        ConnectType = (DBType)temp;
+                        m_ConnectType = (DBType)temp;
                         break;
                 }
             }
         }
         public void SetConfig(DBOperatorType operatorType, DBType connecttype,Dictionary<string,string> Dicconnect)
         {
-            OperatorType = operatorType;
-            ConnectType = connecttype;
+            m_OperatorType = operatorType;
+            m_ConnectType = connecttype;
             if (Dicconnect.Count == 0) return;
             foreach (string key in Dicconnect.Keys)
             {
                 switch (key.ToLower())
                 {
                     case "server":
-                        Server = Dicconnect[key];
+                        m_Server = Dicconnect[key];
                         break;
                     case "serverice":
-                        Service = Dicconnect[key];
+                        m_Service = Dicconnect[key];
                         break;
                     case "database":
-                        Database = Dicconnect[key];
+                        m_Database = Dicconnect[key];
                         break;
                     case "user":
-                        User = Dicconnect[key];
+                        m_User = Dicconnect[key];
                         break;
                     case "password":
-                        Password = Dicconnect[key];
+                        m_Password = Dicconnect[key];
                         break;
                     case "version":
-                        Version = Dicconnect[key];
+                        m_Version = Dicconnect[key];
                         break;
                     case "serverport":
-                        ServerPort = Dicconnect[key];
+                        m_ServerPort = Dicconnect[key];
                         break;
                 }
             }

@@ -54,7 +54,7 @@ namespace Fan.DataBase
         bool TestConnect();
     }
     /// <summary>
-    /// OLEDB数据库操作接口
+    /// ODBC数据库操作接口
     /// </summary>
     public interface IODBCOperate : IDBOperate
     {
@@ -74,7 +74,20 @@ namespace Fan.DataBase
     /// </summary>
     public interface ISQLServerOperate : IODBCOperate
     {
-
+        /// <summary>
+        /// 执行存储过程获取数据表
+        /// </summary>
+        /// <param name="spName">存储过程名称</param>
+        /// <param name="spParams">存储过程参数</param>
+        /// <returns></returns>
+        DataTable GetTableByStoredProcedure(string spName, params string[] spParams);
+        /// <summary>
+        /// 执行存储过程，用户更新、删除、新增操作
+        /// </summary>
+        /// <param name="spName">存储过程名称</param>
+        /// <param name="spParams">存储过程参数</param>
+        /// <returns></returns>
+        bool ExecStoreProcedure(string spName, params string[] spParams);
     }
     /// <summary>
     /// Oracle数据库操作接口

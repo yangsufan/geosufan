@@ -23,7 +23,15 @@ namespace GDBM
         /// 业务操作连接
         /// </summary>
         public static IDBOperate m_SysDbOperate = null;
+        /// <summary>
+        /// 系统登录用户
+        /// </summary>
         public static User m_LoginUser = null;
+        /// <summary>
+        /// 系统配置
+        /// </summary>
+        public static SysConfig m_sysConfig = null;
+
         public static bool LoginState = false;//控件登陆后，最终是否显示主界面
 
         public static Fan.Plugin.Application.AppForm v_AppForm;

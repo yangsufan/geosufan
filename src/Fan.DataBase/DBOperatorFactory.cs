@@ -20,10 +20,10 @@ namespace Fan.DataBase
         public IDBOperate GetDbOperate()
         {
             IDBOperate iDBOperate=null;
-            switch (m_config.m_OperatorType)
+            switch (m_config.OperatorType)
             {
                 case DBOperatorType.EsriOperator:
-                    switch (m_config.m_ConnectType)
+                    switch (m_config.ConnectType)
                     {
                         case DBType.ESRIGDB:
                             break;
@@ -36,7 +36,7 @@ namespace Fan.DataBase
                     }
                     break;
                 case DBOperatorType.ODBC:
-                    switch (m_config.m_ConnectType)
+                    switch (m_config.ConnectType)
                     {
                         case DBType.ODBCMDB:
                             iDBOperate = new MDBOperate(m_config);
@@ -46,6 +46,7 @@ namespace Fan.DataBase
                         case DBType.ODBCPOST:
                             break;
                         case DBType.ODBCSQL:
+                            iDBOperate = new SQLServerOperate(m_config);
                             break;
                     }
                     break;
