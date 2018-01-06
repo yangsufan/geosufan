@@ -7,14 +7,14 @@
     <ProjectGuid>{178FDFAE-537B-48F2-9F9C-5AE12848F42C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GeoSysSetting</RootNamespace>
-    <AssemblyName>GeoSysSetting</AssemblyName>
+    <RootNamespace>Fan.SysSetting</RootNamespace>
+    <AssemblyName>SysSetting</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -40,6 +40,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -49,12 +51,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevComponents.DotNetBar2">
-      <HintPath>..\..\Bin\DevComponents.DotNetBar2.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="ESRI.ArcGIS.AxControls, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
@@ -117,98 +116,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\CommandAddWMSserviceLyr.cs" />
-    <Compile Include="Command\CommandExit.cs" />
-    <Compile Include="Command\CommandExportLayerTree.cs" />
-    <Compile Include="Command\CommandImportLayerTree.cs" />
-    <Compile Include="Command\CommandImprtMxd.cs" />
-    <Compile Include="Command\CommandLayerScan.cs" />
-    <Compile Include="Command\CommandQueryConfig.cs" />
-    <Compile Include="Command\CommandSaveInitState.cs" />
-    <Compile Include="Command\CommandSaveLayerTree.cs" />
-    <Compile Include="Command\ControlLogManager.cs" />
-    <Compile Include="Command\ControlsAddDataSet.cs" />
-    <Compile Include="Command\ControlsAddFolder.cs" />
-    <Compile Include="Command\ControlsAddGroup.cs" />
-    <Compile Include="Command\ControlsAddLayer.cs" />
-    <Compile Include="Command\ControlsAutoMathLayerConfig.cs" />
-    <Compile Include="Command\ControlsCopyLayer.cs" />
-    <Compile Include="Command\ControlsDeleteNode.cs" />
-    <Compile Include="Command\ControlsModifyNode.cs" />
-    <Compile Include="Command\ControlsParameters.cs" />
-    <Compile Include="Command\ControlsDataSource.cs" />
-    <Compile Include="Command\ControlsCatalogImport.cs" />
-    <Compile Include="Command\ControlsCatalogOutport.cs" />
-    <Compile Include="Command\ControlsCatalogSave.cs" />
-    <Compile Include="Command\ControlsFeatLyrSetImport.cs" />
-    <Compile Include="Command\ControlsPasteLayer.cs" />
-    <Compile Include="Command\ControlsRoleManager.cs" />
-    <Compile Include="Command\ControlsSetDBSource.cs" />
-    <Compile Include="Command\ControlsSetLayerAttributes.cs" />
-    <Compile Include="Command\ControlsSysSettingManager.cs" />
-    <Compile Include="Command\ControlsUserManager.cs" />
-    <Compile Include="Command\ControlsZootToLayer.cs" />
-    <Compile Include="Command\ControlsEagleEyeSet.cs" />
-    <Compile Include="SubControl\FormFullMapConfig.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubControl\FormFullMapConfig.Designer.cs">
-      <DependentUpon>FormFullMapConfig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubControl\FormQueryConfig.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubControl\FormQueryConfig.designer.cs">
-      <DependentUpon>FormQueryConfig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubControl\frmEagleEyeSet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubControl\frmEagleEyeSet.Designer.cs">
-      <DependentUpon>frmEagleEyeSet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module\ModPublicFun.cs" />
+    <Compile Include="Command\CommandInitDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SubControl\FrmQueryConfig.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubControl\FrmQueryConfig.Designer.cs">
-      <DependentUpon>FrmQueryConfig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubControl\UCDataSourceManger.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SubControl\UCDataSourceManger.designer.cs">
-      <DependentUpon>UCDataSourceManger.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubControl\UCLogManager.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SubControl\UCLogManager.Designer.cs">
-      <DependentUpon>UCLogManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubControl\UCParameters.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SubControl\UCParameters.designer.cs">
-      <DependentUpon>UCParameters.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubControl\UCSysSetting.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SubControl\UCSysSetting.Designer.cs">
-      <DependentUpon>UCSysSetting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubControl\FrmStatisticsConfig.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubControl\FrmStatisticsConfig.Designer.cs">
-      <DependentUpon>FrmStatisticsConfig.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -217,67 +130,18 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SubControl\FormFullMapConfig.resx">
-      <DependentUpon>FormFullMapConfig.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubControl\FormQueryConfig.resx">
-      <DependentUpon>FormQueryConfig.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubControl\frmEagleEyeSet.resx">
-      <DependentUpon>frmEagleEyeSet.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubControl\FrmQueryConfig.resx">
-      <DependentUpon>FrmQueryConfig.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubControl\UCDataSourceManger.resx">
-      <DependentUpon>UCDataSourceManger.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubControl\UCLogManager.resx">
-      <DependentUpon>UCLogManager.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubControl\UCParameters.resx">
-      <DependentUpon>UCParameters.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubControl\UCSysSetting.resx">
-      <DependentUpon>UCSysSetting.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubControl\FrmStatisticsConfig.resx">
-      <DependentUpon>FrmStatisticsConfig.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GeoDBIntegration\GeoDBIntegration.csproj">
-      <Project>{F8E72C59-2107-45AE-B0AD-05A78A78AA39}</Project>
-      <Name>GeoDBIntegration</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\GeoLayerTreeLib\GeoLayerTreeLib.csproj">
-      <Project>{269B2FEB-C6E2-4105-9469-DA71892F77C8}</Project>
-      <Name>GeoLayerTreeLib</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugin\Plugin.csproj">
+    <ProjectReference Include="..\Plugin\Fan.Plugin.csproj">
       <Project>{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}</Project>
-      <Name>Plugin</Name>
+      <Name>Fan.Plugin</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\SysCommon\SysCommon.csproj">
+    <ProjectReference Include="..\SysCommon\Fan.Common.csproj">
       <Project>{D0D978A2-2F5A-41A4-931F-72CDECD61513}</Project>
-      <Name>SysCommon</Name>
+      <Name>Fan.Common</Name>
       <Private>False</Private>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MapScan1.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -285,6 +149,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Form\" />
+    <Folder Include="Module\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

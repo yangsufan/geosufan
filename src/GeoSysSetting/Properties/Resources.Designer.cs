@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GeoSysSetting.Properties {
+namespace Fan.SysSetting.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace GeoSysSetting.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GeoSysSetting.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fan.SysSetting.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,16 +57,6 @@ namespace GeoSysSetting.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap MapScan {
-            get {
-                object obj = ResourceManager.GetObject("MapScan", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

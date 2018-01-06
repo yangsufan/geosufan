@@ -10,80 +10,49 @@ using System.Xml;
 using Fan.Plugin.Interface;
 using Fan.Plugin.Application;
 using Fan.Plugin.Parse;
+using Fan.Common;
+using Fan.DataBase.Log;
 
 namespace Fan.Plugin
 {
     #region 从XML读取解析插件UI化,并与插件实现进行绑定
-    public static class ModuleCommon
+    public  class PluginUI
     {
-        public static event Common.SysLogInfoChangedHandle SysLogInfoChnaged;
+        public  PluginUI()
+        {
+
+        }
+        public  event SysLogInfoChangedHandle SysLogInfoChnaged;
         #region 插件对象集合
-        private static Dictionary<string, IPlugin> v_dicPlugins;
-        private static Dictionary<string, ICommandRef> v_dicCommands;
-        public static Dictionary<string, ICommandRef> DicCommands
-        {
-            get { return v_dicCommands; }
-        }
-        private static Dictionary<string, IToolRef> v_dicTools;
-        private static Dictionary<string, IToolBarRef> v_dicToolBars;
-        private static Dictionary<string, IMenuRef> v_dicMenus;
-        private static Dictionary<string, IDockableWindowRef> v_dicDockableWindows;
-        private static Dictionary<string, IControlRef> v_dicControls;
-        public static Dictionary<string, IControlRef> DicControls
-        {
-            get
-            {
-                return v_dicControls;
-            }
-            set
-            {
-                v_dicControls = value;
-            }
-        }
+        private PluginStruct AllPlugin = new PluginStruct();
         #endregion
-        private static XmlDocument _SysXmlDocument;
-        private static string _ResPath;
-        private static List<string> _ListUserPrivilegeID;
-        public static List<string> ListUserPrivilegeID
-        {
-            get { return _ListUserPrivilegeID; }
-            set { _ListUserPrivilegeID = value; }
-        }
-        private static List<string> _ListUserdataPriID;
-        public static List<string> ListUserdataPriID
-        {
-            get { return _ListUserdataPriID; }
-            set { _ListUserdataPriID = value; }
-        }
-        private static Fan.Common.User _AppUser;
-        public static Fan.Common.User AppUser
+        private  string _ResPath;
+        private  User _AppUser;
+        public  User AppUser
         {
             get { return _AppUser; }
-            set { _AppUser = value; }
         }
-        private static ESRI.ArcGIS.Geodatabase.IWorkspace _TmpWks ;
-        public static ESRI.ArcGIS.Geodatabase.IWorkspace TmpWorkSpace
+        private  ESRI.ArcGIS.Geodatabase.IWorkspace _TmpWks ;
+        public  ESRI.ArcGIS.Geodatabase.IWorkspace TmpWorkSpace
         {
             get { return _TmpWks; }
             set { _TmpWks = value; }
         }
         //刷新按钮Enable属性
-        private static Timer _Timer = new Timer();
-        public static Timer RefreshTimer
+        private  Timer _Timer = new Timer();
+        public  Timer RefreshTimer
         {
             get { return _Timer;}
         }
         //插件与界面上对应关系
-        private static Dictionary<DevExpress.XtraBars.BarItem, string> _dicBaseItems = new Dictionary<DevExpress.XtraBars.BarItem, string>();
-        public static Dictionary<DevExpress.XtraBars.BarItem, string> DicBaseItems
+        private  Dictionary<DevExpress.XtraBars.BarItem, string> _dicBaseItems = new Dictionary<DevExpress.XtraBars.BarItem, string>();
+        public  Dictionary<DevExpress.XtraBars.BarItem, string> DicBaseItems
         {
             get { return _dicBaseItems; }
         }
-        //记录插件加载过程日志
-        private static Fan.Common.Log.SysLocalLog _SysLocalLog;
         //将tab按照系统分类
-        private static Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> _dicTabs = new Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string>();
-        public static Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> DicTabs
+        private  Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> _dicTabs = new Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string>();
+        public  Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> DicTabs
         {
             get 
             {
@@ -95,8 +64,8 @@ namespace Fan.Plugin
             }
         }
         //主应用程序APP
-        private static IAppFormRef _pIAppFrm;
-        public static IAppFormRef AppFrm
+        private  IAppFormRef _pIAppFrm;
+        public  IAppFormRef AppFrm
         {
             get
             {
@@ -110,54 +79,31 @@ namespace Fan.Plugin
         //全局记录当前选择的按钮-----应用功能高亮显示
         private static DevExpress.XtraBars.BarButtonItem m_pBaseItem = null;
         //初始化
-        public static void IntialModuleCommon(List<string> ListUserPrivilegeID, XmlDocument aXmlDocument, string strResPath, PluginCollection pluginCol, string strLogPath)
+        public  void IntialModuleCommon(User LogInUser,PluginCollection pluginCol)
         {
-            _SysXmlDocument = aXmlDocument;
-            _ResPath = strResPath;
-            _SysLocalLog = new Fan.Common.Log.SysLocalLog(strLogPath);
-            _SysLocalLog.CreateLogFile("系统加载插件日志.txt");
-            _ListUserPrivilegeID = ListUserPrivilegeID;
-            //分类解析插件
-            Fan.Common.ModSysSetting.WriteLog("分类解析插件"); //@日志测试
             try
             {
-                ParsePlugins(pluginCol);
+                if (pluginCol == null) return;
+                ParsePluginCol parsePluginCol = new ParsePluginCol(pluginCol);
+                AllPlugin = parsePluginCol.AllPlugin;
             }
             catch (Exception err)
             {
-                Fan.Common.ModSysSetting.WriteLog("分类解析插件错误，信息："+err.Message); //@日志测试
+                LogManager.WriteSysLog(err,string.Format("分类解析插件错误:Function Name PluginUI.IntialModuleCommon"));
             }
-            Fan.Common.ModSysSetting.WriteLog("分类解析插件结束"); //@日志测试
             //实时刷新命令按钮Enable属性
             _Timer.Interval = 500;
             _Timer.Enabled = true;
             _Timer.Tick+=new EventHandler(Timer_Tick);
         }
-        public static void IntialModuleCommon( XmlDocument aXmlDocument, string strResPath, PluginCollection pluginCol, string strLogPath)
-        {
-            _SysXmlDocument = aXmlDocument;
-            _ResPath = strResPath;
-            _SysLocalLog = new Fan.Common.Log.SysLocalLog(strLogPath);
-            _SysLocalLog.CreateLogFile("系统加载插件日志.txt");
-
-            //_ListUserPrivilegeID = ListUserPrivilegeID;
-
-            //分类解析插件
-            ParsePlugins(pluginCol);
-
-            //实时刷新命令按钮Enable属性
-            _Timer.Interval = 500;
-            _Timer.Enabled = true;
-            _Timer.Tick += new EventHandler(Timer_Tick);
-        }
         /// <summary>
-        /// 根据XML初始化主窗体
+        /// 根据用户权限加载窗体
         /// </summary>
         /// <param name="pApplication"></param>
         /// <returns></returns>
-        public static bool LoadFormByXmlNode(IApplicationRef pApplication)
+        public  bool LoadForm(IApplicationRef pApplication)
         {
-            if (_SysXmlDocument == null || v_dicPlugins == null || pApplication == null) return false;
+            if ( pApplication == null) return false;
 
             _pIAppFrm = pApplication as IAppFormRef;
             //根据XML内容进行插件事件绑定
@@ -166,9 +112,9 @@ namespace Fan.Plugin
             return LoadControlsByXmlNode(pApplication);
 
         }
-        public static bool LoadData(IApplicationRef pApplication)
+        public  bool LoadData(IApplicationRef pApplication)
         {
-            if (_SysXmlDocument == null || v_dicPlugins == null || pApplication == null) return false;
+            if (pApplication == null) return false;
 
             _pIAppFrm = pApplication as IAppFormRef;
 
@@ -178,7 +124,7 @@ namespace Fan.Plugin
         /// <summary>
         /// 根据XML加载系统界面
         /// </summary>
-        private static bool LoadControlsByXmlNode(IApplicationRef pApplication)
+        private  bool LoadControlsByXmlNode(IApplicationRef pApplication)
         {         
             IAppFormRef pAppFormRef = pApplication as IAppFormRef;
             if (pAppFormRef == null)
@@ -308,7 +254,7 @@ namespace Fan.Plugin
         /// <summary>
         /// 根据XML加载系统界面
         /// </summary>
-        private static bool LoadDataByXmlNode(IApplicationRef pApplication)
+        private  bool LoadDataByXmlNode(IApplicationRef pApplication)
         {
             IAppFormRef pAppFormRef = pApplication as IAppFormRef;
             if (pAppFormRef == null)
@@ -378,7 +324,7 @@ namespace Fan.Plugin
         /// <summary>
         /// 匹配所有的Xml节点(菜单栏、工具栏、右键菜单)来构造界面
         /// </summary>
-        public static bool LoadButtonViewByXmlNode(Control aControl, string xPath, IApplicationRef pApplication)
+        public  bool LoadButtonViewByXmlNode(Control aControl, string xPath, IApplicationRef pApplication)
         {
             if (aControl == null || xPath == string.Empty || _SysXmlDocument == null || v_dicPlugins == null || pApplication == null)
             {
@@ -501,7 +447,7 @@ namespace Fan.Plugin
         /// <param name="pApplication"></param>
         /// <param name="dicContextMenu"></param>
         /// <returns></returns>
-        public static Control LoadButtonView(Control aControl, XmlNode xmlnodeChild, IApplicationRef pApplication, Dictionary<string, System.Windows.Forms.ContextMenu> dicContextMenu)
+        public  Control LoadButtonView(Control aControl, XmlNode xmlnodeChild, IApplicationRef pApplication, Dictionary<string, System.Windows.Forms.ContextMenu> dicContextMenu)
         {
             string sNodeName = "";
             string sNodeID = "";
@@ -603,7 +549,7 @@ namespace Fan.Plugin
 
             return aBarControl;
         }
-        private static bool AddItemsByXmlNode(object aControl, XmlNode xmlNodeCol, bool bImageAndText, IApplicationRef pApplication)
+        private  bool AddItemsByXmlNode(object aControl, XmlNode xmlNodeCol, bool bImageAndText, IApplicationRef pApplication)
         {
             if (xmlNodeCol.HasChildNodes == false)
             {
@@ -801,27 +747,7 @@ namespace Fan.Plugin
 
             return bRes;
         }
-        /// <summary>
-        /// 插件接口分类解析
-        /// </summary>
-        private static void ParsePlugins(PluginCollection pluginCol)
-        {
-            if (pluginCol == null) return;
-            Fan.Common.ModSysSetting.WriteLog("parsePluginCol");
-            ParsePluginCol parsePluginCol = new ParsePluginCol();
-            Fan.Common.ModSysSetting.WriteLog("GetPluginArray start"); 
-            parsePluginCol.GetPluginArray(pluginCol);
-            Fan.Common.ModSysSetting.WriteLog("GetPluginArray end"); 
-
-            v_dicPlugins = parsePluginCol.GetPlugins;
-            v_dicCommands = parsePluginCol.GetCommands;
-            v_dicTools = parsePluginCol.GetTools;
-            v_dicToolBars = parsePluginCol.GetToolBars;
-            v_dicMenus = parsePluginCol.GetMenus;
-            v_dicDockableWindows = parsePluginCol.GetDockableWindows;
-            v_dicControls = parsePluginCol.GetControls;
-        }
-        private static void PluginOnWriteLog(IPlugin plugin, string strWritelog)
+        private  void PluginOnWriteLog(IPlugin plugin, string strWritelog)
         {
             bool Writelog = true;
             try
@@ -846,7 +772,7 @@ namespace Fan.Plugin
         /// </summary>
         /// <param name="plugin"></param>
         /// <param name="pApplication"></param>
-        private static void PluginOnCreate(IPlugin plugin, IApplicationRef pApplication)
+        private  void PluginOnCreate(IPlugin plugin, IApplicationRef pApplication)
         {
             if (plugin is ICommandRef)
             {
@@ -884,7 +810,7 @@ namespace Fan.Plugin
         /// </summary>
         /// <param name="plugin"></param>
         /// <param name="pApplication"></param>
-        private static void PluginOnLoadData(IPlugin plugin, IApplicationRef pApplication)
+        private  void PluginOnLoadData(IPlugin plugin, IApplicationRef pApplication)
         {
             IControlRef aControl = plugin as IControlRef;
             if (aControl != null)
@@ -896,7 +822,7 @@ namespace Fan.Plugin
         /// <summary>
         /// 根据XML关联各插件间事件方法
         /// </summary>
-        private static void LoadEventsByXmlNode()
+        private  void LoadEventsByXmlNode()
         {
             if (v_dicPlugins == null || _SysXmlDocument == null) return;
 
@@ -955,11 +881,11 @@ namespace Fan.Plugin
             }
             catch (Exception e)
             {
-                _SysLocalLog.WriteLocalLog("事件绑定出错：" + e.Message);
+                LogManager.WriteSysLog(e, string.Format("Function Name:LoadEventsByXmlNode"));
             }
         }
         #endregion
-        private static void BaseItem_Click(object sender, EventArgs e)
+        private  void BaseItem_Click(object sender, EventArgs e)
         {
             DevExpress.XtraBars.BarItem aBaseItem = sender as DevExpress.XtraBars.BarItem;
             string sKey = aBaseItem.Name.ToString().Trim();
@@ -980,19 +906,18 @@ namespace Fan.Plugin
                 ICommandRef pCommandRef = v_dicCommands[sKey] as ICommandRef;
                 pCommandRef.OnClick();
             }
-
             if (v_dicTools.ContainsKey(sKey))
             {
                 IToolRef pToolRef = v_dicTools[sKey] as IToolRef;
                 pToolRef.OnClick();
             }
         }
-        private static void Timer_Tick(object sender, EventArgs e)
+        private  void Timer_Tick(object sender, EventArgs e)
         {
             if(_dicBaseItems==null) return;
-            if (v_dicCommands != null)
+            if (AllPlugin.dicCommands != null)
             {
-                foreach (KeyValuePair<string, ICommandRef> keyvalue in v_dicCommands)
+                foreach (KeyValuePair<string, ICommandRef> keyvalue in AllPlugin.dicCommands)
                 {
                     foreach(KeyValuePair<DevExpress.XtraBars.BarItem, string> kvCmd in _dicBaseItems)
                     {
@@ -1004,9 +929,9 @@ namespace Fan.Plugin
                 }
             }
 
-            if (v_dicTools != null)
+            if (AllPlugin.dicTools != null)
             {
-                foreach (KeyValuePair<string, IToolRef> keyvalue in v_dicTools)
+                foreach (KeyValuePair<string, IToolRef> keyvalue in AllPlugin.dicTools)
                 {
                     foreach (KeyValuePair<DevExpress.XtraBars.BarItem, string> kvTool in _dicBaseItems)
                     {
@@ -1018,7 +943,7 @@ namespace Fan.Plugin
                 }
             }
         }
-        private static void menuSystemItem_Click(object sender, EventArgs e)
+        private  void menuSystemItem_Click(object sender, EventArgs e)
         {
             DevExpress.XtraBars.BarButtonItem aSysItem = sender as DevExpress.XtraBars.BarButtonItem;
             if (aSysItem == null || _dicTabs == null || _pIAppFrm == null) return;
@@ -1067,7 +992,7 @@ namespace Fan.Plugin
             }
             Mod.WriteLocalLog("v_dicControls end");
         }
-        private static void BaseItem_MouseEnter(object sender, EventArgs e)
+        private  void BaseItem_MouseEnter(object sender, EventArgs e)
         {
             string strMessage=string.Empty;
             DevExpress.XtraBars.BarItem aBaseItem = sender as DevExpress.XtraBars.BarItem;
@@ -1087,7 +1012,7 @@ namespace Fan.Plugin
                 strMessage = pToolRef.Message;
             }
         }
-        private static void BaseItem_MouseLeave(object sender, EventArgs e)
+        private  void BaseItem_MouseLeave(object sender, EventArgs e)
         {
             DevExpress.XtraBars.BarItem aBaseItem = sender as DevExpress.XtraBars.BarItem;
             if (aBaseItem == null) return;

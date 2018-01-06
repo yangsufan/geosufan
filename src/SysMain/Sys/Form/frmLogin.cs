@@ -49,10 +49,10 @@ namespace GDBM
         {
             if (this.txtUser.Text != "")
             {
-                this.textBoxXPassword.Focus();
+                this.txtUser.Focus();
             }
         }
-        protected override void WndProc(ref System.Windows.Forms.Message m)
+        protected override void WndProc(ref Message m)
         {
             const int WM_NCHITTEST = 0x84;
             const int HTCLIENT = 0x01;

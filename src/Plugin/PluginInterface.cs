@@ -182,88 +182,53 @@ namespace Fan.Plugin.Interface
         #region ICommandRef ≥…‘±
         public virtual string Name
         {
-            get
-            {
-                return _Name;
-            }
+            get{ return _Name;}
         }
         public virtual string Caption
         {
-            get
-            {
-                return _Caption;
-            }
+            get{return _Caption;}
         }
         public virtual string Tooltip
         {
-            get
-            {
-                return _Tooltip;
-            }
+            get{return _Tooltip;}
         }
         public virtual Image Image
         {
-            get
-            {
-                return _Image;
-            }
+            get{return _Image;}
         }
         public virtual string Category
         {
-            get
-            {
-                return _Category;
-            }
+            get{return _Category;}
         }
         public virtual bool Checked
         {
-            get
-            {
-                return _Checked;
-            }
+            get{return _Checked;}
         }
         public virtual bool Visible
         {
-            get
-            {
-                return _Visible;
-            }
+            get{return _Visible;}
         }
         public virtual bool Enabled
         {
-            get
-            {
-                return _Enabled;
-            }
+            get{return _Enabled;}
         }
         public virtual string Message
         {
-            get
-            {
-                return _Message;
-            }
+            get{return _Message;}
         }
         public virtual bool WriteLog
         {
-            get 
-            {
-                return _Writelog;
-            }
-            set
-            {
-                _Writelog = value;
-            }
+            get {return _Writelog;}
+            set{_Writelog = value;}
         }
         public virtual void ClearMessage()
         {
         }
         public virtual void OnClick()
         {
-
         }
         public virtual void OnCreate(IApplicationRef hook)
         {
-
         }
         #endregion
     }

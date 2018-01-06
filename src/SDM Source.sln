@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoDataEdit", "GeoDataEdit\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoDataExport", "GeoDataExport\GeoDataExport.csproj", "{6A5218D0-98B4-4962-B81B-259160D1953C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoDataManagerFrame", "GeoDataManagerFrame\GeoDataManagerFrame.csproj", "{112D2A3E-C106-4A11-A8ED-AB7786B81CFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fan.DataManagerView", "GeoDataManagerFrame\Fan.DataManagerView.csproj", "{112D2A3E-C106-4A11-A8ED-AB7786B81CFD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoDBATool", "GeoDBATool\GeoDBATool.csproj", "{392B05F9-B0D9-4843-AF74-13AA95825940}"
 EndProject
@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoStatistics", "GeoStatist
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoSymbology", "GeoSymbology\GeoSymbology.csproj", "{3C433A2D-43B2-491E-851A-347C67A5F130}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoSysSetting", "GeoSysSetting\GeoSysSetting.csproj", "{178FDFAE-537B-48F2-9F9C-5AE12848F42C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fan.SysSetting", "GeoSysSetting\Fan.SysSetting.csproj", "{178FDFAE-537B-48F2-9F9C-5AE12848F42C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoSysUpdate", "GeoSysUpdate\GeoSysUpdate.csproj", "{BFADF39C-0213-4784-8CDD-29AB42827516}"
 EndProject
@@ -275,7 +275,7 @@ Global
 		{FD4C4953-4740-47B4-B539-0B1B2C483AA6} = {C06E141D-8F3C-4C2E-8F8F-3A994CB94CC9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EC22706C-4205-480C-B473-C557531935EB}
 		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {EC22706C-4205-480C-B473-C557531935EB}
 	EndGlobalSection
 EndGlobal

@@ -123,132 +123,94 @@ namespace Fan.Plugin.Parse
     //插件接口分类解析
     public class ParsePluginCol
     {
-        // plugin集合
-        private Dictionary<string, IPlugin> dicPlugins = new Dictionary<string, IPlugin>();
-        //command集合
-        private Dictionary<string, ICommandRef> dicCommands = new Dictionary<string, ICommandRef>();
-        //tool集合
-        private Dictionary<string, IToolRef> dicTools = new Dictionary<string, IToolRef>();
-        //memu集合
-        private Dictionary<string, IMenuRef> dicMenus = new Dictionary<string, IMenuRef>();
-        //toolbar集合
-        private Dictionary<string, IToolBarRef> dicToolBars = new Dictionary<string, IToolBarRef>();
-        //DockableWindow集合
-        private Dictionary<string, IDockableWindowRef> dicDockableWindows = new Dictionary<string, IDockableWindowRef>();
-        //control集合
-        private Dictionary<string, IControlRef> dicControls = new Dictionary<string, IControlRef>();
-        //类型集合
-        private ArrayList ArraylstCommandCategory = new ArrayList();
-        public Dictionary<string, IPlugin> GetPlugins
+        public ParsePluginCol(PluginCollection pluginCol)
         {
-            get { return this.dicPlugins; }
+            GetPluginArray(pluginCol);
         }
-        public Dictionary<string, ICommandRef> GetCommands
+        private PluginStruct m_AllPlugin = new PluginStruct(); 
+        public PluginStruct AllPlugin
         {
-            get { return this.dicCommands; }
+            get { return AllPlugin; }
         }
-        public Dictionary<string, IToolRef> GetTools
+        private void GetPluginArray(PluginCollection pluginCol)
         {
-            get { return this.dicTools; }
-        }
-        public Dictionary<string, IMenuRef> GetMenus
-        {
-            get { return this.dicMenus; }
-        }
-        public Dictionary<string, IToolBarRef> GetToolBars
-        {
-            get { return this.dicToolBars; }
-        }
-        public Dictionary<string, IDockableWindowRef> GetDockableWindows
-        {
-            get { return this.dicDockableWindows; }
-        }
-        public Dictionary<string, IControlRef> GetControls
-        {
-            get { return this.dicControls; }
-        }
-        public ArrayList GetCommandCategory
-        {
-            get { return this.ArraylstCommandCategory; }
-        }
-        public void GetPluginArray(PluginCollection pluginCol)
-        {
+            if (pluginCol == null) return;
             foreach (IPlugin plugin in pluginCol)
             {
                 try
                 {
-                    if (!dicPlugins.ContainsKey(plugin.ToString()))
+                    if (!AllPlugin.dicPlugins.ContainsKey(plugin.ToString()))
                     {
-                        dicPlugins.Add(plugin.ToString(), plugin);
+                        AllPlugin.dicPlugins.Add(plugin.ToString(), plugin);
                     }
                     ICommandRef cmd = plugin as ICommandRef;
                     if (cmd != null)
                     {
-                        if (!dicCommands.ContainsKey(cmd.ToString()))
+                        if (!AllPlugin.dicCommands.ContainsKey(cmd.ToString()))
                         {
-                            dicCommands.Add(cmd.ToString(), cmd);
+                            AllPlugin.dicCommands.Add(cmd.ToString(), cmd);
                         }
 
                         if (cmd.Category != null)
                         {
-                            if (!ArraylstCommandCategory.Contains(cmd.Category))
+                            if (!AllPlugin.ArraylstCommandCategory.Contains(cmd.Category))
                             {
-                                ArraylstCommandCategory.Add(cmd.Category);
+                                AllPlugin.ArraylstCommandCategory.Add(cmd.Category);
                             }
                         }
                     }
                     IToolRef atool = plugin as IToolRef;
                     if (atool != null)
                     {
-                        if (!dicTools.ContainsKey(atool.ToString()))
+                        if (!AllPlugin.dicTools.ContainsKey(atool.ToString()))
                         {
-                            dicTools.Add(atool.ToString(), atool);
+                            AllPlugin.dicTools.Add(atool.ToString(), atool);
                         }
 
                         if (atool.Category != null)
                         {
-                            if (!ArraylstCommandCategory.Contains(atool.Category))
+                            if (!AllPlugin.ArraylstCommandCategory.Contains(atool.Category))
                             {
-                                ArraylstCommandCategory.Add(atool.Category);
+                                AllPlugin.ArraylstCommandCategory.Add(atool.Category);
                             }
                         }
                     }
                     IMenuRef aMenu = plugin as IMenuRef;
                     if (aMenu != null)
                     {
-                        if (!dicMenus.ContainsKey(aMenu.ToString()))
+                        if (!AllPlugin.dicMenus.ContainsKey(aMenu.ToString()))
                         {
-                            dicMenus.Add(aMenu.ToString(), aMenu);
+                            AllPlugin.dicMenus.Add(aMenu.ToString(), aMenu);
                         }
                     }
                     IToolBarRef aToolBar = plugin as IToolBarRef;
                     if (aToolBar != null)
                     {
-                        if (!dicToolBars.ContainsKey(aToolBar.ToString()))
+                        if (!AllPlugin.dicToolBars.ContainsKey(aToolBar.ToString()))
                         {
-                            dicToolBars.Add(aToolBar.ToString(), aToolBar);
+                            AllPlugin.dicToolBars.Add(aToolBar.ToString(), aToolBar);
                         }
                     }
                     IDockableWindowRef aDockableWindow = plugin as IDockableWindowRef;
                     if (aDockableWindow != null)
                     {
-                        if (!dicDockableWindows.ContainsKey(aDockableWindow.ToString()))
+                        if (!AllPlugin.dicDockableWindows.ContainsKey(aDockableWindow.ToString()))
                         {
-                            dicDockableWindows.Add(aDockableWindow.ToString(), aDockableWindow);
+                            AllPlugin.dicDockableWindows.Add(aDockableWindow.ToString(), aDockableWindow);
                         }
                     }
                     IControlRef aControl = plugin as IControlRef;
                     if (aControl != null)
                     {
-                        if (!dicControls.ContainsKey(aControl.ToString()))
+                        if (!AllPlugin.dicControls.ContainsKey(aControl.ToString()))
                         {
-                            dicControls.Add(aControl.ToString(), aControl);
+                            AllPlugin.dicControls.Add(aControl.ToString(), aControl);
                         }
                     }
                 }
                 catch (Exception err)
                 {
-                    Fan.Common.ModSysSetting.WriteLog("GetPluginArray 函数内错误，信息：" + err.Message);//@日志测试
+                    Common.ModSysSetting.WriteLog("GetPluginArray 函数内错误，信息：" + err.Message);
                 }
             }
         }
@@ -256,17 +218,14 @@ namespace Fan.Plugin.Parse
     //根据反射机制获取插件并装入插件接口容器
     public class PluginHandle
     {
+        public PluginHandle(string strPluginFolder)
+        {
+            _pluginFolder = strPluginFolder;
+        }
         private string _pluginFolder;
         public string PluginFolderPath
         {
-            get
-            {
-                return _pluginFolder;
-            }
-            set
-            {
-                _pluginFolder = value;
-            }
+            get { return _pluginFolder;}
         }
         private void GetPluginObject(PluginCollection PluginCol, Type type)
         {
@@ -293,7 +252,6 @@ namespace Fan.Plugin.Parse
         {
             //插件接口容器
             PluginCollection PluginCol = new PluginCollection();
-
             //检查插件文件夹是否存在
             if (!Directory.Exists(_pluginFolder))
             {
@@ -344,4 +302,22 @@ namespace Fan.Plugin.Parse
         }
     }
     #endregion
+    public enum PluginControlType
+    {
+        RibbonPageCategory=1,
+        RibbonPage=2,
+        RibbonPageGroup=3,
+        BarButtonItem=4,
+    }
+    public struct PluginStruct
+    {
+        public Dictionary<string, IPlugin> dicPlugins;
+        public Dictionary<string, ICommandRef> dicCommands;
+        public Dictionary<string, IToolRef> dicTools;
+        public Dictionary<string, IMenuRef> dicMenus;
+        public Dictionary<string, IToolBarRef> dicToolBars;
+        public Dictionary<string, IDockableWindowRef> dicDockableWindows;
+        public Dictionary<string, IControlRef> dicControls;
+        public ArrayList ArraylstCommandCategory;
+    }
 }

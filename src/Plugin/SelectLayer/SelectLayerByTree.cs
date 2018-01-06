@@ -37,7 +37,7 @@ namespace Fan.Plugin
         {
             if (Fan.Common.ModField._DicFieldName.Keys.Count == 0)
             {
-                Fan.Common.ModField.InitNameDic(Fan.Plugin.ModuleCommon.TmpWorkSpace, Fan.Common.ModField._DicFieldName, "属性对照表");
+                //Fan.Common.ModField.InitNameDic(Fan.Plugin.ModuleCommon.TmpWorkSpace, Fan.Common.ModField._DicFieldName, "属性对照表");
             }
             if (_DicLayerList == null)
             {
@@ -93,10 +93,10 @@ namespace Fan.Plugin
                 }
                 //用Xml子节点的"NodeKey"和"NodeText"属性来构造树子节点
                 string sNodeKey = xmlElementChild.GetAttribute("NodeKey");
-                if (!Fan.Plugin.ModuleCommon.ListUserdataPriID.Contains(sNodeKey))
-                {
-                    continue;
-                }
+                //if (!Fan.Plugin.ModuleCommon.ListUserdataPriID.Contains(sNodeKey))
+                //{
+                //    continue;
+                //}
                 string sNodeText = xmlElementChild.GetAttribute("NodeText");
 
                 DevExpress.XtraTreeList.Nodes.TreeListNode treenodeChild = new DevExpress.XtraTreeList.Nodes.TreeListNode();

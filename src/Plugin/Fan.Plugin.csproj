@@ -112,10 +112,6 @@
       <HintPath>C:\WINDOWS\assembly\GAC_MSIL\ESRI.ArcGIS.SystemUI\9.2.3.1380__8fc3cc631e44ad86\ESRI.ArcGIS.SystemUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>False</Private>
     </Reference>
@@ -142,6 +138,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fan.DataBase\Fan.DataBase.csproj">
+      <Project>{fd4c4953-4740-47b4-b539-0b1b2c483aa6}</Project>
+      <Name>Fan.DataBase</Name>
+      <Private>False</Private>
+    </ProjectReference>
     <ProjectReference Include="..\SysCommon\Fan.Common.csproj">
       <Project>{D0D978A2-2F5A-41A4-931F-72CDECD61513}</Project>
       <Name>Fan.Common</Name>

@@ -55,8 +55,6 @@ namespace Fan.Plugin
             }
         }
 
-
-
         public static bool CreateLogTable()
         {
             if (m_sysTable == null)
@@ -360,12 +358,7 @@ namespace Fan.Plugin
                 resList.Add(logRow);
                 pRow = pCursor.NextRow();
             }
-
-
-
             return resList;
-
-
         }
         //重载一个无参的查询日志
         public List<string[]> SeachLog()
@@ -398,11 +391,7 @@ namespace Fan.Plugin
                 resList.Add(logRow);
                 pRow = pCursor.NextRow();
             }
-
-
-
             return resList;
-
         }
         //重载一个去重复枚举字段值的查询日志
         public static List<string> SeachLog2(string inFieldName)
@@ -423,7 +412,6 @@ namespace Fan.Plugin
             //IQueryFilter pQF = new QueryFilterClass();
             //pQF.WhereClause = "";
             //ICursor pCursor = pTable.Search(pQF, false);
-
             //int i1 = pTable.FindField(inFieldName);
             ICursor pCursor = pQueryDef.Evaluate();
             IRow pRow = pCursor.NextRow();
@@ -435,7 +423,6 @@ namespace Fan.Plugin
                 pRow = pCursor.NextRow();
             }
             return resList;
-
         }
         //清空日志
         public static void ClearLog(ListView lv)
@@ -461,12 +448,11 @@ namespace Fan.Plugin
             ITransactions pTransactions = (ITransactions)pWorkspace;
             try
             {
-
                 if (!pTransactions.InTransaction) pTransactions.StartTransaction();
             }
             catch (Exception eX)
             {
-                Fan.Common.Error.ErrorHandle.ShowFrmErrorHandle("提示", eX.Message);
+                ErrorHandle.ShowFrmErrorHandle("提示", eX.Message);
                 return;
             }
             Exception exError;
@@ -482,10 +468,6 @@ namespace Fan.Plugin
             catch (Exception eX)
             {
             }
-
-
-            //}
-
         }
         //删除选择的日志
         public static void DeleteSelectedLog(ListView lv)
@@ -511,7 +493,6 @@ namespace Fan.Plugin
                 ITransactions pTransactions = (ITransactions)pWorkspace;
                 try
                 {
-
                     if (!pTransactions.InTransaction) pTransactions.StartTransaction();
                 }
                 catch (Exception eX)
@@ -534,11 +515,8 @@ namespace Fan.Plugin
                 }
 
 
-            }//end for
-
+            }
         }
-      
-
         //新增获取用户组唯一值 ygc 2012-9-3
         public static List<string> GetGroupUser()
         {

@@ -82,8 +82,6 @@ namespace GeoSysSetting
             if (hook == null) return;
             m_Hook = hook as Plugin.Application.IAppFormRef;
             _hook = hook as Plugin.Application.IAppFormRef;
-
-
         }
     }
 }

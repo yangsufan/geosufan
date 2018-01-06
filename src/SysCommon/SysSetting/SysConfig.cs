@@ -7,6 +7,7 @@ using Fan.DataBase;
 using System.Data;
 using Fan.DataBase.Module;
 
+
 namespace Fan.Common
 {
     public class SysConfig
@@ -44,7 +45,7 @@ namespace Fan.Common
             }
             foreach (DataRow pRow in pConfigDt.Rows)
             {
-                if (pRow[ColumnName.ConfigCode].ToString() == m_SystemCode)
+                if (pRow[ColumnName.ConfigCode].ToString().Trim() == m_SystemCode)
                 {
                     m_SystemName = pRow[ColumnName.ConfigValue].ToString();
                 }
