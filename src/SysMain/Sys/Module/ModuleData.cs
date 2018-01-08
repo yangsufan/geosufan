@@ -39,8 +39,6 @@ namespace GDBM
 
         public static XmlDocument v_SystemXml;
 
-        public static Fan.Plugin.Parse.PluginCollection m_PluginCol;  
-
         public static Fan.Common.Log.clsWriteSystemFunctionLog v_SysLog;
 
         public static string v_UserInfoPath = Application.StartupPath + "\\user.dat";

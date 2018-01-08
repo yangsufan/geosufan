@@ -28,6 +28,7 @@ namespace Fan.DataBase.Module
         public const string NewGroup = "NewGroup";
         public const string FID = "FID";
         public const string Tips = "Tips";
+        public const string LevelID = "LevelID";
         #endregion
         #region Table SysConfig
         public const string ConfigCode = "ConfigCode";
