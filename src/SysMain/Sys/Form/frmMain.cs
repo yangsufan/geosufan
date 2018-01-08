@@ -35,7 +35,7 @@ namespace GDBM
             m_MainPluginUI.SysLogInfoChnaged += new SysLogInfoChangedHandle(SysLogInfoChnaged);
             //加载界面信息
             InitialFrm();
-            InitialSysConfig();
+           // InitialSysConfig();
             _frmTemp.Close();
         }
         PluginUI m_MainPluginUI = default(PluginUI);
@@ -49,16 +49,11 @@ namespace GDBM
         /// </summary>
         private void InitialFrm()
         {
-            //XmlDocument docXml = null;
-            //docXml = new XmlDocument();
-            //if (!File.Exists(Mod.m_SysXmlPath)) return;
-            //docXml.Load(Mod.m_SysXmlPath);
             _frmTemp.SysInfo = "获取系统功能插件中...";
             _frmTemp.RefreshLable();
             //从插件文件夹中获取插件接口对象
             PluginHandle pluginHandle = new PluginHandle(Mod.m_PluginFolderPath);
             PluginCollection pluginCol = pluginHandle.GetPluginFromDLL();
-            Mod.m_PluginCol = pluginCol;
             //初始化主框架对象
             Mod.v_AppForm = new Fan.Plugin.Application.AppForm(this, pluginCol);
             //分类解析、获取插件

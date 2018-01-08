@@ -12,6 +12,10 @@ using Fan.Plugin.Application;
 using Fan.Plugin.Parse;
 using Fan.Common;
 using Fan.DataBase.Log;
+using DevExpress.XtraBars;
+using DevExpress.XtraBars.Ribbon;
+using System.Data;
+using Fan.DataBase.Module;
 
 namespace Fan.Plugin
 {
@@ -45,14 +49,14 @@ namespace Fan.Plugin
             get { return _Timer;}
         }
         //插件与界面上对应关系
-        private  Dictionary<DevExpress.XtraBars.BarItem, string> _dicBaseItems = new Dictionary<DevExpress.XtraBars.BarItem, string>();
-        public  Dictionary<DevExpress.XtraBars.BarItem, string> DicBaseItems
+        private  Dictionary<BarItem, string> _dicBaseItems = new Dictionary<BarItem, string>();
+        public  Dictionary<BarItem, string> DicBaseItems
         {
             get { return _dicBaseItems; }
         }
         //将tab按照系统分类
-        private  Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> _dicTabs = new Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string>();
-        public  Dictionary<DevExpress.XtraBars.Ribbon.RibbonPage, string> DicTabs
+        private  Dictionary<RibbonPage, string> _dicTabs = new Dictionary<RibbonPage, string>();
+        public  Dictionary<RibbonPage, string> DicTabs
         {
             get 
             {
@@ -77,7 +81,7 @@ namespace Fan.Plugin
             }
         }
         //全局记录当前选择的按钮-----应用功能高亮显示
-        private static DevExpress.XtraBars.BarButtonItem m_pBaseItem = null;
+        private static BarButtonItem m_pBaseItem = null;
         //初始化
         public  void IntialModuleCommon(User LogInUser,PluginCollection pluginCol)
         {
@@ -101,15 +105,14 @@ namespace Fan.Plugin
         /// </summary>
         /// <param name="pApplication"></param>
         /// <returns></returns>
-        public  bool LoadForm(IApplicationRef pApplication)
+        public  string LoadForm(IApplicationRef pApplication)
         {
-            if ( pApplication == null) return false;
-
+            if ( pApplication == null) return string.Empty;
             _pIAppFrm = pApplication as IAppFormRef;
             //根据XML内容进行插件事件绑定
-            LoadEventsByXmlNode();
+            LoadEventsByXmlNode(); 
             //根据XML加载系统界面
-            return LoadControlsByXmlNode(pApplication);
+            return LoadControls();
 
         }
         public  bool LoadData(IApplicationRef pApplication)
@@ -122,51 +125,53 @@ namespace Fan.Plugin
 
         }
         /// <summary>
-        /// 根据XML加载系统界面
+        /// 根据用户权限加载控件
         /// </summary>
-        private  bool LoadControlsByXmlNode(IApplicationRef pApplication)
+        private  string LoadControls()
         {         
-            IAppFormRef pAppFormRef = pApplication as IAppFormRef;
-            if (pAppFormRef == null)
+            if (_pIAppFrm ==null)
             {
-                _SysLocalLog.WriteLocalLog("异常：" + "AppFormRef未设置");
-                return false;
+                return string.Format("初始化控件失败：无主应用对象");
             }
-            if (pAppFormRef.MainForm == null)
+            if (_AppUser == null)
             {
-                _SysLocalLog.WriteLocalLog("异常：" + "AppFormRef中变量MainForm未设置");
-                return false;
+                return string.Format("初始化控件失败：无登录用户");
             }
-            //修改窗体标题
-            string xPath = "//Main";
-            XmlNode xmlnode = _SysXmlDocument.SelectSingleNode(xPath);
-            if (xmlnode == null)
+            DataTable pRoleFunDt = _AppUser.UserRole.RoleFunDt;
+            if (pRoleFunDt==null|| pRoleFunDt.Rows.Count<=0)
             {
-                _SysLocalLog.WriteLocalLog("异常：" + "XML中未找到Main节点");
-                return false;
+                return string.Format("初始化控件失败：登录用户没有相应的权限");
             }
-            XmlElement aXmlElement = xmlnode as XmlElement;
-            if (aXmlElement.HasAttribute("Caption"))
+            //级别为0即系统名称
+            DataRow[] pRows = pRoleFunDt.Select(string.Format("{0}='{1}'",ColumnName.LevelID,'0'));
+            if (pRows.Length <= 0)
             {
-                pAppFormRef.Caption = aXmlElement.GetAttribute("Caption");
+                return string.Format("无法获取系统名称");
+            }
+            _pIAppFrm.MainForm.Text = pRows[0][ColumnName.Caption].ToString();
+            //初始化RibbonPageCategory
+            pRows = pRoleFunDt.Select(string.Format("{0}='{1}'", ColumnName.ControlType, PluginControlType.RibbonPageCategory.ToString()));
+            if (pRows.Length <= 0)
+            {
+                return string.Format("当前用户：{0}缺少相应的权限",_AppUser.UserName);
             }
             //创建RibbonControl
-            pAppFormRef.MainForm.Size = new Size(1028, 742);
-            DevExpress.XtraBars.Ribbon.RibbonControl aRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            _pIAppFrm.MainForm.Size = new Size(1028, 742);
+            RibbonControl aRibbonControl = new RibbonControl();
             aRibbonControl.Dock = DockStyle.Top;
             aRibbonControl.Location = new Point(4, 1);
             aRibbonControl.Name = "ribbonControlMain";
             aRibbonControl.Size = new Size(1028, 140);
-            pAppFormRef.ControlContainer = aRibbonControl as Control;
+            //_pIAppFrm.ControlContainer = aRibbonControl as Control;
             //创建StartButton
-            DevExpress.XtraBars.Ribbon.ApplicationMenu aStartButton = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
+            ApplicationMenu aStartButton = new ApplicationMenu();
             aStartButton.Name = "buttonSystems";
-            _SysLocalLog.WriteLocalLog("完成系统主界面初始化");
-            if (xmlnode.HasChildNodes == false)
-            {
-                _SysLocalLog.WriteLocalLog("异常：" + "XML中无相关插件内容");
-                return false;
-            }
+            //_SysLocalLog.WriteLocalLog("完成系统主界面初始化");
+            //if (xmlnode.HasChildNodes == false)
+            //{
+            //    _SysLocalLog.WriteLocalLog("异常：" + "XML中无相关插件内容");
+            //    return false;
+            //}
             //右键菜单集合
             Dictionary<string, DevExpress.Utils.ContextButton> dicContextMenu = new Dictionary<string, DevExpress.Utils.ContextButton>();
             string sNodeName = "";
@@ -193,18 +198,18 @@ namespace Fan.Plugin
                     sNodeID = "";
                     if (xmlelementChild.GetAttribute("ID") != null) sNodeID = xmlelementChild.GetAttribute("ID").Trim();
 
-                    if (pAppFormRef.ConnUser.UserCode.ToLower() != "admin")
-                    {
-                        if (sNodeID == "") continue;
-                        if (!_ListUserPrivilegeID.Contains(sNodeID)) continue;
-                    }
+                    //if (pAppFormRef.ConnUser.UserCode.ToLower() != "admin")
+                    //{
+                    //    if (sNodeID == "") continue;
+                    //    if (!_ListUserPrivilegeID.Contains(sNodeID)) continue;
+                    //}
 
                     if (sVisible == bool.FalseString.ToLower())  //获取子系统是否加载 对应Visible
                         continue;
-                    _SysLocalLog.WriteLocalLog("***************************************");
-                    _SysLocalLog.WriteLocalLog("开始加载" + sNodeName);
+                    //_SysLocalLog.WriteLocalLog("***************************************");
+                    //_SysLocalLog.WriteLocalLog("开始加载" + sNodeName);
 
-                    Fan.Common.SysLogInfoChangedEvent newEvent = new Fan.Common.SysLogInfoChangedEvent("加载" + sNodeCaption + "...");
+                    SysLogInfoChangedEvent newEvent = new SysLogInfoChangedEvent("加载" + sNodeCaption + "...");
                     SysLogInfoChnaged(null, newEvent);
 
                     if (sControlType == "UserControl")
