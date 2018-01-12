@@ -33,7 +33,7 @@ namespace Fan.Plugin
         {
             if (m_gisDb == null)
             {
-                user = (Fan.Plugin.ModuleCommon.AppUser == null) ? "" : Fan.Plugin.ModuleCommon.AppUser.UserCode;
+                //user = (Fan.Plugin.ModuleCommon.AppUser == null) ? "" : Fan.Plugin.ModuleCommon.AppUser.UserCode;
                 string strHostName = Dns.GetHostName();  //得到本机的主机名
                 IPHostEntry ipEntry = Dns.GetHostByName(strHostName); //取得本机IP
                 userIP = ipEntry.AddressList[0].ToString();
@@ -63,7 +63,7 @@ namespace Fan.Plugin
             Exception err;
             //SetWorkSpace();
             //m_sysTable = new SysGisTable(m_gisDb);
-            m_sysTable.WorkSpace = Fan.Plugin.ModuleCommon.TmpWorkSpace;//获得业务库工作空间
+            //m_sysTable.WorkSpace = Fan.Plugin.ModuleCommon.TmpWorkSpace;//获得业务库工作空间
             ITable pTable = m_sysTable.OpenTable(m_LogNAME, out err); //OpenTable(m_LogNAME, out err);
             if (pTable != null)
             {
@@ -96,7 +96,7 @@ namespace Fan.Plugin
             pEdit.Length_2 = 255;
             pFieldsEdit.AddField(pField);
             IFieldChecker pFieldChecker = new FieldCheckerClass();//检查字段有效性
-            pFieldChecker.ValidateWorkspace = Fan.Plugin.ModuleCommon.TmpWorkSpace;//xisheng 20111221 
+            //pFieldChecker.ValidateWorkspace = Fan.Plugin.ModuleCommon.TmpWorkSpace;//xisheng 20111221 
             IFields pValidFields = null;
             IEnumFieldError pEFE = null;
             pFieldChecker.Validate(pFields, out pEFE, out pValidFields);

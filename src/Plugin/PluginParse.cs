@@ -54,7 +54,6 @@ namespace Fan.Plugin.Parse
                 this.Add((IPlugin)value.List[i]);
             }
         }
-
         public int Add(IPlugin value)
         {
             return this.List.Add(value);
@@ -125,12 +124,20 @@ namespace Fan.Plugin.Parse
     {
         public ParsePluginCol(PluginCollection pluginCol)
         {
+            m_AllPlugin.ArraylstCommandCategory = new ArrayList();
+            m_AllPlugin.dicCommands = new Dictionary<string, ICommandRef>();
+            m_AllPlugin.dicControls = new Dictionary<string, IControlRef>();
+            m_AllPlugin.dicDockableWindows = new Dictionary<string, IDockableWindowRef>();
+            m_AllPlugin.dicMenus = new Dictionary<string, IMenuRef>();
+            m_AllPlugin.dicPlugins = new Dictionary<string, IPlugin>();
+            m_AllPlugin.dicToolBars = new Dictionary<string, IToolBarRef>();
+            m_AllPlugin.dicTools = new Dictionary<string, IToolRef>();
             GetPluginArray(pluginCol);
         }
         private PluginStruct m_AllPlugin = new PluginStruct(); 
         public PluginStruct AllPlugin
         {
-            get { return AllPlugin; }
+            get { return m_AllPlugin; }
         }
         private void GetPluginArray(PluginCollection pluginCol)
         {
@@ -139,78 +146,78 @@ namespace Fan.Plugin.Parse
             {
                 try
                 {
-                    if (!AllPlugin.dicPlugins.ContainsKey(plugin.ToString()))
+                    if (!m_AllPlugin.dicPlugins.ContainsKey(plugin.Name))
                     {
-                        AllPlugin.dicPlugins.Add(plugin.ToString(), plugin);
+                        m_AllPlugin.dicPlugins.Add(plugin.Name, plugin);
                     }
                     ICommandRef cmd = plugin as ICommandRef;
                     if (cmd != null)
                     {
-                        if (!AllPlugin.dicCommands.ContainsKey(cmd.ToString()))
+                        if (!m_AllPlugin.dicCommands.ContainsKey(cmd.ToString()))
                         {
-                            AllPlugin.dicCommands.Add(cmd.ToString(), cmd);
+                            m_AllPlugin.dicCommands.Add(cmd.Name, cmd);
                         }
 
                         if (cmd.Category != null)
                         {
-                            if (!AllPlugin.ArraylstCommandCategory.Contains(cmd.Category))
+                            if (!m_AllPlugin.ArraylstCommandCategory.Contains(cmd.Category))
                             {
-                                AllPlugin.ArraylstCommandCategory.Add(cmd.Category);
+                                m_AllPlugin.ArraylstCommandCategory.Add(cmd.Category);
                             }
                         }
                     }
                     IToolRef atool = plugin as IToolRef;
                     if (atool != null)
                     {
-                        if (!AllPlugin.dicTools.ContainsKey(atool.ToString()))
+                        if (!m_AllPlugin.dicTools.ContainsKey(atool.Name))
                         {
-                            AllPlugin.dicTools.Add(atool.ToString(), atool);
+                            m_AllPlugin.dicTools.Add(atool.Name, atool);
                         }
 
                         if (atool.Category != null)
                         {
-                            if (!AllPlugin.ArraylstCommandCategory.Contains(atool.Category))
+                            if (!m_AllPlugin.ArraylstCommandCategory.Contains(atool.Category))
                             {
-                                AllPlugin.ArraylstCommandCategory.Add(atool.Category);
+                                m_AllPlugin.ArraylstCommandCategory.Add(atool.Category);
                             }
                         }
                     }
                     IMenuRef aMenu = plugin as IMenuRef;
                     if (aMenu != null)
                     {
-                        if (!AllPlugin.dicMenus.ContainsKey(aMenu.ToString()))
+                        if (!m_AllPlugin.dicMenus.ContainsKey(aMenu.Name))
                         {
-                            AllPlugin.dicMenus.Add(aMenu.ToString(), aMenu);
+                            m_AllPlugin.dicMenus.Add(aMenu.Name, aMenu);
                         }
                     }
                     IToolBarRef aToolBar = plugin as IToolBarRef;
                     if (aToolBar != null)
                     {
-                        if (!AllPlugin.dicToolBars.ContainsKey(aToolBar.ToString()))
+                        if (!m_AllPlugin.dicToolBars.ContainsKey(aToolBar.Name))
                         {
-                            AllPlugin.dicToolBars.Add(aToolBar.ToString(), aToolBar);
+                            m_AllPlugin.dicToolBars.Add(aToolBar.Name, aToolBar);
                         }
                     }
                     IDockableWindowRef aDockableWindow = plugin as IDockableWindowRef;
                     if (aDockableWindow != null)
                     {
-                        if (!AllPlugin.dicDockableWindows.ContainsKey(aDockableWindow.ToString()))
+                        if (!m_AllPlugin.dicDockableWindows.ContainsKey(aDockableWindow.Name))
                         {
-                            AllPlugin.dicDockableWindows.Add(aDockableWindow.ToString(), aDockableWindow);
+                            m_AllPlugin.dicDockableWindows.Add(aDockableWindow.Name, aDockableWindow);
                         }
                     }
                     IControlRef aControl = plugin as IControlRef;
                     if (aControl != null)
                     {
-                        if (!AllPlugin.dicControls.ContainsKey(aControl.ToString()))
+                        if (!m_AllPlugin.dicControls.ContainsKey(aControl.Name))
                         {
-                            AllPlugin.dicControls.Add(aControl.ToString(), aControl);
+                            m_AllPlugin.dicControls.Add(aControl.Name, aControl);
                         }
                     }
                 }
                 catch (Exception err)
                 {
-                    Common.ModSysSetting.WriteLog("GetPluginArray 函数内错误，信息：" + err.Message);
+                    DataBase.Log.LogManager.WriteSysLog(err, string.Format("Function Name:ParsePluginCol.GetPluginArray"));
                 }
             }
         }
@@ -233,12 +240,6 @@ namespace Fan.Plugin.Parse
             try
             {
                 plugin = Activator.CreateInstance(type) as IPlugin;
-            }
-            catch
-            {
-            }
-            finally
-            {
                 if (plugin != null)
                 {
                     if (!PluginCol.Contains(plugin))
@@ -246,6 +247,10 @@ namespace Fan.Plugin.Parse
                         PluginCol.Add(plugin);
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                DataBase.Log.LogManager.WriteSysLog(ex, string.Format("Function Name:PluginParse.GetPluginObject"));
             }
         }
         public PluginCollection GetPluginFromDLL()
@@ -257,7 +262,6 @@ namespace Fan.Plugin.Parse
             {
                 Directory.CreateDirectory(_pluginFolder);
             }
-
             //获取DLL
             string[] dllFiles = Directory.GetFiles(_pluginFolder, "*.dll");
             foreach (string file in dllFiles)
@@ -270,11 +274,10 @@ namespace Fan.Plugin.Parse
                     {
                         types = assembly.GetTypes();
                     }
-                    catch
+                    catch(Exception ex)
                     {
-
+                        DataBase.Log.LogManager.WriteSysLog(ex, string.Format("Function Name:PluginParse.GetPluginFromDLL"));
                     }
-
                     if (types == null) continue;
                     foreach (Type type in types)
                     {
@@ -283,12 +286,12 @@ namespace Fan.Plugin.Parse
                         {
                             switch (ainterface.FullName)
                             {
-                                case "Plugin.Interface.ICommandRef":
-                                case "Plugin.Interface.IToolRef":
-                                case "Plugin.Interface.IMenuRef":
-                                case "Plugin.Interface.IToolBarRef":
-                                case "Plugin.Interface.IDockableWindowRef":
-                                case "Plugin.Interface.IControlRef":
+                                case "Fan.Plugin.Interface.ICommandRef":
+                                case "Fan.Plugin.Interface.IToolRef":
+                                case "Fan.Plugin.Interface.IMenuRef":
+                                case "Fan.Plugin.Interface.IToolBarRef":
+                                case "Fan.Plugin.Interface.IDockableWindowRef":
+                                case "Fan.Plugin.Interface.IControlRef":
                                     GetPluginObject(PluginCol, type);
                                     break;
                                 default:

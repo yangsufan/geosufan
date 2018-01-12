@@ -35,5 +35,11 @@ namespace Fan.DataBase.Module
         public const string ConfigName = "ConfigName";
         public const string ConfigValue = "ConfigValue";
         #endregion
+        #region 系统配置项名称
+        public const string SystemName = "SysName";
+        public const string TempDbConfigCode = "TempDbConfig";
+        public const string HisDbConfigCode = "HisDbConfig";
+        public const string OfficDbConfigCode = "OfficialDbConfig";
+        #endregion
     }
 }

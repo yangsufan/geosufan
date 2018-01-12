@@ -26,15 +26,15 @@ namespace Fan.DataManagerView
                 {
                     if (_hook != null)
                     {
-                        if (_hook.CurrentSysName != base._Name)
-                        {
-                            base._Visible = false;
-                            //_ControlSet.Visible = false;
-                            //ModFrameData.v_AppGisUpdate.StatusBar.Visible = false;
-                            return false;
-                        }
+                        //if (_hook.CurrentSysName != base._Name)
+                        //{
+                        //    base._Visible = false;
+                        //    //_ControlSet.Visible = false;
+                        //    //ModFrameData.v_AppGisUpdate.StatusBar.Visible = false;
+                        //    return false;
+                        //}
 
-                        base._Visible = true;
+                        //base._Visible = true;
                         //_ControlSet.Visible = true;
                         //ModFrameData.v_AppGisUpdate.StatusBar.Visible = true;
                         return true;
@@ -64,13 +64,13 @@ namespace Fan.DataManagerView
                         base._Enabled = false;
                         return false;
                     }
-                    if (_hook.CurrentSysName != base._Name)
-                    {
-                        base._Enabled = false;
-                        //_ControlSet.Enabled = false;
-                        //ModFrameData.v_AppGisUpdate.StatusBar.Enabled = false;
-                        return false;
-                    }
+                    //if (_hook.CurrentSysName != base._Name)
+                    //{
+                    //    base._Enabled = false;
+                    //    //_ControlSet.Enabled = false;
+                    //    //ModFrameData.v_AppGisUpdate.StatusBar.Enabled = false;
+                    //    return false;
+                    //}
 
                     base._Enabled = true;
                     //_ControlSet.Enabled = true;
@@ -104,7 +104,7 @@ namespace Fan.DataManagerView
             //_hook.MainForm.Controls.Add(ModFrameData.v_AppGisUpdate.StatusBar);  //创建框架底部状态栏
             //20110518 当前登录用户
             //ModFrameData.v_AppGisUpdate.UserInfo = "当前登陆: " + _hook.ConnUser.TrueName;  //在底部状态栏中显示登录信息
-            _hook.MainForm.FormClosing += new FormClosingEventHandler(MainForm_FormClosing);
+            //_hook.MainForm.FormClosing += new FormClosingEventHandler(MainForm_FormClosing);
             //20110518  cyf  添加
   /*          _ControlSet.EnabledChanged += new EventHandler(_ControlSet_EnabledChanged); */ // Enable事件，用来触发数据库工程树图界面的初始化
 

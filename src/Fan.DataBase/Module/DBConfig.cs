@@ -69,14 +69,22 @@ namespace Fan.DataBase
             if (!File.Exists(fileName)) return;
             StreamReader sr = new StreamReader(fileName,Encoding.UTF8);
             string readStr = sr.ReadToEnd();
-            string ConfigStr = Encryption.Decrypt(readStr);
+            ReadConfigFromStr(readStr);
+        }
+        /// <summary>
+        /// 从加密字符串中读取配置信息
+        /// </summary>
+        /// <param name="strConfig"></param>
+        public void ReadConfigFromStr(string strConfig)
+        {
+            string ConfigStr = Encryption.Decrypt(strConfig);
             string[] data = ConfigStr.Split(',');
             if (data.Length <= 0) return;
             int temp = 0;
             foreach (string dataitem in data)
             {
                 string[] configitem = dataitem.Split('=');
-                if (configitem.Length !=2) continue;
+                if (configitem.Length != 2) continue;
                 switch (configitem[0])
                 {
                     case "server":
@@ -101,11 +109,11 @@ namespace Fan.DataBase
                         m_ServerPort = configitem[1];
                         break;
                     case "operatortype":
-                        int.TryParse(configitem[1],out temp);
+                        int.TryParse(configitem[1], out temp);
                         m_OperatorType = (DBOperatorType)temp;
                         break;
                     case "dbtype":
-                        int.TryParse(configitem[1],out temp);
+                        int.TryParse(configitem[1], out temp);
                         m_ConnectType = (DBType)temp;
                         break;
                 }
@@ -147,16 +155,25 @@ namespace Fan.DataBase
         }
         public void SaveConfig(string fileName)
         {
-            string writeStr = string.Empty;
-            writeStr = string.Format("operatortype={0},dbtype={1},server={2},serverice={3},database={4},user={5}," +
-                "password={6},version={7},serverport={8}",(int)OperatorType,(int)ConnectType,
-               Server, Service, Database, User, Password, Version, ServerPort);
-            writeStr = Encryption.Encrypt(writeStr);
+            string writeStr = GetConfigStr();
             FileStream fs = new FileStream(fileName, FileMode.Create);
             byte[] data = System.Text.Encoding.UTF8.GetBytes(writeStr);
             fs.Write(data, 0, data.Length);
             fs.Flush();
             fs.Close();
+        }
+        /// <summary>
+        /// 获取数据库连接加密字符串
+        /// </summary>
+        /// <returns></returns>
+        public string GetConfigStr()
+        {
+            string writeStr = string.Empty;
+            writeStr = string.Format("operatortype={0},dbtype={1},server={2},serverice={3},database={4},user={5}," +
+                "password={6},version={7},serverport={8}", (int)OperatorType, (int)ConnectType,
+               Server, Service, Database, User, Password, Version, ServerPort);
+            writeStr = Encryption.Encrypt(writeStr);
+            return writeStr;
         }
         #endregion
 

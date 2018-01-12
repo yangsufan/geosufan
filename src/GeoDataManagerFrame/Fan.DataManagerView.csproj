@@ -180,14 +180,17 @@
     <ProjectReference Include="..\Fan.DataBase\Fan.DataBase.csproj">
       <Project>{fd4c4953-4740-47b4-b539-0b1b2c483aa6}</Project>
       <Name>Fan.DataBase</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\Plugin\Fan.Plugin.csproj">
       <Project>{bc54cbad-763e-40e5-b2c4-ff9faa9cc318}</Project>
       <Name>Fan.Plugin</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\SysCommon\Fan.Common.csproj">
       <Project>{d0d978a2-2f5a-41a4-931f-72cdecd61513}</Project>
       <Name>Fan.Common</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -22,7 +22,8 @@ namespace Fan.DataBase.Log
             {
                 File.Delete(m_LogFileName);
             }
-            File.Create(m_LogFileName);
+            FileStream fileStream= File.Create(m_LogFileName);
+            fileStream.Close();
             return true;
         }
         public bool WriteErrorLog(Exception ex, params string[] StrMessage)

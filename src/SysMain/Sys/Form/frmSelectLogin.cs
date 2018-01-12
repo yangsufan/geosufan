@@ -10,32 +10,25 @@ namespace GDBM
 {
     public partial class frmSelectLogin :Fan.Common.BaseForm
     {
-        private SystemTypeEnum _Systemtype;
         public frmSelectLogin()
         {
             InitializeComponent();
         }
-        public SystemTypeEnum GetSystemType()
-        {
-            return _Systemtype;
-        }
+
         private void btnDataManage_Click(object sender, EventArgs e)
         {
-            _Systemtype = SystemTypeEnum.ManagerSystem;
             this.DialogResult = DialogResult.OK;
             
         }
 
         private void btnUpdata_Click(object sender, EventArgs e)
         {
-            _Systemtype = SystemTypeEnum.UpdateSystem;
             this.DialogResult = DialogResult.OK;
             
         }
 
         private void btnDBIntegration_Click(object sender, EventArgs e)
         {
-            _Systemtype = SystemTypeEnum.ConfigSystem;
             this.DialogResult = DialogResult.OK;
             
 

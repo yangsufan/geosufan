@@ -16,7 +16,7 @@ namespace Fan.Plugin.Application
         /// <summary>
         /// 窗体
         /// </summary>
-        Form MainForm { get;}
+        BaseRibbonForm MainForm { get;}
         /// <summary>
         /// 窗体名称
         /// </summary>
@@ -38,19 +38,19 @@ namespace Fan.Plugin.Application
     #region 接口实现类
     public class AppForm : IAppFormRef
     {
-        private Form _MainForm;                                      
+        private BaseRibbonForm _MainForm;                                      
         private Parse.PluginCollection _ColParsePlugin;      
         public AppForm()
         {
 
         }
-        public AppForm(Form MainForm, Parse.PluginCollection ColParsePlugin):this()
+        public AppForm(BaseRibbonForm MainForm, Parse.PluginCollection ColParsePlugin):this()
         {
             _MainForm = MainForm;
             _ColParsePlugin = ColParsePlugin;
         }
         #region IDefAppForm 成员
-        public Form MainForm
+        public BaseRibbonForm MainForm
         {
             get{return _MainForm;}
         }

@@ -43,6 +43,7 @@
             // 
             // textBoxXPassword
             // 
+            this.textBoxXPassword.EditValue = "admin";
             this.textBoxXPassword.Location = new System.Drawing.Point(252, 201);
             this.textBoxXPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxXPassword.Name = "textBoxXPassword";
@@ -99,6 +100,7 @@
             // 
             // txtUser
             // 
+            this.txtUser.EditValue = "admin";
             this.txtUser.Location = new System.Drawing.Point(252, 167);
             this.txtUser.Margin = new System.Windows.Forms.Padding(4);
             this.txtUser.Name = "txtUser";
