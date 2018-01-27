@@ -128,6 +128,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\InitalizeDb.cs" />
     <Compile Include="Command\CommandInitDB.cs" />
     <Compile Include="Command\InitializeSet.cs" />
     <Compile Include="Form\FromInitializeSet.cs">
@@ -147,6 +148,7 @@
     <EmbeddedResource Include="Form\FromInitializeSet.resx">
       <DependentUpon>FromInitializeSet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -154,6 +156,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fan.DataBase\Fan.DataBase.csproj">
+      <Project>{fd4c4953-4740-47b4-b539-0b1b2c483aa6}</Project>
+      <Name>Fan.DataBase</Name>
+      <Private>False</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Plugin\Fan.Plugin.csproj">
       <Project>{BC54CBAD-763E-40E5-B2C4-FF9FAA9CC318}</Project>
       <Name>Fan.Plugin</Name>

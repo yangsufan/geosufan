@@ -175,6 +175,18 @@ namespace Fan.DataBase
             writeStr = Encryption.Encrypt(writeStr);
             return writeStr;
         }
+        /// <summary>
+        /// 获取数据库配置名称
+        /// 如果是关系型数据库则返回服务器IP，如果是文件数据库则返回文件路径
+        /// </summary>
+        /// <returns></returns>
+        public string GetConfigName()
+        {
+            if (m_ConnectType == DBType.ESRIGDB || m_ConnectType == DBType.ESRIPDB || m_ConnectType == DBType.ESRISHP || m_ConnectType == DBType.ODBCMDB)
+                return m_Database;
+            else if (m_ConnectType != DBType.DEFAULT) return string.Format("{0}:{1}",m_Server,m_Database);
+            return string.Empty;
+        }
         #endregion
 
     }

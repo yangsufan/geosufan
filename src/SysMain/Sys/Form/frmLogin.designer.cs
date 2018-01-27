@@ -44,13 +44,13 @@
             // textBoxXPassword
             // 
             this.textBoxXPassword.EditValue = "admin";
-            this.textBoxXPassword.Location = new System.Drawing.Point(252, 201);
-            this.textBoxXPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxXPassword.Location = new System.Drawing.Point(252, 205);
+            this.textBoxXPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxXPassword.Name = "textBoxXPassword";
             this.textBoxXPassword.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBoxXPassword.Properties.Appearance.Options.UseFont = true;
             this.textBoxXPassword.Properties.PasswordChar = '*';
-            this.textBoxXPassword.Size = new System.Drawing.Size(234, 26);
+            this.textBoxXPassword.Size = new System.Drawing.Size(240, 26);
             this.textBoxXPassword.TabIndex = 3;
             // 
             // buttonX1
@@ -61,10 +61,10 @@
             this.buttonX1.Appearance.Options.UseFont = true;
             this.buttonX1.Appearance.Options.UseForeColor = true;
             this.buttonX1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonX1.Location = new System.Drawing.Point(410, 239);
-            this.buttonX1.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonX1.Location = new System.Drawing.Point(419, 242);
+            this.buttonX1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(76, 30);
+            this.buttonX1.Size = new System.Drawing.Size(65, 28);
             this.buttonX1.TabIndex = 4;
             this.buttonX1.Text = "登  录";
             this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
@@ -76,44 +76,44 @@
             this.buttonX3.Appearance.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonX3.Appearance.Options.UseFont = true;
             this.buttonX3.Appearance.Options.UseForeColor = true;
-            this.buttonX3.Location = new System.Drawing.Point(326, 239);
-            this.buttonX3.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonX3.Location = new System.Drawing.Point(348, 242);
+            this.buttonX3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(76, 30);
+            this.buttonX3.Size = new System.Drawing.Size(65, 28);
             this.buttonX3.TabIndex = 6;
             this.buttonX3.Text = "退  出";
             this.buttonX3.Click += new System.EventHandler(this.buttonX3_Click);
             // 
             // checkBoxNotPassWord
             // 
-            this.checkBoxNotPassWord.Location = new System.Drawing.Point(188, 247);
-            this.checkBoxNotPassWord.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxNotPassWord.Location = new System.Drawing.Point(161, 229);
+            this.checkBoxNotPassWord.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxNotPassWord.Name = "checkBoxNotPassWord";
             this.checkBoxNotPassWord.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxNotPassWord.Properties.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.checkBoxNotPassWord.Properties.Appearance.Options.UseBackColor = true;
             this.checkBoxNotPassWord.Properties.Appearance.Options.UseFont = true;
             this.checkBoxNotPassWord.Properties.Caption = "记住密码";
-            this.checkBoxNotPassWord.Size = new System.Drawing.Size(88, 19);
+            this.checkBoxNotPassWord.Size = new System.Drawing.Size(75, 19);
             this.checkBoxNotPassWord.TabIndex = 7;
             this.checkBoxNotPassWord.Visible = false;
             // 
             // txtUser
             // 
             this.txtUser.EditValue = "admin";
-            this.txtUser.Location = new System.Drawing.Point(252, 167);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUser.Location = new System.Drawing.Point(252, 166);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUser.Name = "txtUser";
             this.txtUser.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtUser.Properties.Appearance.Options.UseFont = true;
-            this.txtUser.Size = new System.Drawing.Size(234, 26);
+            this.txtUser.Size = new System.Drawing.Size(240, 26);
             this.txtUser.TabIndex = 8;
             // 
             // frmLogin
             // 
             this.AcceptButton = this.buttonX1;
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = global::GDBM.Properties.Resources.bglogin;
@@ -124,7 +124,7 @@
             this.Controls.Add(this.buttonX1);
             this.Controls.Add(this.textBoxXPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";

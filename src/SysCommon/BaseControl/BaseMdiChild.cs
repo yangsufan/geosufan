@@ -16,9 +16,14 @@ namespace Fan.Common
 {
     public partial class BaseMdiChild : BaseForm
     {
-        public BaseMdiChild()
+        public BaseMdiChild(BaseRibbonForm MdiParentForm)
         {
             InitializeComponent();
+            this.MdiParent = MdiParentForm;
+        }
+        public BaseMdiChild()
+        {
+
         }
     }
 }

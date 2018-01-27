@@ -29,10 +29,10 @@ namespace GDBM
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //check the config file 
-            frmDBSet setDbFrom=null;
+           Fan.Common.frmDBSet setDbFrom=null;
             if (!System.IO.File.Exists(Fan.Common.ModuleConfig.m_ConnectFileName))
             {
-                setDbFrom = new frmDBSet();
+                setDbFrom = new Fan.Common.frmDBSet();
                 if (setDbFrom.ShowDialog() != DialogResult.OK)
                 {
                     return;
@@ -51,7 +51,7 @@ namespace GDBM
                 Mod.m_SysDbOperate=dbFac.GetDbOperate();
                 if (Mod.m_SysDbOperate == null||!Mod.m_SysDbOperate.TestConnect())
                 {
-                    setDbFrom = new frmDBSet();
+                    setDbFrom = new Fan.Common.frmDBSet();
                     if (setDbFrom.ShowDialog() != DialogResult.OK)
                     {
                         return;

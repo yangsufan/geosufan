@@ -32,6 +32,7 @@
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.ItemLoginUser = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,13 +40,14 @@
             // 
             this.mainRibbon.ExpandCollapseItem.Id = 0;
             this.mainRibbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.mainRibbon.ExpandCollapseItem});
+            this.mainRibbon.ExpandCollapseItem,
+            this.ItemLoginUser});
             this.mainRibbon.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbon.MaxItemId = 1;
+            this.mainRibbon.MaxItemId = 2;
             this.mainRibbon.Name = "mainRibbon";
             this.mainRibbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.mainRibbon.Size = new System.Drawing.Size(442, 147);
+            this.mainRibbon.Size = new System.Drawing.Size(1281, 143);
             this.mainRibbon.StatusBar = this.ribbonStatusBar;
             // 
             // ribbonPage1
@@ -62,16 +64,24 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 418);
+            this.ribbonStatusBar.ItemLinks.Add(this.ItemLoginUser);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 710);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.mainRibbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(442, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1281, 31);
+            // 
+            // ItemLoginUser
+            // 
+            this.ItemLoginUser.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.ItemLoginUser.Caption = "当前登录用户：";
+            this.ItemLoginUser.Id = 1;
+            this.ItemLoginUser.Name = "ItemLoginUser";
             // 
             // BaseRibbonForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 449);
+            this.ClientSize = new System.Drawing.Size(1281, 741);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.mainRibbon);
             this.IsMdiContainer = true;
@@ -91,5 +101,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         public DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
+        private DevExpress.XtraBars.BarStaticItem ItemLoginUser;
     }
 }

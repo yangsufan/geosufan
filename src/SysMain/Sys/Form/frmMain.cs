@@ -15,6 +15,7 @@ namespace GDBM
         /// 必需的设计器变量。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private SysConfig MainSysConfig = null;
         /// <summary>
         /// 清理所有正在使用的资源。
         /// </summary>
@@ -38,6 +39,8 @@ namespace GDBM
             this.mainRibbon.SelectedPageChanged += MainRibbon_SelectedPageChanged;
             //加载界面信息
             InitialFrm();
+            MainSysConfig = new SysConfig(Mod.m_SysDbOperate);
+            SetLonginBarText(string.Format("当前登录用户：{0}", Mod.m_LoginUser.UserName));
             _frmTemp.Close();
         }
         /// <summary>
@@ -61,10 +64,14 @@ namespace GDBM
             }
         }
         PluginUI m_MainPluginUI = default(PluginUI);
-        private void InitialSysConfig()
+        /// <summary>
+        /// 获取主应用程序配置类
+        /// </summary>
+        /// <returns></returns>
+        public override SysConfig GetMainSysConfig()
         {
-            Mod.m_sysConfig = new SysConfig(Mod.m_SysDbOperate);
-            this.Text = Mod.m_sysConfig.SystemName;
+            if (MainSysConfig != null) return MainSysConfig;
+            return base.GetMainSysConfig();
         }
         /// <summary>
         ///初始化界面

@@ -13,13 +13,23 @@ using Fan.Common.Error;
 using ESRI.ArcGIS.Geodatabase;
 using Fan.DataBase;
 
-namespace GDBM
+namespace Fan.Common
 {
     public partial class frmDBSet :Fan.Common.BaseForm
     {
         public frmDBSet()
         {
             InitializeComponent();
+        }
+        public frmDBSet(string strTitle,string strContent)
+        {
+            InitializeComponent();
+            if (!string.IsNullOrEmpty(strTitle))
+            {
+                labelX4.Text = strTitle;
+            }
+            if (!string.IsNullOrEmpty(strContent)) labelX3.Text = strContent;
+
         }
         #region 窗体变量
         private DBConfig m_dbConfig = new DBConfig();
@@ -58,6 +68,10 @@ namespace GDBM
         public IDBOperate Dbop
         {
             get { return m_DbOp; }
+        }
+        public DBConfig DbConfig
+        {
+            get { return m_dbConfig; }
         }
         #region 窗体操作事件
         private void buttonXOK_Click(object sender, EventArgs e)
@@ -113,7 +127,8 @@ namespace GDBM
             switch (m_dbType)
             {
                 case DBType.ODBCMDB:
-                    txtODBCDb.Width = 406;
+                    
+                    txtODBCDb.Width = txtODBCServer.Width-50;
                     btnSelectDB.Visible = true;
                     txtODBCServer.Enabled = false;
                     txtODBCPort.Enabled = false;
@@ -121,14 +136,14 @@ namespace GDBM
                     break;
                 case DBType.ODBCORACLE:
                 case DBType.ODBCPOST:
-                    txtODBCPort.Width = 455;
+                    txtODBCDb.Width = txtODBCServer.Width;
                     btnSelectDB.Visible = false;
                     txtODBCPort.Enabled = true;
                     txtODBCServer.Enabled = true;
                     txtODBCUser.Enabled = true;
                     break;
                 case DBType.ODBCSQL:
-                    txtODBCPort.Width = 455;
+                    txtODBCDb.Width = txtODBCServer.Width;
                     btnSelectDB.Visible = false;
                     txtODBCPort.Enabled = false;
                     txtODBCServer.Enabled = true;
@@ -145,7 +160,7 @@ namespace GDBM
             {
                 case DBType.ESRIGDB:
                 case DBType.ESRIPDB:
-                    txtEsriDb.Width = 406;
+                    txtEsriDb.Width = txtEsriPassword.Width-50;
                     btnSelectEsriDb.Visible = true;
                     txtEsriPassword.Enabled = false;
                     txtEsriServer.Enabled = false;
@@ -155,7 +170,7 @@ namespace GDBM
                     break;
                 case DBType.ESRISDEOracle:
                 case DBType.ESRISDESqlServer:
-                    txtEsriDb.Width = 455;
+                    txtEsriDb.Width = txtEsriPassword.Width;
                     btnSelectEsriDb.Visible = false;
                     txtEsriPassword.Enabled = true;
                     txtEsriServer.Enabled = true;

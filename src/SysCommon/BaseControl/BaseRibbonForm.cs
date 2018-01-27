@@ -16,5 +16,17 @@ namespace Fan.Common
         {
             InitializeComponent();
         }
+       // public delegate void Progress;
+        public virtual SysConfig GetMainSysConfig()
+        {
+            return null;
+        }
+        public virtual void SetLonginBarText(string strBarText)
+        {
+            if (string.IsNullOrEmpty(strBarText))
+            {
+                this.ItemLoginUser.Caption = strBarText;
+            }
+        }
     }
 }
