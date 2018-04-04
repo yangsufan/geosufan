@@ -23,5 +23,6 @@ namespace Fan.SysSetting
         {
             
         }
+
     }
 }

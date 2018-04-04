@@ -30,7 +30,6 @@ namespace Fan.Plugin.Parse
         {
             this.Add(value);
         }
-
         public IPlugin this[int index]
         {
             get
@@ -38,7 +37,6 @@ namespace Fan.Plugin.Parse
                 return (IPlugin)(this.List[index]);
             }
         }
-
         public void AddRange(IPlugin[] value)
         {
             for (int i = 0; i < value.Length; i++)
@@ -46,7 +44,6 @@ namespace Fan.Plugin.Parse
                 this.Add(value[i]);
             }
         }
-
         public void AddRange(PluginCollection value)
         {
             for (int i = 0; i < value.Capacity; i++)
@@ -58,45 +55,40 @@ namespace Fan.Plugin.Parse
         {
             return this.List.Add(value);
         }
-
         public void Insert(int index, IPlugin value)
         {
             this.List.Insert(index, value);
         }
-
         public void Remove(IPlugin value)
         {
             this.List.Remove(value);
         }
-
         public int IndexOf(IPlugin value)
         {
             return this.List.IndexOf(value);
         }
-
         public bool Contains(IPlugin value)
         {
             return this.List.Contains(value);
         }
-
         public void CopyTo(IPlugin[] value, int index)
         {
             this.CopyTo(value, index);
         }
-
         public IPlugin[] ToArray()
         {
             IPlugin[] array = new IPlugin[this.Count];
             this.CopyTo(array, 0);
             return array;
         }
-
         public new PluginCollectionEnumerator GetEnumerator()
         {
             return new PluginCollectionEnumerator(this);
         }
     }
-    //插件接口迭代器
+    /// <summary>
+    /// 插件接口迭代器
+    /// </summary>
     public class PluginCollectionEnumerator : IEnumerator
     {
         private IEnumerable temp;
@@ -119,7 +111,9 @@ namespace Fan.Plugin.Parse
             enumerator.Reset();
         }
     }
-    //插件接口分类解析
+    /// <summary>
+    /// 插件接口分类解析
+    /// </summary>
     public class ParsePluginCol
     {
         public ParsePluginCol(PluginCollection pluginCol)
@@ -222,7 +216,9 @@ namespace Fan.Plugin.Parse
             }
         }
     }
-    //根据反射机制获取插件并装入插件接口容器
+    /// <summary>
+    /// 根据反射机制获取插件并装入插件接口容器
+    /// </summary>
     public class PluginHandle
     {
         public PluginHandle(string strPluginFolder)

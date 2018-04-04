@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS;
+using ESRI.ArcGIS.esriSystem;
 
 namespace GDBM
 {
@@ -23,8 +24,13 @@ namespace GDBM
             DevExpress.UserSkins.BonusSkins.Register();
             DevExpress.Skins.SkinManager.EnableFormSkins();
             //扩展许可判断
-            //IAoInitialize m_AoInitialize = new AoInitialize();
-            //esriLicenseStatus status=m_AoInitialize.Initialize(esriLicenseProductCode.esriLicenseProductCodeEngineGeoDB);
+            IAoInitialize m_AoInitialize = new AoInitialize();
+            esriLicenseStatus status=m_AoInitialize.Initialize(esriLicenseProductCode.esriLicenseProductCodeEngineGeoDB);
+            if (status == esriLicenseStatus.esriLicenseFailure ||status==esriLicenseStatus.esriLicenseNotLicensed)
+            {
+                MessageBox.Show(string.Format("当前ArcGIS权限不足"));
+                return;
+            }
             //m_AoInitialize.IsProductCodeAvailable(esriLicenseProductCode.esriLicenseProductCodeEngineGeoDB);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

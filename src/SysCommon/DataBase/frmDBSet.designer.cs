@@ -31,12 +31,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDBSet));
             this.panelEx = new DevExpress.XtraEditors.PanelControl();
             this.picImg = new System.Windows.Forms.PictureBox();
             this.labelX2 = new DevExpress.XtraEditors.LabelControl();
             this.labelX1 = new DevExpress.XtraEditors.LabelControl();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelEx1 = new DevExpress.XtraEditors.PanelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelX3 = new DevExpress.XtraEditors.LabelControl();
@@ -179,7 +180,7 @@
             // buttonXCancel
             // 
             this.buttonXCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonXCancel.Location = new System.Drawing.Point(407, 344);
+            this.buttonXCancel.Location = new System.Drawing.Point(407, 358);
             this.buttonXCancel.Name = "buttonXCancel";
             this.buttonXCancel.Size = new System.Drawing.Size(75, 25);
             this.buttonXCancel.TabIndex = 68;
@@ -189,7 +190,7 @@
             // buttonXOK
             // 
             this.buttonXOK.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonXOK.Location = new System.Drawing.Point(326, 344);
+            this.buttonXOK.Location = new System.Drawing.Point(326, 358);
             this.buttonXOK.Name = "buttonXOK";
             this.buttonXOK.Size = new System.Drawing.Size(75, 25);
             this.buttonXOK.TabIndex = 67;
@@ -484,7 +485,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 381);
+            this.ClientSize = new System.Drawing.Size(488, 395);
             this.Controls.Add(this.gpEsri);
             this.Controls.Add(this.lblDbOperatorType);
             this.Controls.Add(this.cbSelectDbOpType);
