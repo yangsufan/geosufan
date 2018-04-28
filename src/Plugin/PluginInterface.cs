@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using System.Collections;
 using System.IO;
 using System.Reflection;
-
 using Fan.Plugin.Application;
 
 namespace Fan.Plugin.Interface

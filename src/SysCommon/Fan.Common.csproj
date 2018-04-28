@@ -203,7 +203,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Active.cs" />
     <Compile Include="Authorize\SysFunction.cs" />
     <Compile Include="BaseControl\BaseControl.cs">
       <SubType>UserControl</SubType>
@@ -283,6 +282,13 @@
     <Compile Include="Map\ModuleMap.cs" />
     <Compile Include="Map\ModuleRenderer.cs" />
     <Compile Include="Map\XMLOperation.cs" />
+    <Compile Include="MessageBox\DialogMessageBox.cs" />
+    <Compile Include="MessageBox\FromMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox\FromMessageBox.Designer.cs">
+      <DependentUpon>FromMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModPublic\mdlPublic.cs" />
     <Compile Include="ModPublic\modCalArea.cs" />
     <Compile Include="ModPublic\ModField.cs" />
@@ -369,6 +375,9 @@
     <EmbeddedResource Include="Gis\UIDataConnect.resx">
       <DependentUpon>UIDataConnect.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBox\FromMessageBox.resx">
+      <DependentUpon>FromMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Progress\FormProgress.resx">
       <DependentUpon>FormProgress.cs</DependentUpon>

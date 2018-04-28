@@ -109,7 +109,16 @@ namespace Fan.SysSetting
         /// <param name="e"></param>
         private void btnInitailDb_Click(object sender, EventArgs e)
         {
-
+            InitalizeDb initalizeDb = new InitalizeDb(m_dicTemplateDb,m_sysConfig);
+            bool flag=initalizeDb.Do_Initalize();
+            if (flag)
+            {
+                DialogMessageBox.Show("初始化成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DialogMessageBox.Show("数据库初始化失败,请查看详细日志信息。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         /// <summary>
         /// 删除选中的模板项

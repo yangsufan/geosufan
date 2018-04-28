@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using Fan.Common;
+using Fan.Plugin.Parse;
 namespace Fan.Plugin.Application
 {
     #region 接口声明
@@ -14,7 +15,7 @@ namespace Fan.Plugin.Application
     public interface IAppFormRef : IApplicationRef
     {
         /// <summary>
-        /// 窗体
+        /// 主窗体
         /// </summary>
         BaseRibbonForm MainForm { get;}
         /// <summary>
@@ -28,7 +29,7 @@ namespace Fan.Plugin.Application
         /// <summary>
         /// 系统插件集合
         /// </summary>
-        Parse.PluginCollection ColParsePlugin { get; set; }
+        PluginCollection ColParsePlugin { get; }
         /// <summary>
         /// 登陆的用户
         /// </summary>
@@ -39,17 +40,17 @@ namespace Fan.Plugin.Application
     public class AppForm : IAppFormRef
     {
         private BaseRibbonForm _MainForm;                                      
-        private Parse.PluginCollection _ColParsePlugin;      
+        private PluginCollection _ColParsePlugin;      
         public AppForm()
         {
 
         }
-        public AppForm(BaseRibbonForm MainForm, Parse.PluginCollection ColParsePlugin):this()
+        public AppForm(BaseRibbonForm MainForm, PluginCollection ColParsePlugin):this()
         {
             _MainForm = MainForm;
             _ColParsePlugin = ColParsePlugin;
         }
-        #region IDefAppForm 成员
+        #region AppForm 成员
         public BaseRibbonForm MainForm
         {
             get{return _MainForm;}
@@ -67,10 +68,6 @@ namespace Fan.Plugin.Application
             get
             {
                 return _ColParsePlugin;
-            }
-            set
-            {
-                _ColParsePlugin = value;
             }
         }
         public User ConnUser

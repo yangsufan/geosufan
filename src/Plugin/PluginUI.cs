@@ -19,7 +19,7 @@ using Fan.DataBase.Module;
 
 namespace Fan.Plugin
 {
-    #region 从XML读取解析插件UI化,并与插件实现进行绑定
+    #region 从用户权限读取解析插件UI化,并与插件实现进行绑定
     public  class PluginUI
     {
         public  PluginUI(User LogInUser)
@@ -34,7 +34,8 @@ namespace Fan.Plugin
             get { return AllPlugin; }
         }
         #endregion
-        private  string _ResPath;
+        private string _ResPath;
+
         private  User _AppUser=null;
         public  User AppUser
         {

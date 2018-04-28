@@ -19,13 +19,11 @@ namespace Fan.Common
                 return _information;
             }
         }
-
         //  默认构造函数
         public SysLogInfoChangedEvent()
         {
             _information = string.Empty;
         }
-
         //  实际构造函数
         public SysLogInfoChangedEvent(string information)
         {

@@ -247,7 +247,7 @@
             this.Controls.Add(this.gpTempDbLocation);
             this.Controls.Add(this.gpOfficalDbLoacation);
             this.Name = "FromInitializeSet";
-            this.Text = "FromInitializeSet";
+            this.Text = "数据库初始化";
             this.Load += new System.EventHandler(this.FromInitializeSet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gpOfficalDbLoacation)).EndInit();
             this.gpOfficalDbLoacation.ResumeLayout(false);

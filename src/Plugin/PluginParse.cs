@@ -7,8 +7,10 @@ using System.Collections;
 using System.IO;
 using System.Reflection;
 using System.Xml;
-
 using Fan.Plugin.Interface;
+/*
+ * 描述：插件解析类，主要通过反射的方式将插件DLL解析成对象以供主程序使用
+ */
 
 namespace Fan.Plugin.Parse
 {
@@ -69,7 +71,12 @@ namespace Fan.Plugin.Parse
         }
         public bool Contains(IPlugin value)
         {
-            return this.List.Contains(value);
+            foreach (IPlugin plugin in this.List)
+            {
+                if (plugin.Name == value.Name)
+                    return true;
+            }
+            return false;
         }
         public void CopyTo(IPlugin[] value, int index)
         {
@@ -230,6 +237,11 @@ namespace Fan.Plugin.Parse
         {
             get { return _pluginFolder;}
         }
+        /// <summary>
+        /// 通过反射的方式获取对象
+        /// </summary>
+        /// <param name="PluginCol"></param>
+        /// <param name="type"></param>
         private void GetPluginObject(PluginCollection PluginCol, Type type)
         {
             IPlugin plugin = null;
@@ -242,6 +254,10 @@ namespace Fan.Plugin.Parse
                     {
                         PluginCol.Add(plugin);
                     }
+                    else
+                    {
+                        DataBase.Log.LogManager.WriteSysInfo(string.Format("Plugin:{0} has been Loaded",plugin.Name));
+                    }
                 }
             }
             catch (Exception ex)
@@ -249,6 +265,10 @@ namespace Fan.Plugin.Parse
                 DataBase.Log.LogManager.WriteSysLog(ex, string.Format("Function Name:PluginParse.GetPluginObject"));
             }
         }
+        /// <summary>
+        /// 获取插件对象
+        /// </summary>
+        /// <returns></returns>
         public PluginCollection GetPluginFromDLL()
         {
             //插件接口容器
@@ -301,6 +321,9 @@ namespace Fan.Plugin.Parse
         }
     }
     #endregion
+    /// <summary>
+    /// 插件类型枚举
+    /// </summary>
     public enum PluginControlType
     {
         RibbonPageCategory=1,
@@ -308,6 +331,9 @@ namespace Fan.Plugin.Parse
         RibbonPageGroup=3,
         BarButtonItem=4,
     }
+    /// <summary>
+    /// 插件信息结构体
+    /// </summary>
     public struct PluginStruct
     {
         public Dictionary<string, IPlugin> dicPlugins;

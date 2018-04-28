@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*
+ * 列名常数类
+ */
 namespace Fan.DataBase.Module
 {
    public static class ColumnName
@@ -40,6 +42,29 @@ namespace Fan.DataBase.Module
         public const string TempDbConfigCode = "TempDbConfig";
         public const string HisDbConfigCode = "HisDbConfig";
         public const string OfficDbConfigCode = "OfficialDbConfig";
+        #endregion
+
+        #region 历史库和临时库相关前、后缀
+        public const string His_prex = "his_";
+        public const string Temp_prex = "temp_";
+        #endregion
+        #region 历史库和临时库日期列
+        /// <summary>
+        /// 更新时间
+        /// </summary>
+        public const string UpdateTime = "updatetime";
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        public const string CreateTime = "createtime";
+        /// <summary>
+        /// 有效日期
+        /// </summary>
+        public const string VaDate = "vadate";
+        /// <summary>
+        /// 失效日期
+        /// </summary>
+        public const string InVaDate = "invadate";
         #endregion
     }
 }

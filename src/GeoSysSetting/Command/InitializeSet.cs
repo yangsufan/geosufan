@@ -33,8 +33,7 @@ namespace Fan.SysSetting
         }
         public override void OnClick()
         {
-            FromInitializeSet fromInitalSet = new FromInitializeSet(m_Hook.MainForm);
-            fromInitalSet.Text = _Caption;
+            FromInitializeSet fromInitalSet = new FromInitializeSet(m_Hook.MainForm) {Text=_Caption };
             fromInitalSet.Show();
         }
     }

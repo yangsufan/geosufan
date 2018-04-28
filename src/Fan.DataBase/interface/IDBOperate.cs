@@ -52,6 +52,19 @@ namespace Fan.DataBase
         /// </summary>
         /// <returns></returns>
         bool TestConnect();
+        /// <summary>
+        /// 复制表结构到当前数据库
+        /// </summary>
+        /// <param name="TableName">表名称</param>
+        /// <param name="SoucreTable">表对象</param>
+        /// <returns></returns>
+        bool CopyTableStruct(string TableName,object SoucreTable);
+        /// <summary>
+        /// 判断表是否存在
+        /// </summary>
+        /// <param name="TableName"></param>
+        /// <returns></returns>
+        bool IsTableExist(string TableName);
     }
     /// <summary>
     /// ODBC数据库操作接口

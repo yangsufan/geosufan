@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*
+ * 表名和视图名称常数类
+ */
 namespace Fan.DataBase.Module
 {
    public static class TableName

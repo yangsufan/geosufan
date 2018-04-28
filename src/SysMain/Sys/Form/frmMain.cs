@@ -112,29 +112,47 @@ namespace GDBM
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mainRibbon
+            // 
+            this.mainRibbon.ExpandCollapseItem.Id = 0;
+            this.mainRibbon.MaxItemId = 3;
+            this.mainRibbon.Size = new System.Drawing.Size(1025, 143);
+            // 
+            // ribbonStatusBar
+            // 
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 610);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1025, 31);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 690);
+            this.ClientSize = new System.Drawing.Size(1025, 641);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.ShowIcon = false;
-            this.IsMdiContainer = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new EventHandler(frmMain_Load);
+            this.Load += new System.EventHandler(this.frmMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
         private void frmMain_Load(object sender, EventArgs e)
         {
 
         }
-    }
+
+        #region 主窗体事件
+        public delegate void ShowProgressInfo(string strProgress);
+        public event ShowProgressInfo ShowProgressEvent;
+        #endregion
+        }
 }

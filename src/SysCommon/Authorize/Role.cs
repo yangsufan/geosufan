@@ -6,10 +6,19 @@ using System.Xml;
 using Fan.DataBase;
 using Fan.DataBase.Module;
 
+/*
+ * 描述：角色类用于用户角色管理
+ */
+
 namespace Fan.Common
 {
     public class Role
     {
+        /// <summary>
+        /// 角色类
+        /// </summary>
+        /// <param name="strRoleID"></param>
+        /// <param name="iDbOperate"></param>
         public Role(string strRoleID, IDBOperate iDbOperate)
         {
             m_RoleID = strRoleID;
@@ -17,15 +26,24 @@ namespace Fan.Common
         }
         #region Class Attribute 
         private string m_RoleID = string.Empty;
+        /// <summary>
+        /// 角色ID
+        /// </summary>
         public string RoleID
         {
             get { return m_RoleID; }
         }
         private string m_RoleName = string.Empty;
+        /// <summary>
+        /// 角色名称
+        /// </summary>
         public string RoleName
         {
             get { return m_RoleName; }
         }
+        /// <summary>
+        /// 角色功能列表
+        /// </summary>
         public DataTable RoleFunDt
         {
             get {
@@ -37,6 +55,9 @@ namespace Fan.Common
                 return Dt;
             }
         }
+        /// <summary>
+        /// 数据操作
+        /// </summary>
         private IDBOperate m_DbOperate = default(IDBOperate);
         #endregion
 

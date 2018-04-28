@@ -4,7 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Data.OleDb;
-
+/*
+ * MDB操作类
+ */
 namespace Fan.DataBase
 {
     public class MDBOperate : IMDBOperate
@@ -167,6 +169,14 @@ namespace Fan.DataBase
                 return false;
             }
             return true;
+        }
+        public bool CopyTableStruct(string TableName, object SoucreTable)
+        {
+            return false;
+        }
+        public bool IsTableExist(string TableName)
+        {
+            return false;
         }
     }
 }

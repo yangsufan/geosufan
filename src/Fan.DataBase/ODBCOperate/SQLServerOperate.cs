@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
+/*
+ * SQL server 操作类
+ */
 namespace Fan.DataBase
 {
    public class SQLServerOperate : ISQLServerOperate
@@ -168,6 +170,14 @@ namespace Fan.DataBase
             return returnDt;
         }
         public bool ExecStoreProcedure(string spName, params string[] spParams)
+        {
+            return false;
+        }
+        public bool CopyTableStruct(string TableName, object SoucreTable)
+        {
+            return false;
+        }
+        public bool IsTableExist(string TableName)
         {
             return false;
         }

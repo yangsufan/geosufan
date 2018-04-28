@@ -360,7 +360,6 @@ namespace Fan.Common
         {
             if (!EnterProgress())
                 return;
-
             ProgressInfo vInfo = new ProgressInfo();
             vInfo.action = ProgressAction.enumChangeDesc;
             vInfo.actionValue = strDesc;
@@ -392,7 +391,6 @@ namespace Fan.Common
 
             //启动标志位0；
             System.Threading.Interlocked.Exchange(ref m_ShowFlag, 0);
-            
             m_FormProgress.Dispose();
             m_FormProgress = null;
             m_Thread = null;

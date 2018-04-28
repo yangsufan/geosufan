@@ -72,8 +72,6 @@ namespace Fan.Common.Log
                 }
             }
         }
-        
-
     }
 
     public class TextSystemFuntionLOG : SystemFuntionLOGInitial, ISystemFunctionLog

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.mainRibbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.ItemLoginUser = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.ItemLoginUser = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +49,12 @@
             this.ribbonPage1});
             this.mainRibbon.Size = new System.Drawing.Size(1281, 143);
             this.mainRibbon.StatusBar = this.ribbonStatusBar;
+            // 
+            // ItemLoginUser
+            // 
+            this.ItemLoginUser.Caption = "当前登录用户：";
+            this.ItemLoginUser.Id = 1;
+            this.ItemLoginUser.Name = "ItemLoginUser";
             // 
             // ribbonPage1
             // 
@@ -69,13 +75,6 @@
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.mainRibbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1281, 31);
-            // 
-            // ItemLoginUser
-            // 
-            this.ItemLoginUser.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.ItemLoginUser.Caption = "当前登录用户：";
-            this.ItemLoginUser.Id = 1;
-            this.ItemLoginUser.Name = "ItemLoginUser";
             // 
             // BaseRibbonForm
             // 
